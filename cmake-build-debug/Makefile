@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/0331BF15-E3FC-4A4E-AD11-161A78D1B859/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/8FA6B99C-F70B-45FB-8ABB-AAB706BCACA5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/0331BF15-E3FC-4A4E-AD11-161A78D1B859/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/8FA6B99C-F70B-45FB-8ABB-AAB706BCACA5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/0331BF15-E3FC-4A4E-AD11-161A78D1B859/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/8FA6B99C-F70B-45FB-8ABB-AAB706BCACA5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/0331BF15-E3FC-4A4E-AD11-161A78D1B859/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n000149r00092f/T/AppTranslocation/8FA6B99C-F70B-45FB-8ABB-AAB706BCACA5/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -149,6 +149,87 @@ checker.s: checker.c.s
 checker.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.s
 .PHONY : checker.c.s
+
+execute.o: execute.c.o
+
+.PHONY : execute.o
+
+# target to build an object file
+execute.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.o
+.PHONY : execute.c.o
+
+execute.i: execute.c.i
+
+.PHONY : execute.i
+
+# target to preprocess a source file
+execute.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.i
+.PHONY : execute.c.i
+
+execute.s: execute.c.s
+
+.PHONY : execute.s
+
+# target to generate assembly for a file
+execute.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.s
+.PHONY : execute.c.s
+
+executeRest.o: executeRest.c.o
+
+.PHONY : executeRest.o
+
+# target to build an object file
+executeRest.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/executeRest.c.o
+.PHONY : executeRest.c.o
+
+executeRest.i: executeRest.c.i
+
+.PHONY : executeRest.i
+
+# target to preprocess a source file
+executeRest.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/executeRest.c.i
+.PHONY : executeRest.c.i
+
+executeRest.s: executeRest.c.s
+
+.PHONY : executeRest.s
+
+# target to generate assembly for a file
+executeRest.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/executeRest.c.s
+.PHONY : executeRest.c.s
+
+get_next_line.o: get_next_line.c.o
+
+.PHONY : get_next_line.o
+
+# target to build an object file
+get_next_line.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.o
+.PHONY : get_next_line.c.o
+
+get_next_line.i: get_next_line.c.i
+
+.PHONY : get_next_line.i
+
+# target to preprocess a source file
+get_next_line.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.i
+.PHONY : get_next_line.c.i
+
+get_next_line.s: get_next_line.c.s
+
+.PHONY : get_next_line.s
+
+# target to generate assembly for a file
+get_next_line.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.s
+.PHONY : get_next_line.c.s
 
 src/libft/ft_any.o: src/libft/ft_any.c.o
 
@@ -473,6 +554,33 @@ src/libft/ft_list_at.s: src/libft/ft_list_at.c.s
 src/libft/ft_list_at.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.s
 .PHONY : src/libft/ft_list_at.c.s
+
+src/libft/ft_lstadd.o: src/libft/ft_lstadd.c.o
+
+.PHONY : src/libft/ft_lstadd.o
+
+# target to build an object file
+src/libft/ft_lstadd.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.o
+.PHONY : src/libft/ft_lstadd.c.o
+
+src/libft/ft_lstadd.i: src/libft/ft_lstadd.c.i
+
+.PHONY : src/libft/ft_lstadd.i
+
+# target to preprocess a source file
+src/libft/ft_lstadd.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.i
+.PHONY : src/libft/ft_lstadd.c.i
+
+src/libft/ft_lstadd.s: src/libft/ft_lstadd.c.s
+
+.PHONY : src/libft/ft_lstadd.s
+
+# target to generate assembly for a file
+src/libft/ft_lstadd.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.s
+.PHONY : src/libft/ft_lstadd.c.s
 
 src/libft/ft_lstdel.o: src/libft/ft_lstdel.c.o
 
@@ -824,6 +932,33 @@ src/libft/ft_memset.s: src/libft/ft_memset.c.s
 src/libft/ft_memset.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memset.c.s
 .PHONY : src/libft/ft_memset.c.s
+
+src/libft/ft_push_back.o: src/libft/ft_push_back.c.o
+
+.PHONY : src/libft/ft_push_back.o
+
+# target to build an object file
+src/libft/ft_push_back.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.o
+.PHONY : src/libft/ft_push_back.c.o
+
+src/libft/ft_push_back.i: src/libft/ft_push_back.c.i
+
+.PHONY : src/libft/ft_push_back.i
+
+# target to preprocess a source file
+src/libft/ft_push_back.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.i
+.PHONY : src/libft/ft_push_back.c.i
+
+src/libft/ft_push_back.s: src/libft/ft_push_back.c.s
+
+.PHONY : src/libft/ft_push_back.s
+
+# target to generate assembly for a file
+src/libft/ft_push_back.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.s
+.PHONY : src/libft/ft_push_back.c.s
 
 src/libft/ft_putchar.o: src/libft/ft_putchar.c.o
 
@@ -2715,6 +2850,33 @@ src/string/ft_strappend.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_strappend.c.s
 .PHONY : src/string/ft_strappend.c.s
 
+suportFunctions.o: suportFunctions.c.o
+
+.PHONY : suportFunctions.o
+
+# target to build an object file
+suportFunctions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/suportFunctions.c.o
+.PHONY : suportFunctions.c.o
+
+suportFunctions.i: suportFunctions.c.i
+
+.PHONY : suportFunctions.i
+
+# target to preprocess a source file
+suportFunctions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/suportFunctions.c.i
+.PHONY : suportFunctions.c.i
+
+suportFunctions.s: suportFunctions.c.s
+
+.PHONY : suportFunctions.s
+
+# target to generate assembly for a file
+suportFunctions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/suportFunctions.c.s
+.PHONY : suportFunctions.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2727,6 +2889,15 @@ help:
 	@echo "... checker.o"
 	@echo "... checker.i"
 	@echo "... checker.s"
+	@echo "... execute.o"
+	@echo "... execute.i"
+	@echo "... execute.s"
+	@echo "... executeRest.o"
+	@echo "... executeRest.i"
+	@echo "... executeRest.s"
+	@echo "... get_next_line.o"
+	@echo "... get_next_line.i"
+	@echo "... get_next_line.s"
 	@echo "... src/libft/ft_any.o"
 	@echo "... src/libft/ft_any.i"
 	@echo "... src/libft/ft_any.s"
@@ -2763,6 +2934,9 @@ help:
 	@echo "... src/libft/ft_list_at.o"
 	@echo "... src/libft/ft_list_at.i"
 	@echo "... src/libft/ft_list_at.s"
+	@echo "... src/libft/ft_lstadd.o"
+	@echo "... src/libft/ft_lstadd.i"
+	@echo "... src/libft/ft_lstadd.s"
 	@echo "... src/libft/ft_lstdel.o"
 	@echo "... src/libft/ft_lstdel.i"
 	@echo "... src/libft/ft_lstdel.s"
@@ -2802,6 +2976,9 @@ help:
 	@echo "... src/libft/ft_memset.o"
 	@echo "... src/libft/ft_memset.i"
 	@echo "... src/libft/ft_memset.s"
+	@echo "... src/libft/ft_push_back.o"
+	@echo "... src/libft/ft_push_back.i"
+	@echo "... src/libft/ft_push_back.s"
 	@echo "... src/libft/ft_putchar.o"
 	@echo "... src/libft/ft_putchar.i"
 	@echo "... src/libft/ft_putchar.s"
@@ -3012,6 +3189,9 @@ help:
 	@echo "... src/string/ft_strappend.o"
 	@echo "... src/string/ft_strappend.i"
 	@echo "... src/string/ft_strappend.s"
+	@echo "... suportFunctions.o"
+	@echo "... suportFunctions.i"
+	@echo "... suportFunctions.s"
 .PHONY : help
 
 

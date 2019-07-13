@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/mcanhand/CLionProjects/push_swap/checker.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/execute.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/execute.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/executeRest.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/executeRest.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/get_next_line.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/get_next_line.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_any.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_any.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_atoi.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_atoi.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_bzero.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_bzero.c.o"
@@ -17,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_isprint.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_isprint.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_itoa.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_itoa.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_list_at.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstadd.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstdel.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_lstdel.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstdelone.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_lstdelone.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstiter.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_lstiter.c.o"
@@ -30,6 +34,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_memdel.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_memdel.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_memmove.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_memmove.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_memset.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_memset.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_push_back.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_putchar.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_putchar.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_putchar_fd.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_putchar_fd.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_putendl.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/libft/ft_putendl.c.o"
@@ -100,6 +105,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mcanhand/CLionProjects/push_swap/src/string/ft_lst_to_str.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/string/ft_lst_to_str.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/string/ft_realloc.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/string/ft_realloc.c.o"
   "/Users/mcanhand/CLionProjects/push_swap/src/string/ft_strappend.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o"
+  "/Users/mcanhand/CLionProjects/push_swap/suportFunctions.c" "/Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/suportFunctions.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

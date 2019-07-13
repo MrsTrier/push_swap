@@ -3,13 +3,23 @@
 
 CMakeFiles/push_swap.dir/checker.c.o
  ../include/conversions.h
+ ../include/execute.h
  ../include/float_to_str.h
  ../include/floats.h
  ../include/ft_printf.h
+ ../include/get_next_line.h
  ../include/large_arythmetics.h
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/checker.c
  /Users/mcanhand/CLionProjects/push_swap/checker.h
+CMakeFiles/push_swap.dir/execute.c.o
+ ../include/execute.h
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/execute.c
+CMakeFiles/push_swap.dir/get_next_line.c.o
+ ../include/get_next_line.h
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/get_next_line.c
 CMakeFiles/push_swap.dir/src/libft/ft_any.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_any.c
@@ -45,6 +55,9 @@ CMakeFiles/push_swap.dir/src/libft/ft_itoa.c.o
 CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_list_at.c
+CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.o
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstadd.c
 CMakeFiles/push_swap.dir/src/libft/ft_lstdel.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstdel.c
@@ -84,6 +97,9 @@ CMakeFiles/push_swap.dir/src/libft/ft_memmove.c.o
 CMakeFiles/push_swap.dir/src/libft/ft_memset.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_memset.c
+CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.o
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_push_back.c
 CMakeFiles/push_swap.dir/src/libft/ft_putchar.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/libft/ft_putchar.c

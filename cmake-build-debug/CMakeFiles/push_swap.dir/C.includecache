@@ -14,6 +14,10 @@ stdint.h
 ft_printf.h
 ../include/ft_printf.h
 
+../include/execute.h
+libft.h
+../include/libft.h
+
 ../include/float_to_str.h
 
 ../include/floats.h
@@ -25,6 +29,10 @@ string.h
 -
 unistd.h
 -
+libft.h
+../include/libft.h
+
+../include/get_next_line.h
 libft.h
 ../include/libft.h
 
@@ -41,10 +49,6 @@ unistd.h
 -
 
 /Users/mcanhand/CLionProjects/push_swap/checker.c
-unistd.h
--
-libft.h
--
 checker.h
 /Users/mcanhand/CLionProjects/push_swap/checker.h
 stdio.h
@@ -56,6 +60,8 @@ stdarg.h
 string.h
 -
 unistd.h
+-
+fcntl.h
 -
 libft.h
 /Users/mcanhand/CLionProjects/push_swap/libft.h
@@ -69,4 +75,8 @@ float_to_str.h
 /Users/mcanhand/CLionProjects/push_swap/float_to_str.h
 floats.h
 /Users/mcanhand/CLionProjects/push_swap/floats.h
+execute.h
+/Users/mcanhand/CLionProjects/push_swap/execute.h
+get_next_line.h
+/Users/mcanhand/CLionProjects/push_swap/get_next_line.h
 

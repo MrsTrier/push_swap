@@ -97,6 +97,7 @@ char				*ft_itoa_base(long long int n, int base, int uppercase);
 char				*ft_itoa_base_hex_long(unsigned long long n, int base, int uppercase);
 char				*fill_with_chars(int num, char c);
 void				*ft_realloc(void *mem, size_t old_size, size_t new_size);
+void				ft_push_back(t_list **start, t_list *new);
 char				*ft_strappend(char *s1, char *s2);
 char				*ft_lst_to_str(t_list *lst);
 int					create_node(void *str, size_t len, t_list **lst);

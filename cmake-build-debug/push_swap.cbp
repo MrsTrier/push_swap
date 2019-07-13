@@ -90,7 +90,19 @@
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/checker.h">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/execute.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/executeRest.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/get_next_line.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/conversions.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/execute.h">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/float_to_str.h">
@@ -100,6 +112,9 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/ft_printf.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/get_next_line.h">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/large_arythmetics.h">
@@ -144,6 +159,9 @@
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_list_at.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstadd.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_lstdel.c">
 			<Option target="push_swap"/>
 		</Unit>
@@ -181,6 +199,9 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_memset.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_push_back.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_putchar.c">
@@ -391,6 +412,9 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/string/ft_strappend.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/suportFunctions.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/CMakeLists.txt">
