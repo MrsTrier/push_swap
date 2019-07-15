@@ -11,73 +11,85 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
 
-int		iteration(char **str, char **line, const int fd)
+static int		ft_verify_line(char **buffer, char **res)
 {
+	int		i;
 	char	*tmp;
-	int		len;
+	char	*pr;
 
-	if (ft_strchr(str[fd], '\n'))
-	{
-		len = ft_strlen(str[fd]) - (ft_strchr(str[fd], '\n') - str[fd]);
-		tmp = ft_strnew(len + 1);
-		ft_strncpy(tmp, ft_strchr(str[fd], '\n') + 1, len - 1);
-		*line = ft_strsub(str[fd], 0, ft_strchr(str[fd], '\n') - str[fd]);
-		ft_strdel(&str[fd]);
-		str[fd] = tmp;
-	}
-	else if (str[fd][0])
-	{
-		if (!(ft_strchr(str[fd], '\n')))
-			return (-1);
-		*line = ft_strdup(str[fd]);
-		ft_strdel(&str[fd]);
-	}
-	else
-		return (0);
+	i = 0;
+	tmp = *buffer;
+	while (tmp[i] != '\n')
+		if (!tmp[i++])
+			return (0);
+	pr = &tmp[i];
+	*pr = '\0';
+	*res = ft_strsub(*buffer, 0, i);
+	tmp = ft_strdup(pr + 1);
+	ft_strdel(&*buffer);
+	*buffer = tmp;
 	return (1);
 }
 
-void	copy(char **str, char *buf, int fd)
+static int		ft_read_file(int fd, char *tmp, char **buffer, char **line)
 {
-	char	*tmp;
-	int		strlen;
-	int		buflen;
+	int		ret;
+	char	*cp;
 
-	if (!str[fd])
-		str[fd] = ft_strnew(1);
-	strlen = ft_strlen(str[fd]);
-	buflen = ft_strlen(buf);
-	tmp = ft_strnew(strlen + buflen + 1);
-	ft_strncpy(tmp, str[fd], strlen);
-	ft_strncpy(tmp + strlen, buf, buflen);
-	free(str[fd]);
-	str[fd] = tmp;
-}
-
-int		get_next_line(const int fd, char **line)
-{
-	static char	*str[12000];
-	char		buf[BUFF_SIZE + 1];
-	int			ret;
-
-	if (fd < 0 || line == 0)
-		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	while ((ret = read(fd, tmp, BUFF_SIZE)) > 0)
 	{
-		buf[ret] = '\0';
-		copy(str, buf, fd);
-		if (BUFF_SIZE == 1)
+		tmp[ret] = '\0';
+		if (*buffer)
 		{
-			if (buf[ret - 1] == '\n')
-				break ;
+			cp = *buffer;
+			*buffer = ft_strjoin(cp, tmp);
+			free(cp);
 		}
-		else if (ft_strchr(str[fd], '\n'))
+		else
+			*buffer = ft_strdup(tmp);
+		if (ft_verify_line(buffer, line))
 			break ;
 	}
-	if (ret < 0)
+	return (RET_VALUE(ret));
+}
+
+int				get_next_line(const int fd, char **line)
+{
+	int			i;
+	int			ret;
+	static char	*str[MAX_FD];
+	char		*tmp;
+
+	i = 0;
+	if (!line || fd < 0 || fd > MAX_FD || \
+	!(tmp = (char *)malloc(sizeof(char) * (BUFF_SIZE + 1))))
+	{
+		free(tmp);
 		return (-1);
-	if (!ret && !str[fd])
-		return (0);
-	return (iteration(str, line, fd));
+	}
+	if (str[fd])
+	{
+		if (ft_verify_line(&str[fd], line))
+		{
+			free(tmp);
+			return (1);
+		}
+	}
+	while (i < BUFF_SIZE)
+		tmp[i++] = '\0';
+	ret = ft_read_file(fd, tmp, &str[fd], line);
+	free(tmp);
+	tmp = NULL;
+	if (ret != 0 || str[fd] == NULL || str[fd][0] == '\0')
+	{
+		if (!ret && *line)
+			*line = NULL;
+		return (ret);
+	}
+	*line = str[fd];
+	str[fd] = NULL;
+	return (1);
 }

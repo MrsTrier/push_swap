@@ -16,6 +16,17 @@ CMakeFiles/push_swap.dir/execute.c.o: ../include/execute.h
 CMakeFiles/push_swap.dir/execute.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/execute.c.o: ../execute.c
 
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/conversions.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/float_to_str.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/floats.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/ft_printf.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/get_next_line.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/large_arythmetics.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../checker.h
+CMakeFiles/push_swap.dir/executeRest.c.o: ../executeRest.c
+
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../include/get_next_line.h
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../get_next_line.c
@@ -342,4 +353,8 @@ CMakeFiles/push_swap.dir/src/string/ft_realloc.c.o: ../src/string/ft_realloc.c
 
 CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o: ../src/string/ft_strappend.c
+
+CMakeFiles/push_swap.dir/suportFunctions.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/suportFunctions.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/suportFunctions.c.o: ../suportFunctions.c
 

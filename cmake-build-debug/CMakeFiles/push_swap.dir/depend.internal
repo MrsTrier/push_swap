@@ -16,6 +16,17 @@ CMakeFiles/push_swap.dir/execute.c.o
  ../include/execute.h
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/execute.c
+CMakeFiles/push_swap.dir/executeRest.c.o
+ ../include/conversions.h
+ ../include/execute.h
+ ../include/float_to_str.h
+ ../include/floats.h
+ ../include/ft_printf.h
+ ../include/get_next_line.h
+ ../include/large_arythmetics.h
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/checker.h
+ /Users/mcanhand/CLionProjects/push_swap/executeRest.c
 CMakeFiles/push_swap.dir/get_next_line.c.o
  ../include/get_next_line.h
  ../include/libft.h
@@ -343,3 +354,7 @@ CMakeFiles/push_swap.dir/src/string/ft_realloc.c.o
 CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o
  ../include/libft.h
  /Users/mcanhand/CLionProjects/push_swap/src/string/ft_strappend.c
+CMakeFiles/push_swap.dir/suportFunctions.c.o
+ ../include/execute.h
+ ../include/libft.h
+ /Users/mcanhand/CLionProjects/push_swap/suportFunctions.c
