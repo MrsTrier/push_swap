@@ -16,20 +16,35 @@ CMakeFiles/push_swap.dir/execute.c.o: ../include/execute.h
 CMakeFiles/push_swap.dir/execute.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/execute.c.o: ../execute.c
 
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/conversions.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/execute.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/float_to_str.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/floats.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/ft_printf.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/get_next_line.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/large_arythmetics.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../include/libft.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../checker.h
-CMakeFiles/push_swap.dir/executeRest.c.o: ../executeRest.c
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/conversions.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/float_to_str.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/floats.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/ft_printf.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/get_next_line.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/large_arythmetics.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../checker.h
+CMakeFiles/push_swap.dir/execute_rest.c.o: ../execute_rest.c
 
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../include/get_next_line.h
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/get_next_line.c.o: ../get_next_line.c
+
+CMakeFiles/push_swap.dir/lst_functions.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/lst_functions.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/lst_functions.c.o: ../lst_functions.c
+
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/conversions.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/float_to_str.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/floats.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/ft_printf.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/get_next_line.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/large_arythmetics.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/push_swap.c.o: ../push_swap.c
+CMakeFiles/push_swap.dir/push_swap.c.o: ../push_swap.h
 
 CMakeFiles/push_swap.dir/src/libft/ft_any.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/src/libft/ft_any.c.o: ../src/libft/ft_any.c
@@ -45,6 +60,9 @@ CMakeFiles/push_swap.dir/src/libft/ft_count_if.c.o: ../src/libft/ft_count_if.c
 
 CMakeFiles/push_swap.dir/src/libft/ft_create_elem.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/src/libft/ft_create_elem.c.o: ../src/libft/ft_create_elem.c
+
+CMakeFiles/push_swap.dir/src/libft/ft_is_int.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/src/libft/ft_is_int.c.o: ../src/libft/ft_is_int.c
 
 CMakeFiles/push_swap.dir/src/libft/ft_isalnum.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/src/libft/ft_isalnum.c.o: ../src/libft/ft_isalnum.c
@@ -354,7 +372,14 @@ CMakeFiles/push_swap.dir/src/string/ft_realloc.c.o: ../src/string/ft_realloc.c
 CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o: ../include/libft.h
 CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o: ../src/string/ft_strappend.c
 
-CMakeFiles/push_swap.dir/suportFunctions.c.o: ../include/execute.h
-CMakeFiles/push_swap.dir/suportFunctions.c.o: ../include/libft.h
-CMakeFiles/push_swap.dir/suportFunctions.c.o: ../suportFunctions.c
+CMakeFiles/push_swap.dir/validation.c.o: ../include/conversions.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/execute.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/float_to_str.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/floats.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/ft_printf.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/get_next_line.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/large_arythmetics.h
+CMakeFiles/push_swap.dir/validation.c.o: ../include/libft.h
+CMakeFiles/push_swap.dir/validation.c.o: ../checker.h
+CMakeFiles/push_swap.dir/validation.c.o: ../validation.c
 

@@ -1,7 +1,8 @@
 #include "checker.h"
 #include <stdio.h>
+#include <limits.h>
 
-void	executeRest(t_list **res_lst, char *line, t_list **b)
+void	execute_rest(t_list **res_lst, char *line, t_list **b)
 {
 	int 	a_length;
 	int 	b_length;
@@ -16,7 +17,7 @@ void	executeRest(t_list **res_lst, char *line, t_list **b)
 		executeRRR(res_lst, a_length, b, b_length);
 }
 
-void	executeComand(t_list **res_lst, char *line, t_list **b)
+void	execute_comand(t_list **res_lst, char *line, t_list **b)
 {
 	int 	a_length;
 	int 	b_length;
@@ -40,52 +41,57 @@ void	executeComand(t_list **res_lst, char *line, t_list **b)
 	else if (ft_strcmp(line, "rr") == 0)
 		executeSSRR(res_lst, b, 0, 0);
 	else
-		executeRest(res_lst, line, b);
+		execute_rest(res_lst, line, b);
 }
 
-int		saveStack(int ac, char **av, t_list *res_lst)
-{
-	int		i;
-	char 	*str;
-	t_list	*stack;
+//int		save_stack(int ac, char **av, t_list *res_lst)
+//{
+//	int		i;
+//	t_list	*stack;
+//
+//	i = 1;
+//	stack = res_lst;
+//	if (ac < 2)
+//		return (0);
+//	while (i < ac)
+//	{
+//		if (!is_int(av[i]))
+//			return (write(2, "Error\n", 6));
+//		create_elem(av[i], ft_strlen(av[i]) + 1, &stack);
+//		i++;
+//	}
+//	return (1);
+//}
 
-	i = 1;
-	stack = res_lst;
-	if (ac < 2)
-		return (0);
-	while (i < ac)
-	{
-		str = av[i];
-		create_elem(str, ft_strlen(av[i]) + 1, &stack);
-		i++;
-	}
-	return (1);
-}
-
-int		main(int ac, char **av)
-{
-	char	*line;
-	t_list	*res_lst;
-	t_list	*b;
-
-	res_lst = ft_lstnew(NULL, 0);
-	b = ft_lstnew(NULL, 0);
-	if (!saveStack(ac, av, res_lst))
-		return (0);
-	while (get_next_line(0, &line) > 0)
-	{
-		executeComand(&res_lst, line, &b);
-		ft_printf("%s\n", ft_list_at(res_lst, 0)->content);
-//		ft_printf("%s\n", ft_list_at(res_lst, 2)->content);
-//		ft_printf("%s\n", res_lst->content);
-//		ft_printf("%s\n", b->content);
-//		ft_printf("%s\n", ft_list_at(res_lst, 0)->content);
-	}
-	ft_printf("dad");
-	if ((!lst_sorted(res_lst, f)) && (b->content != NULL))
-		return (write(2, "Error\n", 6));
-	return (write(1, "uraa\n", 5));
-}
+//int		main(int ac, char **av)
+//{
+//	char	*line;
+//	t_list	*res_lst;
+//	t_list	*b;
+//
+//	res_lst = ft_lstnew(NULL, 0);
+//	b = ft_lstnew(NULL, 0);
+//	if (!save_stack(ac, av, res_lst))
+//		return (0);
+//	while (get_next_line(0, &line) > 0)
+//	 {
+//		if (!*line)
+//			break;
+//		if (!valid(line)) {
+//			free(line);
+//			return (write(2, "Error\n", 6));
+//		}
+//		execute_comand(&res_lst, line, &b);
+//		free(line);
+//	}
+//	if ((!lst_sorted(res_lst)) || (b->content != NULL))
+//		return (write(2, "KO\n", 3));
+//	else
+//	{
+//		ft_lstiter(res_lst, put_string);
+//		return (write(1, "OK\n", 3));
+//	}
+//}
 
 //sa
 //pb
@@ -95,4 +101,8 @@ int		main(int ac, char **av)
 //rrr
 //sa
 //pa
+//pa
+//pa
+//
+//
 

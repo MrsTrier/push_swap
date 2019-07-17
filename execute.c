@@ -4,6 +4,7 @@ int		executeSAB(t_list **res_lst, int elemNum)
 {
 	t_list	*a;
 	char 	*tmp;
+	int		tmp_size;
 
 	a = *res_lst;
 	if (elemNum <= 2)
@@ -11,12 +12,14 @@ int		executeSAB(t_list **res_lst, int elemNum)
 	else
 	{
 		tmp = (ft_list_at(a, 0)->content);
+		tmp_size = (ft_list_at(a, 0)->content_size);
 		ft_list_at(a, 0)->content = ft_list_at(a, 1)->content;
+		ft_list_at(a, 0)->content_size = ft_list_at(a, 1)->content_size;
 		ft_list_at(a, 1)->content = tmp;
+		ft_list_at(a, 1)->content_size = tmp_size;
 	}
 	return (1);
 }
-
 
 void	executePA(t_list **a, t_list **b)
 {
@@ -32,21 +35,6 @@ void	executePA(t_list **a, t_list **b)
 	free(new_b);
 	*b = next;
 }
-
-//void	lst_delete_last(t_list **start)
-//{
-//	t_list		*lst;
-//
-//	lst = *start;
-//	if (!(*start))
-//		return ;
-//	else
-//	{
-//		while (lst->next)
-//			lst = lst->next;
-//		free(lst);
-//	}
-//}
 
 void	executePB(t_list **a, t_list **b)
 {

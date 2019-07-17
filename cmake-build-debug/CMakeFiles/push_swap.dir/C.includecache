@@ -47,14 +47,14 @@ stdlib.h
 -
 unistd.h
 -
-
-/Users/mcanhand/CLionProjects/push_swap/checker.c
-checker.h
-/Users/mcanhand/CLionProjects/push_swap/checker.h
-stdio.h
+limits.h
 -
 
-/Users/mcanhand/CLionProjects/push_swap/checker.h
+/Users/mcanhand/CLionProjects/push_swap/push_swap.c
+push_swap.h
+/Users/mcanhand/CLionProjects/push_swap/push_swap.h
+
+/Users/mcanhand/CLionProjects/push_swap/push_swap.h
 stdarg.h
 -
 string.h

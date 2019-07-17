@@ -93,7 +93,7 @@
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/execute.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/executeRest.c">
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/execute_rest.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/get_next_line.c">
@@ -123,6 +123,15 @@
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/include/libft.h">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/lst_functions.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/push_swap.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/push_swap.h">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_any.c">
 			<Option target="push_swap"/>
 		</Unit>
@@ -136,6 +145,9 @@
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_create_elem.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_is_int.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/libft/ft_isalnum.c">
@@ -414,7 +426,7 @@
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/src/string/ft_strappend.c">
 			<Option target="push_swap"/>
 		</Unit>
-		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/suportFunctions.c">
+		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/validation.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/CLionProjects/push_swap/CMakeLists.txt">

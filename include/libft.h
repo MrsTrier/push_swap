@@ -15,7 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-//# include <string.h>
+# include <limits.h>
+
+typedef enum
+{
+	false,
+	true
+}	t_bool;
 
 typedef struct		s_list
 {
@@ -101,4 +107,5 @@ void				ft_push_back(t_list **start, t_list *new);
 char				*ft_strappend(char *s1, char *s2);
 char				*ft_lst_to_str(t_list *lst);
 int					create_node(void *str, size_t len, t_list **lst);
+t_bool				is_int(const char *str);
 #endif

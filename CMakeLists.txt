@@ -20,6 +20,7 @@ add_executable(push_swap
         src/libft/ft_bzero.c
         src/libft/ft_count_if.c
         src/libft/ft_create_elem.c
+        src/libft/ft_is_int.c
         src/libft/ft_isalnum.c
         src/libft/ft_isalpha.c
         src/libft/ft_isascii.c
@@ -115,6 +116,9 @@ add_executable(push_swap
         checker.c
         checker.h
         execute.c
-        executeRest.c
+        execute_rest.c
         get_next_line.c
-        suportFunctions.c)
+        lst_functions.c
+        push_swap.c
+        push_swap.h
+        validation.c)
