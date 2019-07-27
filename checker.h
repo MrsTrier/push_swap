@@ -21,7 +21,7 @@ int		create_elem(void *str, size_t len, t_list **lst);
 int		lst_sorted(t_list *lst);
 int 	valid(char *line);
 void	put_string(t_list *elem);
-int		save_stack(int ac, char **av, t_list *res_lst);
+int		save_stack(int ac, char **av, t_list_arr *res_lst);
 
 
 #endif

@@ -1,5 +1,6 @@
 #include "execute.h"
 #include "checker.h"
+#include "push_swap.h"
 
 int 	valid(char *line)
 {
@@ -46,11 +47,11 @@ void	put_string(t_list *elem)
 	ft_printf(elem->content);
 }
 
-int		save_stack(int ac, char **av, t_list *res_lst)
+int		save_stack(int ac, char **av, t_list_arr *res_lst)
 {
-    int		i;
-    t_list	*stack;
-    int     *arr;
+    int			i;
+    t_list_arr	*stack;
+    int			*arr;
 
     i = 1;
     stack = res_lst;
@@ -60,8 +61,9 @@ int		save_stack(int ac, char **av, t_list *res_lst)
 		return (write(2, "Error\n", 6));
     while (i < ac)
     {
-        create_elem((char *)&(arr[i - 1]), ft_strlen((char *)(arr[i - 1])) + 1, &stack);
+        create_nb_elem(arr[i - 1], &stack);
         i++;
     }
+    //Очистить arr[]!!!!
     return (1);
 }

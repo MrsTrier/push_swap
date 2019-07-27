@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mcanhand/CLionProjects/push_swap
+CMAKE_SOURCE_DIR = /Users/romancheremin/CLionProjects/push_swap_l
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles /Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mcanhand/CLionProjects/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named push_swap
+# Target rules for targets named push_swap_l
 
 # Build rule for target.
-push_swap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 push_swap
-.PHONY : push_swap
+push_swap_l: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 push_swap_l
+.PHONY : push_swap_l
 
 # fast build rule for target.
-push_swap/fast:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/build
-.PHONY : push_swap/fast
+push_swap_l/fast:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/build
+.PHONY : push_swap_l/fast
 
 checker.o: checker.c.o
 
@@ -129,7 +129,7 @@ checker.o: checker.c.o
 
 # target to build an object file
 checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/checker.c.o
 .PHONY : checker.c.o
 
 checker.i: checker.c.i
@@ -138,7 +138,7 @@ checker.i: checker.c.i
 
 # target to preprocess a source file
 checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/checker.c.i
 .PHONY : checker.c.i
 
 checker.s: checker.c.s
@@ -147,35 +147,8 @@ checker.s: checker.c.s
 
 # target to generate assembly for a file
 checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/checker.c.s
 .PHONY : checker.c.s
-
-execute.o: execute.c.o
-
-.PHONY : execute.o
-
-# target to build an object file
-execute.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.o
-.PHONY : execute.c.o
-
-execute.i: execute.c.i
-
-.PHONY : execute.i
-
-# target to preprocess a source file
-execute.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.i
-.PHONY : execute.c.i
-
-execute.s: execute.c.s
-
-.PHONY : execute.s
-
-# target to generate assembly for a file
-execute.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute.c.s
-.PHONY : execute.c.s
 
 execute_rest.o: execute_rest.c.o
 
@@ -183,7 +156,7 @@ execute_rest.o: execute_rest.c.o
 
 # target to build an object file
 execute_rest.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/execute_rest.c.o
 .PHONY : execute_rest.c.o
 
 execute_rest.i: execute_rest.c.i
@@ -192,7 +165,7 @@ execute_rest.i: execute_rest.c.i
 
 # target to preprocess a source file
 execute_rest.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/execute_rest.c.i
 .PHONY : execute_rest.c.i
 
 execute_rest.s: execute_rest.c.s
@@ -201,7 +174,7 @@ execute_rest.s: execute_rest.c.s
 
 # target to generate assembly for a file
 execute_rest.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/execute_rest.c.s
 .PHONY : execute_rest.c.s
 
 get_next_line.o: get_next_line.c.o
@@ -210,7 +183,7 @@ get_next_line.o: get_next_line.c.o
 
 # target to build an object file
 get_next_line.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/get_next_line.c.o
 .PHONY : get_next_line.c.o
 
 get_next_line.i: get_next_line.c.i
@@ -219,7 +192,7 @@ get_next_line.i: get_next_line.c.i
 
 # target to preprocess a source file
 get_next_line.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/get_next_line.c.i
 .PHONY : get_next_line.c.i
 
 get_next_line.s: get_next_line.c.s
@@ -228,35 +201,116 @@ get_next_line.s: get_next_line.c.s
 
 # target to generate assembly for a file
 get_next_line.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/get_next_line.c.s
 .PHONY : get_next_line.c.s
 
-lst_functions.o: lst_functions.c.o
+heap_sort.o: heap_sort.c.o
 
-.PHONY : lst_functions.o
+.PHONY : heap_sort.o
 
 # target to build an object file
-lst_functions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_functions.c.o
-.PHONY : lst_functions.c.o
+heap_sort.c.o:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/heap_sort.c.o
+.PHONY : heap_sort.c.o
 
-lst_functions.i: lst_functions.c.i
+heap_sort.i: heap_sort.c.i
 
-.PHONY : lst_functions.i
+.PHONY : heap_sort.i
 
 # target to preprocess a source file
-lst_functions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_functions.c.i
-.PHONY : lst_functions.c.i
+heap_sort.c.i:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/heap_sort.c.i
+.PHONY : heap_sort.c.i
 
-lst_functions.s: lst_functions.c.s
+heap_sort.s: heap_sort.c.s
 
-.PHONY : lst_functions.s
+.PHONY : heap_sort.s
 
 # target to generate assembly for a file
-lst_functions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_functions.c.s
-.PHONY : lst_functions.c.s
+heap_sort.c.s:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/heap_sort.c.s
+.PHONY : heap_sort.c.s
+
+lst_arr_functions.o: lst_arr_functions.c.o
+
+.PHONY : lst_arr_functions.o
+
+# target to build an object file
+lst_arr_functions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o
+.PHONY : lst_arr_functions.c.o
+
+lst_arr_functions.i: lst_arr_functions.c.i
+
+.PHONY : lst_arr_functions.i
+
+# target to preprocess a source file
+lst_arr_functions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/lst_arr_functions.c.i
+.PHONY : lst_arr_functions.c.i
+
+lst_arr_functions.s: lst_arr_functions.c.s
+
+.PHONY : lst_arr_functions.s
+
+# target to generate assembly for a file
+lst_arr_functions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/lst_arr_functions.c.s
+.PHONY : lst_arr_functions.c.s
+
+nb_execute.o: nb_execute.c.o
+
+.PHONY : nb_execute.o
+
+# target to build an object file
+nb_execute.c.o:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_execute.c.o
+.PHONY : nb_execute.c.o
+
+nb_execute.i: nb_execute.c.i
+
+.PHONY : nb_execute.i
+
+# target to preprocess a source file
+nb_execute.c.i:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_execute.c.i
+.PHONY : nb_execute.c.i
+
+nb_execute.s: nb_execute.c.s
+
+.PHONY : nb_execute.s
+
+# target to generate assembly for a file
+nb_execute.c.s:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_execute.c.s
+.PHONY : nb_execute.c.s
+
+nb_lst.o: nb_lst.c.o
+
+.PHONY : nb_lst.o
+
+# target to build an object file
+nb_lst.c.o:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_lst.c.o
+.PHONY : nb_lst.c.o
+
+nb_lst.i: nb_lst.c.i
+
+.PHONY : nb_lst.i
+
+# target to preprocess a source file
+nb_lst.c.i:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_lst.c.i
+.PHONY : nb_lst.c.i
+
+nb_lst.s: nb_lst.c.s
+
+.PHONY : nb_lst.s
+
+# target to generate assembly for a file
+nb_lst.c.s:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/nb_lst.c.s
+.PHONY : nb_lst.c.s
 
 push_swap.o: push_swap.c.o
 
@@ -264,7 +318,7 @@ push_swap.o: push_swap.c.o
 
 # target to build an object file
 push_swap.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/push_swap.c.o
 .PHONY : push_swap.c.o
 
 push_swap.i: push_swap.c.i
@@ -273,7 +327,7 @@ push_swap.i: push_swap.c.i
 
 # target to preprocess a source file
 push_swap.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/push_swap.c.i
 .PHONY : push_swap.c.i
 
 push_swap.s: push_swap.c.s
@@ -282,7 +336,7 @@ push_swap.s: push_swap.c.s
 
 # target to generate assembly for a file
 push_swap.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/push_swap.c.s
 .PHONY : push_swap.c.s
 
 src/libft/ft_any.o: src/libft/ft_any.c.o
@@ -291,7 +345,7 @@ src/libft/ft_any.o: src/libft/ft_any.c.o
 
 # target to build an object file
 src/libft/ft_any.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_any.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_any.c.o
 .PHONY : src/libft/ft_any.c.o
 
 src/libft/ft_any.i: src/libft/ft_any.c.i
@@ -300,7 +354,7 @@ src/libft/ft_any.i: src/libft/ft_any.c.i
 
 # target to preprocess a source file
 src/libft/ft_any.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_any.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_any.c.i
 .PHONY : src/libft/ft_any.c.i
 
 src/libft/ft_any.s: src/libft/ft_any.c.s
@@ -309,7 +363,7 @@ src/libft/ft_any.s: src/libft/ft_any.c.s
 
 # target to generate assembly for a file
 src/libft/ft_any.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_any.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_any.c.s
 .PHONY : src/libft/ft_any.c.s
 
 src/libft/ft_atoi.o: src/libft/ft_atoi.c.o
@@ -318,7 +372,7 @@ src/libft/ft_atoi.o: src/libft/ft_atoi.c.o
 
 # target to build an object file
 src/libft/ft_atoi.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_atoi.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_atoi.c.o
 .PHONY : src/libft/ft_atoi.c.o
 
 src/libft/ft_atoi.i: src/libft/ft_atoi.c.i
@@ -327,7 +381,7 @@ src/libft/ft_atoi.i: src/libft/ft_atoi.c.i
 
 # target to preprocess a source file
 src/libft/ft_atoi.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_atoi.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_atoi.c.i
 .PHONY : src/libft/ft_atoi.c.i
 
 src/libft/ft_atoi.s: src/libft/ft_atoi.c.s
@@ -336,7 +390,7 @@ src/libft/ft_atoi.s: src/libft/ft_atoi.c.s
 
 # target to generate assembly for a file
 src/libft/ft_atoi.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_atoi.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_atoi.c.s
 .PHONY : src/libft/ft_atoi.c.s
 
 src/libft/ft_bzero.o: src/libft/ft_bzero.c.o
@@ -345,7 +399,7 @@ src/libft/ft_bzero.o: src/libft/ft_bzero.c.o
 
 # target to build an object file
 src/libft/ft_bzero.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_bzero.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_bzero.c.o
 .PHONY : src/libft/ft_bzero.c.o
 
 src/libft/ft_bzero.i: src/libft/ft_bzero.c.i
@@ -354,7 +408,7 @@ src/libft/ft_bzero.i: src/libft/ft_bzero.c.i
 
 # target to preprocess a source file
 src/libft/ft_bzero.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_bzero.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_bzero.c.i
 .PHONY : src/libft/ft_bzero.c.i
 
 src/libft/ft_bzero.s: src/libft/ft_bzero.c.s
@@ -363,7 +417,7 @@ src/libft/ft_bzero.s: src/libft/ft_bzero.c.s
 
 # target to generate assembly for a file
 src/libft/ft_bzero.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_bzero.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_bzero.c.s
 .PHONY : src/libft/ft_bzero.c.s
 
 src/libft/ft_count_if.o: src/libft/ft_count_if.c.o
@@ -372,7 +426,7 @@ src/libft/ft_count_if.o: src/libft/ft_count_if.c.o
 
 # target to build an object file
 src/libft/ft_count_if.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_count_if.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_count_if.c.o
 .PHONY : src/libft/ft_count_if.c.o
 
 src/libft/ft_count_if.i: src/libft/ft_count_if.c.i
@@ -381,7 +435,7 @@ src/libft/ft_count_if.i: src/libft/ft_count_if.c.i
 
 # target to preprocess a source file
 src/libft/ft_count_if.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_count_if.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_count_if.c.i
 .PHONY : src/libft/ft_count_if.c.i
 
 src/libft/ft_count_if.s: src/libft/ft_count_if.c.s
@@ -390,7 +444,7 @@ src/libft/ft_count_if.s: src/libft/ft_count_if.c.s
 
 # target to generate assembly for a file
 src/libft/ft_count_if.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_count_if.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_count_if.c.s
 .PHONY : src/libft/ft_count_if.c.s
 
 src/libft/ft_create_elem.o: src/libft/ft_create_elem.c.o
@@ -399,7 +453,7 @@ src/libft/ft_create_elem.o: src/libft/ft_create_elem.c.o
 
 # target to build an object file
 src/libft/ft_create_elem.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_create_elem.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_create_elem.c.o
 .PHONY : src/libft/ft_create_elem.c.o
 
 src/libft/ft_create_elem.i: src/libft/ft_create_elem.c.i
@@ -408,7 +462,7 @@ src/libft/ft_create_elem.i: src/libft/ft_create_elem.c.i
 
 # target to preprocess a source file
 src/libft/ft_create_elem.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_create_elem.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_create_elem.c.i
 .PHONY : src/libft/ft_create_elem.c.i
 
 src/libft/ft_create_elem.s: src/libft/ft_create_elem.c.s
@@ -417,7 +471,7 @@ src/libft/ft_create_elem.s: src/libft/ft_create_elem.c.s
 
 # target to generate assembly for a file
 src/libft/ft_create_elem.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_create_elem.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_create_elem.c.s
 .PHONY : src/libft/ft_create_elem.c.s
 
 src/libft/ft_is_int.o: src/libft/ft_is_int.c.o
@@ -426,7 +480,7 @@ src/libft/ft_is_int.o: src/libft/ft_is_int.c.o
 
 # target to build an object file
 src/libft/ft_is_int.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_is_int.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_is_int.c.o
 .PHONY : src/libft/ft_is_int.c.o
 
 src/libft/ft_is_int.i: src/libft/ft_is_int.c.i
@@ -435,7 +489,7 @@ src/libft/ft_is_int.i: src/libft/ft_is_int.c.i
 
 # target to preprocess a source file
 src/libft/ft_is_int.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_is_int.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_is_int.c.i
 .PHONY : src/libft/ft_is_int.c.i
 
 src/libft/ft_is_int.s: src/libft/ft_is_int.c.s
@@ -444,7 +498,7 @@ src/libft/ft_is_int.s: src/libft/ft_is_int.c.s
 
 # target to generate assembly for a file
 src/libft/ft_is_int.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_is_int.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_is_int.c.s
 .PHONY : src/libft/ft_is_int.c.s
 
 src/libft/ft_isalnum.o: src/libft/ft_isalnum.c.o
@@ -453,7 +507,7 @@ src/libft/ft_isalnum.o: src/libft/ft_isalnum.c.o
 
 # target to build an object file
 src/libft/ft_isalnum.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalnum.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalnum.c.o
 .PHONY : src/libft/ft_isalnum.c.o
 
 src/libft/ft_isalnum.i: src/libft/ft_isalnum.c.i
@@ -462,7 +516,7 @@ src/libft/ft_isalnum.i: src/libft/ft_isalnum.c.i
 
 # target to preprocess a source file
 src/libft/ft_isalnum.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalnum.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalnum.c.i
 .PHONY : src/libft/ft_isalnum.c.i
 
 src/libft/ft_isalnum.s: src/libft/ft_isalnum.c.s
@@ -471,7 +525,7 @@ src/libft/ft_isalnum.s: src/libft/ft_isalnum.c.s
 
 # target to generate assembly for a file
 src/libft/ft_isalnum.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalnum.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalnum.c.s
 .PHONY : src/libft/ft_isalnum.c.s
 
 src/libft/ft_isalpha.o: src/libft/ft_isalpha.c.o
@@ -480,7 +534,7 @@ src/libft/ft_isalpha.o: src/libft/ft_isalpha.c.o
 
 # target to build an object file
 src/libft/ft_isalpha.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalpha.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalpha.c.o
 .PHONY : src/libft/ft_isalpha.c.o
 
 src/libft/ft_isalpha.i: src/libft/ft_isalpha.c.i
@@ -489,7 +543,7 @@ src/libft/ft_isalpha.i: src/libft/ft_isalpha.c.i
 
 # target to preprocess a source file
 src/libft/ft_isalpha.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalpha.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalpha.c.i
 .PHONY : src/libft/ft_isalpha.c.i
 
 src/libft/ft_isalpha.s: src/libft/ft_isalpha.c.s
@@ -498,7 +552,7 @@ src/libft/ft_isalpha.s: src/libft/ft_isalpha.c.s
 
 # target to generate assembly for a file
 src/libft/ft_isalpha.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isalpha.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isalpha.c.s
 .PHONY : src/libft/ft_isalpha.c.s
 
 src/libft/ft_isascii.o: src/libft/ft_isascii.c.o
@@ -507,7 +561,7 @@ src/libft/ft_isascii.o: src/libft/ft_isascii.c.o
 
 # target to build an object file
 src/libft/ft_isascii.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isascii.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isascii.c.o
 .PHONY : src/libft/ft_isascii.c.o
 
 src/libft/ft_isascii.i: src/libft/ft_isascii.c.i
@@ -516,7 +570,7 @@ src/libft/ft_isascii.i: src/libft/ft_isascii.c.i
 
 # target to preprocess a source file
 src/libft/ft_isascii.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isascii.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isascii.c.i
 .PHONY : src/libft/ft_isascii.c.i
 
 src/libft/ft_isascii.s: src/libft/ft_isascii.c.s
@@ -525,7 +579,7 @@ src/libft/ft_isascii.s: src/libft/ft_isascii.c.s
 
 # target to generate assembly for a file
 src/libft/ft_isascii.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isascii.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isascii.c.s
 .PHONY : src/libft/ft_isascii.c.s
 
 src/libft/ft_isdigit.o: src/libft/ft_isdigit.c.o
@@ -534,7 +588,7 @@ src/libft/ft_isdigit.o: src/libft/ft_isdigit.c.o
 
 # target to build an object file
 src/libft/ft_isdigit.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isdigit.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isdigit.c.o
 .PHONY : src/libft/ft_isdigit.c.o
 
 src/libft/ft_isdigit.i: src/libft/ft_isdigit.c.i
@@ -543,7 +597,7 @@ src/libft/ft_isdigit.i: src/libft/ft_isdigit.c.i
 
 # target to preprocess a source file
 src/libft/ft_isdigit.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isdigit.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isdigit.c.i
 .PHONY : src/libft/ft_isdigit.c.i
 
 src/libft/ft_isdigit.s: src/libft/ft_isdigit.c.s
@@ -552,7 +606,7 @@ src/libft/ft_isdigit.s: src/libft/ft_isdigit.c.s
 
 # target to generate assembly for a file
 src/libft/ft_isdigit.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isdigit.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isdigit.c.s
 .PHONY : src/libft/ft_isdigit.c.s
 
 src/libft/ft_isprint.o: src/libft/ft_isprint.c.o
@@ -561,7 +615,7 @@ src/libft/ft_isprint.o: src/libft/ft_isprint.c.o
 
 # target to build an object file
 src/libft/ft_isprint.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isprint.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isprint.c.o
 .PHONY : src/libft/ft_isprint.c.o
 
 src/libft/ft_isprint.i: src/libft/ft_isprint.c.i
@@ -570,7 +624,7 @@ src/libft/ft_isprint.i: src/libft/ft_isprint.c.i
 
 # target to preprocess a source file
 src/libft/ft_isprint.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isprint.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isprint.c.i
 .PHONY : src/libft/ft_isprint.c.i
 
 src/libft/ft_isprint.s: src/libft/ft_isprint.c.s
@@ -579,7 +633,7 @@ src/libft/ft_isprint.s: src/libft/ft_isprint.c.s
 
 # target to generate assembly for a file
 src/libft/ft_isprint.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_isprint.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_isprint.c.s
 .PHONY : src/libft/ft_isprint.c.s
 
 src/libft/ft_itoa.o: src/libft/ft_itoa.c.o
@@ -588,7 +642,7 @@ src/libft/ft_itoa.o: src/libft/ft_itoa.c.o
 
 # target to build an object file
 src/libft/ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_itoa.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_itoa.c.o
 .PHONY : src/libft/ft_itoa.c.o
 
 src/libft/ft_itoa.i: src/libft/ft_itoa.c.i
@@ -597,7 +651,7 @@ src/libft/ft_itoa.i: src/libft/ft_itoa.c.i
 
 # target to preprocess a source file
 src/libft/ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_itoa.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_itoa.c.i
 .PHONY : src/libft/ft_itoa.c.i
 
 src/libft/ft_itoa.s: src/libft/ft_itoa.c.s
@@ -606,7 +660,7 @@ src/libft/ft_itoa.s: src/libft/ft_itoa.c.s
 
 # target to generate assembly for a file
 src/libft/ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_itoa.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_itoa.c.s
 .PHONY : src/libft/ft_itoa.c.s
 
 src/libft/ft_list_at.o: src/libft/ft_list_at.c.o
@@ -615,7 +669,7 @@ src/libft/ft_list_at.o: src/libft/ft_list_at.c.o
 
 # target to build an object file
 src/libft/ft_list_at.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_list_at.c.o
 .PHONY : src/libft/ft_list_at.c.o
 
 src/libft/ft_list_at.i: src/libft/ft_list_at.c.i
@@ -624,7 +678,7 @@ src/libft/ft_list_at.i: src/libft/ft_list_at.c.i
 
 # target to preprocess a source file
 src/libft/ft_list_at.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_list_at.c.i
 .PHONY : src/libft/ft_list_at.c.i
 
 src/libft/ft_list_at.s: src/libft/ft_list_at.c.s
@@ -633,7 +687,7 @@ src/libft/ft_list_at.s: src/libft/ft_list_at.c.s
 
 # target to generate assembly for a file
 src/libft/ft_list_at.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_list_at.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_list_at.c.s
 .PHONY : src/libft/ft_list_at.c.s
 
 src/libft/ft_lstadd.o: src/libft/ft_lstadd.c.o
@@ -642,7 +696,7 @@ src/libft/ft_lstadd.o: src/libft/ft_lstadd.c.o
 
 # target to build an object file
 src/libft/ft_lstadd.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstadd.c.o
 .PHONY : src/libft/ft_lstadd.c.o
 
 src/libft/ft_lstadd.i: src/libft/ft_lstadd.c.i
@@ -651,7 +705,7 @@ src/libft/ft_lstadd.i: src/libft/ft_lstadd.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstadd.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstadd.c.i
 .PHONY : src/libft/ft_lstadd.c.i
 
 src/libft/ft_lstadd.s: src/libft/ft_lstadd.c.s
@@ -660,7 +714,7 @@ src/libft/ft_lstadd.s: src/libft/ft_lstadd.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstadd.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstadd.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstadd.c.s
 .PHONY : src/libft/ft_lstadd.c.s
 
 src/libft/ft_lstdel.o: src/libft/ft_lstdel.c.o
@@ -669,7 +723,7 @@ src/libft/ft_lstdel.o: src/libft/ft_lstdel.c.o
 
 # target to build an object file
 src/libft/ft_lstdel.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdel.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdel.c.o
 .PHONY : src/libft/ft_lstdel.c.o
 
 src/libft/ft_lstdel.i: src/libft/ft_lstdel.c.i
@@ -678,7 +732,7 @@ src/libft/ft_lstdel.i: src/libft/ft_lstdel.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstdel.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdel.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdel.c.i
 .PHONY : src/libft/ft_lstdel.c.i
 
 src/libft/ft_lstdel.s: src/libft/ft_lstdel.c.s
@@ -687,7 +741,7 @@ src/libft/ft_lstdel.s: src/libft/ft_lstdel.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstdel.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdel.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdel.c.s
 .PHONY : src/libft/ft_lstdel.c.s
 
 src/libft/ft_lstdelone.o: src/libft/ft_lstdelone.c.o
@@ -696,7 +750,7 @@ src/libft/ft_lstdelone.o: src/libft/ft_lstdelone.c.o
 
 # target to build an object file
 src/libft/ft_lstdelone.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdelone.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdelone.c.o
 .PHONY : src/libft/ft_lstdelone.c.o
 
 src/libft/ft_lstdelone.i: src/libft/ft_lstdelone.c.i
@@ -705,7 +759,7 @@ src/libft/ft_lstdelone.i: src/libft/ft_lstdelone.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstdelone.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdelone.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdelone.c.i
 .PHONY : src/libft/ft_lstdelone.c.i
 
 src/libft/ft_lstdelone.s: src/libft/ft_lstdelone.c.s
@@ -714,7 +768,7 @@ src/libft/ft_lstdelone.s: src/libft/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstdelone.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstdelone.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstdelone.c.s
 .PHONY : src/libft/ft_lstdelone.c.s
 
 src/libft/ft_lstiter.o: src/libft/ft_lstiter.c.o
@@ -723,7 +777,7 @@ src/libft/ft_lstiter.o: src/libft/ft_lstiter.c.o
 
 # target to build an object file
 src/libft/ft_lstiter.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstiter.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstiter.c.o
 .PHONY : src/libft/ft_lstiter.c.o
 
 src/libft/ft_lstiter.i: src/libft/ft_lstiter.c.i
@@ -732,7 +786,7 @@ src/libft/ft_lstiter.i: src/libft/ft_lstiter.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstiter.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstiter.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstiter.c.i
 .PHONY : src/libft/ft_lstiter.c.i
 
 src/libft/ft_lstiter.s: src/libft/ft_lstiter.c.s
@@ -741,7 +795,7 @@ src/libft/ft_lstiter.s: src/libft/ft_lstiter.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstiter.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstiter.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstiter.c.s
 .PHONY : src/libft/ft_lstiter.c.s
 
 src/libft/ft_lstmap.o: src/libft/ft_lstmap.c.o
@@ -750,7 +804,7 @@ src/libft/ft_lstmap.o: src/libft/ft_lstmap.c.o
 
 # target to build an object file
 src/libft/ft_lstmap.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstmap.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstmap.c.o
 .PHONY : src/libft/ft_lstmap.c.o
 
 src/libft/ft_lstmap.i: src/libft/ft_lstmap.c.i
@@ -759,7 +813,7 @@ src/libft/ft_lstmap.i: src/libft/ft_lstmap.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstmap.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstmap.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstmap.c.i
 .PHONY : src/libft/ft_lstmap.c.i
 
 src/libft/ft_lstmap.s: src/libft/ft_lstmap.c.s
@@ -768,7 +822,7 @@ src/libft/ft_lstmap.s: src/libft/ft_lstmap.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstmap.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstmap.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstmap.c.s
 .PHONY : src/libft/ft_lstmap.c.s
 
 src/libft/ft_lstnew.o: src/libft/ft_lstnew.c.o
@@ -777,7 +831,7 @@ src/libft/ft_lstnew.o: src/libft/ft_lstnew.c.o
 
 # target to build an object file
 src/libft/ft_lstnew.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstnew.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstnew.c.o
 .PHONY : src/libft/ft_lstnew.c.o
 
 src/libft/ft_lstnew.i: src/libft/ft_lstnew.c.i
@@ -786,7 +840,7 @@ src/libft/ft_lstnew.i: src/libft/ft_lstnew.c.i
 
 # target to preprocess a source file
 src/libft/ft_lstnew.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstnew.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstnew.c.i
 .PHONY : src/libft/ft_lstnew.c.i
 
 src/libft/ft_lstnew.s: src/libft/ft_lstnew.c.s
@@ -795,7 +849,7 @@ src/libft/ft_lstnew.s: src/libft/ft_lstnew.c.s
 
 # target to generate assembly for a file
 src/libft/ft_lstnew.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_lstnew.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_lstnew.c.s
 .PHONY : src/libft/ft_lstnew.c.s
 
 src/libft/ft_memalloc.o: src/libft/ft_memalloc.c.o
@@ -804,7 +858,7 @@ src/libft/ft_memalloc.o: src/libft/ft_memalloc.c.o
 
 # target to build an object file
 src/libft/ft_memalloc.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memalloc.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memalloc.c.o
 .PHONY : src/libft/ft_memalloc.c.o
 
 src/libft/ft_memalloc.i: src/libft/ft_memalloc.c.i
@@ -813,7 +867,7 @@ src/libft/ft_memalloc.i: src/libft/ft_memalloc.c.i
 
 # target to preprocess a source file
 src/libft/ft_memalloc.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memalloc.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memalloc.c.i
 .PHONY : src/libft/ft_memalloc.c.i
 
 src/libft/ft_memalloc.s: src/libft/ft_memalloc.c.s
@@ -822,7 +876,7 @@ src/libft/ft_memalloc.s: src/libft/ft_memalloc.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memalloc.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memalloc.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memalloc.c.s
 .PHONY : src/libft/ft_memalloc.c.s
 
 src/libft/ft_memccpy.o: src/libft/ft_memccpy.c.o
@@ -831,7 +885,7 @@ src/libft/ft_memccpy.o: src/libft/ft_memccpy.c.o
 
 # target to build an object file
 src/libft/ft_memccpy.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memccpy.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memccpy.c.o
 .PHONY : src/libft/ft_memccpy.c.o
 
 src/libft/ft_memccpy.i: src/libft/ft_memccpy.c.i
@@ -840,7 +894,7 @@ src/libft/ft_memccpy.i: src/libft/ft_memccpy.c.i
 
 # target to preprocess a source file
 src/libft/ft_memccpy.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memccpy.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memccpy.c.i
 .PHONY : src/libft/ft_memccpy.c.i
 
 src/libft/ft_memccpy.s: src/libft/ft_memccpy.c.s
@@ -849,7 +903,7 @@ src/libft/ft_memccpy.s: src/libft/ft_memccpy.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memccpy.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memccpy.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memccpy.c.s
 .PHONY : src/libft/ft_memccpy.c.s
 
 src/libft/ft_memchr.o: src/libft/ft_memchr.c.o
@@ -858,7 +912,7 @@ src/libft/ft_memchr.o: src/libft/ft_memchr.c.o
 
 # target to build an object file
 src/libft/ft_memchr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memchr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memchr.c.o
 .PHONY : src/libft/ft_memchr.c.o
 
 src/libft/ft_memchr.i: src/libft/ft_memchr.c.i
@@ -867,7 +921,7 @@ src/libft/ft_memchr.i: src/libft/ft_memchr.c.i
 
 # target to preprocess a source file
 src/libft/ft_memchr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memchr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memchr.c.i
 .PHONY : src/libft/ft_memchr.c.i
 
 src/libft/ft_memchr.s: src/libft/ft_memchr.c.s
@@ -876,7 +930,7 @@ src/libft/ft_memchr.s: src/libft/ft_memchr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memchr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memchr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memchr.c.s
 .PHONY : src/libft/ft_memchr.c.s
 
 src/libft/ft_memcmp.o: src/libft/ft_memcmp.c.o
@@ -885,7 +939,7 @@ src/libft/ft_memcmp.o: src/libft/ft_memcmp.c.o
 
 # target to build an object file
 src/libft/ft_memcmp.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcmp.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcmp.c.o
 .PHONY : src/libft/ft_memcmp.c.o
 
 src/libft/ft_memcmp.i: src/libft/ft_memcmp.c.i
@@ -894,7 +948,7 @@ src/libft/ft_memcmp.i: src/libft/ft_memcmp.c.i
 
 # target to preprocess a source file
 src/libft/ft_memcmp.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcmp.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcmp.c.i
 .PHONY : src/libft/ft_memcmp.c.i
 
 src/libft/ft_memcmp.s: src/libft/ft_memcmp.c.s
@@ -903,7 +957,7 @@ src/libft/ft_memcmp.s: src/libft/ft_memcmp.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memcmp.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcmp.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcmp.c.s
 .PHONY : src/libft/ft_memcmp.c.s
 
 src/libft/ft_memcpy.o: src/libft/ft_memcpy.c.o
@@ -912,7 +966,7 @@ src/libft/ft_memcpy.o: src/libft/ft_memcpy.c.o
 
 # target to build an object file
 src/libft/ft_memcpy.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcpy.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcpy.c.o
 .PHONY : src/libft/ft_memcpy.c.o
 
 src/libft/ft_memcpy.i: src/libft/ft_memcpy.c.i
@@ -921,7 +975,7 @@ src/libft/ft_memcpy.i: src/libft/ft_memcpy.c.i
 
 # target to preprocess a source file
 src/libft/ft_memcpy.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcpy.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcpy.c.i
 .PHONY : src/libft/ft_memcpy.c.i
 
 src/libft/ft_memcpy.s: src/libft/ft_memcpy.c.s
@@ -930,7 +984,7 @@ src/libft/ft_memcpy.s: src/libft/ft_memcpy.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memcpy.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memcpy.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memcpy.c.s
 .PHONY : src/libft/ft_memcpy.c.s
 
 src/libft/ft_memdel.o: src/libft/ft_memdel.c.o
@@ -939,7 +993,7 @@ src/libft/ft_memdel.o: src/libft/ft_memdel.c.o
 
 # target to build an object file
 src/libft/ft_memdel.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memdel.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memdel.c.o
 .PHONY : src/libft/ft_memdel.c.o
 
 src/libft/ft_memdel.i: src/libft/ft_memdel.c.i
@@ -948,7 +1002,7 @@ src/libft/ft_memdel.i: src/libft/ft_memdel.c.i
 
 # target to preprocess a source file
 src/libft/ft_memdel.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memdel.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memdel.c.i
 .PHONY : src/libft/ft_memdel.c.i
 
 src/libft/ft_memdel.s: src/libft/ft_memdel.c.s
@@ -957,7 +1011,7 @@ src/libft/ft_memdel.s: src/libft/ft_memdel.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memdel.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memdel.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memdel.c.s
 .PHONY : src/libft/ft_memdel.c.s
 
 src/libft/ft_memmove.o: src/libft/ft_memmove.c.o
@@ -966,7 +1020,7 @@ src/libft/ft_memmove.o: src/libft/ft_memmove.c.o
 
 # target to build an object file
 src/libft/ft_memmove.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memmove.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memmove.c.o
 .PHONY : src/libft/ft_memmove.c.o
 
 src/libft/ft_memmove.i: src/libft/ft_memmove.c.i
@@ -975,7 +1029,7 @@ src/libft/ft_memmove.i: src/libft/ft_memmove.c.i
 
 # target to preprocess a source file
 src/libft/ft_memmove.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memmove.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memmove.c.i
 .PHONY : src/libft/ft_memmove.c.i
 
 src/libft/ft_memmove.s: src/libft/ft_memmove.c.s
@@ -984,7 +1038,7 @@ src/libft/ft_memmove.s: src/libft/ft_memmove.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memmove.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memmove.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memmove.c.s
 .PHONY : src/libft/ft_memmove.c.s
 
 src/libft/ft_memset.o: src/libft/ft_memset.c.o
@@ -993,7 +1047,7 @@ src/libft/ft_memset.o: src/libft/ft_memset.c.o
 
 # target to build an object file
 src/libft/ft_memset.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memset.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memset.c.o
 .PHONY : src/libft/ft_memset.c.o
 
 src/libft/ft_memset.i: src/libft/ft_memset.c.i
@@ -1002,7 +1056,7 @@ src/libft/ft_memset.i: src/libft/ft_memset.c.i
 
 # target to preprocess a source file
 src/libft/ft_memset.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memset.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memset.c.i
 .PHONY : src/libft/ft_memset.c.i
 
 src/libft/ft_memset.s: src/libft/ft_memset.c.s
@@ -1011,7 +1065,7 @@ src/libft/ft_memset.s: src/libft/ft_memset.c.s
 
 # target to generate assembly for a file
 src/libft/ft_memset.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_memset.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_memset.c.s
 .PHONY : src/libft/ft_memset.c.s
 
 src/libft/ft_push_back.o: src/libft/ft_push_back.c.o
@@ -1020,7 +1074,7 @@ src/libft/ft_push_back.o: src/libft/ft_push_back.c.o
 
 # target to build an object file
 src/libft/ft_push_back.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_push_back.c.o
 .PHONY : src/libft/ft_push_back.c.o
 
 src/libft/ft_push_back.i: src/libft/ft_push_back.c.i
@@ -1029,7 +1083,7 @@ src/libft/ft_push_back.i: src/libft/ft_push_back.c.i
 
 # target to preprocess a source file
 src/libft/ft_push_back.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_push_back.c.i
 .PHONY : src/libft/ft_push_back.c.i
 
 src/libft/ft_push_back.s: src/libft/ft_push_back.c.s
@@ -1038,7 +1092,7 @@ src/libft/ft_push_back.s: src/libft/ft_push_back.c.s
 
 # target to generate assembly for a file
 src/libft/ft_push_back.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_push_back.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_push_back.c.s
 .PHONY : src/libft/ft_push_back.c.s
 
 src/libft/ft_putchar.o: src/libft/ft_putchar.c.o
@@ -1047,7 +1101,7 @@ src/libft/ft_putchar.o: src/libft/ft_putchar.c.o
 
 # target to build an object file
 src/libft/ft_putchar.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar.c.o
 .PHONY : src/libft/ft_putchar.c.o
 
 src/libft/ft_putchar.i: src/libft/ft_putchar.c.i
@@ -1056,7 +1110,7 @@ src/libft/ft_putchar.i: src/libft/ft_putchar.c.i
 
 # target to preprocess a source file
 src/libft/ft_putchar.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar.c.i
 .PHONY : src/libft/ft_putchar.c.i
 
 src/libft/ft_putchar.s: src/libft/ft_putchar.c.s
@@ -1065,7 +1119,7 @@ src/libft/ft_putchar.s: src/libft/ft_putchar.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putchar.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar.c.s
 .PHONY : src/libft/ft_putchar.c.s
 
 src/libft/ft_putchar_fd.o: src/libft/ft_putchar_fd.c.o
@@ -1074,7 +1128,7 @@ src/libft/ft_putchar_fd.o: src/libft/ft_putchar_fd.c.o
 
 # target to build an object file
 src/libft/ft_putchar_fd.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar_fd.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar_fd.c.o
 .PHONY : src/libft/ft_putchar_fd.c.o
 
 src/libft/ft_putchar_fd.i: src/libft/ft_putchar_fd.c.i
@@ -1083,7 +1137,7 @@ src/libft/ft_putchar_fd.i: src/libft/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 src/libft/ft_putchar_fd.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar_fd.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar_fd.c.i
 .PHONY : src/libft/ft_putchar_fd.c.i
 
 src/libft/ft_putchar_fd.s: src/libft/ft_putchar_fd.c.s
@@ -1092,7 +1146,7 @@ src/libft/ft_putchar_fd.s: src/libft/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putchar_fd.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putchar_fd.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putchar_fd.c.s
 .PHONY : src/libft/ft_putchar_fd.c.s
 
 src/libft/ft_putendl.o: src/libft/ft_putendl.c.o
@@ -1101,7 +1155,7 @@ src/libft/ft_putendl.o: src/libft/ft_putendl.c.o
 
 # target to build an object file
 src/libft/ft_putendl.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl.c.o
 .PHONY : src/libft/ft_putendl.c.o
 
 src/libft/ft_putendl.i: src/libft/ft_putendl.c.i
@@ -1110,7 +1164,7 @@ src/libft/ft_putendl.i: src/libft/ft_putendl.c.i
 
 # target to preprocess a source file
 src/libft/ft_putendl.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl.c.i
 .PHONY : src/libft/ft_putendl.c.i
 
 src/libft/ft_putendl.s: src/libft/ft_putendl.c.s
@@ -1119,7 +1173,7 @@ src/libft/ft_putendl.s: src/libft/ft_putendl.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putendl.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl.c.s
 .PHONY : src/libft/ft_putendl.c.s
 
 src/libft/ft_putendl_fd.o: src/libft/ft_putendl_fd.c.o
@@ -1128,7 +1182,7 @@ src/libft/ft_putendl_fd.o: src/libft/ft_putendl_fd.c.o
 
 # target to build an object file
 src/libft/ft_putendl_fd.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl_fd.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl_fd.c.o
 .PHONY : src/libft/ft_putendl_fd.c.o
 
 src/libft/ft_putendl_fd.i: src/libft/ft_putendl_fd.c.i
@@ -1137,7 +1191,7 @@ src/libft/ft_putendl_fd.i: src/libft/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 src/libft/ft_putendl_fd.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl_fd.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl_fd.c.i
 .PHONY : src/libft/ft_putendl_fd.c.i
 
 src/libft/ft_putendl_fd.s: src/libft/ft_putendl_fd.c.s
@@ -1146,7 +1200,7 @@ src/libft/ft_putendl_fd.s: src/libft/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putendl_fd.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putendl_fd.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putendl_fd.c.s
 .PHONY : src/libft/ft_putendl_fd.c.s
 
 src/libft/ft_putnbr.o: src/libft/ft_putnbr.c.o
@@ -1155,7 +1209,7 @@ src/libft/ft_putnbr.o: src/libft/ft_putnbr.c.o
 
 # target to build an object file
 src/libft/ft_putnbr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr.c.o
 .PHONY : src/libft/ft_putnbr.c.o
 
 src/libft/ft_putnbr.i: src/libft/ft_putnbr.c.i
@@ -1164,7 +1218,7 @@ src/libft/ft_putnbr.i: src/libft/ft_putnbr.c.i
 
 # target to preprocess a source file
 src/libft/ft_putnbr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr.c.i
 .PHONY : src/libft/ft_putnbr.c.i
 
 src/libft/ft_putnbr.s: src/libft/ft_putnbr.c.s
@@ -1173,7 +1227,7 @@ src/libft/ft_putnbr.s: src/libft/ft_putnbr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putnbr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr.c.s
 .PHONY : src/libft/ft_putnbr.c.s
 
 src/libft/ft_putnbr_fd.o: src/libft/ft_putnbr_fd.c.o
@@ -1182,7 +1236,7 @@ src/libft/ft_putnbr_fd.o: src/libft/ft_putnbr_fd.c.o
 
 # target to build an object file
 src/libft/ft_putnbr_fd.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr_fd.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr_fd.c.o
 .PHONY : src/libft/ft_putnbr_fd.c.o
 
 src/libft/ft_putnbr_fd.i: src/libft/ft_putnbr_fd.c.i
@@ -1191,7 +1245,7 @@ src/libft/ft_putnbr_fd.i: src/libft/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 src/libft/ft_putnbr_fd.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr_fd.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr_fd.c.i
 .PHONY : src/libft/ft_putnbr_fd.c.i
 
 src/libft/ft_putnbr_fd.s: src/libft/ft_putnbr_fd.c.s
@@ -1200,7 +1254,7 @@ src/libft/ft_putnbr_fd.s: src/libft/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putnbr_fd.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putnbr_fd.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putnbr_fd.c.s
 .PHONY : src/libft/ft_putnbr_fd.c.s
 
 src/libft/ft_putstr.o: src/libft/ft_putstr.c.o
@@ -1209,7 +1263,7 @@ src/libft/ft_putstr.o: src/libft/ft_putstr.c.o
 
 # target to build an object file
 src/libft/ft_putstr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr.c.o
 .PHONY : src/libft/ft_putstr.c.o
 
 src/libft/ft_putstr.i: src/libft/ft_putstr.c.i
@@ -1218,7 +1272,7 @@ src/libft/ft_putstr.i: src/libft/ft_putstr.c.i
 
 # target to preprocess a source file
 src/libft/ft_putstr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr.c.i
 .PHONY : src/libft/ft_putstr.c.i
 
 src/libft/ft_putstr.s: src/libft/ft_putstr.c.s
@@ -1227,7 +1281,7 @@ src/libft/ft_putstr.s: src/libft/ft_putstr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putstr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr.c.s
 .PHONY : src/libft/ft_putstr.c.s
 
 src/libft/ft_putstr_fd.o: src/libft/ft_putstr_fd.c.o
@@ -1236,7 +1290,7 @@ src/libft/ft_putstr_fd.o: src/libft/ft_putstr_fd.c.o
 
 # target to build an object file
 src/libft/ft_putstr_fd.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr_fd.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr_fd.c.o
 .PHONY : src/libft/ft_putstr_fd.c.o
 
 src/libft/ft_putstr_fd.i: src/libft/ft_putstr_fd.c.i
@@ -1245,7 +1299,7 @@ src/libft/ft_putstr_fd.i: src/libft/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 src/libft/ft_putstr_fd.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr_fd.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr_fd.c.i
 .PHONY : src/libft/ft_putstr_fd.c.i
 
 src/libft/ft_putstr_fd.s: src/libft/ft_putstr_fd.c.s
@@ -1254,7 +1308,7 @@ src/libft/ft_putstr_fd.s: src/libft/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 src/libft/ft_putstr_fd.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_putstr_fd.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_putstr_fd.c.s
 .PHONY : src/libft/ft_putstr_fd.c.s
 
 src/libft/ft_reverse.o: src/libft/ft_reverse.c.o
@@ -1263,7 +1317,7 @@ src/libft/ft_reverse.o: src/libft/ft_reverse.c.o
 
 # target to build an object file
 src/libft/ft_reverse.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_reverse.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_reverse.c.o
 .PHONY : src/libft/ft_reverse.c.o
 
 src/libft/ft_reverse.i: src/libft/ft_reverse.c.i
@@ -1272,7 +1326,7 @@ src/libft/ft_reverse.i: src/libft/ft_reverse.c.i
 
 # target to preprocess a source file
 src/libft/ft_reverse.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_reverse.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_reverse.c.i
 .PHONY : src/libft/ft_reverse.c.i
 
 src/libft/ft_reverse.s: src/libft/ft_reverse.c.s
@@ -1281,7 +1335,7 @@ src/libft/ft_reverse.s: src/libft/ft_reverse.c.s
 
 # target to generate assembly for a file
 src/libft/ft_reverse.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_reverse.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_reverse.c.s
 .PHONY : src/libft/ft_reverse.c.s
 
 src/libft/ft_strcat.o: src/libft/ft_strcat.c.o
@@ -1290,7 +1344,7 @@ src/libft/ft_strcat.o: src/libft/ft_strcat.c.o
 
 # target to build an object file
 src/libft/ft_strcat.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcat.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcat.c.o
 .PHONY : src/libft/ft_strcat.c.o
 
 src/libft/ft_strcat.i: src/libft/ft_strcat.c.i
@@ -1299,7 +1353,7 @@ src/libft/ft_strcat.i: src/libft/ft_strcat.c.i
 
 # target to preprocess a source file
 src/libft/ft_strcat.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcat.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcat.c.i
 .PHONY : src/libft/ft_strcat.c.i
 
 src/libft/ft_strcat.s: src/libft/ft_strcat.c.s
@@ -1308,7 +1362,7 @@ src/libft/ft_strcat.s: src/libft/ft_strcat.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strcat.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcat.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcat.c.s
 .PHONY : src/libft/ft_strcat.c.s
 
 src/libft/ft_strchr.o: src/libft/ft_strchr.c.o
@@ -1317,7 +1371,7 @@ src/libft/ft_strchr.o: src/libft/ft_strchr.c.o
 
 # target to build an object file
 src/libft/ft_strchr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strchr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strchr.c.o
 .PHONY : src/libft/ft_strchr.c.o
 
 src/libft/ft_strchr.i: src/libft/ft_strchr.c.i
@@ -1326,7 +1380,7 @@ src/libft/ft_strchr.i: src/libft/ft_strchr.c.i
 
 # target to preprocess a source file
 src/libft/ft_strchr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strchr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strchr.c.i
 .PHONY : src/libft/ft_strchr.c.i
 
 src/libft/ft_strchr.s: src/libft/ft_strchr.c.s
@@ -1335,7 +1389,7 @@ src/libft/ft_strchr.s: src/libft/ft_strchr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strchr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strchr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strchr.c.s
 .PHONY : src/libft/ft_strchr.c.s
 
 src/libft/ft_strclr.o: src/libft/ft_strclr.c.o
@@ -1344,7 +1398,7 @@ src/libft/ft_strclr.o: src/libft/ft_strclr.c.o
 
 # target to build an object file
 src/libft/ft_strclr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strclr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strclr.c.o
 .PHONY : src/libft/ft_strclr.c.o
 
 src/libft/ft_strclr.i: src/libft/ft_strclr.c.i
@@ -1353,7 +1407,7 @@ src/libft/ft_strclr.i: src/libft/ft_strclr.c.i
 
 # target to preprocess a source file
 src/libft/ft_strclr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strclr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strclr.c.i
 .PHONY : src/libft/ft_strclr.c.i
 
 src/libft/ft_strclr.s: src/libft/ft_strclr.c.s
@@ -1362,7 +1416,7 @@ src/libft/ft_strclr.s: src/libft/ft_strclr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strclr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strclr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strclr.c.s
 .PHONY : src/libft/ft_strclr.c.s
 
 src/libft/ft_strcmp.o: src/libft/ft_strcmp.c.o
@@ -1371,7 +1425,7 @@ src/libft/ft_strcmp.o: src/libft/ft_strcmp.c.o
 
 # target to build an object file
 src/libft/ft_strcmp.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcmp.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcmp.c.o
 .PHONY : src/libft/ft_strcmp.c.o
 
 src/libft/ft_strcmp.i: src/libft/ft_strcmp.c.i
@@ -1380,7 +1434,7 @@ src/libft/ft_strcmp.i: src/libft/ft_strcmp.c.i
 
 # target to preprocess a source file
 src/libft/ft_strcmp.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcmp.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcmp.c.i
 .PHONY : src/libft/ft_strcmp.c.i
 
 src/libft/ft_strcmp.s: src/libft/ft_strcmp.c.s
@@ -1389,7 +1443,7 @@ src/libft/ft_strcmp.s: src/libft/ft_strcmp.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strcmp.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcmp.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcmp.c.s
 .PHONY : src/libft/ft_strcmp.c.s
 
 src/libft/ft_strcpy.o: src/libft/ft_strcpy.c.o
@@ -1398,7 +1452,7 @@ src/libft/ft_strcpy.o: src/libft/ft_strcpy.c.o
 
 # target to build an object file
 src/libft/ft_strcpy.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcpy.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcpy.c.o
 .PHONY : src/libft/ft_strcpy.c.o
 
 src/libft/ft_strcpy.i: src/libft/ft_strcpy.c.i
@@ -1407,7 +1461,7 @@ src/libft/ft_strcpy.i: src/libft/ft_strcpy.c.i
 
 # target to preprocess a source file
 src/libft/ft_strcpy.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcpy.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcpy.c.i
 .PHONY : src/libft/ft_strcpy.c.i
 
 src/libft/ft_strcpy.s: src/libft/ft_strcpy.c.s
@@ -1416,7 +1470,7 @@ src/libft/ft_strcpy.s: src/libft/ft_strcpy.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strcpy.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strcpy.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strcpy.c.s
 .PHONY : src/libft/ft_strcpy.c.s
 
 src/libft/ft_strdel.o: src/libft/ft_strdel.c.o
@@ -1425,7 +1479,7 @@ src/libft/ft_strdel.o: src/libft/ft_strdel.c.o
 
 # target to build an object file
 src/libft/ft_strdel.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdel.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdel.c.o
 .PHONY : src/libft/ft_strdel.c.o
 
 src/libft/ft_strdel.i: src/libft/ft_strdel.c.i
@@ -1434,7 +1488,7 @@ src/libft/ft_strdel.i: src/libft/ft_strdel.c.i
 
 # target to preprocess a source file
 src/libft/ft_strdel.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdel.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdel.c.i
 .PHONY : src/libft/ft_strdel.c.i
 
 src/libft/ft_strdel.s: src/libft/ft_strdel.c.s
@@ -1443,7 +1497,7 @@ src/libft/ft_strdel.s: src/libft/ft_strdel.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strdel.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdel.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdel.c.s
 .PHONY : src/libft/ft_strdel.c.s
 
 src/libft/ft_strdup.o: src/libft/ft_strdup.c.o
@@ -1452,7 +1506,7 @@ src/libft/ft_strdup.o: src/libft/ft_strdup.c.o
 
 # target to build an object file
 src/libft/ft_strdup.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdup.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdup.c.o
 .PHONY : src/libft/ft_strdup.c.o
 
 src/libft/ft_strdup.i: src/libft/ft_strdup.c.i
@@ -1461,7 +1515,7 @@ src/libft/ft_strdup.i: src/libft/ft_strdup.c.i
 
 # target to preprocess a source file
 src/libft/ft_strdup.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdup.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdup.c.i
 .PHONY : src/libft/ft_strdup.c.i
 
 src/libft/ft_strdup.s: src/libft/ft_strdup.c.s
@@ -1470,7 +1524,7 @@ src/libft/ft_strdup.s: src/libft/ft_strdup.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strdup.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strdup.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strdup.c.s
 .PHONY : src/libft/ft_strdup.c.s
 
 src/libft/ft_strequ.o: src/libft/ft_strequ.c.o
@@ -1479,7 +1533,7 @@ src/libft/ft_strequ.o: src/libft/ft_strequ.c.o
 
 # target to build an object file
 src/libft/ft_strequ.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strequ.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strequ.c.o
 .PHONY : src/libft/ft_strequ.c.o
 
 src/libft/ft_strequ.i: src/libft/ft_strequ.c.i
@@ -1488,7 +1542,7 @@ src/libft/ft_strequ.i: src/libft/ft_strequ.c.i
 
 # target to preprocess a source file
 src/libft/ft_strequ.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strequ.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strequ.c.i
 .PHONY : src/libft/ft_strequ.c.i
 
 src/libft/ft_strequ.s: src/libft/ft_strequ.c.s
@@ -1497,7 +1551,7 @@ src/libft/ft_strequ.s: src/libft/ft_strequ.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strequ.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strequ.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strequ.c.s
 .PHONY : src/libft/ft_strequ.c.s
 
 src/libft/ft_striter.o: src/libft/ft_striter.c.o
@@ -1506,7 +1560,7 @@ src/libft/ft_striter.o: src/libft/ft_striter.c.o
 
 # target to build an object file
 src/libft/ft_striter.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striter.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striter.c.o
 .PHONY : src/libft/ft_striter.c.o
 
 src/libft/ft_striter.i: src/libft/ft_striter.c.i
@@ -1515,7 +1569,7 @@ src/libft/ft_striter.i: src/libft/ft_striter.c.i
 
 # target to preprocess a source file
 src/libft/ft_striter.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striter.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striter.c.i
 .PHONY : src/libft/ft_striter.c.i
 
 src/libft/ft_striter.s: src/libft/ft_striter.c.s
@@ -1524,7 +1578,7 @@ src/libft/ft_striter.s: src/libft/ft_striter.c.s
 
 # target to generate assembly for a file
 src/libft/ft_striter.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striter.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striter.c.s
 .PHONY : src/libft/ft_striter.c.s
 
 src/libft/ft_striteri.o: src/libft/ft_striteri.c.o
@@ -1533,7 +1587,7 @@ src/libft/ft_striteri.o: src/libft/ft_striteri.c.o
 
 # target to build an object file
 src/libft/ft_striteri.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striteri.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striteri.c.o
 .PHONY : src/libft/ft_striteri.c.o
 
 src/libft/ft_striteri.i: src/libft/ft_striteri.c.i
@@ -1542,7 +1596,7 @@ src/libft/ft_striteri.i: src/libft/ft_striteri.c.i
 
 # target to preprocess a source file
 src/libft/ft_striteri.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striteri.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striteri.c.i
 .PHONY : src/libft/ft_striteri.c.i
 
 src/libft/ft_striteri.s: src/libft/ft_striteri.c.s
@@ -1551,7 +1605,7 @@ src/libft/ft_striteri.s: src/libft/ft_striteri.c.s
 
 # target to generate assembly for a file
 src/libft/ft_striteri.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_striteri.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_striteri.c.s
 .PHONY : src/libft/ft_striteri.c.s
 
 src/libft/ft_strjoin.o: src/libft/ft_strjoin.c.o
@@ -1560,7 +1614,7 @@ src/libft/ft_strjoin.o: src/libft/ft_strjoin.c.o
 
 # target to build an object file
 src/libft/ft_strjoin.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strjoin.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strjoin.c.o
 .PHONY : src/libft/ft_strjoin.c.o
 
 src/libft/ft_strjoin.i: src/libft/ft_strjoin.c.i
@@ -1569,7 +1623,7 @@ src/libft/ft_strjoin.i: src/libft/ft_strjoin.c.i
 
 # target to preprocess a source file
 src/libft/ft_strjoin.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strjoin.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strjoin.c.i
 .PHONY : src/libft/ft_strjoin.c.i
 
 src/libft/ft_strjoin.s: src/libft/ft_strjoin.c.s
@@ -1578,7 +1632,7 @@ src/libft/ft_strjoin.s: src/libft/ft_strjoin.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strjoin.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strjoin.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strjoin.c.s
 .PHONY : src/libft/ft_strjoin.c.s
 
 src/libft/ft_strlcat.o: src/libft/ft_strlcat.c.o
@@ -1587,7 +1641,7 @@ src/libft/ft_strlcat.o: src/libft/ft_strlcat.c.o
 
 # target to build an object file
 src/libft/ft_strlcat.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlcat.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlcat.c.o
 .PHONY : src/libft/ft_strlcat.c.o
 
 src/libft/ft_strlcat.i: src/libft/ft_strlcat.c.i
@@ -1596,7 +1650,7 @@ src/libft/ft_strlcat.i: src/libft/ft_strlcat.c.i
 
 # target to preprocess a source file
 src/libft/ft_strlcat.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlcat.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlcat.c.i
 .PHONY : src/libft/ft_strlcat.c.i
 
 src/libft/ft_strlcat.s: src/libft/ft_strlcat.c.s
@@ -1605,7 +1659,7 @@ src/libft/ft_strlcat.s: src/libft/ft_strlcat.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strlcat.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlcat.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlcat.c.s
 .PHONY : src/libft/ft_strlcat.c.s
 
 src/libft/ft_strlen.o: src/libft/ft_strlen.c.o
@@ -1614,7 +1668,7 @@ src/libft/ft_strlen.o: src/libft/ft_strlen.c.o
 
 # target to build an object file
 src/libft/ft_strlen.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlen.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlen.c.o
 .PHONY : src/libft/ft_strlen.c.o
 
 src/libft/ft_strlen.i: src/libft/ft_strlen.c.i
@@ -1623,7 +1677,7 @@ src/libft/ft_strlen.i: src/libft/ft_strlen.c.i
 
 # target to preprocess a source file
 src/libft/ft_strlen.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlen.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlen.c.i
 .PHONY : src/libft/ft_strlen.c.i
 
 src/libft/ft_strlen.s: src/libft/ft_strlen.c.s
@@ -1632,7 +1686,7 @@ src/libft/ft_strlen.s: src/libft/ft_strlen.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strlen.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strlen.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strlen.c.s
 .PHONY : src/libft/ft_strlen.c.s
 
 src/libft/ft_strmap.o: src/libft/ft_strmap.c.o
@@ -1641,7 +1695,7 @@ src/libft/ft_strmap.o: src/libft/ft_strmap.c.o
 
 # target to build an object file
 src/libft/ft_strmap.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmap.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmap.c.o
 .PHONY : src/libft/ft_strmap.c.o
 
 src/libft/ft_strmap.i: src/libft/ft_strmap.c.i
@@ -1650,7 +1704,7 @@ src/libft/ft_strmap.i: src/libft/ft_strmap.c.i
 
 # target to preprocess a source file
 src/libft/ft_strmap.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmap.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmap.c.i
 .PHONY : src/libft/ft_strmap.c.i
 
 src/libft/ft_strmap.s: src/libft/ft_strmap.c.s
@@ -1659,7 +1713,7 @@ src/libft/ft_strmap.s: src/libft/ft_strmap.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strmap.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmap.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmap.c.s
 .PHONY : src/libft/ft_strmap.c.s
 
 src/libft/ft_strmapi.o: src/libft/ft_strmapi.c.o
@@ -1668,7 +1722,7 @@ src/libft/ft_strmapi.o: src/libft/ft_strmapi.c.o
 
 # target to build an object file
 src/libft/ft_strmapi.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmapi.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmapi.c.o
 .PHONY : src/libft/ft_strmapi.c.o
 
 src/libft/ft_strmapi.i: src/libft/ft_strmapi.c.i
@@ -1677,7 +1731,7 @@ src/libft/ft_strmapi.i: src/libft/ft_strmapi.c.i
 
 # target to preprocess a source file
 src/libft/ft_strmapi.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmapi.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmapi.c.i
 .PHONY : src/libft/ft_strmapi.c.i
 
 src/libft/ft_strmapi.s: src/libft/ft_strmapi.c.s
@@ -1686,7 +1740,7 @@ src/libft/ft_strmapi.s: src/libft/ft_strmapi.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strmapi.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strmapi.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strmapi.c.s
 .PHONY : src/libft/ft_strmapi.c.s
 
 src/libft/ft_strncat.o: src/libft/ft_strncat.c.o
@@ -1695,7 +1749,7 @@ src/libft/ft_strncat.o: src/libft/ft_strncat.c.o
 
 # target to build an object file
 src/libft/ft_strncat.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncat.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncat.c.o
 .PHONY : src/libft/ft_strncat.c.o
 
 src/libft/ft_strncat.i: src/libft/ft_strncat.c.i
@@ -1704,7 +1758,7 @@ src/libft/ft_strncat.i: src/libft/ft_strncat.c.i
 
 # target to preprocess a source file
 src/libft/ft_strncat.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncat.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncat.c.i
 .PHONY : src/libft/ft_strncat.c.i
 
 src/libft/ft_strncat.s: src/libft/ft_strncat.c.s
@@ -1713,7 +1767,7 @@ src/libft/ft_strncat.s: src/libft/ft_strncat.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strncat.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncat.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncat.c.s
 .PHONY : src/libft/ft_strncat.c.s
 
 src/libft/ft_strncmp.o: src/libft/ft_strncmp.c.o
@@ -1722,7 +1776,7 @@ src/libft/ft_strncmp.o: src/libft/ft_strncmp.c.o
 
 # target to build an object file
 src/libft/ft_strncmp.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncmp.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncmp.c.o
 .PHONY : src/libft/ft_strncmp.c.o
 
 src/libft/ft_strncmp.i: src/libft/ft_strncmp.c.i
@@ -1731,7 +1785,7 @@ src/libft/ft_strncmp.i: src/libft/ft_strncmp.c.i
 
 # target to preprocess a source file
 src/libft/ft_strncmp.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncmp.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncmp.c.i
 .PHONY : src/libft/ft_strncmp.c.i
 
 src/libft/ft_strncmp.s: src/libft/ft_strncmp.c.s
@@ -1740,7 +1794,7 @@ src/libft/ft_strncmp.s: src/libft/ft_strncmp.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strncmp.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncmp.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncmp.c.s
 .PHONY : src/libft/ft_strncmp.c.s
 
 src/libft/ft_strncpy.o: src/libft/ft_strncpy.c.o
@@ -1749,7 +1803,7 @@ src/libft/ft_strncpy.o: src/libft/ft_strncpy.c.o
 
 # target to build an object file
 src/libft/ft_strncpy.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncpy.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncpy.c.o
 .PHONY : src/libft/ft_strncpy.c.o
 
 src/libft/ft_strncpy.i: src/libft/ft_strncpy.c.i
@@ -1758,7 +1812,7 @@ src/libft/ft_strncpy.i: src/libft/ft_strncpy.c.i
 
 # target to preprocess a source file
 src/libft/ft_strncpy.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncpy.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncpy.c.i
 .PHONY : src/libft/ft_strncpy.c.i
 
 src/libft/ft_strncpy.s: src/libft/ft_strncpy.c.s
@@ -1767,7 +1821,7 @@ src/libft/ft_strncpy.s: src/libft/ft_strncpy.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strncpy.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strncpy.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strncpy.c.s
 .PHONY : src/libft/ft_strncpy.c.s
 
 src/libft/ft_strnequ.o: src/libft/ft_strnequ.c.o
@@ -1776,7 +1830,7 @@ src/libft/ft_strnequ.o: src/libft/ft_strnequ.c.o
 
 # target to build an object file
 src/libft/ft_strnequ.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnequ.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnequ.c.o
 .PHONY : src/libft/ft_strnequ.c.o
 
 src/libft/ft_strnequ.i: src/libft/ft_strnequ.c.i
@@ -1785,7 +1839,7 @@ src/libft/ft_strnequ.i: src/libft/ft_strnequ.c.i
 
 # target to preprocess a source file
 src/libft/ft_strnequ.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnequ.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnequ.c.i
 .PHONY : src/libft/ft_strnequ.c.i
 
 src/libft/ft_strnequ.s: src/libft/ft_strnequ.c.s
@@ -1794,7 +1848,7 @@ src/libft/ft_strnequ.s: src/libft/ft_strnequ.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strnequ.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnequ.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnequ.c.s
 .PHONY : src/libft/ft_strnequ.c.s
 
 src/libft/ft_strnew.o: src/libft/ft_strnew.c.o
@@ -1803,7 +1857,7 @@ src/libft/ft_strnew.o: src/libft/ft_strnew.c.o
 
 # target to build an object file
 src/libft/ft_strnew.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnew.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnew.c.o
 .PHONY : src/libft/ft_strnew.c.o
 
 src/libft/ft_strnew.i: src/libft/ft_strnew.c.i
@@ -1812,7 +1866,7 @@ src/libft/ft_strnew.i: src/libft/ft_strnew.c.i
 
 # target to preprocess a source file
 src/libft/ft_strnew.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnew.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnew.c.i
 .PHONY : src/libft/ft_strnew.c.i
 
 src/libft/ft_strnew.s: src/libft/ft_strnew.c.s
@@ -1821,7 +1875,7 @@ src/libft/ft_strnew.s: src/libft/ft_strnew.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strnew.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnew.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnew.c.s
 .PHONY : src/libft/ft_strnew.c.s
 
 src/libft/ft_strnstr.o: src/libft/ft_strnstr.c.o
@@ -1830,7 +1884,7 @@ src/libft/ft_strnstr.o: src/libft/ft_strnstr.c.o
 
 # target to build an object file
 src/libft/ft_strnstr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnstr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnstr.c.o
 .PHONY : src/libft/ft_strnstr.c.o
 
 src/libft/ft_strnstr.i: src/libft/ft_strnstr.c.i
@@ -1839,7 +1893,7 @@ src/libft/ft_strnstr.i: src/libft/ft_strnstr.c.i
 
 # target to preprocess a source file
 src/libft/ft_strnstr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnstr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnstr.c.i
 .PHONY : src/libft/ft_strnstr.c.i
 
 src/libft/ft_strnstr.s: src/libft/ft_strnstr.c.s
@@ -1848,7 +1902,7 @@ src/libft/ft_strnstr.s: src/libft/ft_strnstr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strnstr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strnstr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strnstr.c.s
 .PHONY : src/libft/ft_strnstr.c.s
 
 src/libft/ft_strrchr.o: src/libft/ft_strrchr.c.o
@@ -1857,7 +1911,7 @@ src/libft/ft_strrchr.o: src/libft/ft_strrchr.c.o
 
 # target to build an object file
 src/libft/ft_strrchr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strrchr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strrchr.c.o
 .PHONY : src/libft/ft_strrchr.c.o
 
 src/libft/ft_strrchr.i: src/libft/ft_strrchr.c.i
@@ -1866,7 +1920,7 @@ src/libft/ft_strrchr.i: src/libft/ft_strrchr.c.i
 
 # target to preprocess a source file
 src/libft/ft_strrchr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strrchr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strrchr.c.i
 .PHONY : src/libft/ft_strrchr.c.i
 
 src/libft/ft_strrchr.s: src/libft/ft_strrchr.c.s
@@ -1875,7 +1929,7 @@ src/libft/ft_strrchr.s: src/libft/ft_strrchr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strrchr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strrchr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strrchr.c.s
 .PHONY : src/libft/ft_strrchr.c.s
 
 src/libft/ft_strsplit.o: src/libft/ft_strsplit.c.o
@@ -1884,7 +1938,7 @@ src/libft/ft_strsplit.o: src/libft/ft_strsplit.c.o
 
 # target to build an object file
 src/libft/ft_strsplit.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsplit.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsplit.c.o
 .PHONY : src/libft/ft_strsplit.c.o
 
 src/libft/ft_strsplit.i: src/libft/ft_strsplit.c.i
@@ -1893,7 +1947,7 @@ src/libft/ft_strsplit.i: src/libft/ft_strsplit.c.i
 
 # target to preprocess a source file
 src/libft/ft_strsplit.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsplit.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsplit.c.i
 .PHONY : src/libft/ft_strsplit.c.i
 
 src/libft/ft_strsplit.s: src/libft/ft_strsplit.c.s
@@ -1902,7 +1956,7 @@ src/libft/ft_strsplit.s: src/libft/ft_strsplit.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strsplit.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsplit.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsplit.c.s
 .PHONY : src/libft/ft_strsplit.c.s
 
 src/libft/ft_strstr.o: src/libft/ft_strstr.c.o
@@ -1911,7 +1965,7 @@ src/libft/ft_strstr.o: src/libft/ft_strstr.c.o
 
 # target to build an object file
 src/libft/ft_strstr.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strstr.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strstr.c.o
 .PHONY : src/libft/ft_strstr.c.o
 
 src/libft/ft_strstr.i: src/libft/ft_strstr.c.i
@@ -1920,7 +1974,7 @@ src/libft/ft_strstr.i: src/libft/ft_strstr.c.i
 
 # target to preprocess a source file
 src/libft/ft_strstr.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strstr.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strstr.c.i
 .PHONY : src/libft/ft_strstr.c.i
 
 src/libft/ft_strstr.s: src/libft/ft_strstr.c.s
@@ -1929,7 +1983,7 @@ src/libft/ft_strstr.s: src/libft/ft_strstr.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strstr.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strstr.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strstr.c.s
 .PHONY : src/libft/ft_strstr.c.s
 
 src/libft/ft_strsub.o: src/libft/ft_strsub.c.o
@@ -1938,7 +1992,7 @@ src/libft/ft_strsub.o: src/libft/ft_strsub.c.o
 
 # target to build an object file
 src/libft/ft_strsub.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsub.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsub.c.o
 .PHONY : src/libft/ft_strsub.c.o
 
 src/libft/ft_strsub.i: src/libft/ft_strsub.c.i
@@ -1947,7 +2001,7 @@ src/libft/ft_strsub.i: src/libft/ft_strsub.c.i
 
 # target to preprocess a source file
 src/libft/ft_strsub.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsub.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsub.c.i
 .PHONY : src/libft/ft_strsub.c.i
 
 src/libft/ft_strsub.s: src/libft/ft_strsub.c.s
@@ -1956,7 +2010,7 @@ src/libft/ft_strsub.s: src/libft/ft_strsub.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strsub.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strsub.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strsub.c.s
 .PHONY : src/libft/ft_strsub.c.s
 
 src/libft/ft_strtrim.o: src/libft/ft_strtrim.c.o
@@ -1965,7 +2019,7 @@ src/libft/ft_strtrim.o: src/libft/ft_strtrim.c.o
 
 # target to build an object file
 src/libft/ft_strtrim.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strtrim.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strtrim.c.o
 .PHONY : src/libft/ft_strtrim.c.o
 
 src/libft/ft_strtrim.i: src/libft/ft_strtrim.c.i
@@ -1974,7 +2028,7 @@ src/libft/ft_strtrim.i: src/libft/ft_strtrim.c.i
 
 # target to preprocess a source file
 src/libft/ft_strtrim.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strtrim.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strtrim.c.i
 .PHONY : src/libft/ft_strtrim.c.i
 
 src/libft/ft_strtrim.s: src/libft/ft_strtrim.c.s
@@ -1983,7 +2037,7 @@ src/libft/ft_strtrim.s: src/libft/ft_strtrim.c.s
 
 # target to generate assembly for a file
 src/libft/ft_strtrim.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_strtrim.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_strtrim.c.s
 .PHONY : src/libft/ft_strtrim.c.s
 
 src/libft/ft_tolower.o: src/libft/ft_tolower.c.o
@@ -1992,7 +2046,7 @@ src/libft/ft_tolower.o: src/libft/ft_tolower.c.o
 
 # target to build an object file
 src/libft/ft_tolower.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_tolower.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_tolower.c.o
 .PHONY : src/libft/ft_tolower.c.o
 
 src/libft/ft_tolower.i: src/libft/ft_tolower.c.i
@@ -2001,7 +2055,7 @@ src/libft/ft_tolower.i: src/libft/ft_tolower.c.i
 
 # target to preprocess a source file
 src/libft/ft_tolower.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_tolower.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_tolower.c.i
 .PHONY : src/libft/ft_tolower.c.i
 
 src/libft/ft_tolower.s: src/libft/ft_tolower.c.s
@@ -2010,7 +2064,7 @@ src/libft/ft_tolower.s: src/libft/ft_tolower.c.s
 
 # target to generate assembly for a file
 src/libft/ft_tolower.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_tolower.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_tolower.c.s
 .PHONY : src/libft/ft_tolower.c.s
 
 src/libft/ft_toupper.o: src/libft/ft_toupper.c.o
@@ -2019,7 +2073,7 @@ src/libft/ft_toupper.o: src/libft/ft_toupper.c.o
 
 # target to build an object file
 src/libft/ft_toupper.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_toupper.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_toupper.c.o
 .PHONY : src/libft/ft_toupper.c.o
 
 src/libft/ft_toupper.i: src/libft/ft_toupper.c.i
@@ -2028,7 +2082,7 @@ src/libft/ft_toupper.i: src/libft/ft_toupper.c.i
 
 # target to preprocess a source file
 src/libft/ft_toupper.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_toupper.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_toupper.c.i
 .PHONY : src/libft/ft_toupper.c.i
 
 src/libft/ft_toupper.s: src/libft/ft_toupper.c.s
@@ -2037,7 +2091,7 @@ src/libft/ft_toupper.s: src/libft/ft_toupper.c.s
 
 # target to generate assembly for a file
 src/libft/ft_toupper.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/libft/ft_toupper.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/libft/ft_toupper.c.s
 .PHONY : src/libft/ft_toupper.c.s
 
 src/list/ft_create_node.o: src/list/ft_create_node.c.o
@@ -2046,7 +2100,7 @@ src/list/ft_create_node.o: src/list/ft_create_node.c.o
 
 # target to build an object file
 src/list/ft_create_node.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/list/ft_create_node.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/list/ft_create_node.c.o
 .PHONY : src/list/ft_create_node.c.o
 
 src/list/ft_create_node.i: src/list/ft_create_node.c.i
@@ -2055,7 +2109,7 @@ src/list/ft_create_node.i: src/list/ft_create_node.c.i
 
 # target to preprocess a source file
 src/list/ft_create_node.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/list/ft_create_node.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/list/ft_create_node.c.i
 .PHONY : src/list/ft_create_node.c.i
 
 src/list/ft_create_node.s: src/list/ft_create_node.c.s
@@ -2064,7 +2118,7 @@ src/list/ft_create_node.s: src/list/ft_create_node.c.s
 
 # target to generate assembly for a file
 src/list/ft_create_node.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/list/ft_create_node.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/list/ft_create_node.c.s
 .PHONY : src/list/ft_create_node.c.s
 
 src/printf/c_conversions.o: src/printf/c_conversions.c.o
@@ -2073,7 +2127,7 @@ src/printf/c_conversions.o: src/printf/c_conversions.c.o
 
 # target to build an object file
 src/printf/c_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/c_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/c_conversions.c.o
 .PHONY : src/printf/c_conversions.c.o
 
 src/printf/c_conversions.i: src/printf/c_conversions.c.i
@@ -2082,7 +2136,7 @@ src/printf/c_conversions.i: src/printf/c_conversions.c.i
 
 # target to preprocess a source file
 src/printf/c_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/c_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/c_conversions.c.i
 .PHONY : src/printf/c_conversions.c.i
 
 src/printf/c_conversions.s: src/printf/c_conversions.c.s
@@ -2091,7 +2145,7 @@ src/printf/c_conversions.s: src/printf/c_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/c_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/c_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/c_conversions.c.s
 .PHONY : src/printf/c_conversions.c.s
 
 src/printf/conversion_flags.o: src/printf/conversion_flags.c.o
@@ -2100,7 +2154,7 @@ src/printf/conversion_flags.o: src/printf/conversion_flags.c.o
 
 # target to build an object file
 src/printf/conversion_flags.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/conversion_flags.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/conversion_flags.c.o
 .PHONY : src/printf/conversion_flags.c.o
 
 src/printf/conversion_flags.i: src/printf/conversion_flags.c.i
@@ -2109,7 +2163,7 @@ src/printf/conversion_flags.i: src/printf/conversion_flags.c.i
 
 # target to preprocess a source file
 src/printf/conversion_flags.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/conversion_flags.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/conversion_flags.c.i
 .PHONY : src/printf/conversion_flags.c.i
 
 src/printf/conversion_flags.s: src/printf/conversion_flags.c.s
@@ -2118,7 +2172,7 @@ src/printf/conversion_flags.s: src/printf/conversion_flags.c.s
 
 # target to generate assembly for a file
 src/printf/conversion_flags.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/conversion_flags.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/conversion_flags.c.s
 .PHONY : src/printf/conversion_flags.c.s
 
 src/printf/convert_flags.o: src/printf/convert_flags.c.o
@@ -2127,7 +2181,7 @@ src/printf/convert_flags.o: src/printf/convert_flags.c.o
 
 # target to build an object file
 src/printf/convert_flags.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/convert_flags.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/convert_flags.c.o
 .PHONY : src/printf/convert_flags.c.o
 
 src/printf/convert_flags.i: src/printf/convert_flags.c.i
@@ -2136,7 +2190,7 @@ src/printf/convert_flags.i: src/printf/convert_flags.c.i
 
 # target to preprocess a source file
 src/printf/convert_flags.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/convert_flags.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/convert_flags.c.i
 .PHONY : src/printf/convert_flags.c.i
 
 src/printf/convert_flags.s: src/printf/convert_flags.c.s
@@ -2145,7 +2199,7 @@ src/printf/convert_flags.s: src/printf/convert_flags.c.s
 
 # target to generate assembly for a file
 src/printf/convert_flags.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/convert_flags.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/convert_flags.c.s
 .PHONY : src/printf/convert_flags.c.s
 
 src/printf/d_conversions.o: src/printf/d_conversions.c.o
@@ -2154,7 +2208,7 @@ src/printf/d_conversions.o: src/printf/d_conversions.c.o
 
 # target to build an object file
 src/printf/d_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/d_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/d_conversions.c.o
 .PHONY : src/printf/d_conversions.c.o
 
 src/printf/d_conversions.i: src/printf/d_conversions.c.i
@@ -2163,7 +2217,7 @@ src/printf/d_conversions.i: src/printf/d_conversions.c.i
 
 # target to preprocess a source file
 src/printf/d_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/d_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/d_conversions.c.i
 .PHONY : src/printf/d_conversions.c.i
 
 src/printf/d_conversions.s: src/printf/d_conversions.c.s
@@ -2172,7 +2226,7 @@ src/printf/d_conversions.s: src/printf/d_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/d_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/d_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/d_conversions.c.s
 .PHONY : src/printf/d_conversions.c.s
 
 src/printf/div_10_longnum.o: src/printf/div_10_longnum.c.o
@@ -2181,7 +2235,7 @@ src/printf/div_10_longnum.o: src/printf/div_10_longnum.c.o
 
 # target to build an object file
 src/printf/div_10_longnum.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/div_10_longnum.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/div_10_longnum.c.o
 .PHONY : src/printf/div_10_longnum.c.o
 
 src/printf/div_10_longnum.i: src/printf/div_10_longnum.c.i
@@ -2190,7 +2244,7 @@ src/printf/div_10_longnum.i: src/printf/div_10_longnum.c.i
 
 # target to preprocess a source file
 src/printf/div_10_longnum.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/div_10_longnum.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/div_10_longnum.c.i
 .PHONY : src/printf/div_10_longnum.c.i
 
 src/printf/div_10_longnum.s: src/printf/div_10_longnum.c.s
@@ -2199,7 +2253,7 @@ src/printf/div_10_longnum.s: src/printf/div_10_longnum.c.s
 
 # target to generate assembly for a file
 src/printf/div_10_longnum.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/div_10_longnum.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/div_10_longnum.c.s
 .PHONY : src/printf/div_10_longnum.c.s
 
 src/printf/f_conversions.o: src/printf/f_conversions.c.o
@@ -2208,7 +2262,7 @@ src/printf/f_conversions.o: src/printf/f_conversions.c.o
 
 # target to build an object file
 src/printf/f_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/f_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/f_conversions.c.o
 .PHONY : src/printf/f_conversions.c.o
 
 src/printf/f_conversions.i: src/printf/f_conversions.c.i
@@ -2217,7 +2271,7 @@ src/printf/f_conversions.i: src/printf/f_conversions.c.i
 
 # target to preprocess a source file
 src/printf/f_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/f_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/f_conversions.c.i
 .PHONY : src/printf/f_conversions.c.i
 
 src/printf/f_conversions.s: src/printf/f_conversions.c.s
@@ -2226,7 +2280,7 @@ src/printf/f_conversions.s: src/printf/f_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/f_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/f_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/f_conversions.c.s
 .PHONY : src/printf/f_conversions.c.s
 
 src/printf/float_to_str.o: src/printf/float_to_str.c.o
@@ -2235,7 +2289,7 @@ src/printf/float_to_str.o: src/printf/float_to_str.c.o
 
 # target to build an object file
 src/printf/float_to_str.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/float_to_str.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/float_to_str.c.o
 .PHONY : src/printf/float_to_str.c.o
 
 src/printf/float_to_str.i: src/printf/float_to_str.c.i
@@ -2244,7 +2298,7 @@ src/printf/float_to_str.i: src/printf/float_to_str.c.i
 
 # target to preprocess a source file
 src/printf/float_to_str.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/float_to_str.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/float_to_str.c.i
 .PHONY : src/printf/float_to_str.c.i
 
 src/printf/float_to_str.s: src/printf/float_to_str.c.s
@@ -2253,7 +2307,7 @@ src/printf/float_to_str.s: src/printf/float_to_str.c.s
 
 # target to generate assembly for a file
 src/printf/float_to_str.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/float_to_str.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/float_to_str.c.s
 .PHONY : src/printf/float_to_str.c.s
 
 src/printf/ft_after_num.o: src/printf/ft_after_num.c.o
@@ -2262,7 +2316,7 @@ src/printf/ft_after_num.o: src/printf/ft_after_num.c.o
 
 # target to build an object file
 src/printf/ft_after_num.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_after_num.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_after_num.c.o
 .PHONY : src/printf/ft_after_num.c.o
 
 src/printf/ft_after_num.i: src/printf/ft_after_num.c.i
@@ -2271,7 +2325,7 @@ src/printf/ft_after_num.i: src/printf/ft_after_num.c.i
 
 # target to preprocess a source file
 src/printf/ft_after_num.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_after_num.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_after_num.c.i
 .PHONY : src/printf/ft_after_num.c.i
 
 src/printf/ft_after_num.s: src/printf/ft_after_num.c.s
@@ -2280,7 +2334,7 @@ src/printf/ft_after_num.s: src/printf/ft_after_num.c.s
 
 # target to generate assembly for a file
 src/printf/ft_after_num.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_after_num.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_after_num.c.s
 .PHONY : src/printf/ft_after_num.c.s
 
 src/printf/ft_before_num.o: src/printf/ft_before_num.c.o
@@ -2289,7 +2343,7 @@ src/printf/ft_before_num.o: src/printf/ft_before_num.c.o
 
 # target to build an object file
 src/printf/ft_before_num.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_before_num.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_before_num.c.o
 .PHONY : src/printf/ft_before_num.c.o
 
 src/printf/ft_before_num.i: src/printf/ft_before_num.c.i
@@ -2298,7 +2352,7 @@ src/printf/ft_before_num.i: src/printf/ft_before_num.c.i
 
 # target to preprocess a source file
 src/printf/ft_before_num.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_before_num.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_before_num.c.i
 .PHONY : src/printf/ft_before_num.c.i
 
 src/printf/ft_before_num.s: src/printf/ft_before_num.c.s
@@ -2307,7 +2361,7 @@ src/printf/ft_before_num.s: src/printf/ft_before_num.c.s
 
 # target to generate assembly for a file
 src/printf/ft_before_num.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_before_num.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_before_num.c.s
 .PHONY : src/printf/ft_before_num.c.s
 
 src/printf/ft_itoa_base.o: src/printf/ft_itoa_base.c.o
@@ -2316,7 +2370,7 @@ src/printf/ft_itoa_base.o: src/printf/ft_itoa_base.c.o
 
 # target to build an object file
 src/printf/ft_itoa_base.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base.c.o
 .PHONY : src/printf/ft_itoa_base.c.o
 
 src/printf/ft_itoa_base.i: src/printf/ft_itoa_base.c.i
@@ -2325,7 +2379,7 @@ src/printf/ft_itoa_base.i: src/printf/ft_itoa_base.c.i
 
 # target to preprocess a source file
 src/printf/ft_itoa_base.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base.c.i
 .PHONY : src/printf/ft_itoa_base.c.i
 
 src/printf/ft_itoa_base.s: src/printf/ft_itoa_base.c.s
@@ -2334,7 +2388,7 @@ src/printf/ft_itoa_base.s: src/printf/ft_itoa_base.c.s
 
 # target to generate assembly for a file
 src/printf/ft_itoa_base.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base.c.s
 .PHONY : src/printf/ft_itoa_base.c.s
 
 src/printf/ft_itoa_base_hex_long.o: src/printf/ft_itoa_base_hex_long.c.o
@@ -2343,7 +2397,7 @@ src/printf/ft_itoa_base_hex_long.o: src/printf/ft_itoa_base_hex_long.c.o
 
 # target to build an object file
 src/printf/ft_itoa_base_hex_long.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base_hex_long.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base_hex_long.c.o
 .PHONY : src/printf/ft_itoa_base_hex_long.c.o
 
 src/printf/ft_itoa_base_hex_long.i: src/printf/ft_itoa_base_hex_long.c.i
@@ -2352,7 +2406,7 @@ src/printf/ft_itoa_base_hex_long.i: src/printf/ft_itoa_base_hex_long.c.i
 
 # target to preprocess a source file
 src/printf/ft_itoa_base_hex_long.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base_hex_long.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base_hex_long.c.i
 .PHONY : src/printf/ft_itoa_base_hex_long.c.i
 
 src/printf/ft_itoa_base_hex_long.s: src/printf/ft_itoa_base_hex_long.c.s
@@ -2361,7 +2415,7 @@ src/printf/ft_itoa_base_hex_long.s: src/printf/ft_itoa_base_hex_long.c.s
 
 # target to generate assembly for a file
 src/printf/ft_itoa_base_hex_long.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_itoa_base_hex_long.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_itoa_base_hex_long.c.s
 .PHONY : src/printf/ft_itoa_base_hex_long.c.s
 
 src/printf/ft_printf.o: src/printf/ft_printf.c.o
@@ -2370,7 +2424,7 @@ src/printf/ft_printf.o: src/printf/ft_printf.c.o
 
 # target to build an object file
 src/printf/ft_printf.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_printf.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_printf.c.o
 .PHONY : src/printf/ft_printf.c.o
 
 src/printf/ft_printf.i: src/printf/ft_printf.c.i
@@ -2379,7 +2433,7 @@ src/printf/ft_printf.i: src/printf/ft_printf.c.i
 
 # target to preprocess a source file
 src/printf/ft_printf.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_printf.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_printf.c.i
 .PHONY : src/printf/ft_printf.c.i
 
 src/printf/ft_printf.s: src/printf/ft_printf.c.s
@@ -2388,7 +2442,7 @@ src/printf/ft_printf.s: src/printf/ft_printf.c.s
 
 # target to generate assembly for a file
 src/printf/ft_printf.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/ft_printf.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/ft_printf.c.s
 .PHONY : src/printf/ft_printf.c.s
 
 src/printf/get_conv_glags.o: src/printf/get_conv_glags.c.o
@@ -2397,7 +2451,7 @@ src/printf/get_conv_glags.o: src/printf/get_conv_glags.c.o
 
 # target to build an object file
 src/printf/get_conv_glags.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conv_glags.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conv_glags.c.o
 .PHONY : src/printf/get_conv_glags.c.o
 
 src/printf/get_conv_glags.i: src/printf/get_conv_glags.c.i
@@ -2406,7 +2460,7 @@ src/printf/get_conv_glags.i: src/printf/get_conv_glags.c.i
 
 # target to preprocess a source file
 src/printf/get_conv_glags.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conv_glags.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conv_glags.c.i
 .PHONY : src/printf/get_conv_glags.c.i
 
 src/printf/get_conv_glags.s: src/printf/get_conv_glags.c.s
@@ -2415,7 +2469,7 @@ src/printf/get_conv_glags.s: src/printf/get_conv_glags.c.s
 
 # target to generate assembly for a file
 src/printf/get_conv_glags.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conv_glags.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conv_glags.c.s
 .PHONY : src/printf/get_conv_glags.c.s
 
 src/printf/get_conversion.o: src/printf/get_conversion.c.o
@@ -2424,7 +2478,7 @@ src/printf/get_conversion.o: src/printf/get_conversion.c.o
 
 # target to build an object file
 src/printf/get_conversion.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conversion.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conversion.c.o
 .PHONY : src/printf/get_conversion.c.o
 
 src/printf/get_conversion.i: src/printf/get_conversion.c.i
@@ -2433,7 +2487,7 @@ src/printf/get_conversion.i: src/printf/get_conversion.c.i
 
 # target to preprocess a source file
 src/printf/get_conversion.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conversion.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conversion.c.i
 .PHONY : src/printf/get_conversion.c.i
 
 src/printf/get_conversion.s: src/printf/get_conversion.c.s
@@ -2442,7 +2496,7 @@ src/printf/get_conversion.s: src/printf/get_conversion.c.s
 
 # target to generate assembly for a file
 src/printf/get_conversion.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_conversion.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_conversion.c.s
 .PHONY : src/printf/get_conversion.c.s
 
 src/printf/get_first_digit.o: src/printf/get_first_digit.c.o
@@ -2451,7 +2505,7 @@ src/printf/get_first_digit.o: src/printf/get_first_digit.c.o
 
 # target to build an object file
 src/printf/get_first_digit.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_first_digit.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_first_digit.c.o
 .PHONY : src/printf/get_first_digit.c.o
 
 src/printf/get_first_digit.i: src/printf/get_first_digit.c.i
@@ -2460,7 +2514,7 @@ src/printf/get_first_digit.i: src/printf/get_first_digit.c.i
 
 # target to preprocess a source file
 src/printf/get_first_digit.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_first_digit.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_first_digit.c.i
 .PHONY : src/printf/get_first_digit.c.i
 
 src/printf/get_first_digit.s: src/printf/get_first_digit.c.s
@@ -2469,7 +2523,7 @@ src/printf/get_first_digit.s: src/printf/get_first_digit.c.s
 
 # target to generate assembly for a file
 src/printf/get_first_digit.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_first_digit.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_first_digit.c.s
 .PHONY : src/printf/get_first_digit.c.s
 
 src/printf/get_flags.o: src/printf/get_flags.c.o
@@ -2478,7 +2532,7 @@ src/printf/get_flags.o: src/printf/get_flags.c.o
 
 # target to build an object file
 src/printf/get_flags.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_flags.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_flags.c.o
 .PHONY : src/printf/get_flags.c.o
 
 src/printf/get_flags.i: src/printf/get_flags.c.i
@@ -2487,7 +2541,7 @@ src/printf/get_flags.i: src/printf/get_flags.c.i
 
 # target to preprocess a source file
 src/printf/get_flags.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_flags.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_flags.c.i
 .PHONY : src/printf/get_flags.c.i
 
 src/printf/get_flags.s: src/printf/get_flags.c.s
@@ -2496,7 +2550,7 @@ src/printf/get_flags.s: src/printf/get_flags.c.s
 
 # target to generate assembly for a file
 src/printf/get_flags.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_flags.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_flags.c.s
 .PHONY : src/printf/get_flags.c.s
 
 src/printf/get_sizes.o: src/printf/get_sizes.c.o
@@ -2505,7 +2559,7 @@ src/printf/get_sizes.o: src/printf/get_sizes.c.o
 
 # target to build an object file
 src/printf/get_sizes.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_sizes.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_sizes.c.o
 .PHONY : src/printf/get_sizes.c.o
 
 src/printf/get_sizes.i: src/printf/get_sizes.c.i
@@ -2514,7 +2568,7 @@ src/printf/get_sizes.i: src/printf/get_sizes.c.i
 
 # target to preprocess a source file
 src/printf/get_sizes.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_sizes.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_sizes.c.i
 .PHONY : src/printf/get_sizes.c.i
 
 src/printf/get_sizes.s: src/printf/get_sizes.c.s
@@ -2523,7 +2577,7 @@ src/printf/get_sizes.s: src/printf/get_sizes.c.s
 
 # target to generate assembly for a file
 src/printf/get_sizes.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/get_sizes.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/get_sizes.c.s
 .PHONY : src/printf/get_sizes.c.s
 
 src/printf/large_arythmetics.o: src/printf/large_arythmetics.c.o
@@ -2532,7 +2586,7 @@ src/printf/large_arythmetics.o: src/printf/large_arythmetics.c.o
 
 # target to build an object file
 src/printf/large_arythmetics.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/large_arythmetics.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/large_arythmetics.c.o
 .PHONY : src/printf/large_arythmetics.c.o
 
 src/printf/large_arythmetics.i: src/printf/large_arythmetics.c.i
@@ -2541,7 +2595,7 @@ src/printf/large_arythmetics.i: src/printf/large_arythmetics.c.i
 
 # target to preprocess a source file
 src/printf/large_arythmetics.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/large_arythmetics.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/large_arythmetics.c.i
 .PHONY : src/printf/large_arythmetics.c.i
 
 src/printf/large_arythmetics.s: src/printf/large_arythmetics.c.s
@@ -2550,7 +2604,7 @@ src/printf/large_arythmetics.s: src/printf/large_arythmetics.c.s
 
 # target to generate assembly for a file
 src/printf/large_arythmetics.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/large_arythmetics.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/large_arythmetics.c.s
 .PHONY : src/printf/large_arythmetics.c.s
 
 src/printf/make_double.o: src/printf/make_double.c.o
@@ -2559,7 +2613,7 @@ src/printf/make_double.o: src/printf/make_double.c.o
 
 # target to build an object file
 src/printf/make_double.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_double.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_double.c.o
 .PHONY : src/printf/make_double.c.o
 
 src/printf/make_double.i: src/printf/make_double.c.i
@@ -2568,7 +2622,7 @@ src/printf/make_double.i: src/printf/make_double.c.i
 
 # target to preprocess a source file
 src/printf/make_double.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_double.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_double.c.i
 .PHONY : src/printf/make_double.c.i
 
 src/printf/make_double.s: src/printf/make_double.c.s
@@ -2577,7 +2631,7 @@ src/printf/make_double.s: src/printf/make_double.c.s
 
 # target to generate assembly for a file
 src/printf/make_double.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_double.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_double.c.s
 .PHONY : src/printf/make_double.c.s
 
 src/printf/make_ldouble.o: src/printf/make_ldouble.c.o
@@ -2586,7 +2640,7 @@ src/printf/make_ldouble.o: src/printf/make_ldouble.c.o
 
 # target to build an object file
 src/printf/make_ldouble.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_ldouble.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_ldouble.c.o
 .PHONY : src/printf/make_ldouble.c.o
 
 src/printf/make_ldouble.i: src/printf/make_ldouble.c.i
@@ -2595,7 +2649,7 @@ src/printf/make_ldouble.i: src/printf/make_ldouble.c.i
 
 # target to preprocess a source file
 src/printf/make_ldouble.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_ldouble.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_ldouble.c.i
 .PHONY : src/printf/make_ldouble.c.i
 
 src/printf/make_ldouble.s: src/printf/make_ldouble.c.s
@@ -2604,7 +2658,7 @@ src/printf/make_ldouble.s: src/printf/make_ldouble.c.s
 
 # target to generate assembly for a file
 src/printf/make_ldouble.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/make_ldouble.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/make_ldouble.c.s
 .PHONY : src/printf/make_ldouble.c.s
 
 src/printf/mod_conversions.o: src/printf/mod_conversions.c.o
@@ -2613,7 +2667,7 @@ src/printf/mod_conversions.o: src/printf/mod_conversions.c.o
 
 # target to build an object file
 src/printf/mod_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/mod_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/mod_conversions.c.o
 .PHONY : src/printf/mod_conversions.c.o
 
 src/printf/mod_conversions.i: src/printf/mod_conversions.c.i
@@ -2622,7 +2676,7 @@ src/printf/mod_conversions.i: src/printf/mod_conversions.c.i
 
 # target to preprocess a source file
 src/printf/mod_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/mod_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/mod_conversions.c.i
 .PHONY : src/printf/mod_conversions.c.i
 
 src/printf/mod_conversions.s: src/printf/mod_conversions.c.s
@@ -2631,7 +2685,7 @@ src/printf/mod_conversions.s: src/printf/mod_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/mod_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/mod_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/mod_conversions.c.s
 .PHONY : src/printf/mod_conversions.c.s
 
 src/printf/o_conversions.o: src/printf/o_conversions.c.o
@@ -2640,7 +2694,7 @@ src/printf/o_conversions.o: src/printf/o_conversions.c.o
 
 # target to build an object file
 src/printf/o_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/o_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/o_conversions.c.o
 .PHONY : src/printf/o_conversions.c.o
 
 src/printf/o_conversions.i: src/printf/o_conversions.c.i
@@ -2649,7 +2703,7 @@ src/printf/o_conversions.i: src/printf/o_conversions.c.i
 
 # target to preprocess a source file
 src/printf/o_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/o_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/o_conversions.c.i
 .PHONY : src/printf/o_conversions.c.i
 
 src/printf/o_conversions.s: src/printf/o_conversions.c.s
@@ -2658,7 +2712,7 @@ src/printf/o_conversions.s: src/printf/o_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/o_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/o_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/o_conversions.c.s
 .PHONY : src/printf/o_conversions.c.s
 
 src/printf/p_conversions.o: src/printf/p_conversions.c.o
@@ -2667,7 +2721,7 @@ src/printf/p_conversions.o: src/printf/p_conversions.c.o
 
 # target to build an object file
 src/printf/p_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/p_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/p_conversions.c.o
 .PHONY : src/printf/p_conversions.c.o
 
 src/printf/p_conversions.i: src/printf/p_conversions.c.i
@@ -2676,7 +2730,7 @@ src/printf/p_conversions.i: src/printf/p_conversions.c.i
 
 # target to preprocess a source file
 src/printf/p_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/p_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/p_conversions.c.i
 .PHONY : src/printf/p_conversions.c.i
 
 src/printf/p_conversions.s: src/printf/p_conversions.c.s
@@ -2685,7 +2739,7 @@ src/printf/p_conversions.s: src/printf/p_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/p_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/p_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/p_conversions.c.s
 .PHONY : src/printf/p_conversions.c.s
 
 src/printf/print_conversion.o: src/printf/print_conversion.c.o
@@ -2694,7 +2748,7 @@ src/printf/print_conversion.o: src/printf/print_conversion.c.o
 
 # target to build an object file
 src/printf/print_conversion.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/print_conversion.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/print_conversion.c.o
 .PHONY : src/printf/print_conversion.c.o
 
 src/printf/print_conversion.i: src/printf/print_conversion.c.i
@@ -2703,7 +2757,7 @@ src/printf/print_conversion.i: src/printf/print_conversion.c.i
 
 # target to preprocess a source file
 src/printf/print_conversion.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/print_conversion.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/print_conversion.c.i
 .PHONY : src/printf/print_conversion.c.i
 
 src/printf/print_conversion.s: src/printf/print_conversion.c.s
@@ -2712,7 +2766,7 @@ src/printf/print_conversion.s: src/printf/print_conversion.c.s
 
 # target to generate assembly for a file
 src/printf/print_conversion.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/print_conversion.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/print_conversion.c.s
 .PHONY : src/printf/print_conversion.c.s
 
 src/printf/s_conversion.o: src/printf/s_conversion.c.o
@@ -2721,7 +2775,7 @@ src/printf/s_conversion.o: src/printf/s_conversion.c.o
 
 # target to build an object file
 src/printf/s_conversion.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/s_conversion.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/s_conversion.c.o
 .PHONY : src/printf/s_conversion.c.o
 
 src/printf/s_conversion.i: src/printf/s_conversion.c.i
@@ -2730,7 +2784,7 @@ src/printf/s_conversion.i: src/printf/s_conversion.c.i
 
 # target to preprocess a source file
 src/printf/s_conversion.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/s_conversion.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/s_conversion.c.i
 .PHONY : src/printf/s_conversion.c.i
 
 src/printf/s_conversion.s: src/printf/s_conversion.c.s
@@ -2739,7 +2793,7 @@ src/printf/s_conversion.s: src/printf/s_conversion.c.s
 
 # target to generate assembly for a file
 src/printf/s_conversion.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/s_conversion.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/s_conversion.c.s
 .PHONY : src/printf/s_conversion.c.s
 
 src/printf/sum_longnum.o: src/printf/sum_longnum.c.o
@@ -2748,7 +2802,7 @@ src/printf/sum_longnum.o: src/printf/sum_longnum.c.o
 
 # target to build an object file
 src/printf/sum_longnum.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/sum_longnum.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/sum_longnum.c.o
 .PHONY : src/printf/sum_longnum.c.o
 
 src/printf/sum_longnum.i: src/printf/sum_longnum.c.i
@@ -2757,7 +2811,7 @@ src/printf/sum_longnum.i: src/printf/sum_longnum.c.i
 
 # target to preprocess a source file
 src/printf/sum_longnum.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/sum_longnum.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/sum_longnum.c.i
 .PHONY : src/printf/sum_longnum.c.i
 
 src/printf/sum_longnum.s: src/printf/sum_longnum.c.s
@@ -2766,7 +2820,7 @@ src/printf/sum_longnum.s: src/printf/sum_longnum.c.s
 
 # target to generate assembly for a file
 src/printf/sum_longnum.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/sum_longnum.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/sum_longnum.c.s
 .PHONY : src/printf/sum_longnum.c.s
 
 src/printf/u_conversion.o: src/printf/u_conversion.c.o
@@ -2775,7 +2829,7 @@ src/printf/u_conversion.o: src/printf/u_conversion.c.o
 
 # target to build an object file
 src/printf/u_conversion.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/u_conversion.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/u_conversion.c.o
 .PHONY : src/printf/u_conversion.c.o
 
 src/printf/u_conversion.i: src/printf/u_conversion.c.i
@@ -2784,7 +2838,7 @@ src/printf/u_conversion.i: src/printf/u_conversion.c.i
 
 # target to preprocess a source file
 src/printf/u_conversion.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/u_conversion.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/u_conversion.c.i
 .PHONY : src/printf/u_conversion.c.i
 
 src/printf/u_conversion.s: src/printf/u_conversion.c.s
@@ -2793,7 +2847,7 @@ src/printf/u_conversion.s: src/printf/u_conversion.c.s
 
 # target to generate assembly for a file
 src/printf/u_conversion.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/u_conversion.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/u_conversion.c.s
 .PHONY : src/printf/u_conversion.c.s
 
 src/printf/x_conversions.o: src/printf/x_conversions.c.o
@@ -2802,7 +2856,7 @@ src/printf/x_conversions.o: src/printf/x_conversions.c.o
 
 # target to build an object file
 src/printf/x_conversions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/x_conversions.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/x_conversions.c.o
 .PHONY : src/printf/x_conversions.c.o
 
 src/printf/x_conversions.i: src/printf/x_conversions.c.i
@@ -2811,7 +2865,7 @@ src/printf/x_conversions.i: src/printf/x_conversions.c.i
 
 # target to preprocess a source file
 src/printf/x_conversions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/x_conversions.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/x_conversions.c.i
 .PHONY : src/printf/x_conversions.c.i
 
 src/printf/x_conversions.s: src/printf/x_conversions.c.s
@@ -2820,7 +2874,7 @@ src/printf/x_conversions.s: src/printf/x_conversions.c.s
 
 # target to generate assembly for a file
 src/printf/x_conversions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/x_conversions.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/printf/x_conversions.c.s
 .PHONY : src/printf/x_conversions.c.s
 
 src/string/fill_with_chars.o: src/string/fill_with_chars.c.o
@@ -2829,7 +2883,7 @@ src/string/fill_with_chars.o: src/string/fill_with_chars.c.o
 
 # target to build an object file
 src/string/fill_with_chars.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/fill_with_chars.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/fill_with_chars.c.o
 .PHONY : src/string/fill_with_chars.c.o
 
 src/string/fill_with_chars.i: src/string/fill_with_chars.c.i
@@ -2838,7 +2892,7 @@ src/string/fill_with_chars.i: src/string/fill_with_chars.c.i
 
 # target to preprocess a source file
 src/string/fill_with_chars.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/fill_with_chars.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/fill_with_chars.c.i
 .PHONY : src/string/fill_with_chars.c.i
 
 src/string/fill_with_chars.s: src/string/fill_with_chars.c.s
@@ -2847,7 +2901,7 @@ src/string/fill_with_chars.s: src/string/fill_with_chars.c.s
 
 # target to generate assembly for a file
 src/string/fill_with_chars.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/fill_with_chars.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/fill_with_chars.c.s
 .PHONY : src/string/fill_with_chars.c.s
 
 src/string/ft_lst_to_str.o: src/string/ft_lst_to_str.c.o
@@ -2856,7 +2910,7 @@ src/string/ft_lst_to_str.o: src/string/ft_lst_to_str.c.o
 
 # target to build an object file
 src/string/ft_lst_to_str.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_lst_to_str.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_lst_to_str.c.o
 .PHONY : src/string/ft_lst_to_str.c.o
 
 src/string/ft_lst_to_str.i: src/string/ft_lst_to_str.c.i
@@ -2865,7 +2919,7 @@ src/string/ft_lst_to_str.i: src/string/ft_lst_to_str.c.i
 
 # target to preprocess a source file
 src/string/ft_lst_to_str.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_lst_to_str.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_lst_to_str.c.i
 .PHONY : src/string/ft_lst_to_str.c.i
 
 src/string/ft_lst_to_str.s: src/string/ft_lst_to_str.c.s
@@ -2874,7 +2928,7 @@ src/string/ft_lst_to_str.s: src/string/ft_lst_to_str.c.s
 
 # target to generate assembly for a file
 src/string/ft_lst_to_str.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_lst_to_str.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_lst_to_str.c.s
 .PHONY : src/string/ft_lst_to_str.c.s
 
 src/string/ft_realloc.o: src/string/ft_realloc.c.o
@@ -2883,7 +2937,7 @@ src/string/ft_realloc.o: src/string/ft_realloc.c.o
 
 # target to build an object file
 src/string/ft_realloc.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_realloc.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_realloc.c.o
 .PHONY : src/string/ft_realloc.c.o
 
 src/string/ft_realloc.i: src/string/ft_realloc.c.i
@@ -2892,7 +2946,7 @@ src/string/ft_realloc.i: src/string/ft_realloc.c.i
 
 # target to preprocess a source file
 src/string/ft_realloc.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_realloc.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_realloc.c.i
 .PHONY : src/string/ft_realloc.c.i
 
 src/string/ft_realloc.s: src/string/ft_realloc.c.s
@@ -2901,7 +2955,7 @@ src/string/ft_realloc.s: src/string/ft_realloc.c.s
 
 # target to generate assembly for a file
 src/string/ft_realloc.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_realloc.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_realloc.c.s
 .PHONY : src/string/ft_realloc.c.s
 
 src/string/ft_strappend.o: src/string/ft_strappend.c.o
@@ -2910,7 +2964,7 @@ src/string/ft_strappend.o: src/string/ft_strappend.c.o
 
 # target to build an object file
 src/string/ft_strappend.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_strappend.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.o
 .PHONY : src/string/ft_strappend.c.o
 
 src/string/ft_strappend.i: src/string/ft_strappend.c.i
@@ -2919,7 +2973,7 @@ src/string/ft_strappend.i: src/string/ft_strappend.c.i
 
 # target to preprocess a source file
 src/string/ft_strappend.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_strappend.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.i
 .PHONY : src/string/ft_strappend.c.i
 
 src/string/ft_strappend.s: src/string/ft_strappend.c.s
@@ -2928,7 +2982,7 @@ src/string/ft_strappend.s: src/string/ft_strappend.c.s
 
 # target to generate assembly for a file
 src/string/ft_strappend.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_strappend.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.s
 .PHONY : src/string/ft_strappend.c.s
 
 validation.o: validation.c.o
@@ -2937,7 +2991,7 @@ validation.o: validation.c.o
 
 # target to build an object file
 validation.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.o
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/validation.c.o
 .PHONY : validation.c.o
 
 validation.i: validation.c.i
@@ -2946,7 +3000,7 @@ validation.i: validation.c.i
 
 # target to preprocess a source file
 validation.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.i
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/validation.c.i
 .PHONY : validation.c.i
 
 validation.s: validation.c.s
@@ -2955,7 +3009,7 @@ validation.s: validation.c.s
 
 # target to generate assembly for a file
 validation.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.s
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/validation.c.s
 .PHONY : validation.c.s
 
 # Help Target
@@ -2966,22 +3020,28 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... push_swap"
+	@echo "... push_swap_l"
 	@echo "... checker.o"
 	@echo "... checker.i"
 	@echo "... checker.s"
-	@echo "... execute.o"
-	@echo "... execute.i"
-	@echo "... execute.s"
 	@echo "... execute_rest.o"
 	@echo "... execute_rest.i"
 	@echo "... execute_rest.s"
 	@echo "... get_next_line.o"
 	@echo "... get_next_line.i"
 	@echo "... get_next_line.s"
-	@echo "... lst_functions.o"
-	@echo "... lst_functions.i"
-	@echo "... lst_functions.s"
+	@echo "... heap_sort.o"
+	@echo "... heap_sort.i"
+	@echo "... heap_sort.s"
+	@echo "... lst_arr_functions.o"
+	@echo "... lst_arr_functions.i"
+	@echo "... lst_arr_functions.s"
+	@echo "... nb_execute.o"
+	@echo "... nb_execute.i"
+	@echo "... nb_execute.s"
+	@echo "... nb_lst.o"
+	@echo "... nb_lst.i"
+	@echo "... nb_lst.s"
 	@echo "... push_swap.o"
 	@echo "... push_swap.i"
 	@echo "... push_swap.s"

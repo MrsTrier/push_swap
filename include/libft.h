@@ -30,6 +30,12 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_list_arr
+{
+    int 			    content;
+    struct s_list_arr	*next;
+}					t_list_arr;
+
 void				*ft_memalloc(size_t size);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_striter(char *s, void (*f)(char *));

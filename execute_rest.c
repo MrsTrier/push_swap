@@ -1,14 +1,16 @@
 #include "execute.h"
 #include "checker.h"
+#include "push_swap.h"
 
-void	executeRRAB(t_list **res_lst, int a_length)
+
+void	executeRRAB(t_list_arr **res_lst, int a_length)
 {
 //	t_list	*new_item;
-	t_list	*tmpl;
+	t_list_arr	*tmpl;
 //	t_list	**del;
 
-	tmpl = ft_list_at(*res_lst, a_length - 1);
-    ft_list_at(*res_lst, a_length - 2)->next = NULL;
+	tmpl = nb_list_at(*res_lst, a_length - 1);
+    nb_list_at(*res_lst, a_length - 2)->next = NULL;
 	tmpl->next = *res_lst;
 	*res_lst = tmpl;
 //	tmpl = *res_lst;
@@ -21,7 +23,7 @@ void	executeRRAB(t_list **res_lst, int a_length)
 //	*res_lst = tmpl;
 }
 
-void	executeRRR(t_list **res_lst, int a_length, t_list **b, int b_length)
+void	executeRRR(t_list_arr **res_lst, int a_length, t_list_arr **b, int b_length)
 {
 	executeRRAB(res_lst, a_length);
 	executeRRAB(b, b_length);
