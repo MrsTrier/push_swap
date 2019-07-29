@@ -11,7 +11,7 @@ t_list_arr  *nb_lstnew()
 //        new_list->content = NULL;
 //    else
 //        new_list->content = nb;
-//    new_list->next = NULL;
+    new_list->next = NULL;
     return (new_list);
 }
 
@@ -32,43 +32,25 @@ t_list_arr	*create_nb_elem(int nb, t_list_arr **lst)
 	return (*lst);
 }
 
-int		nb_lst_length(t_list_arr *lst)
+int		lst_sorted_ac(t_list_arr *lst)
 {
-	t_list_arr  *new_item;
-	int         count;
-
-	count = 0;
-	if (!lst)
-		return (0);
-	new_item = lst;
-	while (new_item)
-	{
-		new_item = new_item->next;
-		count++;
-	}
-	free(new_item);
-	return (count);
-}
-
-int		lst_sorted_ac(t_list *lst)
-{
-	t_list *new_item;
+	t_list_arr *new_item;
 
 	if (!lst)
 		return (0);
 	new_item = lst;
 	while (new_item->next)
 	{
-		if ((*(int *)(new_item->content)) > (*(int *)(new_item->next->content)))
+		if (new_item->content > new_item->next->content)
 			return (0);
 		new_item = new_item->next;
 	}
 	return (1);
 }
 
-int		lst_sorted_dec(t_list *lst)
+int		lst_sorted_dec(t_list_arr *lst)
 {
-	t_list *new_item;
+	t_list_arr *new_item;
 
 	if (!lst)
 		return (0);
@@ -83,17 +65,24 @@ int		lst_sorted_dec(t_list *lst)
 }
 
 
-void	nb_push_back(t_list_arr **start, t_list_arr *new)
+void	nb_push_back(t_list_arr **start, int nb)
 {
 	t_list_arr		*lst;
+	t_list_arr		*new;
 
 	lst = *start;
 	if (!(*start))
-		*start = new;
+	{
+		new = nb_lstnew();
+		new->content = nb;
+		lst->next = new;
+	}
 	else
 	{
 		while (lst->next)
 			lst = lst->next;
+		new = nb_lstnew();
+		new->content = nb;
 		lst->next = new;
 	}
 }

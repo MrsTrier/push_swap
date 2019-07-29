@@ -38,46 +38,43 @@ int     find_min(t_list_arr *res_lst)
     return (min);
 }
 
-int     find_max(t_list_arr	*res_lst, int len)
+int     find_max(t_list_arr	*res_lst)
 {
 	int			max;
 	t_list_arr	*new_item;
-	int 		i;
 
-	i = 0;
 	if (!res_lst)
 		return (write(2, "Error\n", 6));
 	new_item = res_lst;
 	max = new_item->content;
-	while (i < len)
+	while (new_item->next)
 	{
 		if (max < new_item->next->content)
-			max = (int)new_item->next->content;
+			max = new_item->next->content;
 		new_item = new_item->next;
-		i++;
 	}
 	return (max);
 }
 
-//int		mk_easy_sort(t_list_arr **a, int a_length)
-//{
-//	int i = 0;
-//
-//	if (lst_sorted_ac(*a) && lst_sorted_dec(*a))
-//		executeSAB(a, a_length);
-//	else
-//	{
-//		if (find_min(*a) != ((*a)->content))
-//			executeSAB(a, a_length);
-//		while (!lst_sorted_ac(*a))
-//		{
-//			executeRRAB(a, 3);
-//			executeSAB(a, a_length);
-//			i += 2;
-//		}
-//	}
-//	return (i);
-//}
+int		mk_easy_sort(t_list_arr **a, int a_length)
+{
+	int i = 0;
+
+	if (lst_sorted_ac(*a) && lst_sorted_dec(*a))
+		executeSAB(a, a_length);
+	else
+	{
+		if ((find_min(*a) != ((*a)->content)) && a_length == 3)
+			executeSAB(a, a_length);
+		while (!lst_sorted_ac(*a))
+		{
+			executeRRAB(a, a_length);
+			executeSAB(a, a_length);
+			i += 2;
+		}
+	}
+	return (i);
+}
 
 int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
@@ -86,10 +83,8 @@ int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 
 	i = 0;
 	pr = *a;
-	//a_data->min = find_min(*a);
-	a_data->max = find_max(a, a_data->length);
-	ft_printf("%d\n", a_data->max);
-	return (0);
+	a_data->min = find_min(*a);
+	a_data->max = find_max(*a);
 	a_data->mdn = ((nb_list_at(*a, (a_data->length / 2) - 1)->content));
 	while (a_data->length != 3)
 	{
@@ -98,12 +93,12 @@ int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 			executePB(a, b);
 			i++;
 			b_data->length += 1;
-//			if (*b_length >= 3)
-//				if ((*(int *)(*b)->content) > (*(int *)(*b)->next->content))
-//				{
-//					executeSAB(b, b_length);
-//					i++;
-//				}
+			if (b_data->length >= 3) {
+				if ((*b)->content > (*b)->next->content) {
+					executeSAB(b, b_data->length);
+					i++;
+				}
+			}
 			a_data->length -= 1;
 		}
 		else
@@ -111,7 +106,7 @@ int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 			executeRAB(a);
 			i++;
 		}
-		pr = pr->next;
+		pr = *a;
 	}
 	return (i);
 }
@@ -168,7 +163,7 @@ int		find_place(t_list_arr **a, int b, t_stack *a_data)
 	place = (*a)->content;
 	while (pr)
 	{
-		if (pr->content > b && diff > pr->content - b)
+		if ((pr->content > b) && (diff > pr->content - b))
 		{
 			diff = pr->content - b;
 			place = pr->content;
@@ -189,13 +184,14 @@ int		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_dat
 
 	i = 1;
 	comands = 100000000000000;
+	curr = 0;
 	pr = *b;
 	best = 0;
 	best_place = 0;
-	while (i - 1 < b_data->length)
+	while (pr->next)
 	{
 		*place = find_place(a, pr->content, a_data);
-		if (comands > (curr = calculate_comands(a, *place, min_is(i, b_data->length- i), a_data->length)))
+		if (comands > (curr = calculate_comands(a, *place, min_is(i, b_data->length - i), a_data->length)))
 		{
 			best = pr->content;
 			comands = curr;
@@ -208,20 +204,23 @@ int		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_dat
 	return (best);
 }
 
-void	sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_list_arr	*pr;
 	t_list_arr	*pr_a;
 	int			i;
 	int 		j;
+	int 		c;
 	int			best;
 	int			place;
 
 	i = 0;
 	j = 0;
+	c = 0;
 	pr = *b;
+	place = 0;
 	pr_a = *a;
-	while (*b)
+	while ((*b)->next)
 	{
 		pr = *b;
 		pr_a = *a;
@@ -229,6 +228,7 @@ void	sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		i = detect_index(b, best);
 		while (pr->content != best)
 		{
+			c++;
 			if ((min_is(i, b_data->length - i)) == i - 1)
 				executeRAB(b);
 			else
@@ -237,6 +237,7 @@ void	sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		j = detect_index(a, place);
 		while (pr_a->content != place)
 		{
+			c++;
 			if ((min_is(j, a_data->length - j)) == j - 1)
 				executeRRAB(a, a_data->length);
 			else
@@ -244,10 +245,12 @@ void	sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 			pr_a = *a;
 		}
 		executePA(a, b);
+		c++;
 		a_data->length++;
 		pr_a = *a;
 		b_data->length--;
 	}
+	return (c);
 }
 
 int		main(int ac, char **av)
@@ -264,14 +267,29 @@ int		main(int ac, char **av)
     if (!save_stack(ac, av, res_lst))
         return (0);
 	a_stack.length = ac - 1;
-//	ft_printf("%d\n", a_stack.length);
 	b_stack.length = 0;
 	i = free_a(&res_lst, &b, &a_stack, &b_stack);
 //	i += mk_easy_sort(&res_lst, 3);
-//	sorting(&res_lst, &b, &a_stack, &b_stack);
-	ft_printf("%d\n", res_lst->content);
-	ft_printf("%d\n", res_lst->next->content);
-	ft_printf("%d\n", res_lst->next->next->content);
+//	i += sorting(&res_lst, &b, &a_stack, &b_stack);
+//	while (!lst_sorted_ac(res_lst))
+//	{
+//		executeRRAB(&res_lst, a_stack.length);
+//		i++;
+//	}
+//	ft_printf("%d\n", a_stack.min);
+
+	while (b->next)
+	{
+		ft_printf("%d\n", b->content);
+		b = b->next;
+	}
+	ft_printf("%d\n", b->content);
+
+	//ft_printf("%d\n", i);
+//	ft_printf("%d\n", res_lst->content);
+//	ft_printf("%d\n", res_lst->next->content);
+//	ft_printf("%d\n", res_lst->next->next->content);
 //	ft_printf("%d\n\n", a_length);
 //	ft_printf("%d\n\n", b_length);
+	return (0);
 }

@@ -13,23 +13,26 @@ int		executeSAB(t_list_arr **res_lst, int elemNum)
 	{
 		tmp = (nb_list_at(a, 0)->content);
 		nb_list_at(a, 0)->content = nb_list_at(a, 1)->content;
-			nb_list_at(a, 1)->content = tmp;
+		nb_list_at(a, 1)->content = tmp;
 	}
 	return (1);
 }
 
 void	executePA(t_list_arr **a, t_list_arr **b)
 {
-	t_list_arr	*new_item;
-	t_list_arr	*new_b;
-	t_list_arr	*next;
+	t_list_arr *new_item;
+	t_list_arr *new_a;
+	t_list_arr *next;
 
-	new_b = *b;
-	next = nb_list_at(new_b, 1);
-	new_item = create_nb_elem((*b)->content, a);
-	new_item->next = *a;
+	new_a = *b;
+	next = nb_list_at(new_a, 1);
+	new_item = nb_lstnew();
+	new_item->content = (*b)->content;
+	new_item->next = NULL;
+	if (*a)
+		new_item->next = *a;
 	*a = new_item;
-	free(new_b);
+	free(new_a);
 	*b = next;
 }
 
@@ -41,8 +44,10 @@ void	executePB(t_list_arr **a, t_list_arr **b)
 
 	new_a = *a;
 	next = nb_list_at(new_a, 1);
-	new_item = create_nb_elem((*a)->content, b);
-	if ((*b)->content != NULL)
+	new_item = nb_lstnew();
+	new_item->content = (*a)->content;
+	new_item->next = NULL;
+	if (*b)
 		new_item->next = *b;
 	*b = new_item;
 	free(new_a);
@@ -52,13 +57,13 @@ void	executePB(t_list_arr **a, t_list_arr **b)
 void	executeRAB(t_list_arr **a)
 {
 	t_list_arr	*new_item;
-	t_list_arr	*tmpl;
+	int 		tmp;
 
 	new_item = (*a)->next;
-	tmpl = nb_lstnew((*a)->content);
+	tmp = (*a)->content;
 	free(*a);
 	*a = new_item;
-	nb_push_back(a, tmpl);
+	nb_push_back(a, tmp);
 }
 
 void	executeSSRR(t_list_arr **a, t_list_arr **b, int a_length, int b_length)
