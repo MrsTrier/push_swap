@@ -91,6 +91,9 @@
 		<Unit filename="/Users/romancheremin/CLionProjects/push_swap_l/execute_rest.c">
 			<Option target="push_swap_l"/>
 		</Unit>
+		<Unit filename="/Users/romancheremin/CLionProjects/push_swap_l/generaye_sample.c">
+			<Option target="push_swap_l"/>
+		</Unit>
 		<Unit filename="/Users/romancheremin/CLionProjects/push_swap_l/get_next_line.c">
 			<Option target="push_swap_l"/>
 		</Unit>

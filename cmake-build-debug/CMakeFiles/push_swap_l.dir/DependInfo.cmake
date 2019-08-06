@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/romancheremin/CLionProjects/push_swap_l/checker.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/checker.c.o"
   "/Users/romancheremin/CLionProjects/push_swap_l/execute_rest.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/execute_rest.c.o"
+  "/Users/romancheremin/CLionProjects/push_swap_l/generaye_sample.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/generaye_sample.c.o"
   "/Users/romancheremin/CLionProjects/push_swap_l/get_next_line.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/get_next_line.c.o"
   "/Users/romancheremin/CLionProjects/push_swap_l/heap_sort.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/heap_sort.c.o"
   "/Users/romancheremin/CLionProjects/push_swap_l/lst_arr_functions.c" "/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o"

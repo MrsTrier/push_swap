@@ -99,6 +99,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.o"
   "CMakeFiles/push_swap_l.dir/checker.c.o"
   "CMakeFiles/push_swap_l.dir/execute_rest.c.o"
+  "CMakeFiles/push_swap_l.dir/generaye_sample.c.o"
   "CMakeFiles/push_swap_l.dir/get_next_line.c.o"
   "CMakeFiles/push_swap_l.dir/heap_sort.c.o"
   "CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o"

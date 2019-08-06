@@ -1,8 +1,9 @@
 #include "push_swap.h"
+# include "execute.h"
 
-int     *lst_to_arr(t_list *lst, int ac)
+int     *lst_to_arr(t_list_arr *lst, int ac)
 {
-    t_list  *new_item;
+    t_list_arr  *new_item;
     int     *arr;
     int     i;
 
@@ -11,12 +12,13 @@ int     *lst_to_arr(t_list *lst, int ac)
     i = 0;
     new_item = lst;
     arr = (int *)malloc(sizeof(int) * ac);
-    while (new_item)
+    while (new_item->next)
     {
-        arr[i] = ft_atoi(new_item->content);
+        arr[i] = new_item->content;
         new_item = new_item->next;
         i++;
     }
+	arr[i] = new_item->content;
     return (arr);
 }
 
@@ -56,57 +58,47 @@ int     find_max(t_list_arr	*res_lst)
 	return (max);
 }
 
-int		mk_easy_sort(t_list_arr **a, int a_length)
+int		easy(t_list_arr **a, t_stack *a_data)
 {
-	int i = 0;
+	int i;
+	int j;
 
-	if (lst_sorted_ac(*a) && lst_sorted_dec(*a))
-		executeSAB(a, a_length);
-	else
-	{
-		if ((find_min(*a) != ((*a)->content)) && a_length == 3)
-			executeSAB(a, a_length);
-		while (!lst_sorted_ac(*a))
-		{
-			executeRRAB(a, a_length);
-			executeSAB(a, a_length);
-			i += 2;
-		}
-	}
-	return (i);
+	i = detect_index(a, a_data->min);
+	j = detect_index(a, a_data->max);
+	if (i - j == 1 || i - j == -2)
+		return (0);
+	return (1);
+}
+
+int		mk_easy_sort(t_list_arr **a, t_list_arr **b, t_stack *a_data)
+{
+	if (easy(a, a_data))
+		executeSAB(a, b, a_data->length, 1, 0);
+	return (0);
 }
 
 int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
-	t_list_arr	*pr;
-	int			i;
+	int		i;
+	int		j;
 
+	j = a_data->length;
 	i = 0;
-	pr = *a;
-	a_data->min = find_min(*a);
-	a_data->max = find_max(*a);
-	a_data->mdn = ((nb_list_at(*a, (a_data->length / 2) - 1)->content));
 	while (a_data->length != 3)
 	{
-		if ((pr->content != a_data->min) && (pr->content != a_data->max) && (pr->content != a_data->mdn))
+		while (j > 0)
 		{
-			executePB(a, b);
-			i++;
-			b_data->length += 1;
-			if (b_data->length >= 3) {
-				if ((*b)->content > (*b)->next->content) {
-					executeSAB(b, b_data->length);
-					i++;
-				}
-			}
-			a_data->length -= 1;
-		}
-		else
-		{
-			executeRAB(a);
+			if (((*a)->content != a_data->min) && ((*a)->content != a_data->max) && ((*a)->content != a_data->mdn))
+				((*a)->content < a_data->mdn) ? executeRAB(a, b, 1, 0) : executePB(a, b, a_data, b_data);
+			else
+				executeRAB(a, b, 1, 0);
+			j--;
 			i++;
 		}
-		pr = *a;
+		(((*a)->content != a_data->min) && ((*a)->content != a_data->max) &&
+			((*a)->content != a_data->mdn)) ?
+			executePB(a, b, a_data, b_data) : executeRAB(a, b, 1, 0);
+		i++;
 	}
 	return (i);
 }
@@ -122,7 +114,7 @@ int 	min_is(int up, int bottom)
 int		detect_index(t_list_arr **a, int place)
 {
 	t_list_arr	*pr;
-	int		i;
+	int			i;
 
 	pr = *a;
 	i = 1;
@@ -134,22 +126,21 @@ int		detect_index(t_list_arr **a, int place)
 	return (i);
 }
 
-int		calculate_comands(t_list_arr **a, int place, int b, int a_length)
+int		calculate_comands(t_list_arr **a, t_cmnd *cmnd, int b, int a_length)
 {
-	t_list_arr	*pr;
 	int			i;
-	int			trns;
+	int			trns_to_place;
 
-	i = 1;
-	trns = 0;
-	pr = *a;
-	while (pr->content != place)
+	i = detect_index(a, cmnd->place);
+	trns_to_place = min_is(i, a_length - i);
+	if (trns_to_place + b < cmnd->c)
 	{
-		i++;
-		pr = pr->next;
+		cmnd->c = trns_to_place + b;
+		cmnd->b = b;
+		cmnd->a = cmnd->c - cmnd->b;
+		return (1);
 	}
-	trns = min_is(i, a_length - i);
-	return (trns + b);
+	return (0);
 }
 
 int		find_place(t_list_arr **a, int b, t_stack *a_data)
@@ -173,123 +164,233 @@ int		find_place(t_list_arr **a, int b, t_stack *a_data)
 	return (place);
 }
 
-int		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data, int *place)
+t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_list_arr	*pr;
-	int		i;
-	int		curr;
-	int		comands;
-	int		best;
-	int		best_place;
+	t_cmnd		cmnd;
+	int			i;
+	int			best_place;
 
 	i = 1;
-	comands = 100000000000000;
-	curr = 0;
+	cmnd.c = 100000000000000;
 	pr = *b;
-	best = 0;
 	best_place = 0;
-	while (pr->next)
+	while (pr)
 	{
-		*place = find_place(a, pr->content, a_data);
-		if (comands > (curr = calculate_comands(a, *place, min_is(i, b_data->length - i), a_data->length)))
+		cmnd.place = find_place(a, pr->content, a_data);
+		if (calculate_comands(a, &cmnd, min_is(i, b_data->length - i), a_data->length))
 		{
-			best = pr->content;
-			comands = curr;
-			best_place = *place;
+			cmnd.best = pr->content;
+			best_place = cmnd.place;
 		}
 		i++;
 		pr = pr->next;
 	}
-	*place = best_place;
-	return (best);
+	cmnd.place = best_place;
+	return (cmnd);
 }
 
-int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+int 	switch_to(t_list_arr **a, t_list_arr **b, t_stack *data, int nb, int a_or_b)
 {
-	t_list_arr	*pr;
-	t_list_arr	*pr_a;
-	int			i;
-	int 		j;
-	int 		c;
-	int			best;
-	int			place;
+	int c;
+	int i;
 
-	i = 0;
-	j = 0;
 	c = 0;
-	pr = *b;
-	place = 0;
-	pr_a = *a;
-	while ((*b)->next)
+	i = detect_index(a_or_b ? a : b, nb);
+	while (a_or_b ? (*a)->content != nb : (*b)->content != nb)
 	{
-		pr = *b;
-		pr_a = *a;
-		best = choose_best(a, b, a_data, b_data, &place);
-		i = detect_index(b, best);
-		while (pr->content != best)
-		{
-			c++;
-			if ((min_is(i, b_data->length - i)) == i - 1)
-				executeRAB(b);
-			else
-				executeRRAB(b, b_data->length);
-		}
-		j = detect_index(a, place);
-		while (pr_a->content != place)
-		{
-			c++;
-			if ((min_is(j, a_data->length - j)) == j - 1)
-				executeRRAB(a, a_data->length);
-			else
-				executeRAB(a);
-			pr_a = *a;
-		}
-		executePA(a, b);
 		c++;
-		a_data->length++;
-		pr_a = *a;
-		b_data->length--;
+		if ((min_is(i, data->length - i)) == i - 1)
+			executeRAB(a, b, a_or_b, 0);
+		else if (a_or_b)
+			executeRRA(a, b, data->length);
+		else
+			executeRRB(a, b, data->length);
 	}
 	return (c);
 }
 
-int		main(int ac, char **av)
+int		optimazation(t_list_arr **a, t_list_arr **b, t_cmnd cmnd, t_stack *data)
 {
-    t_list_arr	*res_lst;
-    t_list_arr	*b;
+	int c;
+
+	c = 0;
+	while ((*a)->content != cmnd.place && (*b)->content != cmnd.best)
+	{
+		if ((min_is(cmnd.a, data->length - cmnd.a)) == cmnd.a - 1)
+		{
+			executeSSRR(a, b, data, 1);
+			c++;
+		}
+		else
+		{
+			executeRRR(a, data->length, b, data->tot_len - data->length);
+			c++;
+		}
+	}
+	return (c);
+}
+
+int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+{
+	t_cmnd		cmnd;
+	int 		c;
+
+	c = 0;
+	while (*b)
+	{
+		cmnd = choose_best(a, b, a_data, b_data);
+//		if ((cmnd.b >= cmnd.a && cmnd.a > 0) || (cmnd.a >= cmnd.b && cmnd.b > 0))
+//			c += optimazation(a, b, cmnd, a_data);
+		c += switch_to(a, b, b_data, cmnd.best, 0);
+		c += switch_to(a, b, a_data, cmnd.place, 1);
+		executePA(a, b, a_data, b_data);
+		c++;
+	}
+	return (c);
+}
+
+void	fill_data(t_list_arr *a, int ac, t_stack *a_data, int i)
+{
+	int			*arr;
+
+	arr = lst_to_arr(a, ac - 1 - i);
+	a_data->length = ac - 1 - i;
+	a_data->tot_len = a_data->length;
+	a_data->min = find_min(a);
+	a_data->max = find_max(a);
+	heap_sort(ac - 1 - i, &arr);
+	a_data->mdn = arr[(a_data->length / 2)];
+	free(arr);
+}
+
+int 	read_input(int ac, char **av, unsigned *res)
+{
+	int			fd;
+	int			i;
+
+	fd = -1;
+	i = 1;
+	*res = 0;
+	while (i < 3)
+	{
+		if (!is_int(av[i]))
+		{
+			if (ft_strcmp("-c", av[i]) == 0)
+				*res |= COLOR_FLAG;
+			else if (ft_strcmp("-v", av[i]) == 0)
+				*res |= VISUALIZE_FLAG;
+			else if ((fd = open(av[i], O_RDONLY)) != -1)
+				*res |= READFILE_FLAG;
+			else
+				return (-2);
+		}
+		i++;
+	}
+	return (fd);
+}
+
+void		free_lst_arr(t_list_arr *lst)
+{
+	t_list_arr	*tmp;
+
+	while (lst)
+	{
+		tmp = lst->next;
+		free(lst->content);
+		free(lst);
+		lst = tmp;
+	}
+}
+
+int 	algorithm(int ac, char **av, unsigned flag, int *i)
+{
+	t_list_arr	*res_lst;
+	t_list_arr	*b;
 	t_stack		b_stack;
 	t_stack		a_stack;
-    int			i;
+	int 		j;
 
-    i = 0;
-    res_lst = nb_lstnew();
-    b = nb_lstnew();
-    if (!save_stack(ac, av, res_lst))
-        return (0);
-	a_stack.length = ac - 1;
+	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
+	j = (flag & READFILE_FLAG) ? 0 : j;
+	res_lst = nb_lstnew();
+	b = nb_lstnew();
+	res_lst->flag = flag;
+	b->flag = flag;
 	b_stack.length = 0;
-	i = free_a(&res_lst, &b, &a_stack, &b_stack);
-//	i += mk_easy_sort(&res_lst, 3);
-//	i += sorting(&res_lst, &b, &a_stack, &b_stack);
-//	while (!lst_sorted_ac(res_lst))
-//	{
-//		executeRRAB(&res_lst, a_stack.length);
-//		i++;
-//	}
-//	ft_printf("%d\n", a_stack.min);
-
-	while (b->next)
+	if (!save_stack(ac, av, res_lst, j))
+		return (write(2, "Error\n", 6));
+	fill_data(res_lst, ac, &a_stack, j);
+	if (!lst_sorted_ac(res_lst))
 	{
-		ft_printf("%d\n", b->content);
-		b = b->next;
+		*i = free_a(&res_lst, &b, &a_stack, &b_stack);
+		*i += mk_easy_sort(&res_lst, &b, &a_stack);
+		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
+		while (!lst_sorted_ac(res_lst))
+		{
+			executeRRA(&res_lst, &b, a_stack.length);
+			*i += 1;
+		}
 	}
-	ft_printf("%d\n", b->content);
-
-	//ft_printf("%d\n", i);
+//	while (res_lst->next)
+//	{
+//		ft_printf("%d\n", res_lst->content);
+//		res_lst = res_lst->next;
+//	}
 //	ft_printf("%d\n", res_lst->content);
-//	ft_printf("%d\n", res_lst->next->content);
-//	ft_printf("%d\n", res_lst->next->next->content);
-//	ft_printf("%d\n\n", a_length);
-//	ft_printf("%d\n\n", b_length);
+//	free_lst_arr(res_lst);
+//	free_lst_arr(b);
+}
+
+int 	count_wrds(char **sp_line)
+{
+	int 	wrds;
+
+	wrds = 1;
+	while (sp_line[wrds] != NULL)
+		wrds++;
+	return (wrds);
+}
+
+int		main(int ac, char **av)
+{
+    int			i;
+	int			k;
+	int			fd;
+	char 		*line;
+	char 		**sp_line;
+	unsigned	res;
+
+	i = 0;
+	k = 0;
+	if ((fd = read_input(ac, av, &res)) == -2)
+		return (write(2, "Error\n", 6));
+	if (!(res & READFILE_FLAG))
+		algorithm(ac, av, res, &i);
+	else
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break;
+			sp_line = ft_strsplit(ft_strjoin("0 ", line), ' ');
+			ac = count_wrds(sp_line);
+			algorithm(ac, sp_line, res, &i);
+			if (i > 12)
+			{
+				ft_printf("i>12 : %d\n", i);
+				k++;
+			}
+			else
+				ft_printf("i : %d\n", i);
+			while (ac != -1)
+			{
+				free(sp_line[ac]);
+				ac--;
+			}
+			free(line);
+		}
+	}
+	ft_printf("k : %d\n", k);
 	return (0);
 }

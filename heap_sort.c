@@ -39,21 +39,15 @@ void    heapify(int max, int **stack)
     }
 }
 
-void    heap_sort(int max, int *stack)
+void    heap_sort(int max, int **stack)
 {
     int     i;
 
     i = (max / 2) - 1;
     while (i >= 0)
     {
-        build_max_heap(&stack, i, max);
+        build_max_heap(stack, i, max);
         i--;
     }
-    heapify(max - 1, &stack);
-    i =0;
-    while (i < max)
-    {
-        ft_printf("%d\n", stack[i]);
-        i++;
-    }
+    heapify(max - 1, stack);
 }

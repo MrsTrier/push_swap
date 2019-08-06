@@ -177,6 +177,33 @@ execute_rest.c.s:
 	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/execute_rest.c.s
 .PHONY : execute_rest.c.s
 
+generaye_sample.o: generaye_sample.c.o
+
+.PHONY : generaye_sample.o
+
+# target to build an object file
+generaye_sample.c.o:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/generaye_sample.c.o
+.PHONY : generaye_sample.c.o
+
+generaye_sample.i: generaye_sample.c.i
+
+.PHONY : generaye_sample.i
+
+# target to preprocess a source file
+generaye_sample.c.i:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/generaye_sample.c.i
+.PHONY : generaye_sample.c.i
+
+generaye_sample.s: generaye_sample.c.s
+
+.PHONY : generaye_sample.s
+
+# target to generate assembly for a file
+generaye_sample.c.s:
+	$(MAKE) -f CMakeFiles/push_swap_l.dir/build.make CMakeFiles/push_swap_l.dir/generaye_sample.c.s
+.PHONY : generaye_sample.c.s
+
 get_next_line.o: get_next_line.c.o
 
 .PHONY : get_next_line.o
@@ -3027,6 +3054,9 @@ help:
 	@echo "... execute_rest.o"
 	@echo "... execute_rest.i"
 	@echo "... execute_rest.s"
+	@echo "... generaye_sample.o"
+	@echo "... generaye_sample.i"
+	@echo "... generaye_sample.s"
 	@echo "... get_next_line.o"
 	@echo "... get_next_line.i"
 	@echo "... get_next_line.s"

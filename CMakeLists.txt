@@ -116,6 +116,7 @@ add_executable(push_swap_l
         checker.c
         checker.h
         execute_rest.c
+        generaye_sample.c
         get_next_line.c
         heap_sort.c
         lst_arr_functions.c

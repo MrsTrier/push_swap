@@ -2,6 +2,42 @@
 #include "checker.h"
 #include "push_swap.h"
 
+
+void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd)
+{
+	t_list_arr	*pr_a;
+	t_list_arr	*pr_b;
+	int 		i;
+
+	i = 0;
+	pr_a = *a;
+	pr_b = *b;
+	ft_printf("    № |   A %-20s%|   B %-20s\n", "STACK", "STACK");
+	ft_printf("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+	while (pr_a && pr_b)
+	{
+		ft_printf("%5d |   %-22d |   %-22d \n", i, pr_a->content, pr_b->content);
+		pr_a = pr_a->next;
+		pr_b = pr_b->next;
+		i++;
+	}
+	while (pr_a)
+	{
+		ft_printf("%5d |   %-22d |   %-22s \n", i, pr_a->content, "(null)");
+		pr_a = pr_a->next;
+		i++;
+	}
+	while (pr_b)
+	{
+		ft_printf("%5d |   %-22s |   %-22d \n", i, "(null)", pr_b->content);
+		pr_b = pr_b->next;
+		i++;
+	}
+	ft_printf("Last command %s\n", cmnd);
+//	ft_printf("\033[0;35m Last command \033[0m%s\n", cmnd);
+	ft_printf("=============================================================\n");
+}
+
 int 	valid(char *line)
 {
 	if ((ft_strcmp(line, "sa") == 0) || (ft_strcmp(line, "sb") == 0) ||
@@ -14,7 +50,7 @@ int 	valid(char *line)
 	return (0);
 }
 
-int 	*any_double(char **av, int ac)
+int 	*any_double(char **av, int ac, int flag)
 {
 	int		i;
 	int		j;
@@ -22,22 +58,22 @@ int 	*any_double(char **av, int ac)
 	int     *arr;
 
 
-	i = 1;
-	j = 1;
-	arr = (int *)malloc(sizeof(int) * ac);
+	i = 1 + flag;
+	j = 1 + flag;
+	arr = (int *)malloc(sizeof(int) * (ac - 1 - flag));
 	while (i < ac)
 	{
 		if (!is_int(av[i]))
 			return (NULL);
-		arr[i - 1] = ft_atoi(av[i]);
-		while (j < ac)
+		arr[i - 1 - flag] = ft_atoi(av[i]);
+		while (j < ac - flag)
 		{
-			if ((ft_atoi(av[j]) == arr[i - 1]) && (j != i))
+			if ((ft_atoi(av[j]) == arr[i - 1 - flag]) && (j != i))
 				return (NULL);
 			j++;
 		}
 		i++;
-		j = 1;
+		j = 1 + flag;
 	}
 	return (arr);
 }
@@ -47,7 +83,7 @@ void	put_string(t_list *elem)
 	ft_printf(elem->content);
 }
 
-int		save_stack(int ac, char **av, t_list_arr *res_lst)
+int		save_stack(int ac, char **av, t_list_arr *res_lst, int flag)
 {
     int			i;
     t_list_arr	*stack;
@@ -57,13 +93,13 @@ int		save_stack(int ac, char **av, t_list_arr *res_lst)
     stack = res_lst;
     if (ac < 2)
         return (0);
-	if ((arr = any_double(av, ac)) == NULL)
+	if ((arr = any_double(av, ac, flag)) == NULL)
 		return (write(2, "Error\n", 6));
-    while (i < ac)
+    while (i < ac - flag)
     {
-        create_nb_elem(arr[i - 1], &stack);
+        create_nb_elem(arr[i - 1], &stack, i);
         i++;
     }
-    //Очистить arr[]!!!!
+    free(arr);
     return (1);
 }

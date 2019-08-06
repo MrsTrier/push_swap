@@ -17,6 +17,8 @@ ft_printf.h
 ../include/execute.h
 libft.h
 ../include/libft.h
+push_swap.h
+../include/push_swap.h
 
 ../include/float_to_str.h
 
@@ -53,6 +55,8 @@ limits.h
 /Users/romancheremin/CLionProjects/push_swap_l/push_swap.c
 push_swap.h
 /Users/romancheremin/CLionProjects/push_swap_l/push_swap.h
+execute.h
+/Users/romancheremin/CLionProjects/push_swap_l/execute.h
 
 /Users/romancheremin/CLionProjects/push_swap_l/push_swap.h
 stdarg.h
@@ -75,8 +79,6 @@ float_to_str.h
 /Users/romancheremin/CLionProjects/push_swap_l/float_to_str.h
 floats.h
 /Users/romancheremin/CLionProjects/push_swap_l/floats.h
-execute.h
-/Users/romancheremin/CLionProjects/push_swap_l/execute.h
 get_next_line.h
 /Users/romancheremin/CLionProjects/push_swap_l/get_next_line.h
 

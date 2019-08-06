@@ -1,24 +1,26 @@
 #include "execute.h"
 #include "push_swap.h"
 
-int		executeSAB(t_list_arr **res_lst, int elemNum)
+int		executeSAB(t_list_arr **a, t_list_arr **b, int elemNum, int a_or_b, int ss)
 {
-	t_list_arr	*a;
+	t_list_arr	*pr_a;
 	int			tmp;
 
-	a = *res_lst;
+	pr_a = a_or_b ? *a : *b;
 	if (elemNum <= 2)
 		return (0);
 	else
 	{
-		tmp = (nb_list_at(a, 0)->content);
-		nb_list_at(a, 0)->content = nb_list_at(a, 1)->content;
-		nb_list_at(a, 1)->content = tmp;
+		tmp = (nb_list_at(pr_a, 0)->content);
+		nb_list_at(pr_a, 0)->content = nb_list_at(pr_a, 1)->content;
+		nb_list_at(pr_a, 1)->content = tmp;
 	}
+	if (((*a)->flag & VISUALIZE_FLAG) && ss == 0)
+		visualize(a, b, a_or_b ? SA : SB);
 	return (1);
 }
 
-void	executePA(t_list_arr **a, t_list_arr **b)
+void	executePA(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_list_arr *new_item;
 	t_list_arr *new_a;
@@ -29,14 +31,17 @@ void	executePA(t_list_arr **a, t_list_arr **b)
 	new_item = nb_lstnew();
 	new_item->content = (*b)->content;
 	new_item->next = NULL;
-	if (*a)
-		new_item->next = *a;
+	new_item->next = *a;
 	*a = new_item;
 	free(new_a);
 	*b = next;
+	a_data->length++;
+	b_data->length--;
+	if ((*a)->flag & VISUALIZE_FLAG)
+		visualize(a, b, PA);
 }
 
-void	executePB(t_list_arr **a, t_list_arr **b)
+void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_list_arr *new_item;
 	t_list_arr *new_a;
@@ -47,33 +52,51 @@ void	executePB(t_list_arr **a, t_list_arr **b)
 	new_item = nb_lstnew();
 	new_item->content = (*a)->content;
 	new_item->next = NULL;
-	if (*b)
+	if (b_data->length != 0)
 		new_item->next = *b;
 	*b = new_item;
 	free(new_a);
 	*a = next;
+	b_data->length++;
+	a_data->length--;
+	if ((*a)->flag & VISUALIZE_FLAG)
+		visualize(a, b, PB);
 }
 
-void	executeRAB(t_list_arr **a)
+void	executeRAB(t_list_arr **a, t_list_arr **b, int a_or_b, int rr)
 {
 	t_list_arr	*new_item;
 	int 		tmp;
 
-	new_item = (*a)->next;
-	tmp = (*a)->content;
-	free(*a);
-	*a = new_item;
-	nb_push_back(a, tmp);
+	new_item = a_or_b ? (*a)->next : (*b)->next;
+	tmp = a_or_b ? (*a)->content : (*b)->content;
+	a_or_b ? free(*a) : free(*b);
+	if (a_or_b)
+		*a = new_item;
+	else
+		*b = new_item;
+	nb_push_back(a_or_b ? a : b, tmp);
+//	if ((*a)->flag & COLOR_FLAG)
+//		visualize_color(a, b, a_or_b ? "ra" : "rb");
+	if (((*a)->flag & VISUALIZE_FLAG) && rr == 0)
+		visualize(a, b, a_or_b ? RA : RB);
 }
 
-void	executeSSRR(t_list_arr **a, t_list_arr **b, int a_length, int b_length)
+void	executeSSRR(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rr)
 {
-	if (a_length == 0 && b_length == 0)
+	int b_length;
+
+	b_length = a_data->tot_len - a_data->length;
+	if (rr)
 	{
-		executeRAB(a);
-		executeRAB(b);
-		return ;
+		executeRAB(a, b, 1, 1);
+		executeRAB(a, b, 0, 1);
 	}
-	executeSAB(a, a_length);
-	executeSAB(b, b_length);
+	else
+	{
+		executeSAB(a, b, a_data->length, 1, 1);
+		executeSAB(a, b, b_length, 0, 1);
+	}
+	if ((*a)->flag & VISUALIZE_FLAG)
+		visualize(a, b, rr ? RR : SS);
 }

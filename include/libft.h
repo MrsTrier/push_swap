@@ -34,6 +34,7 @@ typedef struct		s_list_arr
 {
     int 			    content;
     struct s_list_arr	*next;
+	unsigned 			flag;
 }					t_list_arr;
 
 void				*ft_memalloc(size_t size);

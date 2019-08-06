@@ -1357,9 +1357,22 @@ CMakeFiles/push_swap_l.dir/execute_rest.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap_l.dir/execute_rest.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/romancheremin/CLionProjects/push_swap_l/execute_rest.c -o CMakeFiles/push_swap_l.dir/execute_rest.c.s
 
+CMakeFiles/push_swap_l.dir/generaye_sample.c.o: CMakeFiles/push_swap_l.dir/flags.make
+CMakeFiles/push_swap_l.dir/generaye_sample.c.o: ../generaye_sample.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/push_swap_l.dir/generaye_sample.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/generaye_sample.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/generaye_sample.c
+
+CMakeFiles/push_swap_l.dir/generaye_sample.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push_swap_l.dir/generaye_sample.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/romancheremin/CLionProjects/push_swap_l/generaye_sample.c > CMakeFiles/push_swap_l.dir/generaye_sample.c.i
+
+CMakeFiles/push_swap_l.dir/generaye_sample.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push_swap_l.dir/generaye_sample.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/romancheremin/CLionProjects/push_swap_l/generaye_sample.c -o CMakeFiles/push_swap_l.dir/generaye_sample.c.s
+
 CMakeFiles/push_swap_l.dir/get_next_line.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/get_next_line.c.o: ../get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/push_swap_l.dir/get_next_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/push_swap_l.dir/get_next_line.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/get_next_line.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/get_next_line.c
 
 CMakeFiles/push_swap_l.dir/get_next_line.c.i: cmake_force
@@ -1372,7 +1385,7 @@ CMakeFiles/push_swap_l.dir/get_next_line.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/heap_sort.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/heap_sort.c.o: ../heap_sort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/push_swap_l.dir/heap_sort.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/push_swap_l.dir/heap_sort.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/heap_sort.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/heap_sort.c
 
 CMakeFiles/push_swap_l.dir/heap_sort.c.i: cmake_force
@@ -1385,7 +1398,7 @@ CMakeFiles/push_swap_l.dir/heap_sort.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o: ../lst_arr_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/lst_arr_functions.c
 
 CMakeFiles/push_swap_l.dir/lst_arr_functions.c.i: cmake_force
@@ -1398,7 +1411,7 @@ CMakeFiles/push_swap_l.dir/lst_arr_functions.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/nb_execute.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/nb_execute.c.o: ../nb_execute.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/push_swap_l.dir/nb_execute.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/push_swap_l.dir/nb_execute.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/nb_execute.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/nb_execute.c
 
 CMakeFiles/push_swap_l.dir/nb_execute.c.i: cmake_force
@@ -1411,7 +1424,7 @@ CMakeFiles/push_swap_l.dir/nb_execute.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/nb_lst.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/nb_lst.c.o: ../nb_lst.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/push_swap_l.dir/nb_lst.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/push_swap_l.dir/nb_lst.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/nb_lst.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/nb_lst.c
 
 CMakeFiles/push_swap_l.dir/nb_lst.c.i: cmake_force
@@ -1424,7 +1437,7 @@ CMakeFiles/push_swap_l.dir/nb_lst.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/push_swap.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/push_swap.c.o: ../push_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/push_swap_l.dir/push_swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/push_swap_l.dir/push_swap.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/push_swap.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/push_swap.c
 
 CMakeFiles/push_swap_l.dir/push_swap.c.i: cmake_force
@@ -1437,7 +1450,7 @@ CMakeFiles/push_swap_l.dir/push_swap.c.s: cmake_force
 
 CMakeFiles/push_swap_l.dir/validation.c.o: CMakeFiles/push_swap_l.dir/flags.make
 CMakeFiles/push_swap_l.dir/validation.c.o: ../validation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/push_swap_l.dir/validation.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/push_swap_l.dir/validation.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push_swap_l.dir/validation.c.o   -c /Users/romancheremin/CLionProjects/push_swap_l/validation.c
 
 CMakeFiles/push_swap_l.dir/validation.c.i: cmake_force
@@ -1550,6 +1563,7 @@ push_swap_l_OBJECTS = \
 "CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.o" \
 "CMakeFiles/push_swap_l.dir/checker.c.o" \
 "CMakeFiles/push_swap_l.dir/execute_rest.c.o" \
+"CMakeFiles/push_swap_l.dir/generaye_sample.c.o" \
 "CMakeFiles/push_swap_l.dir/get_next_line.c.o" \
 "CMakeFiles/push_swap_l.dir/heap_sort.c.o" \
 "CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o" \
@@ -1661,6 +1675,7 @@ push_swap_l: CMakeFiles/push_swap_l.dir/src/string/ft_realloc.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/src/string/ft_strappend.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/checker.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/execute_rest.c.o
+push_swap_l: CMakeFiles/push_swap_l.dir/generaye_sample.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/get_next_line.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/heap_sort.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/lst_arr_functions.c.o
@@ -1670,7 +1685,7 @@ push_swap_l: CMakeFiles/push_swap_l.dir/push_swap.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/validation.c.o
 push_swap_l: CMakeFiles/push_swap_l.dir/build.make
 push_swap_l: CMakeFiles/push_swap_l.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable push_swap_l"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/romancheremin/CLionProjects/push_swap_l/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Linking C executable push_swap_l"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/push_swap_l.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
