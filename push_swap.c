@@ -1,26 +1,7 @@
 #include "push_swap.h"
 # include "execute.h"
 
-int     *lst_to_arr(t_list_arr *lst, int ac)
-{
-    t_list_arr  *new_item;
-    int     *arr;
-    int     i;
 
-    if (!lst)
-        return (NULL);
-    i = 0;
-    new_item = lst;
-    arr = (int *)malloc(sizeof(int) * ac);
-    while (new_item->next)
-    {
-        arr[i] = new_item->content;
-        new_item = new_item->next;
-        i++;
-    }
-	arr[i] = new_item->content;
-    return (arr);
-}
 
 int     find_min(t_list_arr *res_lst)
 {
@@ -72,9 +53,15 @@ int		easy(t_list_arr **a, t_stack *a_data)
 
 int		mk_easy_sort(t_list_arr **a, t_list_arr **b, t_stack *a_data)
 {
+    int i;
+
+    i = 0;
 	if (easy(a, a_data))
-		executeSAB(a, b, a_data->length, 1, 0);
-	return (0);
+	{
+        executeSAB(a, b, a_data->length, 1, 0);
+        i++;
+	}
+	return (i);
 }
 
 int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
@@ -109,21 +96,6 @@ int 	min_is(int up, int bottom)
 		return (up - 1);
 	else
 		return (bottom + 1);
-}
-
-int		detect_index(t_list_arr **a, int place)
-{
-	t_list_arr	*pr;
-	int			i;
-
-	pr = *a;
-	i = 1;
-	while (pr->content != place)
-	{
-		i++;
-		pr = pr->next;
-	}
-	return (i);
 }
 
 int		calculate_comands(t_list_arr **a, t_cmnd *cmnd, int b, int a_length)
@@ -203,9 +175,9 @@ int 	switch_to(t_list_arr **a, t_list_arr **b, t_stack *data, int nb, int a_or_b
 		if ((min_is(i, data->length - i)) == i - 1)
 			executeRAB(a, b, a_or_b, 0);
 		else if (a_or_b)
-			executeRRA(a, b, data->length);
+			executeRRA(a, b, data->length, 1);
 		else
-			executeRRB(a, b, data->length);
+			executeRRB(a, b, data->length, 1);
 	}
 	return (c);
 }
@@ -272,7 +244,7 @@ int 	read_input(int ac, char **av, unsigned *res)
 	fd = -1;
 	i = 1;
 	*res = 0;
-	while (i < 3)
+	while (ac > 2 ? i < 3 : i < 2)
 	{
 		if (!is_int(av[i]))
 		{
@@ -287,21 +259,11 @@ int 	read_input(int ac, char **av, unsigned *res)
 		}
 		i++;
 	}
+	ft_printf("res%u\n");
 	return (fd);
 }
 
-void		free_lst_arr(t_list_arr *lst)
-{
-	t_list_arr	*tmp;
 
-	while (lst)
-	{
-		tmp = lst->next;
-		free(lst->content);
-		free(lst);
-		lst = tmp;
-	}
-}
 
 int 	algorithm(int ac, char **av, unsigned flag, int *i)
 {
@@ -328,7 +290,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
 		while (!lst_sorted_ac(res_lst))
 		{
-			executeRRA(&res_lst, &b, a_stack.length);
+			executeRRA(&res_lst, &b, a_stack.length, 1);
 			*i += 1;
 		}
 	}
@@ -338,8 +300,8 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 //		res_lst = res_lst->next;
 //	}
 //	ft_printf("%d\n", res_lst->content);
-//	free_lst_arr(res_lst);
-//	free_lst_arr(b);
+	free_lst_arr(res_lst);
+	free_lst_arr(b);
 }
 
 int 	count_wrds(char **sp_line)
@@ -360,6 +322,7 @@ int		main(int ac, char **av)
 	char 		*line;
 	char 		**sp_line;
 	unsigned	res;
+	char        *tmp;
 
 	i = 0;
 	k = 0;
@@ -373,7 +336,7 @@ int		main(int ac, char **av)
 		{
 			if (!*line)
 				break;
-			sp_line = ft_strsplit(ft_strjoin("0 ", line), ' ');
+			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
 			ac = count_wrds(sp_line);
 			algorithm(ac, sp_line, res, &i);
 			if (i > 12)
@@ -388,7 +351,9 @@ int		main(int ac, char **av)
 				free(sp_line[ac]);
 				ac--;
 			}
+            free(tmp);
 			free(line);
+			free(sp_line);
 		}
 	}
 	ft_printf("k : %d\n", k);

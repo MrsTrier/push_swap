@@ -92,17 +92,3 @@
 //		return (write(1, "OK\n", 3));
 //	}
 //}
-
-//sa
-//pb
-//pb
-//pb
-//rr
-//rrr
-//sa
-//pa
-//pa
-//pa
-//
-//
-

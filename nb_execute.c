@@ -6,6 +6,7 @@ int		executeSAB(t_list_arr **a, t_list_arr **b, int elemNum, int a_or_b, int ss)
 	t_list_arr	*pr_a;
 	int			tmp;
 
+    ft_printf(a_or_b ? "sa\n" : "sb\n");
 	pr_a = a_or_b ? *a : *b;
 	if (elemNum <= 2)
 		return (0);
@@ -26,6 +27,7 @@ void	executePA(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	t_list_arr *new_a;
 	t_list_arr *next;
 
+    ft_printf("pa\n");
 	new_a = *b;
 	next = nb_list_at(new_a, 1);
 	new_item = nb_lstnew();
@@ -47,6 +49,7 @@ void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	t_list_arr *new_a;
 	t_list_arr *next;
 
+    ft_printf("pb\n");
 	new_a = *a;
 	next = nb_list_at(new_a, 1);
 	new_item = nb_lstnew();
@@ -68,6 +71,8 @@ void	executeRAB(t_list_arr **a, t_list_arr **b, int a_or_b, int rr)
 	t_list_arr	*new_item;
 	int 		tmp;
 
+	if (!rr)
+	    ft_printf(a_or_b ? "ra\n" : "rb\n");
 	new_item = a_or_b ? (*a)->next : (*b)->next;
 	tmp = a_or_b ? (*a)->content : (*b)->content;
 	a_or_b ? free(*a) : free(*b);
@@ -86,6 +91,7 @@ void	executeSSRR(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rr)
 {
 	int b_length;
 
+	ft_printf(rr ? "rr\n" : "ss\n");
 	b_length = a_data->tot_len - a_data->length;
 	if (rr)
 	{
