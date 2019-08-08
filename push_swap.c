@@ -44,8 +44,8 @@ int		easy(t_list_arr **a, t_stack *a_data)
 	int i;
 	int j;
 
-	i = detect_index(a, a_data->min);
-	j = detect_index(a, a_data->max);
+	i = detect_index(a, a_data->min, a_data->length);
+	j = detect_index(a, a_data->max, a_data->length);
 	if (i - j == 1 || i - j == -2)
 		return (0);
 	return (1);
@@ -58,7 +58,7 @@ int		mk_easy_sort(t_list_arr **a, t_list_arr **b, t_stack *a_data)
     i = 0;
 	if (easy(a, a_data))
 	{
-        executeSAB(a, b, a_data->length, 1, 0);
+        executeSA(a, b, a_data, 0);
         i++;
 	}
 	return (i);
@@ -76,15 +76,15 @@ int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		while (j > 0)
 		{
 			if (((*a)->content != a_data->min) && ((*a)->content != a_data->max) && ((*a)->content != a_data->mdn))
-				((*a)->content < a_data->mdn) ? executeRAB(a, b, 1, 0) : executePB(a, b, a_data, b_data);
+				((*a)->content < a_data->mdn) ? executeRA(a, b, 0, a_data) : executePB(a, b, a_data, b_data);
 			else
-				executeRAB(a, b, 1, 0);
+				executeRA(a, b, 0, a_data);
 			j--;
 			i++;
 		}
 		(((*a)->content != a_data->min) && ((*a)->content != a_data->max) &&
 			((*a)->content != a_data->mdn)) ?
-			executePB(a, b, a_data, b_data) : executeRAB(a, b, 1, 0);
+			executePB(a, b, a_data, b_data) : executeRA(a, b, 0, a_data);
 		i++;
 	}
 	return (i);
@@ -103,7 +103,7 @@ int		calculate_comands(t_list_arr **a, t_cmnd *cmnd, int b, int a_length)
 	int			i;
 	int			trns_to_place;
 
-	i = detect_index(a, cmnd->place);
+	i = detect_index(a, cmnd->place, a_length);
 	trns_to_place = min_is(i, a_length - i);
 	if (trns_to_place + b < cmnd->c)
 	{
@@ -162,46 +162,63 @@ t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_
 	return (cmnd);
 }
 
-int 	switch_to(t_list_arr **a, t_list_arr **b, t_stack *data, int nb, int a_or_b)
+
+int 	switch_in_b(t_list_arr **a, t_list_arr **b, t_stack *b_data, int nb)
 {
 	int c;
 	int i;
 
 	c = 0;
-	i = detect_index(a_or_b ? a : b, nb);
-	while (a_or_b ? (*a)->content != nb : (*b)->content != nb)
+	i = detect_index(b, nb, b_data->length);
+	while ((*b)->content != nb)
 	{
 		c++;
-		if ((min_is(i, data->length - i)) == i - 1)
-			executeRAB(a, b, a_or_b, 0);
-		else if (a_or_b)
-			executeRRA(a, b, data->length, 1);
+		if ((min_is(i, b_data->length - i)) == i - 1)
+			executeRB(a, b, b_data, 0);
 		else
-			executeRRB(a, b, data->length, 1);
+			executeRRB(a, b, b_data, 1);
 	}
 	return (c);
 }
 
-int		optimazation(t_list_arr **a, t_list_arr **b, t_cmnd cmnd, t_stack *data)
+int 	switch_in_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, int nb)
 {
 	int c;
+	int i;
 
 	c = 0;
-	while ((*a)->content != cmnd.place && (*b)->content != cmnd.best)
+	i = detect_index(a, nb, a_data->length);
+	while ((*a)->content != nb)
 	{
-		if ((min_is(cmnd.a, data->length - cmnd.a)) == cmnd.a - 1)
-		{
-			executeSSRR(a, b, data, 1);
-			c++;
-		}
+		c++;
+		if ((min_is(i, a_data->length - i)) == i - 1)
+			executeRA(a, b, 0, a_data);
 		else
-		{
-			executeRRR(a, data->length, b, data->tot_len - data->length);
-			c++;
-		}
+			executeRRA(a, b, a_data, 1);
 	}
 	return (c);
 }
+
+//int		optimazation(t_list_arr **a, t_list_arr **b, t_cmnd cmnd, t_stack a_data, t_stack b_data)
+//{
+//	int c;
+//
+//	c = 0;
+//	while ((*a)->content != cmnd.place && (*b)->content != cmnd.best)
+//	{
+//		if ((min_is(cmnd.a, data->length - cmnd.a)) == cmnd.a - 1)
+//		{
+//			executeRR(a, b, data, 1);
+//			c++;
+//		}
+//		else
+//		{
+//			executeRRR(a, data, b, data->tot_len - data->length);
+//			c++;
+//		}
+//	}
+//	return (c);
+//}
 
 int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
@@ -214,8 +231,8 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		cmnd = choose_best(a, b, a_data, b_data);
 //		if ((cmnd.b >= cmnd.a && cmnd.a > 0) || (cmnd.a >= cmnd.b && cmnd.b > 0))
 //			c += optimazation(a, b, cmnd, a_data);
-		c += switch_to(a, b, b_data, cmnd.best, 0);
-		c += switch_to(a, b, a_data, cmnd.place, 1);
+		c += switch_in_b(a, b, b_data, cmnd.best);
+		c += switch_in_a(a, b, a_data, cmnd.place);
 		executePA(a, b, a_data, b_data);
 		c++;
 	}
@@ -259,7 +276,6 @@ int 	read_input(int ac, char **av, unsigned *res)
 		}
 		i++;
 	}
-	ft_printf("res%u\n");
 	return (fd);
 }
 
@@ -277,8 +293,8 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	j = (flag & READFILE_FLAG) ? 0 : j;
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
-	res_lst->flag = flag;
-	b->flag = flag;
+	a_stack.flag = flag;
+	b_stack.flag = flag;
 	b_stack.length = 0;
 	if (!save_stack(ac, av, res_lst, j))
 		return (write(2, "Error\n", 6));
@@ -290,7 +306,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
 		while (!lst_sorted_ac(res_lst))
 		{
-			executeRRA(&res_lst, &b, a_stack.length, 1);
+			executeRRA(&res_lst, &b, &a_stack, 1);
 			*i += 1;
 		}
 	}

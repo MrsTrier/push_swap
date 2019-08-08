@@ -21,7 +21,7 @@ int     *lst_to_arr(t_list_arr *lst, int ac)
 	return (arr);
 }
 
-int		detect_index(t_list_arr **a, int place)
+int		detect_index(t_list_arr **a, int place, int lenght)
 {
 	t_list_arr	*pr;
 	int			i;

@@ -41,6 +41,7 @@ typedef struct		s_stack
 	int				mdn;
 	int				length;
 	int 			tot_len;
+	unsigned		flag;
 
 }					t_stack;
 
@@ -66,7 +67,7 @@ void		nb_push_back(t_list_arr **start, int nb);
 void		heap_sort(int max, int **stack);
 void		visualize(t_list_arr **a, t_list_arr **b, char *cmnd);
 void		free_lst_arr(t_list_arr *lst);
-int			detect_index(t_list_arr **a, int place);
+int			detect_index(t_list_arr **a, int place, int lenght);
 int			*lst_to_arr(t_list_arr *lst, int ac);
 
 #endif
