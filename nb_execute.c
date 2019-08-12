@@ -17,7 +17,7 @@ int		executeSA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int ss)
 		nb_list_at(pr_a, 1)->content = tmp;
 	}
 	if ((a_data->flag & VISUALIZE_FLAG) && ss == 0)
-		visualize(a, b, SA);
+		visualize(a, b, SA, a_data->flag & COLOR_FLAG ? 1 : 0);
 	return (1);
 }
 
@@ -38,7 +38,7 @@ int		executeSB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int ss)
 		nb_list_at(pr, 1)->content = tmp;
 	}
 	if ((b_data->flag & VISUALIZE_FLAG) && ss == 0)
-		visualize(a, b, SB);
+		visualize(a, b, SB, b_data->flag & COLOR_FLAG ? 1 : 0);
 	return (1);
 }
 
@@ -61,7 +61,7 @@ void	executePA(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	a_data->length++;
 	b_data->length--;
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, PA);
+		visualize(a, b, PA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
@@ -84,11 +84,11 @@ void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	b_data->length++;
 	a_data->length--;
 	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, PB);
+		visualize(a, b, PB, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 
-void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_stack)
+void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_data)
 {
 	t_list_arr	*new_item;
 	int 		tmp;
@@ -100,14 +100,12 @@ void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_stack)
 	free(*a);
 	*a = new_item;
 	nb_push_back(a, tmp);
-//	if ((*a)->flag & COLOR_FLAG)
-//		visualize_color(a, b, a_or_b ? "ra" : "rb");
-	if ((a_stack->flag & VISUALIZE_FLAG) && rr == 0)
-		visualize(a, b, RA);
+	if ((a_data->flag & VISUALIZE_FLAG) && rr == 0)
+		visualize(a, b, RA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 
-void	executeRB(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_stack)
+void	executeRB(t_list_arr **a, t_list_arr **b, int rr, t_stack *b_data)
 {
 	t_list_arr	*new_item;
 	int 		tmp;
@@ -119,10 +117,8 @@ void	executeRB(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_stack)
 	free(*b);
 	*b = new_item;
 	nb_push_back(b, tmp);
-//	if ((*a)->flag & COLOR_FLAG)
-//		visualize_color(a, b, a_or_b ? "ra" : "rb");
-	if ((a_stack->flag & VISUALIZE_FLAG) && rr == 0)
-		visualize(a, b, RB);
+	if ((b_data->flag & VISUALIZE_FLAG) && rr == 0)
+		visualize(a, b, RB, b_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 
@@ -132,7 +128,7 @@ void	executeSS(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	executeSA(a, b, a_data, 1);
 	executeSB(a, b, b_data, 1);
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, SS);
+		visualize(a, b, SS, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 
@@ -142,5 +138,5 @@ void	executeRR(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	executeRA(a, b, 1, a_data);
 	executeRB(a, b, 1, a_data);
 	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RR);
+		visualize(a, b, RR, a_data->flag & COLOR_FLAG ? 1 : 0);
 }

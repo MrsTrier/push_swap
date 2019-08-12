@@ -13,7 +13,7 @@ void	executeRRB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int rrr)
 	tmpl->next = *b;
 	*b = tmpl;
 	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RRB);
+		visualize(a, b, RRB, b_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
@@ -29,7 +29,7 @@ void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
 	tmpl->next = *a;
 	*a = tmpl;
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RRA);
+		visualize(a, b, RRA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
 void	executeRRR(t_list_arr **a, t_stack *a_data, t_list_arr **b, t_stack *b_data)
@@ -37,6 +37,6 @@ void	executeRRR(t_list_arr **a, t_stack *a_data, t_list_arr **b, t_stack *b_data
 	executeRRA(a, b, a_data, 0);
 	executeRRB(a, b, b_data, 0);
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RRR);
+		visualize(a, b, RRR, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 

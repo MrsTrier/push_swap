@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+.././push_swap.h
+stdarg.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+libft.h
+.././libft.h
+ft_printf.h
+.././ft_printf.h
+conversions.h
+.././conversions.h
+large_arythmetics.h
+.././large_arythmetics.h
+float_to_str.h
+.././float_to_str.h
+floats.h
+.././floats.h
+get_next_line.h
+.././get_next_line.h
+
 ../include/conversions.h
 stdarg.h
 -
@@ -52,13 +76,15 @@ unistd.h
 limits.h
 -
 
-/Users/mcanhand/push_swap/push_swap.c
-push_swap.h
-/Users/mcanhand/push_swap/push_swap.h
-execute.h
-/Users/mcanhand/push_swap/execute.h
+/Users/mcanhand/push_swap/checker.c
+checker.h
+/Users/mcanhand/push_swap/checker.h
+stdio.h
+-
+limits.h
+-
 
-/Users/mcanhand/push_swap/push_swap.h
+/Users/mcanhand/push_swap/checker.h
 stdarg.h
 -
 string.h
@@ -79,6 +105,8 @@ float_to_str.h
 /Users/mcanhand/push_swap/float_to_str.h
 floats.h
 /Users/mcanhand/push_swap/floats.h
+execute.h
+/Users/mcanhand/push_swap/execute.h
 get_next_line.h
 /Users/mcanhand/push_swap/get_next_line.h
 

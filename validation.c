@@ -3,7 +3,7 @@
 #include "push_swap.h"
 
 
-void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd)
+void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd, int color)
 {
 	t_list_arr	*pr_a;
 	t_list_arr	*pr_b;
@@ -33,8 +33,8 @@ void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd)
 		pr_b = pr_b->next;
 		i++;
 	}
-	ft_printf("Last command %s\n", cmnd);
-//	ft_printf("\033[0;35m Last command \033[0m%s\n", cmnd);
+	if (color)
+		ft_printf("\033[0;35m Last command \033[0m%s\n", cmnd);
 	ft_printf("=============================================================\n");
 }
 
@@ -86,20 +86,23 @@ void	put_string(t_list *elem)
 int		save_stack(int ac, char **av, t_list_arr *res_lst, int flag)
 {
     int			i;
+	int			j;
     t_list_arr	*stack;
     int			*arr;
 
+	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
+	j = (flag & READFILE_FLAG) ? 0 : j;
     i = 1;
     stack = res_lst;
     if (ac < 2)
-        return (0);
-	if ((arr = any_double(av, ac, flag)) == NULL)
+        return (6);
+	if ((arr = any_double(av, ac, j)) == NULL)
 		return (write(2, "Error\n", 6));
-    while (i < ac - flag)
+    while (i < ac - j)
     {
         create_nb_elem(arr[i - 1], &stack, i);
         i++;
     }
     free(arr);
-    return (1);
+    return (j);
 }

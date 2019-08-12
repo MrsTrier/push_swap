@@ -133,7 +133,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=push_swap_l
+CMAKE_PROJECT_NAME:STATIC=push_swap
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -196,6 +196,12 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
+
+//Value Computed by CMake
+push_swap_BINARY_DIR:STATIC=/Users/mcanhand/push_swap/cmake-build-debug
+
+//Value Computed by CMake
+push_swap_SOURCE_DIR:STATIC=/Users/mcanhand/push_swap
 
 //Value Computed by CMake
 push_swap_l_BINARY_DIR:STATIC=/Users/mcanhand/push_swap/cmake-build-debug

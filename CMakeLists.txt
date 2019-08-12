@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
-project(push_swap_l C)
+project(push_swap C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 include_directories(include)
 
-add_executable(push_swap_l
+add_executable(push_swap
         include/conversions.h
         include/execute.h
         include/float_to_str.h
@@ -124,4 +124,5 @@ add_executable(push_swap_l
         nb_lst.c
         push_swap.c
         push_swap.h
+        read_input.c
         validation.c)

@@ -1,3 +1,3 @@
 /Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles/push_swap_l.dir
+/Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir

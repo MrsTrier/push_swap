@@ -1,44 +1,6 @@
 #include "push_swap.h"
 # include "execute.h"
 
-
-
-int     find_min(t_list_arr *res_lst)
-{
-    int			min;
-    t_list_arr	*new_item;
-
-    if (!res_lst)
-        return (write(2, "Error\n", 6));
-    new_item = res_lst;
-    min = new_item->content;
-    while (new_item->next)
-    {
-        if (min > new_item->next->content)
-            min = new_item->next->content;
-        new_item = new_item->next;
-    }
-    return (min);
-}
-
-int     find_max(t_list_arr	*res_lst)
-{
-	int			max;
-	t_list_arr	*new_item;
-
-	if (!res_lst)
-		return (write(2, "Error\n", 6));
-	new_item = res_lst;
-	max = new_item->content;
-	while (new_item->next)
-	{
-		if (max < new_item->next->content)
-			max = new_item->next->content;
-		new_item = new_item->next;
-	}
-	return (max);
-}
-
 int		easy(t_list_arr **a, t_stack *a_data)
 {
 	int i;
@@ -174,7 +136,7 @@ int 	switch_in_b(t_list_arr **a, t_list_arr **b, t_stack *b_data, int nb)
 	{
 		c++;
 		if ((min_is(i, b_data->length - i)) == i - 1)
-			executeRB(a, b, b_data, 0);
+			executeRB(a, b, 0, b_data);
 		else
 			executeRRB(a, b, b_data, 1);
 	}
@@ -239,48 +201,6 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 	return (c);
 }
 
-void	fill_data(t_list_arr *a, int ac, t_stack *a_data, int i)
-{
-	int			*arr;
-
-	arr = lst_to_arr(a, ac - 1 - i);
-	a_data->length = ac - 1 - i;
-	a_data->tot_len = a_data->length;
-	a_data->min = find_min(a);
-	a_data->max = find_max(a);
-	heap_sort(ac - 1 - i, &arr);
-	a_data->mdn = arr[(a_data->length / 2)];
-	free(arr);
-}
-
-int 	read_input(int ac, char **av, unsigned *res)
-{
-	int			fd;
-	int			i;
-
-	fd = -1;
-	i = 1;
-	*res = 0;
-	while (ac > 2 ? i < 3 : i < 2)
-	{
-		if (!is_int(av[i]))
-		{
-			if (ft_strcmp("-c", av[i]) == 0)
-				*res |= COLOR_FLAG;
-			else if (ft_strcmp("-v", av[i]) == 0)
-				*res |= VISUALIZE_FLAG;
-			else if ((fd = open(av[i], O_RDONLY)) != -1)
-				*res |= READFILE_FLAG;
-			else
-				return (-2);
-		}
-		i++;
-	}
-	return (fd);
-}
-
-
-
 int 	algorithm(int ac, char **av, unsigned flag, int *i)
 {
 	t_list_arr	*res_lst;
@@ -289,14 +209,14 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	t_stack		a_stack;
 	int 		j;
 
-	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
-	j = (flag & READFILE_FLAG) ? 0 : j;
+//	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
+//	j = (flag & READFILE_FLAG) ? 0 : j;
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
 	a_stack.flag = flag;
 	b_stack.flag = flag;
 	b_stack.length = 0;
-	if (!save_stack(ac, av, res_lst, j))
+	if ((j = save_stack(ac, av, res_lst, flag)) == 6)
 		return (write(2, "Error\n", 6));
 	fill_data(res_lst, ac, &a_stack, j);
 	if (!lst_sorted_ac(res_lst))
@@ -318,16 +238,6 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 //	ft_printf("%d\n", res_lst->content);
 	free_lst_arr(res_lst);
 	free_lst_arr(b);
-}
-
-int 	count_wrds(char **sp_line)
-{
-	int 	wrds;
-
-	wrds = 1;
-	while (sp_line[wrds] != NULL)
-		wrds++;
-	return (wrds);
 }
 
 int		main(int ac, char **av)
