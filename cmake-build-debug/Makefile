@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mcanhand/push_swap
+CMAKE_SOURCE_DIR = /Users/romancheremin/Downloads/push_swap-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mcanhand/push_swap/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/romancheremin/Downloads/push_swap-master/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mcanhand/push_swap/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Volumes/CLion/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles /Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/romancheremin/Downloads/push_swap-master/cmake-build-debug/CMakeFiles /Users/romancheremin/Downloads/push_swap-master/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mcanhand/push_swap/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/romancheremin/Downloads/push_swap-master/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,275 +123,32 @@ push_swap/fast:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/build
 .PHONY : push_swap/fast
 
-checker.o: checker.c.o
+src/checker/checker.o: src/checker/checker.c.o
 
-.PHONY : checker.o
-
-# target to build an object file
-checker.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.o
-.PHONY : checker.c.o
-
-checker.i: checker.c.i
-
-.PHONY : checker.i
-
-# target to preprocess a source file
-checker.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.i
-.PHONY : checker.c.i
-
-checker.s: checker.c.s
-
-.PHONY : checker.s
-
-# target to generate assembly for a file
-checker.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.s
-.PHONY : checker.c.s
-
-execute_rest.o: execute_rest.c.o
-
-.PHONY : execute_rest.o
+.PHONY : src/checker/checker.o
 
 # target to build an object file
-execute_rest.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.o
-.PHONY : execute_rest.c.o
+src/checker/checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker/checker.c.o
+.PHONY : src/checker/checker.c.o
 
-execute_rest.i: execute_rest.c.i
+src/checker/checker.i: src/checker/checker.c.i
 
-.PHONY : execute_rest.i
-
-# target to preprocess a source file
-execute_rest.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.i
-.PHONY : execute_rest.c.i
-
-execute_rest.s: execute_rest.c.s
-
-.PHONY : execute_rest.s
-
-# target to generate assembly for a file
-execute_rest.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/execute_rest.c.s
-.PHONY : execute_rest.c.s
-
-generaye_sample.o: generaye_sample.c.o
-
-.PHONY : generaye_sample.o
-
-# target to build an object file
-generaye_sample.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/generaye_sample.c.o
-.PHONY : generaye_sample.c.o
-
-generaye_sample.i: generaye_sample.c.i
-
-.PHONY : generaye_sample.i
+.PHONY : src/checker/checker.i
 
 # target to preprocess a source file
-generaye_sample.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/generaye_sample.c.i
-.PHONY : generaye_sample.c.i
+src/checker/checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker/checker.c.i
+.PHONY : src/checker/checker.c.i
 
-generaye_sample.s: generaye_sample.c.s
+src/checker/checker.s: src/checker/checker.c.s
 
-.PHONY : generaye_sample.s
-
-# target to generate assembly for a file
-generaye_sample.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/generaye_sample.c.s
-.PHONY : generaye_sample.c.s
-
-get_next_line.o: get_next_line.c.o
-
-.PHONY : get_next_line.o
-
-# target to build an object file
-get_next_line.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.o
-.PHONY : get_next_line.c.o
-
-get_next_line.i: get_next_line.c.i
-
-.PHONY : get_next_line.i
-
-# target to preprocess a source file
-get_next_line.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.i
-.PHONY : get_next_line.c.i
-
-get_next_line.s: get_next_line.c.s
-
-.PHONY : get_next_line.s
+.PHONY : src/checker/checker.s
 
 # target to generate assembly for a file
-get_next_line.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/get_next_line.c.s
-.PHONY : get_next_line.c.s
-
-heap_sort.o: heap_sort.c.o
-
-.PHONY : heap_sort.o
-
-# target to build an object file
-heap_sort.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/heap_sort.c.o
-.PHONY : heap_sort.c.o
-
-heap_sort.i: heap_sort.c.i
-
-.PHONY : heap_sort.i
-
-# target to preprocess a source file
-heap_sort.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/heap_sort.c.i
-.PHONY : heap_sort.c.i
-
-heap_sort.s: heap_sort.c.s
-
-.PHONY : heap_sort.s
-
-# target to generate assembly for a file
-heap_sort.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/heap_sort.c.s
-.PHONY : heap_sort.c.s
-
-lst_arr_functions.o: lst_arr_functions.c.o
-
-.PHONY : lst_arr_functions.o
-
-# target to build an object file
-lst_arr_functions.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_arr_functions.c.o
-.PHONY : lst_arr_functions.c.o
-
-lst_arr_functions.i: lst_arr_functions.c.i
-
-.PHONY : lst_arr_functions.i
-
-# target to preprocess a source file
-lst_arr_functions.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_arr_functions.c.i
-.PHONY : lst_arr_functions.c.i
-
-lst_arr_functions.s: lst_arr_functions.c.s
-
-.PHONY : lst_arr_functions.s
-
-# target to generate assembly for a file
-lst_arr_functions.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/lst_arr_functions.c.s
-.PHONY : lst_arr_functions.c.s
-
-nb_execute.o: nb_execute.c.o
-
-.PHONY : nb_execute.o
-
-# target to build an object file
-nb_execute.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_execute.c.o
-.PHONY : nb_execute.c.o
-
-nb_execute.i: nb_execute.c.i
-
-.PHONY : nb_execute.i
-
-# target to preprocess a source file
-nb_execute.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_execute.c.i
-.PHONY : nb_execute.c.i
-
-nb_execute.s: nb_execute.c.s
-
-.PHONY : nb_execute.s
-
-# target to generate assembly for a file
-nb_execute.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_execute.c.s
-.PHONY : nb_execute.c.s
-
-nb_lst.o: nb_lst.c.o
-
-.PHONY : nb_lst.o
-
-# target to build an object file
-nb_lst.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_lst.c.o
-.PHONY : nb_lst.c.o
-
-nb_lst.i: nb_lst.c.i
-
-.PHONY : nb_lst.i
-
-# target to preprocess a source file
-nb_lst.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_lst.c.i
-.PHONY : nb_lst.c.i
-
-nb_lst.s: nb_lst.c.s
-
-.PHONY : nb_lst.s
-
-# target to generate assembly for a file
-nb_lst.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/nb_lst.c.s
-.PHONY : nb_lst.c.s
-
-push_swap.o: push_swap.c.o
-
-.PHONY : push_swap.o
-
-# target to build an object file
-push_swap.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.o
-.PHONY : push_swap.c.o
-
-push_swap.i: push_swap.c.i
-
-.PHONY : push_swap.i
-
-# target to preprocess a source file
-push_swap.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.i
-.PHONY : push_swap.c.i
-
-push_swap.s: push_swap.c.s
-
-.PHONY : push_swap.s
-
-# target to generate assembly for a file
-push_swap.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/push_swap.c.s
-.PHONY : push_swap.c.s
-
-read_input.o: read_input.c.o
-
-.PHONY : read_input.o
-
-# target to build an object file
-read_input.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/read_input.c.o
-.PHONY : read_input.c.o
-
-read_input.i: read_input.c.i
-
-.PHONY : read_input.i
-
-# target to preprocess a source file
-read_input.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/read_input.c.i
-.PHONY : read_input.c.i
-
-read_input.s: read_input.c.s
-
-.PHONY : read_input.s
-
-# target to generate assembly for a file
-read_input.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/read_input.c.s
-.PHONY : read_input.c.s
+src/checker/checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/checker/checker.c.s
+.PHONY : src/checker/checker.c.s
 
 src/libft/ft_any.o: src/libft/ft_any.c.o
 
@@ -2931,6 +2688,249 @@ src/printf/x_conversions.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/printf/x_conversions.c.s
 .PHONY : src/printf/x_conversions.c.s
 
+src/push_swap/heap_sort.o: src/push_swap/heap_sort.c.o
+
+.PHONY : src/push_swap/heap_sort.o
+
+# target to build an object file
+src/push_swap/heap_sort.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/heap_sort.c.o
+.PHONY : src/push_swap/heap_sort.c.o
+
+src/push_swap/heap_sort.i: src/push_swap/heap_sort.c.i
+
+.PHONY : src/push_swap/heap_sort.i
+
+# target to preprocess a source file
+src/push_swap/heap_sort.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/heap_sort.c.i
+.PHONY : src/push_swap/heap_sort.c.i
+
+src/push_swap/heap_sort.s: src/push_swap/heap_sort.c.s
+
+.PHONY : src/push_swap/heap_sort.s
+
+# target to generate assembly for a file
+src/push_swap/heap_sort.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/heap_sort.c.s
+.PHONY : src/push_swap/heap_sort.c.s
+
+src/push_swap/nb_lst.o: src/push_swap/nb_lst.c.o
+
+.PHONY : src/push_swap/nb_lst.o
+
+# target to build an object file
+src/push_swap/nb_lst.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/nb_lst.c.o
+.PHONY : src/push_swap/nb_lst.c.o
+
+src/push_swap/nb_lst.i: src/push_swap/nb_lst.c.i
+
+.PHONY : src/push_swap/nb_lst.i
+
+# target to preprocess a source file
+src/push_swap/nb_lst.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/nb_lst.c.i
+.PHONY : src/push_swap/nb_lst.c.i
+
+src/push_swap/nb_lst.s: src/push_swap/nb_lst.c.s
+
+.PHONY : src/push_swap/nb_lst.s
+
+# target to generate assembly for a file
+src/push_swap/nb_lst.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/nb_lst.c.s
+.PHONY : src/push_swap/nb_lst.c.s
+
+src/push_swap/push_swap.o: src/push_swap/push_swap.c.o
+
+.PHONY : src/push_swap/push_swap.o
+
+# target to build an object file
+src/push_swap/push_swap.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/push_swap.c.o
+.PHONY : src/push_swap/push_swap.c.o
+
+src/push_swap/push_swap.i: src/push_swap/push_swap.c.i
+
+.PHONY : src/push_swap/push_swap.i
+
+# target to preprocess a source file
+src/push_swap/push_swap.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/push_swap.c.i
+.PHONY : src/push_swap/push_swap.c.i
+
+src/push_swap/push_swap.s: src/push_swap/push_swap.c.s
+
+.PHONY : src/push_swap/push_swap.s
+
+# target to generate assembly for a file
+src/push_swap/push_swap.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/push_swap/push_swap.c.s
+.PHONY : src/push_swap/push_swap.c.s
+
+src/shared/execute_rest.o: src/shared/execute_rest.c.o
+
+.PHONY : src/shared/execute_rest.o
+
+# target to build an object file
+src/shared/execute_rest.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/execute_rest.c.o
+.PHONY : src/shared/execute_rest.c.o
+
+src/shared/execute_rest.i: src/shared/execute_rest.c.i
+
+.PHONY : src/shared/execute_rest.i
+
+# target to preprocess a source file
+src/shared/execute_rest.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/execute_rest.c.i
+.PHONY : src/shared/execute_rest.c.i
+
+src/shared/execute_rest.s: src/shared/execute_rest.c.s
+
+.PHONY : src/shared/execute_rest.s
+
+# target to generate assembly for a file
+src/shared/execute_rest.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/execute_rest.c.s
+.PHONY : src/shared/execute_rest.c.s
+
+src/shared/get_next_line.o: src/shared/get_next_line.c.o
+
+.PHONY : src/shared/get_next_line.o
+
+# target to build an object file
+src/shared/get_next_line.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/get_next_line.c.o
+.PHONY : src/shared/get_next_line.c.o
+
+src/shared/get_next_line.i: src/shared/get_next_line.c.i
+
+.PHONY : src/shared/get_next_line.i
+
+# target to preprocess a source file
+src/shared/get_next_line.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/get_next_line.c.i
+.PHONY : src/shared/get_next_line.c.i
+
+src/shared/get_next_line.s: src/shared/get_next_line.c.s
+
+.PHONY : src/shared/get_next_line.s
+
+# target to generate assembly for a file
+src/shared/get_next_line.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/get_next_line.c.s
+.PHONY : src/shared/get_next_line.c.s
+
+src/shared/lst_arr_functions.o: src/shared/lst_arr_functions.c.o
+
+.PHONY : src/shared/lst_arr_functions.o
+
+# target to build an object file
+src/shared/lst_arr_functions.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/lst_arr_functions.c.o
+.PHONY : src/shared/lst_arr_functions.c.o
+
+src/shared/lst_arr_functions.i: src/shared/lst_arr_functions.c.i
+
+.PHONY : src/shared/lst_arr_functions.i
+
+# target to preprocess a source file
+src/shared/lst_arr_functions.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/lst_arr_functions.c.i
+.PHONY : src/shared/lst_arr_functions.c.i
+
+src/shared/lst_arr_functions.s: src/shared/lst_arr_functions.c.s
+
+.PHONY : src/shared/lst_arr_functions.s
+
+# target to generate assembly for a file
+src/shared/lst_arr_functions.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/lst_arr_functions.c.s
+.PHONY : src/shared/lst_arr_functions.c.s
+
+src/shared/nb_execute.o: src/shared/nb_execute.c.o
+
+.PHONY : src/shared/nb_execute.o
+
+# target to build an object file
+src/shared/nb_execute.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/nb_execute.c.o
+.PHONY : src/shared/nb_execute.c.o
+
+src/shared/nb_execute.i: src/shared/nb_execute.c.i
+
+.PHONY : src/shared/nb_execute.i
+
+# target to preprocess a source file
+src/shared/nb_execute.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/nb_execute.c.i
+.PHONY : src/shared/nb_execute.c.i
+
+src/shared/nb_execute.s: src/shared/nb_execute.c.s
+
+.PHONY : src/shared/nb_execute.s
+
+# target to generate assembly for a file
+src/shared/nb_execute.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/nb_execute.c.s
+.PHONY : src/shared/nb_execute.c.s
+
+src/shared/read_input.o: src/shared/read_input.c.o
+
+.PHONY : src/shared/read_input.o
+
+# target to build an object file
+src/shared/read_input.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/read_input.c.o
+.PHONY : src/shared/read_input.c.o
+
+src/shared/read_input.i: src/shared/read_input.c.i
+
+.PHONY : src/shared/read_input.i
+
+# target to preprocess a source file
+src/shared/read_input.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/read_input.c.i
+.PHONY : src/shared/read_input.c.i
+
+src/shared/read_input.s: src/shared/read_input.c.s
+
+.PHONY : src/shared/read_input.s
+
+# target to generate assembly for a file
+src/shared/read_input.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/read_input.c.s
+.PHONY : src/shared/read_input.c.s
+
+src/shared/validation.o: src/shared/validation.c.o
+
+.PHONY : src/shared/validation.o
+
+# target to build an object file
+src/shared/validation.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/validation.c.o
+.PHONY : src/shared/validation.c.o
+
+src/shared/validation.i: src/shared/validation.c.i
+
+.PHONY : src/shared/validation.i
+
+# target to preprocess a source file
+src/shared/validation.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/validation.c.i
+.PHONY : src/shared/validation.c.i
+
+src/shared/validation.s: src/shared/validation.c.s
+
+.PHONY : src/shared/validation.s
+
+# target to generate assembly for a file
+src/shared/validation.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/shared/validation.c.s
+.PHONY : src/shared/validation.c.s
+
 src/string/fill_with_chars.o: src/string/fill_with_chars.c.o
 
 .PHONY : src/string/fill_with_chars.o
@@ -3039,33 +3039,6 @@ src/string/ft_strappend.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/src/string/ft_strappend.c.s
 .PHONY : src/string/ft_strappend.c.s
 
-validation.o: validation.c.o
-
-.PHONY : validation.o
-
-# target to build an object file
-validation.c.o:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.o
-.PHONY : validation.c.o
-
-validation.i: validation.c.i
-
-.PHONY : validation.i
-
-# target to preprocess a source file
-validation.c.i:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.i
-.PHONY : validation.c.i
-
-validation.s: validation.c.s
-
-.PHONY : validation.s
-
-# target to generate assembly for a file
-validation.c.s:
-	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/validation.c.s
-.PHONY : validation.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3075,36 +3048,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... push_swap"
-	@echo "... checker.o"
-	@echo "... checker.i"
-	@echo "... checker.s"
-	@echo "... execute_rest.o"
-	@echo "... execute_rest.i"
-	@echo "... execute_rest.s"
-	@echo "... generaye_sample.o"
-	@echo "... generaye_sample.i"
-	@echo "... generaye_sample.s"
-	@echo "... get_next_line.o"
-	@echo "... get_next_line.i"
-	@echo "... get_next_line.s"
-	@echo "... heap_sort.o"
-	@echo "... heap_sort.i"
-	@echo "... heap_sort.s"
-	@echo "... lst_arr_functions.o"
-	@echo "... lst_arr_functions.i"
-	@echo "... lst_arr_functions.s"
-	@echo "... nb_execute.o"
-	@echo "... nb_execute.i"
-	@echo "... nb_execute.s"
-	@echo "... nb_lst.o"
-	@echo "... nb_lst.i"
-	@echo "... nb_lst.s"
-	@echo "... push_swap.o"
-	@echo "... push_swap.i"
-	@echo "... push_swap.s"
-	@echo "... read_input.o"
-	@echo "... read_input.i"
-	@echo "... read_input.s"
+	@echo "... src/checker/checker.o"
+	@echo "... src/checker/checker.i"
+	@echo "... src/checker/checker.s"
 	@echo "... src/libft/ft_any.o"
 	@echo "... src/libft/ft_any.i"
 	@echo "... src/libft/ft_any.s"
@@ -3387,6 +3333,33 @@ help:
 	@echo "... src/printf/x_conversions.o"
 	@echo "... src/printf/x_conversions.i"
 	@echo "... src/printf/x_conversions.s"
+	@echo "... src/push_swap/heap_sort.o"
+	@echo "... src/push_swap/heap_sort.i"
+	@echo "... src/push_swap/heap_sort.s"
+	@echo "... src/push_swap/nb_lst.o"
+	@echo "... src/push_swap/nb_lst.i"
+	@echo "... src/push_swap/nb_lst.s"
+	@echo "... src/push_swap/push_swap.o"
+	@echo "... src/push_swap/push_swap.i"
+	@echo "... src/push_swap/push_swap.s"
+	@echo "... src/shared/execute_rest.o"
+	@echo "... src/shared/execute_rest.i"
+	@echo "... src/shared/execute_rest.s"
+	@echo "... src/shared/get_next_line.o"
+	@echo "... src/shared/get_next_line.i"
+	@echo "... src/shared/get_next_line.s"
+	@echo "... src/shared/lst_arr_functions.o"
+	@echo "... src/shared/lst_arr_functions.i"
+	@echo "... src/shared/lst_arr_functions.s"
+	@echo "... src/shared/nb_execute.o"
+	@echo "... src/shared/nb_execute.i"
+	@echo "... src/shared/nb_execute.s"
+	@echo "... src/shared/read_input.o"
+	@echo "... src/shared/read_input.i"
+	@echo "... src/shared/read_input.s"
+	@echo "... src/shared/validation.o"
+	@echo "... src/shared/validation.i"
+	@echo "... src/shared/validation.s"
 	@echo "... src/string/fill_with_chars.o"
 	@echo "... src/string/fill_with_chars.i"
 	@echo "... src/string/fill_with_chars.s"
@@ -3399,9 +3372,6 @@ help:
 	@echo "... src/string/ft_strappend.o"
 	@echo "... src/string/ft_strappend.i"
 	@echo "... src/string/ft_strappend.s"
-	@echo "... validation.o"
-	@echo "... validation.i"
-	@echo "... validation.s"
 .PHONY : help
 
 

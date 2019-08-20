@@ -113,16 +113,15 @@ add_executable(push_swap
         src/string/ft_lst_to_str.c
         src/string/ft_realloc.c
         src/string/ft_strappend.c
-        checker.c
-        checker.h
-        execute_rest.c
-        generaye_sample.c
-        get_next_line.c
-        heap_sort.c
-        lst_arr_functions.c
-        nb_execute.c
-        nb_lst.c
-        push_swap.c
-        push_swap.h
-        read_input.c
-        validation.c)
+        src/checker/checker.c
+        include/checker.h
+        src/shared/execute_rest.c
+        src/shared/get_next_line.c
+        src/push_swap/heap_sort.c
+        src/shared/lst_arr_functions.c
+        src/shared/nb_execute.c
+        src/push_swap/nb_lst.c
+        src/push_swap/push_swap.c
+        include/push_swap.h
+        src/shared/read_input.c
+        src/shared/validation.c)
