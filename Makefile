@@ -5,7 +5,7 @@ NAME2 = push_swap
 RMS = /bin/rm -rf
 LIBFT = src/libft/
 SHARED = src/shared/
-PUSH_SWAP_F = src/push_swap/
+PUSH_SWAP_F = src/
 CHECKER_F = src/checker/
 CHECKER = $(NAME1)
 PUSH_SWAP = $(NAME2)
@@ -13,8 +13,8 @@ PUSH_SWAP = $(NAME2)
 all:
 	@make -C $(LIBFT)
 	@make -C $(SHARED)
-	@make -C $(PUSH_SWAP_F)
 	@make -C $(CHECKER_F)
+	@make -C $(PUSH_SWAP_F)
 
 $(NAME1):
 	@if [ -e $(CHECKER) ]; then \

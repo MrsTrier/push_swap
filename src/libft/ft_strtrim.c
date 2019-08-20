@@ -29,7 +29,7 @@ static char	*ft_blank(char const *s)
 	return (arr);
 }
 
-char		*ft_strtrim(char const *s)
+char		*ft_strtrim(char *s)
 {
 	int		len;
 	int		skip;
@@ -38,7 +38,6 @@ char		*ft_strtrim(char const *s)
 
 	if (!s || !ft_strlen(s))
 		return ((char *)s);
-	skip = 0;
 	i = 0;
 	if (ft_blank(s))
 		return (ft_blank(s));

@@ -71,5 +71,5 @@ int			detect_index(t_list_arr **a, int place, int lenght);
 int			*lst_to_arr(t_list_arr *lst, int ac);
 int			read_input(int ac, char **av, unsigned *res);
 int 		count_wrds(char **sp_line);
-void	fill_data(t_list_arr *a, int ac, t_stack *a_data, int i);
+void		fill_data(t_list_arr *a, int ac, t_stack *a_data, int i);
 #endif

@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "get_next_line.h"
 
 typedef enum
 {
@@ -89,17 +90,17 @@ char				*strchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char *s1, char *s2);
-char				*ft_strtrim(char const *s);
+char				*ft_strtrim(char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *str, const char *to_find);
-char				*ft_strnstr(const char *str, const char *to_find,
+char				*ft_strnstr(const char *str, char *to_find,
 								size_t len);
 char				*ft_strncat(char *dest, const char *src, size_t nb);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 
 size_t				ft_strlen(char *str);
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcat(char *dst, char *src, size_t size);
 
 t_list				*ft_lstnew(char *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
@@ -114,4 +115,5 @@ char				*ft_strappend(char *s1, char *s2);
 char				*ft_lst_to_str(t_list *lst);
 int					create_node(void *str, size_t len, t_list **lst);
 t_bool				is_int(const char *str);
+int					get_next_line(const int fd, char **line);
 #endif

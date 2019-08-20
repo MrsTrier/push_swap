@@ -43,7 +43,7 @@
 //	else
 //		execute_rest(res_lst, line, b);
 //}
-
+//
 //int		save_stack(int ac, char **av, t_list *res_lst)
 //{
 //	int		i;
@@ -62,7 +62,7 @@
 //	}
 //	return (1);
 //}
-
+//
 //int 	get_data(t_stack *a_stack, t_stack *b_stack, int flag)
 //{
 //	int j;
@@ -107,7 +107,7 @@
 //		return (write(1, "OK\n", 3));
 //	}
 //}
-
+//
 //int		main(int ac, char **av)
 //{
 //	char		*line;

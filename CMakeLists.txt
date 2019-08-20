@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
-project(push_swap C)
+project(push_in_trier)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
 include_directories(include)
 
-add_executable(push_swap
+add_executable(push_in_trier
+        include/checker.h
         include/conversions.h
         include/execute.h
         include/float_to_str.h
@@ -15,12 +15,14 @@ add_executable(push_swap
         include/get_next_line.h
         include/large_arythmetics.h
         include/libft.h
+        include/push_swap.h
+        src/checker/checker.c
+        src/checker/Makefile
         src/libft/ft_any.c
         src/libft/ft_atoi.c
         src/libft/ft_bzero.c
         src/libft/ft_count_if.c
         src/libft/ft_create_elem.c
-        src/libft/ft_is_int.c
         src/libft/ft_isalnum.c
         src/libft/ft_isalpha.c
         src/libft/ft_isascii.c
@@ -42,7 +44,6 @@ add_executable(push_swap
         src/libft/ft_memdel.c
         src/libft/ft_memmove.c
         src/libft/ft_memset.c
-        src/libft/ft_push_back.c
         src/libft/ft_putchar.c
         src/libft/ft_putchar_fd.c
         src/libft/ft_putendl.c
@@ -80,7 +81,9 @@ add_executable(push_swap
         src/libft/ft_strtrim.c
         src/libft/ft_tolower.c
         src/libft/ft_toupper.c
-        src/list/ft_create_node.c
+        src/libft/get_next_line.c
+        src/libft/is_int.c
+        src/libft/Makefile
         src/printf/c_conversions.c
         src/printf/conversion_flags.c
         src/printf/convert_flags.c
@@ -90,6 +93,7 @@ add_executable(push_swap
         src/printf/float_to_str.c
         src/printf/ft_after_num.c
         src/printf/ft_before_num.c
+        src/printf/ft_create_node.c
         src/printf/ft_itoa_base.c
         src/printf/ft_itoa_base_hex_long.c
         src/printf/ft_printf.c
@@ -101,6 +105,7 @@ add_executable(push_swap
         src/printf/large_arythmetics.c
         src/printf/make_double.c
         src/printf/make_ldouble.c
+        src/printf/Makefile
         src/printf/mod_conversions.c
         src/printf/o_conversions.c
         src/printf/p_conversions.c
@@ -109,19 +114,18 @@ add_executable(push_swap
         src/printf/sum_longnum.c
         src/printf/u_conversion.c
         src/printf/x_conversions.c
+        src/push_swap/heap_sort.c
+        src/push_swap/nb_lst.c
+        src/push_swap/push_swap.c
+        src/shared/execute_rest.c
+        src/shared/lst_arr_functions.c
+        src/shared/Makefile
+        src/shared/nb_execute.c
+        src/shared/read_input.c
+        src/shared/validation.c
         src/string/fill_with_chars.c
         src/string/ft_lst_to_str.c
         src/string/ft_realloc.c
         src/string/ft_strappend.c
-        src/checker/checker.c
-        include/checker.h
-        src/shared/execute_rest.c
-        src/shared/get_next_line.c
-        src/push_swap/heap_sort.c
-        src/shared/lst_arr_functions.c
-        src/shared/nb_execute.c
-        src/push_swap/nb_lst.c
-        src/push_swap/push_swap.c
-        include/push_swap.h
-        src/shared/read_input.c
-        src/shared/validation.c)
+        src/Makefile
+        Makefile)

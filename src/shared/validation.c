@@ -54,7 +54,6 @@ int 	*any_double(char **av, int ac, int flag)
 {
 	int		i;
 	int		j;
-	int		curr;
 	int     *arr;
 
 
