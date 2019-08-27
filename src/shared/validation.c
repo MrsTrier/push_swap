@@ -82,15 +82,15 @@ void	put_string(t_list *elem)
 	ft_printf(elem->content);
 }
 
-int		save_stack(int ac, char **av, t_list_arr *res_lst, int flag)
+int		save_stack(int ac, char **av, t_list_arr *res_lst, int *flag)
 {
     int			i;
 	int			j;
     t_list_arr	*stack;
     int			*arr;
 
-	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
-	j = (flag & READFILE_FLAG) ? 0 : j;
+	j = ((*flag & COLOR_FLAG) ? 1 : 0) + ((*flag & VISUALIZE_FLAG) ? 1 : 0);
+	j = (*flag & READFILE_FLAG) ? 0 : j;
     i = 1;
     stack = res_lst;
     if (ac < 2)
@@ -103,5 +103,6 @@ int		save_stack(int ac, char **av, t_list_arr *res_lst, int flag)
         i++;
     }
     free(arr);
+    *flag = j;
     return (j);
 }

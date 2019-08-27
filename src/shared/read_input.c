@@ -72,16 +72,16 @@ int 	count_wrds(char **sp_line)
 	return (wrds);
 }
 
-void	fill_data(t_list_arr *a, int ac, t_stack *a_data, int i)
+void	fill_data(t_list_arr *a, int i, t_stack *a_data)
 {
 	int			*arr;
 
-	arr = lst_to_arr(a, ac - 1 - i);
-	a_data->length = ac - 1 - i;
+	arr = lst_to_arr(a, i); // ac- 1-i
+	a_data->length = i;
 	a_data->tot_len = a_data->length;
 	a_data->min = find_min(a);
 	a_data->max = find_max(a);
-	heap_sort(ac - 1 - i, &arr);
+	heap_sort(i, &arr);
 	a_data->mdn = arr[(a_data->length / 2)];
 	free(arr);
 }

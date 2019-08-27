@@ -453,6 +453,12 @@
 		<Unit filename="/Users/mcanhand/push_in_trier/src/string/ft_strappend.c">
 			<Option target="push_in_trier"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/push_in_trier/test">
+			<Option target="push_in_trier"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push_in_trier/test2">
+			<Option target="push_in_trier"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/push_in_trier/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

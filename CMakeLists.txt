@@ -128,4 +128,6 @@ add_executable(push_in_trier
         src/string/ft_realloc.c
         src/string/ft_strappend.c
         src/Makefile
-        Makefile)
+        Makefile
+        test
+        test2)

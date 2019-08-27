@@ -54,7 +54,7 @@ typedef struct		s_cmnd
 	int 			c;
 }					t_cmnd;
 
-int			save_stack(int ac, char **av, t_list_arr *res_lst, int flag);
+int			save_stack(int ac, char **av, t_list_arr *res_lst, int *flag);
 int			lst_length(t_list *lst);
 int			lst_sorted_dec(t_list_arr *lst);
 int		    lst_sorted_ac(t_list_arr *lst);
@@ -71,5 +71,5 @@ int			detect_index(t_list_arr **a, int place, int lenght);
 int			*lst_to_arr(t_list_arr *lst, int ac);
 int			read_input(int ac, char **av, unsigned *res);
 int 		count_wrds(char **sp_line);
-void		fill_data(t_list_arr *a, int ac, t_stack *a_data, int i);
+void		fill_data(t_list_arr *a, int i, t_stack *a_data);
 #endif
