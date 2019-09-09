@@ -114,7 +114,7 @@ add_executable(push_in_trier
         src/printf/sum_longnum.c
         src/printf/u_conversion.c
         src/printf/x_conversions.c
-        src/push_swap/heap_sort.c
+        src/shared/heap_sort.c
         src/push_swap/nb_lst.c
         src/push_swap/push_swap.c
         src/shared/execute_rest.c
@@ -130,4 +130,5 @@ add_executable(push_in_trier
         src/Makefile
         Makefile
         test
-        test2)
+        test2
+        test3)

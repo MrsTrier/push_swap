@@ -276,52 +276,52 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	free_lst_arr(b);
 }
 
-//int		main(int ac, char **av)
-//{
-//    int			i;
-//	int			k;
-//	int			fd;
-//	char 		*line;
-//	char 		**sp_line;
-//	unsigned	res;
-//	char        *tmp;
-//
-//	i = 0;
-//	k = 0;
-//	if ((fd = read_input(ac, av, &res)) == -2)
-//		return (write(2, "Error\n", 6));
-//	if (!(res & READFILE_FLAG))
-//	{
-//		algorithm(ac, av, res, &i);
-//		ft_printf("i : %d\n", i);
-//		ft_printf("k : %d\n", k);
-//	}
-//	else
-//	{
-//		while (get_next_line(fd, &line) > 0)
-//		{
-//			if (!*line)
-//				break;
-//			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
-//			ac = count_wrds(sp_line);
-//			algorithm(ac, sp_line, res, &i);
-//			if (i > 12)
-//			{
-//				ft_printf("i > 12 : %d\n", i);
-//				k++;
-//			}
-//			else
-//				ft_printf("i : %d\n", i);
-//			while (ac != -1)
-//			{
-//				free(sp_line[ac]);
-//				ac--;
-//			}
-//            free(tmp);
-//			free(line);
-//			free(sp_line);
-//		}
-//	}
-//	return (0);
-//}
-//
+int		main(int ac, char **av)
+{
+    int			i;
+	int			k;
+	int			fd;
+	char 		*line;
+	char 		**sp_line;
+	unsigned	res;
+	char        *tmp;
+
+	i = 0;
+	k = 0;
+	if ((fd = read_input(ac, av, &res)) == -2)
+		return (write(2, "Error\n", 6));
+	if (!(res & READFILE_FLAG))
+	{
+		algorithm(ac, av, res, &i);
+		ft_printf("i : %d\n", i);
+		ft_printf("k : %d\n", k);
+	}
+	else
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break;
+			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
+			ac = count_wrds(sp_line);
+			algorithm(ac, sp_line, res, &i);
+			if (i > 12)
+			{
+				ft_printf("i > 12 : %d\n", i);
+				k++;
+			}
+			else
+				ft_printf("i : %d\n", i);
+			while (ac != -1)
+			{
+				free(sp_line[ac]);
+				ac--;
+			}
+            free(tmp);
+			free(line);
+			free(sp_line);
+		}
+	}
+	return (0);
+}
+

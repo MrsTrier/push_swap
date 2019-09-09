@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include "execute.h"
 
 int     find_min(t_list_arr *res_lst)
 {

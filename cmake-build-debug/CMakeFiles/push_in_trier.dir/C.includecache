@@ -104,9 +104,9 @@ floats.h
 get_next_line.h
 ../include/get_next_line.h
 
-/Users/romancheremin/Desktop/dasha/my_pysh/src/checker/checker.c
+/Users/mcanhand/push_in_trier/src/checker/checker.c
 checker.h
-/Users/romancheremin/Desktop/dasha/my_pysh/src/checker/checker.h
+/Users/mcanhand/push_in_trier/src/checker/checker.h
 stdio.h
 -
 limits.h

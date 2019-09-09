@@ -4,7 +4,7 @@ HFILES = ../../include
 NAME = shared.a
 RM = /bin/rm -rfv
 RMS = /bin/rm -rf
-CFILES = execute_rest.c lst_arr_functions.c nb_execute.c read_input.c validation.c
+CFILES = execute_rest.c lst_arr_functions.c nb_execute.c read_input.c validation.c heap_sort.c lst_execute.c
 OFILES = $(CFILES:.c=.o)
 
 all: $(NAME)
