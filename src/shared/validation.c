@@ -77,11 +77,6 @@ int 	*any_double(char **av, int ac, int flag)
 	return (arr);
 }
 
-void	put_string(t_list *elem)
-{
-	ft_printf(elem->content);
-}
-
 int		save_stack(int ac, char **av, t_list_arr *res_lst, int *flag)
 {
     int			i;

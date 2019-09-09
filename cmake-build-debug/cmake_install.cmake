@@ -1,4 +1,4 @@
-# Install script for directory: /Users/mcanhand/push_in_trier
+# Install script for directory: /Users/romancheremin/Desktop/dasha/my_pysh
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/mcanhand/push_in_trier/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/romancheremin/Desktop/dasha/my_pysh/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

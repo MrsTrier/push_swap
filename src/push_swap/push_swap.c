@@ -201,14 +201,21 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		{
 			i = detect_index(a, cmnd.place, a_data->length);
 			j = detect_index(b, cmnd.best, b_data->length);
-			if (((min_is(i, a_data->length - i)) == i - 1) && (min_is(j, b_data->length - j) == j - 1))
+			if (((min_is(i, a_data->length - i)) == i - 1) &&
+					(min_is(j, b_data->length - j) == j - 1))
 				c += optimazationRR(a, b, cmnd, a_data, b_data);
-			else if (((min_is(i, a_data->length - i)) == a_data->length - i + 1) && (min_is(j, b_data->length - j) == b_data->length - j + 1))
+			else if (((min_is(i, a_data->length - i)) == a_data->length - i + 1)
+					&& (min_is(j, b_data->length - j) == b_data->length - j + 1))
 				c += optimazationRRR(a, b, cmnd, a_data, b_data);
 			else
 				c += 0;
 		}
 		c += switch_in_b(a, b, b_data, cmnd.best);
+		if (*b_data->pr != NULL)
+		{
+			(*a_data->cmnd) = *(b_data->cmnd - 1);
+			a_data->cmnd++;
+		}
 		c += switch_in_a(a, b, a_data, cmnd.place);
 		executePA(a, b, a_data, b_data);
 		c++;
@@ -223,6 +230,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	t_stack		b_stack;
 	t_stack		a_stack;
 	int 		j;
+	int 		h;
 
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
@@ -231,10 +239,12 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	b_stack.length = 0;
 	if ((save_stack(ac, av, res_lst, (int*)&flag)) == 6)
 		return (write(2, "Error\n", 6));
-	fill_data(res_lst, ac - flag - 1, &a_stack);
+	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
 	if (!lst_sorted_ac(res_lst))
 	{
 		*i = free_a(&res_lst, &b, &a_stack, &b_stack);
+//		ft_printf(*a_stack.pr);
+//		ft_printf("%s\n", *a_stack.cmnd);
 		*i += mk_easy_sort(&res_lst, &b, &a_stack);
 		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
 		while (!lst_sorted_ac(res_lst))
@@ -246,60 +256,72 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 				executeRRA(&res_lst, &b, &a_stack, 1);
 			*i += 1;
 		}
+		(*a_stack.cmnd) = NULL;
 	}
+//	ft_putstr(a_stack.pr);
 //	while (res_lst->next)
 //	{
 //		ft_printf("%d\n", res_lst->content);
 //		res_lst = res_lst->next;
 //	}
 //	ft_printf("%d\n", res_lst->content);
+	(a_stack.cmnd) = NULL;
+//	ft_printf("\n\n");
+	while ((a_stack.pr)[h] != NULL)
+	{
+		ft_printf("%s", (a_stack.pr)[h]);
+		h++;
+	}
 	free_lst_arr(res_lst);
 	free_lst_arr(b);
 }
 
-int		main(int ac, char **av)
-{
-    int			i;
-	int			k;
-	int			fd;
-	char 		*line;
-	char 		**sp_line;
-	unsigned	res;
-	char        *tmp;
-
-	i = 0;
-	k = 0;
-	if ((fd = read_input(ac, av, &res)) == -2)
-		return (write(2, "Error\n", 6));
-	if (!(res & READFILE_FLAG))
-		algorithm(ac, av, res, &i);
-	else
-	{
-		while (get_next_line(fd, &line) > 0)
-		{
-			if (!*line)
-				break;
-			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
-			ac = count_wrds(sp_line);
-			algorithm(ac, sp_line, res, &i);
-			if (i > 3)
-			{
-				ft_printf("i > 12 : %d\n", i);
-				k++;
-			}
-			else
-				ft_printf("i : %d\n", i);
-			while (ac != -1)
-			{
-				free(sp_line[ac]);
-				ac--;
-			}
-            free(tmp);
-			free(line);
-			free(sp_line);
-		}
-	}
-	ft_printf("k : %d\n", k);
-	return (0);
-}
-
+//int		main(int ac, char **av)
+//{
+//    int			i;
+//	int			k;
+//	int			fd;
+//	char 		*line;
+//	char 		**sp_line;
+//	unsigned	res;
+//	char        *tmp;
+//
+//	i = 0;
+//	k = 0;
+//	if ((fd = read_input(ac, av, &res)) == -2)
+//		return (write(2, "Error\n", 6));
+//	if (!(res & READFILE_FLAG))
+//	{
+//		algorithm(ac, av, res, &i);
+//		ft_printf("i : %d\n", i);
+//		ft_printf("k : %d\n", k);
+//	}
+//	else
+//	{
+//		while (get_next_line(fd, &line) > 0)
+//		{
+//			if (!*line)
+//				break;
+//			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
+//			ac = count_wrds(sp_line);
+//			algorithm(ac, sp_line, res, &i);
+//			if (i > 12)
+//			{
+//				ft_printf("i > 12 : %d\n", i);
+//				k++;
+//			}
+//			else
+//				ft_printf("i : %d\n", i);
+//			while (ac != -1)
+//			{
+//				free(sp_line[ac]);
+//				ac--;
+//			}
+//            free(tmp);
+//			free(line);
+//			free(sp_line);
+//		}
+//	}
+//	return (0);
+//}
+//

@@ -7,7 +7,10 @@ void	executeRRB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int rrr)
 	t_list_arr	*tmpl;
 
 	if (rrr)
-        ft_printf("rrb\n");
+	{
+		(*b_data->cmnd) = "rrb\n";
+		b_data->cmnd++;
+	}
 	tmpl = nb_list_at(*b, b_data->length - 1);
 	nb_list_at(*b, b_data->length - 2)->next = NULL;
 	tmpl->next = *b;
@@ -22,7 +25,10 @@ void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
 	t_list_arr	*pr;
 
     if (rrr)
-        ft_printf("rra\n");
+	{
+		(*a_data->cmnd) = "rra\n";
+		a_data->cmnd++;
+	}
 	pr = *a;
 	tmpl = nb_list_at(pr, a_data->length - 1);
     nb_list_at(*a, a_data->length - 2)->next = NULL;

@@ -72,16 +72,22 @@ int 	count_wrds(char **sp_line)
 	return (wrds);
 }
 
-void	fill_data(t_list_arr *a, int i, t_stack *a_data)
+void	fill_data(t_list_arr *a, int i, t_stack *a_data, t_stack * b_data)
 {
 	int			*arr;
 
 	arr = lst_to_arr(a, i); // ac- 1-i
 	a_data->length = i;
-	a_data->tot_len = a_data->length;
 	a_data->min = find_min(a);
 	a_data->max = find_max(a);
 	heap_sort(i, &arr);
 	a_data->mdn = arr[(a_data->length / 2)];
+	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 100); //выделить память на массив
+//	(*a_data->cmnd) = "try\n";
+//	*(a_data->cmnd + 1) = "try2\n";
+	b_data->cmnd = (char**)malloc(sizeof(b_data->cmnd) * 100);
+	a_data->pr = (a_data->cmnd);
+	b_data->pr = (b_data->cmnd);
+//	a_data->cmnd++;
 	free(arr);
 }

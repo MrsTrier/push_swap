@@ -24,6 +24,6 @@ void	put_string(t_list *elem);
 int		ch_save_stack(int ac, char **av, t_list_arr *res_lst, int flag);
 int 	read_input(int ac, char **av, unsigned *res);
 int 	count_wrds(char **sp_line);
-void	fill_data(t_list_arr *a, int i, t_stack *a_data);
+void	fill_data(t_list_arr *a, int i, t_stack *a_data, t_stack *b_data);
 
 #endif

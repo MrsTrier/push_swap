@@ -2,145 +2,137 @@
 #include <stdio.h>
 #include <limits.h>
 
-//void	execute_rest(t_list **res_lst, char *line, t_list **b)
-//{
-//	int 	a_length;
-//	int 	b_length;
-//
-//	a_length = lst_length(*res_lst);
-//	b_length = (*b)->content == NULL ? 0 : lst_length(*b);
-//	if (ft_strcmp(line, "rra") == 0)
-//		executeRRAB(res_lst, a_length);
-//	else if (ft_strcmp(line, "rrb") == 0)
-//		executeRRAB(b, b_length);
-//	else if (ft_strcmp(line, "rrr") == 0)
-//		executeRRR(res_lst, a_length, b, b_length);
-//}
-////int		save_stack(int ac, char **av, t_list *res_lst)
-////{
-////	int		i;
-////	t_list	*stack;
-////
-////	i = 1;
-////	stack = res_lst;
-////	if (ac < 2)
-////		return (0);
-////	while (i < ac)
-////	{
-////		if (!is_int(av[i]))
-////			return (write(2, "Error\n", 6));
-////		create_elem(av[i], ft_strlen(av[i]) + 1, &stack);
-////		i++;
-////	}
-////	return (1);
-////}
-//
-//int 	get_data(t_stack *a_stack, t_stack *b_stack, int flag)
-//{
-//	int j;
-//
-//	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
-//	j = (flag & READFILE_FLAG) ? 0 : j;
-//	a_stack->flag = flag;
-//	b_stack->flag = flag;
-//	b_stack->length = 0;
-//}
-//
-//int measure_list(t_list_arr **res_lst)
-//{
-//
-//}
-//
-//void	execute_comand(t_list_arr **res_lst, char *line, t_list_arr **b, int flag)
-//{
-//	int 		a_length;
-//	int 		b_length;
-//	t_stack		b_data;
-//	t_stack		a_data;
-//
-//	get_data(&a_data, &b_data, flag);
-//	fill_data(res_lst, measure_list(res_lst), &a_data);
-//
-//	a_length = (*res_lst)->content == NULL ? 0 : lst_length(*res_lst);
-//	b_length = (*b)->content == NULL ? 0 : lst_length(*b);
-//	if ((ft_strcmp(line, "sa") == 0) && a_length >= 2)
-//		executeSA(res_lst, b, a_data, 0);
-//	else if ((ft_strcmp(line, "sb") == 0) && b_length >= 2)
-//		executeSB(b, b_length);
-//	else if (ft_strcmp(line, "ss") == 0)
-//		executeSS(res_lst, b, a_length, b_length);
-//	else if (ft_strcmp(line, "pa") == 0 && b_length != 0)
-//		executePA(res_lst, b);
-//	else if (ft_strcmp(line, "pb") == 0 && a_length != 0)
-//		executePB(res_lst, b);
-//	else if (ft_strcmp(line, "ra") == 0)
-//		executeRA(res_lst);
-//	else if (ft_strcmp(line, "rb") == 0)
-//		executeRB(b);
-//	else if (ft_strcmp(line, "rr") == 0)
-//		executeRR(res_lst, b, 0, 0);
-//	else
-//		execute_rest(res_lst, line, b);
-//}
-//
-//int 	execute(int ac, char **av, unsigned flag)
-//{
-//	t_list_arr	*res_lst;
-//	t_list_arr	*b;
-//	char		*line;
-//	t_stack		b_stack;
-//	t_stack		a_stack;
-//
-//	res_lst = nb_lstnew();
-//	b = nb_lstnew();
-//	get_data(&a_stack, &b_stack, flag);
-//	if (!save_stack(ac, av, res_lst, (int*)&flag))
-//		return (0);
-//	fill_data(res_lst, ac - 1 - flag, &a_stack);
-//	while (get_next_line(0, &line) > 0)
+void	execute_rest(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+{
+	if (ft_strcmp(b_data->cmnd[0], "rra") == 0)
+		executeRRA(res_lst, b, a_data, 1);
+	else if (ft_strcmp(b_data->cmnd[0], "rrb") == 0)
+		executeRRB(res_lst, b, b_data, 1);
+	else if (ft_strcmp(b_data->cmnd[0], "rrr") == 0)
+		executeRRR(res_lst, a_data, b, b_data);
+}
+
+int 	get_data(t_stack *a_stack, t_stack *b_stack, unsigned flag)
+{
+	int j;
+
+	j = ((flag & COLOR_FLAG) ? 1 : 0) + ((flag & VISUALIZE_FLAG) ? 1 : 0);
+	j = (flag & READFILE_FLAG) ? 0 : j;
+	a_stack->flag = flag;
+	b_stack->flag = flag;
+	b_stack->length = 0;
+}
+
+void	execute_comand(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+{
+	if ((ft_strcmp(b_data->cmnd[0], "sa") == 0))
+		executeSA(res_lst, b, a_data, 0);
+	else if ((ft_strcmp(b_data->cmnd[0], "sb") == 0))
+		executeSB(res_lst, b, a_data, 0);
+	else if (ft_strcmp(b_data->cmnd[0], "ss") == 0)
+		executeSS(res_lst, b, a_data, b_data);
+	else if (ft_strcmp(b_data->cmnd[0], "pa") == 0)
+		executePA(res_lst, b, a_data, b_data);
+	else if (ft_strcmp(b_data->cmnd[0], "pb"))
+		executePB(res_lst, b, a_data, b_data);
+	else if (ft_strcmp(b_data->cmnd[0], "ra") == 0)
+		executeRA(res_lst, b, 0, a_data);
+	else if (ft_strcmp(b_data->cmnd[0], "rb") == 0)
+		executeRB(res_lst, b, 0, a_data);
+	else if (ft_strcmp(b_data->cmnd[0], "rr") == 0)
+		executeRR(res_lst, b, a_data, b_data);
+	else
+		execute_rest(res_lst, b, a_data, b_data);
+}
+
+int		manage_comands(t_list_arr **res_lst, t_list_arr **b, t_stack *a_stack, t_stack *b_stack)
+{
+	char		*line;
+
+	while (get_next_line(0, &line) > 0)
+	{
+		if (!*line)
+			break;
+		if (!valid(line))
+		{
+			free(line);
+			return (write(2, "Error\n", 6));
+		}
+		(b_stack->cmnd)[0] = ft_strdup(line);
+		execute_comand(res_lst, b, a_stack, b_stack);
+		free(line);
+		free(*b_stack->cmnd);
+	}
+}
+
+void	ft_lstiter_int(t_list_arr *a)
+{
+	t_list_arr *new_item;
+
+	if (!a)
+		return ;
+	new_item = a;
+	while (new_item)
+	{
+		ft_printf("%s", new_item->content);
+		new_item = new_item->next;
+	}
+}
+
+int 	execute(int ac, char **av, unsigned flag)
+{
+	t_stack		b_stack;
+	t_stack		a_stack;
+	t_list_arr	*res_lst;
+	t_list_arr	*b;
+
+	res_lst = nb_lstnew();
+	b = nb_lstnew();
+	get_data(&a_stack, &b_stack, flag);
+	if ((save_stack(ac, av, res_lst, (int*)&flag)) == 6)
+		return (0);
+	fill_data(res_lst, ac - 1 - (int)flag, &a_stack, &b_stack);
+	manage_comands(&res_lst, &b, &a_stack, &b_stack);
+	if ((!lst_sorted_ac(res_lst)) || b_stack.length != 0)
+		return (write(2, "KO\n", 3));
+	else
+	{
+		ft_lstiter_int(res_lst);
+		return (write(1, "OK\n", 3));
+	}
+//	while (res_lst->next)
 //	{
-//		if (!*line)
-//			break;
-//		if (!valid(line)) {
-//			free(line);
-//			return (write(2, "Error\n", 6));
-//		}
-//		execute_comand(&res_lst, line, &b);
-//		free(line);
+//		ft_printf("%d\n", res_lst->content);
+//		res_lst = res_lst->next;
 //	}
-//	if ((!lst_sorted_ac(res_lst)) || (b->content != NULL))
-//		return (write(2, "KO\n", 3));
-//	else
-//	{
-//		ft_lstiter(res_lst, put_string);
-//		return (write(1, "OK\n", 3));
-//	}
-//}
-//
-//int		main(int ac, char **av)
-//{
-//	char		*line;
-//	int			fd;
-//	unsigned	res;
+//	ft_printf("%d\n", flag);
+//	ft_printf("%d\n", res_lst->content);
+}
+
+int		main(int ac, char **av)
+{
+	char		*line;
+	int			fd;
+	unsigned	res;
 //	char 		**sp_line;
 //	char        *tmp;
-//
-//	if ((fd = read_input(ac, av, &res)) == -2)
-//		return (write(2, "Error\n", 6));
-//	if (!(res & READFILE_FLAG))
-//		execute(ac, av, res);
-//	else
-//	{
-//		while (get_next_line(fd, &line) > 0)
-//		{
-//			if (!*line)
-//				break;
+
+	if ((fd = read_input(ac, av, &res)) == -2)
+		return (write(2, "Error\n", 6));
+	if (!(res & READFILE_FLAG))
+		execute(ac, av, res);
+	else
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break;
 //			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
 //			ac = count_wrds(sp_line);
 //			execute(ac, av, res);
 //			free(tmp);
 //			free(line);
 //			free(sp_line);
-//		}
-//	}
-//}
+		}
+	}
+}
