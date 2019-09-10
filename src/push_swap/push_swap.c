@@ -6,8 +6,8 @@ int		easy(t_list_arr **a, t_stack *a_data)
 	int i;
 	int j;
 
-	i = detect_index(a, a_data->min, a_data->length);
-	j = detect_index(a, a_data->max, a_data->length);
+	i = detect_index(a, a_data->min);
+	j = detect_index(a, a_data->max);
 	if (i - j == 1 || i - j == -2)
 		return (0);
 	return (1);
@@ -64,7 +64,7 @@ int		calculate_comands(t_list_arr **a, t_cmnd *cmnd, int b, int a_length)
 	int			i;
 	int			trns_to_place;
 
-	i = detect_index(a, cmnd->place, a_length);
+	i = detect_index(a, cmnd->place);
 	trns_to_place = min_is(i, a_length - i);
 	if (trns_to_place + b < cmnd->c)
 	{
@@ -105,7 +105,7 @@ t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_
 	int			best_place;
 
 	i = 1;
-	cmnd.c = 100000000000000;
+	cmnd.c = 1000000000;
 	pr = *b;
 	best_place = 0;
 	while (pr)
@@ -130,7 +130,7 @@ int 	switch_in_b(t_list_arr **a, t_list_arr **b, t_stack *b_data, int nb)
 	int i;
 
 	c = 0;
-	i = detect_index(b, nb, b_data->length);
+	i = detect_index(b, nb);
 	while ((*b)->content != nb)
 	{
 		c++;
@@ -148,7 +148,7 @@ int 	switch_in_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, int nb)
 	int i;
 
 	c = 0;
-	i = detect_index(a, nb, a_data->length);
+	i = detect_index(a, nb);
 	while ((*a)->content != nb)
 	{
 		c++;
@@ -199,8 +199,8 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		cmnd = choose_best(a, b, a_data, b_data);
 		if ((cmnd.b >= cmnd.a && cmnd.a > 0) || (cmnd.a >= cmnd.b && cmnd.b > 0))
 		{
-			i = detect_index(a, cmnd.place, a_data->length);
-			j = detect_index(b, cmnd.best, b_data->length);
+			i = detect_index(a, cmnd.place);
+			j = detect_index(b, cmnd.best);
 			if (((min_is(i, a_data->length - i)) == i - 1) &&
 					(min_is(j, b_data->length - j) == j - 1))
 				c += optimazationRR(a, b, cmnd, a_data, b_data);
@@ -232,6 +232,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	int 		j;
 	int 		h;
 
+	h = 0;
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
 	a_stack.flag = flag;
@@ -249,7 +250,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
 		while (!lst_sorted_ac(res_lst))
 		{
-			j = detect_index(&res_lst, a_stack.min, a_stack.length);
+			j = detect_index(&res_lst, a_stack.min);
 			if ((min_is(j, a_stack.length - j)) == j - 1)
 				executeRA(&res_lst, &b, 0, &a_stack);
 			else
@@ -274,6 +275,7 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	}
 	free_lst_arr(res_lst);
 	free_lst_arr(b);
+	return (0);
 }
 
 int		main(int ac, char **av)

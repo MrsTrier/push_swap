@@ -29,6 +29,7 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
+	echo "$(NAME) compiling... \c"; \
 	gcc $(CFLAGS) $(SOURCES) -I$(HFILES)
 	ar rc $(NAME) $(OBJECTS)
 

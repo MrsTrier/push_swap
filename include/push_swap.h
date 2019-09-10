@@ -68,7 +68,7 @@ void		nb_push_back(t_list_arr **start, int nb);
 //void		heap_sort(int max, int **stack);
 void		visualize(t_list_arr **a, t_list_arr **b, char *cmnd, int color);
 void		free_lst_arr(t_list_arr *lst);
-int			detect_index(t_list_arr **a, int place, int lenght);
+int			detect_index(t_list_arr **a, int place);
 //int			*lst_to_arr(t_list_arr *lst, int ac);
 int			read_input(int ac, char **av, unsigned *res);
 int 		count_wrds(char **sp_line);

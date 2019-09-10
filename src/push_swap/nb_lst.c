@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int		detect_index(t_list_arr **a, int place, int lenght)
+int		detect_index(t_list_arr **a, int place)
 {
 	t_list_arr	*pr;
 	int			i;

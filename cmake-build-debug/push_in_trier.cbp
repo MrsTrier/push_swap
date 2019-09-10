@@ -414,9 +414,6 @@
 		<Unit filename="/Users/mcanhand/push_in_trier/src/printf/x_conversions.c">
 			<Option target="push_in_trier"/>
 		</Unit>
-		<Unit filename="/Users/mcanhand/push_in_trier/src/push_swap/heap_sort.c">
-			<Option target="push_in_trier"/>
-		</Unit>
 		<Unit filename="/Users/mcanhand/push_in_trier/src/push_swap/nb_lst.c">
 			<Option target="push_in_trier"/>
 		</Unit>
@@ -427,6 +424,9 @@
 			<Option target="push_in_trier"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/push_in_trier/src/shared/execute_rest.c">
+			<Option target="push_in_trier"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push_in_trier/src/shared/heap_sort.c">
 			<Option target="push_in_trier"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/push_in_trier/src/shared/lst_arr_functions.c">

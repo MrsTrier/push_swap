@@ -2,7 +2,6 @@
 #include "checker.h"
 #include "push_swap.h"
 
-
 void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd, int color)
 {
 	t_list_arr	*pr_a;

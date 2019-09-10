@@ -1,57 +1,44 @@
-.PHONY: all clean fclean re push_swap checker reclean
+NAME = push_swap
+SRC_DIR = ./src
+SRC = src/checker/checker.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c src/push_swap/nb_lst.c src/push_swap/push_swap.c
+SRC_ps = src/push_swap/nb_lst.c src/push_swap/push_swap.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c
+SRC_ch = src/checker.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c
 
-NAME1 = checker
-NAME2 = push_swap
-RMS = /bin/rm -rf
-LIBFT = src/libft/
-SHARED = src/shared/
-PUSH_SWAP_F = src/
-CHECKER_F = src/checker/
-CHECKER = $(NAME1)
-PUSH_SWAP = $(NAME2)
+OBJ_DIR = ./objs
+OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
+OBJ_ps = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_ps))
+OBJ_ch = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_ch))
+INC_DIR	:= include
+LIBFT_DIR = src/libft
+LIBFT_INC_DIR = ./include
+PRINTF_DIR = src/printf
+PRINTF_INC_DIR = ../../include
+LIBFT_INC_DIR = ../../include
 
-all:
-	@make -C $(LIBFT)
-	@make -C $(SHARED)
-	@make -C $(CHECKER_F)
-	@make -C $(PUSH_SWAP_F)
+all: $(NAME)
 
-$(NAME1):
-	@if [ -e $(CHECKER) ]; then \
-		make silent_re -C $(CHECKER_F); \
-	else \
-		make -C $(CHECKER_F); \
-	fi
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	echo $INC_DIR
+	@gcc -Wall -Werror -Wextra -I$(LIBFT_INC_DIR) -I$(INC_DIR) -o $@ -c $<
 
-$(NAME2):
-	@if [ -e $(PUSH_SWAP) ]; then \
-		make silent_re -C $(PUSH_SWAP_F); \
-	else \
-		make -C $(PUSH_SWAP_F); \
-	fi
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@make -C $(LIBFT_DIR)
+	@make -C $(PRINTF_DIR)
+	@echo "$(NAME) compiling... \c";
+	@gcc -Wall -Werror -Wextra -L $(LIBFT_DIR) -L $(PRINTF_DIR) -o $(NAME) $(OBJ_ps) -I$(LIBFT_INC_DIR) -I$(INC_DIR)
+#	@gcc -Wall -Werror -Wextra  -L $(LIBFT_DIR) $(PRINTF_DIR) -l -o checker $(OBJ_ch) -I$(LIBFT_INC_DIR) -I$(INC_DIR)
 
 clean:
-	@echo "$(LIBFT) folder:\c"
-	@make clean -C $(LIBFT)
-	@echo "$(SHARED) folder:\c"
-	@make clean -C $(SHARED)
-	@echo "$(PUSH_SWAP_F) folder:\c"
-	@make clean -C $(PUSH_SWAP_F)
-	@echo "$(CHECKER_F) folder:\c"
-	@make clean -C $(CHECKER_F)
+	@rm -rf $(OBJ_DIR)
+	@make -C $(LIBFT_DIR) clean
+	@make -C $(PRINTF_DIR) clean
 
 fclean: clean
-	@#echo "$(LIBFT) folder:\c"
-	@make fclean -C $(LIBFT)
-	@#echo "$(SHARED) folder:\c"
-	@make fclean -C $(SHARED)
-	@#echo "$(PUSH_SWAP_F) folder:\c"
-	@make fclean -C $(PUSH_SWAP_F)
-	@#echo "$(CHECKER_F) folder:\c"
-	@make fclean -C $(CHECKER_F)
-	@$(RMS) $(PUSH_SWAP) $(CHECKER)
+	@rm -f $(NAME)
+	@rm -f checker
+	@make -C $(LIBFT_DIR) fclean
 
 re: fclean all
-
-reclean: re
-	@make clean
