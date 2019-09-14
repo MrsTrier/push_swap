@@ -1,4 +1,4 @@
-NAME = printf.a
+NAME = libftprintf.a
 
 HFILES = ../../include
 
@@ -87,6 +87,7 @@ $(NAME):
 	echo "$(NAME) compiling... \c"; \
 	gcc $(CFLAGS) $(SOURCES) -I$(HFILES)
 	ar rc $(NAME) $(OBJECTS)
+	echo "$(NAME) is ready!... \c"; \
 
 clean:
 	rm -f $(OBJECTS)

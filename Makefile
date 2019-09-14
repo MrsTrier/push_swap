@@ -1,44 +1,59 @@
-NAME = push_swap
-SRC_DIR = ./src
-SRC = src/checker/checker.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c src/push_swap/nb_lst.c src/push_swap/push_swap.c
-SRC_ps = src/push_swap/nb_lst.c src/push_swap/push_swap.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c
-SRC_ch = src/checker.c src/shared/execute_rest.c src/shared/heap_sort.c src/shared/lst_arr_functions.c src/shared/lst_execute.c src/shared/nb_execute.c src/shared/read_input.c src/shared/validation.c
+NAME1 = push_swap
 
-OBJ_DIR = ./objs
-OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
-OBJ_ps = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_ps))
-OBJ_ch = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_ch))
-INC_DIR	:= include
-LIBFT_DIR = src/libft
+NAME2 = checker
+
+SRCDIR = ./src/
+
+OBJDIR = $(SRCDIR)obj/
+
+LFTDIR = $(SRCDIR)libft/
+
+LFT = $(LFTDIR)libft.a
+
 LIBFT_INC_DIR = ./include
-PRINTF_DIR = src/printf
-PRINTF_INC_DIR = ../../include
-LIBFT_INC_DIR = ../../include
 
-all: $(NAME)
+LFTPRINTFDIR = $(SRCDIR)printf/
 
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
-	echo $INC_DIR
-	@gcc -Wall -Werror -Wextra -I$(LIBFT_INC_DIR) -I$(INC_DIR) -o $@ -c $<
+LFTPRINTF = $(LFTPRINTFDIR)libftprintf.a
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+SRCS1 = $(addprefix $(SRCDIR), nb_lst.c push_swap.c execute_rest.c heap_sort.c lst_arr_functions.c lst_execute.c nb_execute.c read_input.c validation.c)
 
-$(NAME): $(OBJ_DIR) $(OBJ)
-	@make -C $(LIBFT_DIR)
-	@make -C $(PRINTF_DIR)
-	@echo "$(NAME) compiling... \c";
-	@gcc -Wall -Werror -Wextra -L $(LIBFT_DIR) -L $(PRINTF_DIR) -o $(NAME) $(OBJ_ps) -I$(LIBFT_INC_DIR) -I$(INC_DIR)
-#	@gcc -Wall -Werror -Wextra  -L $(LIBFT_DIR) $(PRINTF_DIR) -l -o checker $(OBJ_ch) -I$(LIBFT_INC_DIR) -I$(INC_DIR)
+SRCS2 = $(addprefix $(SRCDIR), checker.c execute_rest.c heap_sort.c lst_arr_functions.c lst_execute.c nb_execute.c read_input.c validation.c)
+
+OBJ1 = $(SRCS1:%.c=$(OBJDIR)%.o)
+
+OBJ2 = $(SRCS2:%.c=$(OBJDIR)%.o)
+
+CC = gcc -Wall -Werror -Wextra
+
+all: $(NAME1) $(NAME2)
+
+$(NAME1): $(OBJ1) $(LFT) $(LFTPRINTF)
+	@$(CC) -L$(LFTDIR) -lft -L$(LFTPRINTFDIR) -lftprintf $^ -o $@
+	@echo "$(NAME1) done!"
+
+$(NAME2): $(OBJ2) $(LFT) $(LFTPRINTF)
+	@$(CC) -L$(LFTDIR) -lft -L$(LFTPRINTFDIR) -lftprintf $^ -o $@
+	@echo "$(NAME2) done!"
+
+$(LFT):
+	@$(MAKE) -C $(LFTDIR)
+	@$(MAKE) -C $(LFTDIR) clean
+
+$(LFTPRINTF):
+	@$(MAKE) -C $(LFTPRINTFDIR)
+	@$(MAKE) -C $(LFTPRINTFDIR) clean
+
+$(OBJDIR)%.o: %.c
+	@mkdir -p '$(@D)'
+	@$(CC) -I./include -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)
-	@make -C $(LIBFT_DIR) clean
-	@make -C $(PRINTF_DIR) clean
+	@rm -rf $(OBJDIR)
+	@$(MAKE) -C $(LFTDIR) fclean
+	@$(MAKE) -C $(LFTPRINTFDIR) fclean
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -f checker
-	@make -C $(LIBFT_DIR) fclean
+	@rm -f $(NAME1) $(NAME2)
 
 re: fclean all
