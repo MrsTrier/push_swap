@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/cf/zlnflkx92w15974wkjbrqcbh0000gn/T/AppTranslocation/4131A1BB-1337-4B41-B1BB-D2E7E5F01277/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/cf/zlnflkx92w15974wkjbrqcbh0000gn/T/AppTranslocation/4131A1BB-1337-4B41-B1BB-D2E7E5F01277/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/cf/zlnflkx92w15974wkjbrqcbh0000gn/T/AppTranslocation/4131A1BB-1337-4B41-B1BB-D2E7E5F01277/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/cf/zlnflkx92w15974wkjbrqcbh0000gn/T/AppTranslocation/4131A1BB-1337-4B41-B1BB-D2E7E5F01277/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -2445,60 +2445,6 @@ src/printf/ft_lst_to_str.c.s:
 	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.s
 .PHONY : src/printf/ft_lst_to_str.c.s
 
-src/printf/ft_lstadd.o: src/printf/ft_lstadd.c.o
-
-.PHONY : src/printf/ft_lstadd.o
-
-# target to build an object file
-src/printf/ft_lstadd.c.o:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o
-.PHONY : src/printf/ft_lstadd.c.o
-
-src/printf/ft_lstadd.i: src/printf/ft_lstadd.c.i
-
-.PHONY : src/printf/ft_lstadd.i
-
-# target to preprocess a source file
-src/printf/ft_lstadd.c.i:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.i
-.PHONY : src/printf/ft_lstadd.c.i
-
-src/printf/ft_lstadd.s: src/printf/ft_lstadd.c.s
-
-.PHONY : src/printf/ft_lstadd.s
-
-# target to generate assembly for a file
-src/printf/ft_lstadd.c.s:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.s
-.PHONY : src/printf/ft_lstadd.c.s
-
-src/printf/ft_lstnew.o: src/printf/ft_lstnew.c.o
-
-.PHONY : src/printf/ft_lstnew.o
-
-# target to build an object file
-src/printf/ft_lstnew.c.o:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o
-.PHONY : src/printf/ft_lstnew.c.o
-
-src/printf/ft_lstnew.i: src/printf/ft_lstnew.c.i
-
-.PHONY : src/printf/ft_lstnew.i
-
-# target to preprocess a source file
-src/printf/ft_lstnew.c.i:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.i
-.PHONY : src/printf/ft_lstnew.c.i
-
-src/printf/ft_lstnew.s: src/printf/ft_lstnew.c.s
-
-.PHONY : src/printf/ft_lstnew.s
-
-# target to generate assembly for a file
-src/printf/ft_lstnew.c.s:
-	$(MAKE) -f CMakeFiles/my_push.dir/build.make CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.s
-.PHONY : src/printf/ft_lstnew.c.s
-
 src/printf/ft_printf.o: src/printf/ft_printf.c.o
 
 .PHONY : src/printf/ft_printf.o
@@ -3360,12 +3306,6 @@ help:
 	@echo "... src/printf/ft_lst_to_str.o"
 	@echo "... src/printf/ft_lst_to_str.i"
 	@echo "... src/printf/ft_lst_to_str.s"
-	@echo "... src/printf/ft_lstadd.o"
-	@echo "... src/printf/ft_lstadd.i"
-	@echo "... src/printf/ft_lstadd.s"
-	@echo "... src/printf/ft_lstnew.o"
-	@echo "... src/printf/ft_lstnew.i"
-	@echo "... src/printf/ft_lstnew.s"
 	@echo "... src/printf/ft_printf.o"
 	@echo "... src/printf/ft_printf.i"
 	@echo "... src/printf/ft_printf.s"

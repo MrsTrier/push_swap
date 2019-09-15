@@ -49,7 +49,7 @@ t_list_arr	*create_nb_elem(int nb, t_list_arr **lst, int i)
 	return (*lst);
 }
 
-int		lst_sorted_ac(t_list_arr *lst)
+int		lst_sorted_ac(t_list_arr *lst, int elem, int l_elem)
 {
 	t_list_arr  *new_item;
 	int			i;
@@ -58,7 +58,13 @@ int		lst_sorted_ac(t_list_arr *lst)
 	if (!lst)
 		return (0);
 	new_item = lst;
-	while (new_item->next)
+	while (new_item->next && i != elem)
+	{
+		new_item = new_item->next;
+		i++;
+	}
+	i = 0;
+	while (i != l_elem - elem - 1)
 	{
         i += 1;
 		if (new_item->content > new_item->next->content)

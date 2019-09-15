@@ -379,12 +379,6 @@
 		<Unit filename="/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lst_to_str.c">
 			<Option target="my_push"/>
 		</Unit>
-		<Unit filename="/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lstadd.c">
-			<Option target="my_push"/>
-		</Unit>
-		<Unit filename="/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lstnew.c">
-			<Option target="my_push"/>
-		</Unit>
 		<Unit filename="/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_printf.c">
 			<Option target="my_push"/>
 		</Unit>

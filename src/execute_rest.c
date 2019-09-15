@@ -40,6 +40,8 @@ void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
 
 void	executeRRR(t_list_arr **a, t_stack *a_data, t_list_arr **b, t_stack *b_data)
 {
+	(*a_data->cmnd) = "rrr\n";
+	a_data->cmnd++;
 	executeRRA(a, b, a_data, 0);
 	executeRRB(a, b, b_data, 0);
 	if (a_data->flag & VISUALIZE_FLAG)

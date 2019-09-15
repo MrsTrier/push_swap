@@ -211,10 +211,11 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 				c += 0;
 		}
 		c += switch_in_b(a, b, b_data, cmnd.best);
-		if (*b_data->pr != NULL)
+		while (*b_data->pr != NULL)
 		{
 			(*a_data->cmnd) = *(b_data->cmnd - 1);
 			a_data->cmnd++;
+			b_data->pr++;
 		}
 		c += switch_in_a(a, b, a_data, cmnd.place);
 		executePA(a, b, a_data, b_data);
@@ -226,32 +227,77 @@ int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 int     how_much_sorted(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	int     i;
+	int     elem;
 	int     pb;
 
-	if ((i = lst_sorted_ac(*a)) != 0)
+	pb = 0;
+	elem = -1;
+	i = 0;
+	while (a_data->length - i - 1)
 	{
-		pb = a_data->length - i;
-		if (i >= (a_data->length / 2))
+		if ((pb = lst_sorted_ac(*a, i, a_data->length)) == 0)
 		{
-			while (a_data->length - i)
-			{
-				executeRRA(a, b, a_data, 1);
-				i++;
-			}
-			while (pb)
-			{
-				executePB(a, b, a_data, b_data);
-				pb--;
-			}
+			elem = i;
+			break ;
 		}
-		else
-			return (0);
+		i++;
 	}
+	if (!elem)
+		return (0);
+	if (elem == 1)
+		executeSA(a, b, a_data, 0);
+	else if (elem == 2)
+	{
+		executeRA(a, b, 0, a_data);
+		executeSA(a, b, a_data, 0);
+		executeRRA(a, b, a_data, 1);
+		return (1);
+	}
+	else if ((pb = lst_sorted_ac(*a, i, a_data->length)) > (a_data->length / 2))
+	{
+		while (a_data->length - pb)
+		{
+			executeRRA(a, b, a_data, 1);
+			executePB(a, b, a_data, b_data);
+			pb++;
+		}
+	}
+	i = a_data->length - 1;
+	elem = -1;
+	while (i != a_data->length - 2)
+	{
+		if (lst_sorted_ac(*a, 0, i) == 0)
+		{
+			elem = i;
+			break ;
+		}
+		i--;
+	}
+	if (elem == a_data->length - 1)
+	{
+		executeRRA(a, b, a_data, 1);
+		executeRRA(a, b, a_data, 1);
+		executeSA(a, b, a_data, 0);
+		executeRA(a, b, 0, a_data);
+		executeRA(a, b, 0, a_data);
+	}
+	else if (elem == a_data->length - 2)
+	{
+		executeRRA(a, b, a_data, 1);
+		executeRRA(a, b, a_data, 1);
+		executeRRA(a, b, a_data, 1);
+		executeSA(a, b, a_data, 0);
+		executeRA(a, b, 0, a_data);
+		executeRA(a, b, 0, a_data);
+		executeRA(a, b, 0, a_data);
+	}
+	else
+		return (0);
 	return (1);
 
 }
 
-int 	algorithm(int ac, char **av, unsigned flag, int *i)
+int 	algorithm(int ac, char **av, unsigned flag)
 {
 	t_list_arr	*res_lst;
 	t_list_arr	*b;
@@ -268,31 +314,37 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 	b_stack.length = 0;
 	if ((save_stack(ac, av, res_lst, (int*)&flag)) == 6)
 		return (write(2, "Error\n", 6));
-	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
-	if (lst_sorted_ac(res_lst))
+	if (ac == 3)
 	{
-		if (!(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)))
+		if (res_lst->content > res_lst->next->content)
+			return (write(1, "sa\n", 3));
+		else
+			return (0);
+	}
+	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
+	if (lst_sorted_ac(res_lst, 0, a_stack.length))
+	{
+		if (a_stack.length > 5 ? !(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
 		{
-			*i = free_a(&res_lst, &b, &a_stack, &b_stack);
-			*i += mk_easy_sort(&res_lst, &b, &a_stack);
+			free_a(&res_lst, &b, &a_stack, &b_stack);
+			mk_easy_sort(&res_lst, &b, &a_stack);
 		}
+		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ? sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
 //		ft_printf(*a_stack.pr);
 //		ft_printf("%s\n", *a_stack.cmnd);
-		*i += sorting(&res_lst, &b, &a_stack, &b_stack);
 //		while (res_lst->next)
 //		{
 //			ft_printf("%d\n", res_lst->content);
 //			res_lst = res_lst->next;
 //		}
 //		ft_printf("%d\n", res_lst->content);
-		while (lst_sorted_ac(res_lst))
+		while (lst_sorted_ac(res_lst, 0, a_stack.length))
 		{
 			j = detect_index(&res_lst, a_stack.min);
 			if ((min_is(j, a_stack.length - j)) == j - 1)
 				executeRA(&res_lst, &b, 0, &a_stack);
 			else
 				executeRRA(&res_lst, &b, &a_stack, 1);
-			*i += 1;
 		}
 		(*a_stack.cmnd) = NULL;
 	}
@@ -317,26 +369,20 @@ int 	algorithm(int ac, char **av, unsigned flag, int *i)
 
 int		main(int ac, char **av)
 {
-	int			i;
-	int			k;
 	int			fd;
 	char 		*line;
 	char 		**sp_line;
 	unsigned	res;
 	char        *tmp;
 
-	i = 0;
-	k = 0;
 	if (ac == 1)
 		return 0;
 	if ((fd = read_input(ac, av, &res)) == -2)
 		return (write(2, "Error\n", 6));
 	if (!(res & READFILE_FLAG))
 	{
-		if (algorithm(ac, av, res, &i) == 6)
+		if (algorithm(ac, av, res) == 6)
 			return (0);
-		ft_printf("i : %d\n", i);
-		ft_printf("k : %d\n", k);
 	}
 	else
 	{
@@ -346,15 +392,8 @@ int		main(int ac, char **av)
 				break;
 			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
 			ac = count_wrds(sp_line);
-			if (algorithm(ac, sp_line, res, &i) == 6)
+			if (algorithm(ac, sp_line, res) == 6)
 				return (0);
-			if (i > 12)
-			{
-				ft_printf("i > 12 : %d\n", i);
-				k++;
-			}
-			else
-				ft_printf("i : %d\n", i);
 			while (ac != -1)
 			{
 				free(sp_line[ac]);
@@ -368,3 +407,47 @@ int		main(int ac, char **av)
 	return (0);
 }
 
+
+
+//-25677
+//73658
+//-73853
+//-66569
+//-62632
+//-61060
+//-37372
+//
+//		ra
+//pb
+//		pb
+//pb
+//		ra
+//pb
+//		pb
+//pb
+//		sa
+//ra
+//		pa
+//rra
+//		pa
+//rb
+//		pa
+//rb
+//		pa
+//rb
+//		ra
+//ra
+//		pa
+//rb
+//		ra
+//ra
+//		ra
+//ra
+//		pa
+//rb
+//		rra
+//pa
+//		ra
+//ra
+//		ra
+//ra

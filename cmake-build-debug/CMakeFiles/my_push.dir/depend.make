@@ -381,14 +381,6 @@ CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.o: ../include/get_next_line.h
 CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.o: ../include/libft.h
 CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.o: ../src/printf/ft_lst_to_str.c
 
-CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o: ../include/get_next_line.h
-CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o: ../include/libft.h
-CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o: ../src/printf/ft_lstadd.c
-
-CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o: ../include/get_next_line.h
-CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o: ../include/libft.h
-CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o: ../src/printf/ft_lstnew.c
-
 CMakeFiles/my_push.dir/src/printf/ft_printf.c.o: ../include/conversions.h
 CMakeFiles/my_push.dir/src/printf/ft_printf.c.o: ../include/ft_printf.h
 CMakeFiles/my_push.dir/src/printf/ft_printf.c.o: ../include/get_next_line.h

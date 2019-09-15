@@ -97,8 +97,6 @@ add_executable(my_push
         src/printf/ft_itoa_base.c
         src/printf/ft_itoa_base_hex_long.c
         src/printf/ft_lst_to_str.c
-        src/printf/ft_lstadd.c
-        src/printf/ft_lstnew.c
         src/printf/ft_printf.c
         src/printf/ft_realloc.c
         src/printf/ft_strappend.c

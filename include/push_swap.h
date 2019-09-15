@@ -58,7 +58,7 @@ typedef struct		s_cmnd
 int			save_stack(int ac, char **av, t_list_arr *res_lst, int *flag);
 int			lst_length(t_list *lst);
 int			lst_sorted_dec(t_list_arr *lst);
-int		    lst_sorted_ac(t_list_arr *lst);
+int		    lst_sorted_ac(t_list_arr *lst, int elem, int l_elem);
 //t_list_arr	*nb_list_at(t_list_arr *begin_list, unsigned int nbr);
 t_list_arr	*create_nb_elem(int nb, t_list_arr **lst, int i);
 t_list_arr	*nb_lstnew();

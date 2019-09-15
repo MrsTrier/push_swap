@@ -79,8 +79,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_push.dir/src/printf/ft_itoa_base.c.o"
   "CMakeFiles/my_push.dir/src/printf/ft_itoa_base_hex_long.c.o"
   "CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.o"
-  "CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o"
-  "CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o"
   "CMakeFiles/my_push.dir/src/printf/ft_printf.c.o"
   "CMakeFiles/my_push.dir/src/printf/ft_realloc.c.o"
   "CMakeFiles/my_push.dir/src/printf/ft_strappend.c.o"

@@ -38,7 +38,7 @@ void	execute_comand(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_sta
 		executePB(res_lst, b, a_data, b_data);
 	else if (ft_strcmp(b_data->cmnd[0], "ra") == 0 && a_data->length > 1)
 		executeRA(res_lst, b, 0, a_data);
-	else if (ft_strcmp(b_data->cmnd[0], "rb") == 0 && b_data->length > 1)
+	else if (ft_strcmp(b_data->cmnd[0], "rb") == 0 && a_data->length > 1)
 		executeRB(res_lst, b, 0, a_data);
 	else if (ft_strcmp(b_data->cmnd[0], "rr") == 0 && b_data->length > 1 && a_data->length > 1)
 		executeRR(res_lst, b, a_data, b_data);
@@ -96,7 +96,7 @@ int 	execute(int ac, char **av, unsigned flag)
 	fill_data(res_lst, ac - 1 - (int)flag, &a_stack, &b_stack);
 //	write(1, "Please, enter instructions into the standard input and press 'enter' twice\n", 75);
 	manage_comands(&res_lst, &b, &a_stack, &b_stack);
-	if ((lst_sorted_ac(res_lst)) || b_stack.length != 0)
+	if ((lst_sorted_ac(res_lst, 0, a_stack.length)) || b_stack.length != 0)
 		return (write(2, "KO\n", 3));
 	else
 	{

@@ -90,8 +90,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_itoa_base.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_itoa_base.c.o"
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_itoa_base_hex_long.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_itoa_base_hex_long.c.o"
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lst_to_str.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_lst_to_str.c.o"
-  "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lstadd.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_lstadd.c.o"
-  "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_lstnew.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_lstnew.c.o"
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_printf.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_printf.c.o"
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_realloc.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_realloc.c.o"
   "/Users/romancheremin/Desktop/dasha/my_push/src/printf/ft_strappend.c" "/Users/romancheremin/Desktop/dasha/my_push/cmake-build-debug/CMakeFiles/my_push.dir/src/printf/ft_strappend.c.o"

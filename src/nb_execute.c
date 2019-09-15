@@ -6,10 +6,13 @@ int		executeSA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int ss)
 	t_list_arr	*pr_a;
 	int			tmp;
 
-	(*a_data->cmnd) = "sa\n";
-	a_data->cmnd++;
-	pr_a = *a;
-	if (a_data->length <= 2)
+	if (!ss)
+	{
+		(*a_data->cmnd) = "sa\n";
+		a_data->cmnd++;
+		pr_a = *a;
+	}
+	if (a_data->length < 2)
 		return (0);
 	else
 	{

@@ -1,0 +1,77 @@
+NAME = libftprintf.a
+
+FT_INC = ../../include
+
+CFLAGS = -c -Wall -Wextra -Werror
+SOURCES =   c_conversions.c \
+            conversion_flags.c \
+            convert_flags.c \
+            d_conversions.c \
+            div_10_longnum.c \
+            f_conversions.c \
+            float_to_str.c \
+            ft_after_num.c \
+            ft_before_num.c \
+            ft_itoa_base.c \
+            ft_itoa_base_hex_long.c \
+            ft_printf.c \
+            get_conv_glags.c \
+            get_conversion.c \
+            get_first_digit.c \
+            get_flags.c \
+            get_sizes.c \
+            large_arythmetics.c \
+            make_double.c \
+            make_ldouble.c \
+            mod_conversions.c \
+            o_conversions.c \
+            p_conversions.c \
+            print_conversion.c \
+            s_conversion.c \
+            sum_longnum.c \
+            u_conversion.c \
+            x_conversions.c \
+            fill_with_chars.c \
+            ft_lst_to_str.c \
+            ft_realloc.c \
+            ft_strappend.c \
+            ft_create_node.c \
+
+
+LIST_PATH = ../libft/
+LIST_SRC = ft_lstadd.c \
+           ft_lstnew.c \
+
+CC = gcc
+
+OBJ += $(addprefix $(PRINT_PATH),$(FT_PRINTF_SRC:.c=.o))
+OBJ += $(addprefix $(LIST_PATH),$(LIST_SRC:.c=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	@echo "\nCreating $@"
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+
+%.o: %.c
+	@echo "$(CLEAR_LINE)"
+	@echo "Compiling $<\r\c"
+	@$(CC) $(CFLAGS) -I$(FT_INC) -c $< -o $@
+
+
+# all: $(NAME)
+#
+# $(NAME):
+# 	echo "$(NAME) compiling... \c"; \
+# 	gcc $(CFLAGS) $(SOURCES) -I$(HFILES)
+# 	ar rc $(NAME) $(OBJECTS)
+# 	echo "$(NAME) is ready!... \c"; \
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
