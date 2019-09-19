@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_input.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:46:01 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:03:17 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "execute.h"
 
-int     find_min(t_list_arr *res_lst)
+int     find_min(t_arr *res_lst)
 {
 	int			min;
-	t_list_arr	*new_item;
+	t_arr	*new_item;
 
 	if (!res_lst)
 		return (write(2, "Error\n", 6));
@@ -19,10 +31,10 @@ int     find_min(t_list_arr *res_lst)
 	return (min);
 }
 
-int     find_max(t_list_arr	*res_lst)
+int     find_max(t_arr	*res_lst)
 {
 	int			max;
-	t_list_arr	*new_item;
+	t_arr	*new_item;
 
 	if (!res_lst)
 		return (write(2, "Error\n", 6));
@@ -73,22 +85,19 @@ int 	count_wrds(char **sp_line)
 	return (wrds);
 }
 
-void	fill_data(t_list_arr *a, int i, t_stack *a_data, t_stack * b_data)
+void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack * b_data)
 {
 	int			*arr;
 
-	arr = lst_to_arr(a, i); // ac- 1-i
+	arr = lst_to_arr(a, i);
 	a_data->length = i;
 	a_data->min = find_min(a);
 	a_data->max = find_max(a);
 	heap_sort(i, &arr);
 	a_data->mdn = arr[(a_data->length / 2)];
-	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 100); //выделить память на массив
-//	(*a_data->cmnd) = "try\n";
-//	*(a_data->cmnd + 1) = "try2\n";
+	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 100);
 	b_data->cmnd = (char**)malloc(sizeof(b_data->cmnd) * 100);
 	a_data->pr = (a_data->cmnd);
 	b_data->pr = (b_data->cmnd);
-//	a_data->cmnd++;
 	free(arr);
 }

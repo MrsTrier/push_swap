@@ -1,42 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_lst.c                                           :+:      :+:    :+:   */
+/*   free_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 17:45:49 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/09/19 18:02:49 by mcanhand         ###   ########.fr       */
+/*   Created: 2019/09/19 19:54:11 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 19:56:18 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		detect_index(t_arr **a, int place)
+void	free_arr(int ac, char **arr)
 {
-	t_arr	*pr;
-	int			i;
-
-	pr = *a;
-	i = 1;
-	while (pr->content != place)
+	while (ac != -1)
 	{
-		i++;
-		pr = pr->next;
+		free(arr[ac]);
+		ac--;
 	}
-	return (i);
 }
-
-void		free_lst_arr(t_arr *lst)
-{
-    t_arr	*tmp;
-
-    while (lst)
-    {
-        tmp = lst->next;
-        free(lst);
-        lst = tmp;
-    }
-}
-
-

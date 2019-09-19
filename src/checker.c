@@ -1,18 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:08 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 20:11:29 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 #include <stdio.h>
 #include <limits.h>
 
-void	execute_rest(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	execute_rest(t_arr **res_lst, t_arr **b, t_stack *a_data,
+										t_stack *b_data)
 {
 	if (ft_strcmp(b_data->cmnd[0], "rra") == 0 && a_data->length > 1)
 		executeRRA(res_lst, b, a_data, 1);
 	else if (ft_strcmp(b_data->cmnd[0], "rrb") == 0 && b_data->length > 1)
 		executeRRB(res_lst, b, b_data, 1);
-	else if (ft_strcmp(b_data->cmnd[0], "rrr") == 0 && a_data->length > 1 && b_data->length > 1)
+	else if (ft_strcmp(b_data->cmnd[0], "rrr") == 0 &&
+								a_data->length > 1 && b_data->length > 1)
 		executeRRR(res_lst, a_data, b, b_data);
 }
 
-int 	get_data(t_stack *a_stack, t_stack *b_stack, unsigned flag)
+int		get_data(t_stack *a_stack, t_stack *b_stack, unsigned flag)
 {
 	int j;
 
@@ -24,13 +38,15 @@ int 	get_data(t_stack *a_stack, t_stack *b_stack, unsigned flag)
 	return (0);
 }
 
-void	execute_comand(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	execute_comand(t_arr **res_lst, t_arr **b,
+								t_stack *a_data, t_stack *b_data)
 {
 	if ((ft_strcmp(b_data->cmnd[0], "sa") == 0) && a_data->length >= 2)
 		executeSA(res_lst, b, a_data, 0);
 	else if ((ft_strcmp(b_data->cmnd[0], "sb") == 0) && b_data->length >= 2)
 		executeSB(res_lst, b, a_data, 0);
-	else if (ft_strcmp(b_data->cmnd[0], "ss") == 0 && a_data->length >= 2 && b_data->length >= 2)
+	else if (ft_strcmp(b_data->cmnd[0], "ss") == 0 &&
+								a_data->length >= 2 && b_data->length >= 2)
 		executeSS(res_lst, b, a_data, b_data);
 	else if (ft_strcmp(b_data->cmnd[0], "pa") == 0 && b_data->length > 0)
 		executePA(res_lst, b, a_data, b_data);
@@ -40,20 +56,22 @@ void	execute_comand(t_list_arr **res_lst, t_list_arr **b, t_stack *a_data, t_sta
 		executeRA(res_lst, b, 0, a_data);
 	else if (ft_strcmp(b_data->cmnd[0], "rb") == 0 && a_data->length > 1)
 		executeRB(res_lst, b, 0, a_data);
-	else if (ft_strcmp(b_data->cmnd[0], "rr") == 0 && b_data->length > 1 && a_data->length > 1)
+	else if (ft_strcmp(b_data->cmnd[0], "rr") == 0 &&
+									b_data->length > 1 && a_data->length > 1)
 		executeRR(res_lst, b, a_data, b_data);
 	else
 		execute_rest(res_lst, b, a_data, b_data);
 }
 
-int		manage_comands(t_list_arr **res_lst, t_list_arr **b, t_stack *a_stack, t_stack *b_stack)
+int		manage_comands(t_arr **res_lst, t_arr **b,
+						t_stack *a_stack, t_stack *b_stack)
 {
 	char		*line;
 
 	while (get_next_line(0, &line) > 0)
 	{
 		if (!*line)
-			break;
+			break ;
 		if (!valid(line))
 		{
 			free(line);
@@ -67,9 +85,9 @@ int		manage_comands(t_list_arr **res_lst, t_list_arr **b, t_stack *a_stack, t_st
 	return (1);
 }
 
-void	ft_lstiter_int(t_list_arr *a)
+void	ft_lstiter_int(t_arr *a)
 {
-	t_list_arr *new_item;
+	t_arr *new_item;
 
 	if (!a)
 		return ;
@@ -81,12 +99,12 @@ void	ft_lstiter_int(t_list_arr *a)
 	}
 }
 
-int 	execute(int ac, char **av, unsigned flag)
+int		execute(int ac, char **av, unsigned flag)
 {
 	t_stack		b_stack;
 	t_stack		a_stack;
-	t_list_arr	*res_lst;
-	t_list_arr	*b;
+	t_arr		*res_lst;
+	t_arr		*b;
 
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
@@ -99,17 +117,7 @@ int 	execute(int ac, char **av, unsigned flag)
 	if ((lst_sorted_ac(res_lst, 0, a_stack.length)) || b_stack.length != 0)
 		return (write(2, "KO\n", 3));
 	else
-	{
-//		ft_lstiter_int(res_lst);
 		return (write(1, "OK\n", 3));
-	}
-//	while (res_lst->next)
-//	{
-//		ft_printf("%d\n", res_lst->content);
-//		res_lst = res_lst->next;
-//	}
-//	ft_printf("%d\n", flag);
-//	ft_printf("%d\n", res_lst->content);
 }
 
 int		main(int ac, char **av)
@@ -117,8 +125,8 @@ int		main(int ac, char **av)
 	char		*line;
 	int			fd;
 	unsigned	res;
-	char 		**sp_line;
-	char        *tmp;
+	char		**sp_line;
+	char		*tmp;
 
 	if ((fd = read_input(ac, av, &res)) == -2)
 		return (write(2, "Error\n", 6));
@@ -129,8 +137,9 @@ int		main(int ac, char **av)
 		while (get_next_line(fd, &line) > 0)
 		{
 			if (!*line)
-				break;
-			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
+				break ;
+			tmp = ft_strjoin("0 ", line);
+			sp_line = ft_strsplit(tmp, ' ');
 			ac = count_wrds(sp_line);
 			execute(ac, sp_line, res);
 			free(tmp);
@@ -139,14 +148,3 @@ int		main(int ac, char **av)
 		}
 	}
 }
-
-//pb
-//pb
-//pb
-//pb
-//rr
-//ra
-//rrr
-//pa
-//pa
-//pa

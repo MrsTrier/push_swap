@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:29:25 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 16:48:39 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/09/19 18:01:48 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_list_arr
+typedef struct		s_arr
 {
     int 			    content;
-    struct s_list_arr	*next;
-}					t_list_arr;
+    struct s_arr	*next;
+}					t_arr;
 
 void				*ft_memalloc(size_t size);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));

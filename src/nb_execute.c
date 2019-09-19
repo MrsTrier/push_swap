@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nb_execute.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:43 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:02:48 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "execute.h"
 #include "push_swap.h"
 
-int		executeSA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int ss)
+int		executeSA(t_arr **a, t_arr **b, t_stack *a_data, int ss)
 {
-	t_list_arr	*pr_a;
+	t_arr	*pr_a;
 	int			tmp;
 
 	if (!ss)
@@ -25,9 +37,9 @@ int		executeSA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int ss)
 	return (1);
 }
 
-int		executeSB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int ss)
+int		executeSB(t_arr **a, t_arr **b, t_stack *b_data, int ss)
 {
-	t_list_arr	*pr;
+	t_arr	*pr;
 	int			tmp;
 
 	if (!ss)
@@ -49,11 +61,11 @@ int		executeSB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int ss)
 	return (1);
 }
 
-void	executePA(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	executePA(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
-	t_list_arr *new_item;
-	t_list_arr *new_a;
-	t_list_arr *next;
+	t_arr *new_item;
+	t_arr *new_a;
+	t_arr *next;
 
 	(*a_data->cmnd) = "pa\n";
 	a_data->cmnd++;
@@ -72,11 +84,11 @@ void	executePA(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 		visualize(a, b, PA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
-void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
-	t_list_arr *new_item;
-	t_list_arr *new_a;
-	t_list_arr *next;
+	t_arr *new_item;
+	t_arr *new_a;
+	t_arr *next;
 
 	(*a_data->cmnd) = "pb\n";
 	a_data->cmnd++;
@@ -98,9 +110,9 @@ void	executePB(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 }
 
 
-void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_data)
+void	executeRA(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 {
-	t_list_arr	*new_item;
+	t_arr	*new_item;
 	int 		tmp;
 
 	if (!rr)
@@ -108,8 +120,6 @@ void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_data)
 		(*a_data->cmnd) = "ra\n";
 		a_data->cmnd++;
 	}
-//	if (!rr)
-//		ft_printf("ra\n");
 	new_item = (*a)->next;
 	tmp = (*a)->content;
 	free(*a);
@@ -120,9 +130,9 @@ void	executeRA(t_list_arr **a, t_list_arr **b, int rr, t_stack *a_data)
 }
 
 
-void	executeRB(t_list_arr **a, t_list_arr **b, int rr, t_stack *b_data)
+void	executeRB(t_arr **a, t_arr **b, int rr, t_stack *b_data)
 {
-	t_list_arr	*new_item;
+	t_arr	*new_item;
 	int 		tmp;
 
 	if (!rr)
@@ -140,7 +150,7 @@ void	executeRB(t_list_arr **a, t_list_arr **b, int rr, t_stack *b_data)
 }
 
 
-void	executeSS(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	executeSS(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	(*a_data->cmnd) = "ss\n";
 	a_data->cmnd++;
@@ -151,7 +161,7 @@ void	executeSS(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
 }
 
 
-void	executeRR(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+void	executeRR(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	(*a_data->cmnd) = "rr\n";
 	a_data->cmnd++;

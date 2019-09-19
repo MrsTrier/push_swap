@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_execute.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:38 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:02:35 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list_arr	*nb_list_at(t_list_arr *begin_list, unsigned int nbr)
+t_arr	*nb_list_at(t_arr *begin_list, unsigned int nbr)
 {
 	unsigned int i;
 
@@ -17,9 +29,9 @@ t_list_arr	*nb_list_at(t_list_arr *begin_list, unsigned int nbr)
 	return (NULL);
 }
 
-int     *lst_to_arr(t_list_arr *lst, int ac)
+int     *lst_to_arr(t_arr *lst, int ac)
 {
-	t_list_arr  *new_item;
+	t_arr  *new_item;
 	int     *arr;
 	int     i;
 

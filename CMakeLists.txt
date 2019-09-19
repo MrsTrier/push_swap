@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
-project(my_push)
+project(push_swap)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
 
-add_executable(my_push
+add_executable(push_swap
         include/checker.h
         include/conversions.h
         include/execute.h
@@ -16,7 +16,6 @@ add_executable(my_push
         include/large_arythmetics.h
         include/libft.h
         include/push_swap.h
-        src/checker.c
         src/libft/ft_any.c
         src/libft/ft_atoi.c
         src/libft/ft_bzero.c
@@ -97,6 +96,8 @@ add_executable(my_push
         src/printf/ft_itoa_base.c
         src/printf/ft_itoa_base_hex_long.c
         src/printf/ft_lst_to_str.c
+        src/printf/ft_lstadd.c
+        src/printf/ft_lstnew.c
         src/printf/ft_printf.c
         src/printf/ft_realloc.c
         src/printf/ft_strappend.c
@@ -109,6 +110,7 @@ add_executable(my_push
         src/printf/make_double.c
         src/printf/make_ldouble.c
         src/printf/Makefile
+        src/printf/mmm
         src/printf/mod_conversions.c
         src/printf/o_conversions.c
         src/printf/p_conversions.c
@@ -117,16 +119,22 @@ add_executable(my_push
         src/printf/sum_longnum.c
         src/printf/u_conversion.c
         src/printf/x_conversions.c
-        src/nb_lst.c
-        src/push_swap.c
+        src/checker.c
         src/execute_rest.c
+        src/free_functions.c
         src/heap_sort.c
         src/lst_arr_functions.c
         src/lst_execute.c
         src/nb_execute.c
+        src/nb_lst.c
+        src/optimazation_functions.c
+        src/push_swap.c
         src/read_input.c
+        src/result_comands.c
+        src/supportive_functions.c
         src/validation.c
         Makefile
         test
+        test.sh
         test2
         test3)

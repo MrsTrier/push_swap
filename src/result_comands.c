@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_lst.c                                           :+:      :+:    :+:   */
+/*   result_comands.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 17:45:49 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/09/19 18:02:49 by mcanhand         ###   ########.fr       */
+/*   Created: 2019/09/19 19:46:09 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 19:56:57 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+#include "execute.h"
 
-int		detect_index(t_arr **a, int place)
+void	merge_comands(t_stack *b_data, t_stack *a_data)
 {
-	t_arr	*pr;
-	int			i;
-
-	pr = *a;
-	i = 1;
-	while (pr->content != place)
+	while (*b_data->pr != NULL)
 	{
-		i++;
-		pr = pr->next;
+		(*a_data->cmnd) = *(b_data->cmnd - 1);
+		a_data->cmnd++;
+		b_data->pr++;
 	}
-	return (i);
 }
-
-void		free_lst_arr(t_arr *lst)
-{
-    t_arr	*tmp;
-
-    while (lst)
-    {
-        tmp = lst->next;
-        free(lst);
-        lst = tmp;
-    }
-}
-
-

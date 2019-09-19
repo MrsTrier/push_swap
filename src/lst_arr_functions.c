@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_arr_functions.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:27 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:02:31 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "execute.h"
 #include "push_swap.h"
 
-t_list_arr	*ft_list_elem(t_list_arr *begin_list, unsigned int nbr)
+t_arr	*ft_list_elem(t_arr *begin_list, unsigned int nbr)
 {
 	unsigned int i;
 
@@ -18,23 +30,19 @@ t_list_arr	*ft_list_elem(t_list_arr *begin_list, unsigned int nbr)
 	return (NULL);
 }
 
-t_list_arr  *nb_lstnew()
+t_arr  *nb_lstnew()
 {
-    t_list_arr *new_list;
+    t_arr *new_list;
 
-    if (!(new_list = (t_list_arr*)malloc(sizeof(t_list_arr))))
+    if (!(new_list = (t_arr*)malloc(sizeof(t_arr))))
         return (NULL);
-//    if (!nb)
-//        new_list->content = NULL;
-//    else
-//        new_list->content = nb;
     new_list->next = NULL;
     return (new_list);
 }
 
-t_list_arr	*create_nb_elem(int nb, t_list_arr **lst, int i)
+t_arr	*create_nb_elem(int nb, t_arr **lst, int i)
 {
-	t_list_arr	*tmp_lst;
+	t_arr	*tmp_lst;
 
 	if (i != 1)
 	{
@@ -49,9 +57,9 @@ t_list_arr	*create_nb_elem(int nb, t_list_arr **lst, int i)
 	return (*lst);
 }
 
-int		lst_sorted_ac(t_list_arr *lst, int elem, int l_elem)
+int		lst_sorted_ac(t_arr *lst, int elem, int l_elem)
 {
-	t_list_arr  *new_item;
+	t_arr  *new_item;
 	int			i;
 
 	i = 0;
@@ -75,9 +83,9 @@ int		lst_sorted_ac(t_list_arr *lst, int elem, int l_elem)
 	return (0);
 }
 
-int		lst_sorted_dec(t_list_arr *lst)
+int		lst_sorted_dec(t_arr *lst)
 {
-	t_list_arr *new_item;
+	t_arr *new_item;
 
 	if (!lst)
 		return (0);
@@ -92,10 +100,10 @@ int		lst_sorted_dec(t_list_arr *lst)
 }
 
 
-void	nb_push_back(t_list_arr **start, int nb)
+void	nb_push_back(t_arr **start, int nb)
 {
-	t_list_arr		*lst;
-	t_list_arr		*new;
+	t_arr		*lst;
+	t_arr		*new;
 
 	lst = *start;
 	if (!(*start))

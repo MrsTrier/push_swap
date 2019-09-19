@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validation.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:46:05 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:03:25 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "execute.h"
 #include "checker.h"
 #include "push_swap.h"
 
-void	visualize(t_list_arr **a, t_list_arr **b, char *cmnd, int color)
+void	visualize(t_arr **a, t_arr **b, char *cmnd, int color)
 {
-	t_list_arr	*pr_a;
-	t_list_arr	*pr_b;
+	t_arr	*pr_a;
+	t_arr	*pr_b;
 	int 		i;
 
 	i = 0;
 	pr_a = *a;
 	pr_b = *b;
-	ft_printf("    № |   A %-20s%|   B %-20s\n", "STACK", "STACK");
+	ft_printf("    № |   A %-20s|   B %-20s\n", "STACK", "STACK");
 	ft_printf("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
 	while (pr_a && pr_b)
 	{
@@ -76,11 +88,11 @@ int 	*any_double(char **av, int ac, int flag)
 	return (arr);
 }
 
-int		save_stack(int ac, char **av, t_list_arr *res_lst, int *flag)
+int		save_stack(int ac, char **av, t_arr *res_lst, int *flag)
 {
     int			i;
 	int			j;
-    t_list_arr	*stack;
+    t_arr	*stack;
     int			*arr;
 
 	j = ((*flag & COLOR_FLAG) ? 1 : 0) + ((*flag & VISUALIZE_FLAG) ? 1 : 0);

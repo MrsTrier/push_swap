@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_rest.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:15 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 18:03:14 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "execute.h"
 #include "checker.h"
 #include "push_swap.h"
 
-void	executeRRB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int rrr)
+void	executeRRB(t_arr **a, t_arr **b, t_stack *b_data, int rrr)
 {
-	t_list_arr	*tmpl;
+	t_arr	*tmpl;
 
 	if (rrr)
 	{
@@ -19,10 +31,10 @@ void	executeRRB(t_list_arr **a, t_list_arr **b, t_stack *b_data, int rrr)
 		visualize(a, b, RRB, b_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
-void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
+void	executeRRA(t_arr **a, t_arr **b, t_stack *a_data, int rrr)
 {
-	t_list_arr	*tmpl;
-	t_list_arr	*pr;
+	t_arr	*tmpl;
+	t_arr	*pr;
 
     if (rrr)
 	{
@@ -38,7 +50,7 @@ void	executeRRA(t_list_arr **a, t_list_arr **b, t_stack *a_data, int rrr)
 		visualize(a, b, RRA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
 
-void	executeRRR(t_list_arr **a, t_stack *a_data, t_list_arr **b, t_stack *b_data)
+void	executeRRR(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data)
 {
 	(*a_data->cmnd) = "rrr\n";
 	a_data->cmnd++;

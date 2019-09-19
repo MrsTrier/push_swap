@@ -1,85 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/19 17:45:55 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/09/19 20:05:54 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-# include "execute.h"
+#include "execute.h"
 
-int		easy(t_list_arr **a, t_stack *a_data)
-{
-	int i;
-	int j;
-
-	i = detect_index(a, a_data->min);
-	j = detect_index(a, a_data->max);
-	if (i - j == 1 || i - j == -2)
-		return (0);
-	return (1);
-}
-
-int		mk_easy_sort(t_list_arr **a, t_list_arr **b, t_stack *a_data)
-{
-	int i;
-
-	i = 0;
-	if (easy(a, a_data))
-	{
-		executeSA(a, b, a_data, 0);
-		i++;
-	}
-	return (i);
-}
-
-int		free_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
-{
-	int		i;
-	int		j;
-
-	j = a_data->length;
-	i = 0;
-	while (a_data->length != 3)
-	{
-//		while (j > 0)
-//		{
-//			if (((*a)->content != a_data->min) && ((*a)->content != a_data->max) && ((*a)->content != a_data->mdn))
-//				executePB(a, b, a_data, b_data);
-//			else
-//				executeRA(a, b, 0, a_data);
-//			j--;
-//			i++;
-//			((*a)->content < a_data->mdn) ? executeRA(a, b, 0, a_data) : executePB(a, b, a_data, b_data);
-//		}
-		(((*a)->content != a_data->min) && ((*a)->content != a_data->max) && ((*a)->content != a_data->mdn)) ? executePB(a, b, a_data, b_data) : executeRA(a, b, 0, a_data);//&&	((*a)->content != a_data->mdn))
-			i++;
-	}
-	return (i);
-}
-
-int 	min_is(int up, int bottom)
-{
-	if (up <= bottom + 1)
-		return (up - 1);
-	else
-		return (bottom + 1);
-}
-
-int		calculate_comands(t_list_arr **a, t_cmnd *cmnd, int b, int a_length)
-{
-	int			i;
-	int			trns_to_place;
-
-	i = detect_index(a, cmnd->place);
-	trns_to_place = min_is(i, a_length - i);
-	if (trns_to_place + b < cmnd->c)
-	{
-		cmnd->c = trns_to_place + b;
-		cmnd->b = b;
-		cmnd->a = cmnd->c - cmnd->b;
-		return (1);
-	}
-	return (0);
-}
-
-int		find_place(t_list_arr **a, int b, t_stack *a_data)
+int		find_place(t_arr **a, int b, t_stack *a_data)
 {
 	int			place;
-	t_list_arr	*pr;
+	t_arr		*pr;
 	int			diff;
 
 	diff = a_data->max - a_data->min;
@@ -97,9 +34,9 @@ int		find_place(t_list_arr **a, int b, t_stack *a_data)
 	return (place);
 }
 
-t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+t_cmnd		choose_best(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
-	t_list_arr	*pr;
+	t_arr		*pr;
 	t_cmnd		cmnd;
 	int			i;
 	int			best_place;
@@ -111,7 +48,8 @@ t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_
 	while (pr)
 	{
 		cmnd.place = find_place(a, pr->content, a_data);
-		if (calculate_comands(a, &cmnd, min_is(i, b_data->length - i), a_data->length))
+		if (calculate_comands(a, &cmnd, min_is(i, b_data->length - i),
+					a_data->length))
 		{
 			cmnd.best = pr->content;
 			best_place = cmnd.place;
@@ -123,190 +61,43 @@ t_cmnd		choose_best(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_
 	return (cmnd);
 }
 
-
-int 	switch_in_b(t_list_arr **a, t_list_arr **b, t_stack *b_data, int nb)
-{
-	int c;
-	int i;
-
-	c = 0;
-	i = detect_index(b, nb);
-	while ((*b)->content != nb)
-	{
-		c++;
-		if ((min_is(i, b_data->length - i)) == i - 1)
-			executeRB(a, b, 0, b_data);
-		else
-			executeRRB(a, b, b_data, 1);
-	}
-	return (c);
-}
-
-int 	switch_in_a(t_list_arr **a, t_list_arr **b, t_stack *a_data, int nb)
-{
-	int c;
-	int i;
-
-	c = 0;
-	i = detect_index(a, nb);
-	while ((*a)->content != nb)
-	{
-		c++;
-		if ((min_is(i, a_data->length - i)) == i - 1)
-			executeRA(a, b, 0, a_data);
-		else
-			executeRRA(a, b, a_data, 1);
-	}
-	return (c);
-}
-
-int		optimazationRR(t_list_arr **a, t_list_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data)
-{
-	int c;
-
-	c = 0;
-	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
-	{
-		executeRR(a, b, a_data, b_data);
-		c++;
-	}
-	return (c);
-}
-
-int		optimazationRRR(t_list_arr **a, t_list_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data)
-{
-	int c;
-
-	c = 0;
-	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
-	{
-		executeRRR(a, a_data, b, b_data);
-		c++;
-	}
-	return (c);
-}
-
-int		sorting(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+int		sorting(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_cmnd		cmnd;
-	int 		c;
 	int			i;
 	int			j;
 
-	c = 0;
 	while (*b && b_data->length)
 	{
 		cmnd = choose_best(a, b, a_data, b_data);
-		if ((cmnd.b >= cmnd.a && cmnd.a > 0) || (cmnd.a >= cmnd.b && cmnd.b > 0))
+		if ((cmnd.b >= cmnd.a && cmnd.a > 0) ||
+				(cmnd.a >= cmnd.b && cmnd.b > 0))
 		{
 			i = detect_index(a, cmnd.place);
 			j = detect_index(b, cmnd.best);
 			if (((min_is(i, a_data->length - i)) == i - 1) &&
 					(min_is(j, b_data->length - j) == j - 1))
-				c += optimazationRR(a, b, cmnd, a_data, b_data);
+				optimazationRR(a, b, cmnd, a_data, b_data);
 			else if (((min_is(i, a_data->length - i)) == a_data->length - i + 1)
-					&& (min_is(j, b_data->length - j) == b_data->length - j + 1))
-				c += optimazationRRR(a, b, cmnd, a_data, b_data);
-			else
-				c += 0;
+				&& (min_is(j, b_data->length - j) == b_data->length - j + 1))
+				optimazationRRR(a, b, cmnd, a_data, b_data);
 		}
-		c += switch_in_b(a, b, b_data, cmnd.best);
-		while (*b_data->pr != NULL)
-		{
-			(*a_data->cmnd) = *(b_data->cmnd - 1);
-			a_data->cmnd++;
-			b_data->pr++;
-		}
-		c += switch_in_a(a, b, a_data, cmnd.place);
+		switch_in_b(a, b, b_data, cmnd.best);
+		merge_comands(b_data, a_data);
+		switch_in_a(a, b, a_data, cmnd.place);
 		executePA(a, b, a_data, b_data);
-		c++;
 	}
-	return (c);
+	return (0);
 }
 
-int     how_much_sorted(t_list_arr **a, t_list_arr **b, t_stack *a_data, t_stack *b_data)
+int		algorithm(int ac, char **av, unsigned flag)
 {
-	int     i;
-	int     elem;
-	int     pb;
-
-	pb = 0;
-	elem = -1;
-	i = 0;
-	while (a_data->length - i - 1)
-	{
-		if ((pb = lst_sorted_ac(*a, i, a_data->length)) == 0)
-		{
-			elem = i;
-			break ;
-		}
-		i++;
-	}
-	if (!elem)
-		return (0);
-	if (elem == 1)
-		executeSA(a, b, a_data, 0);
-	else if (elem == 2)
-	{
-		executeRA(a, b, 0, a_data);
-		executeSA(a, b, a_data, 0);
-		executeRRA(a, b, a_data, 1);
-		return (1);
-	}
-	else if ((pb = lst_sorted_ac(*a, i, a_data->length)) > (a_data->length / 2))
-	{
-		while (a_data->length - pb)
-		{
-			executeRRA(a, b, a_data, 1);
-			executePB(a, b, a_data, b_data);
-			pb++;
-		}
-	}
-	i = a_data->length - 1;
-	elem = -1;
-	while (i != a_data->length - 2)
-	{
-		if (lst_sorted_ac(*a, 0, i) == 0)
-		{
-			elem = i;
-			break ;
-		}
-		i--;
-	}
-	if (elem == a_data->length - 1)
-	{
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeSA(a, b, a_data, 0);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
-	}
-	else if (elem == a_data->length - 2)
-	{
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeSA(a, b, a_data, 0);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
-	}
-	else
-		return (0);
-	return (1);
-
-}
-
-int 	algorithm(int ac, char **av, unsigned flag)
-{
-	t_list_arr	*res_lst;
-	t_list_arr	*b;
+	t_arr		*res_lst;
+	t_arr		*b;
 	t_stack		b_stack;
 	t_stack		a_stack;
-	int 		j;
-	int 		h;
+	int			j;
 
-	h = 0;
 	res_lst = nb_lstnew();
 	b = nb_lstnew();
 	a_stack.flag = flag;
@@ -324,14 +115,14 @@ int 	algorithm(int ac, char **av, unsigned flag)
 	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
 	if (lst_sorted_ac(res_lst, 0, a_stack.length))
 	{
-		if (a_stack.length > 5 ? !(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
+		if (a_stack.length > 5 ?
+				!(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
 		{
 			free_a(&res_lst, &b, &a_stack, &b_stack);
 			mk_easy_sort(&res_lst, &b, &a_stack);
 		}
-		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ? sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
-//		ft_printf(*a_stack.pr);
-//		ft_printf("%s\n", *a_stack.cmnd);
+		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ?
+				sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
 //		while (res_lst->next)
 //		{
 //			ft_printf("%d\n", res_lst->content);
@@ -348,19 +139,12 @@ int 	algorithm(int ac, char **av, unsigned flag)
 		}
 		(*a_stack.cmnd) = NULL;
 	}
-//	ft_putstr(a_stack.pr);
-//	while (res_lst->next)
-//	{
-//		ft_printf("%d\n", res_lst->content);
-//		res_lst = res_lst->next;
-//	}
-//	ft_printf("%d\n", res_lst->content);
 	(a_stack.cmnd) = NULL;
-//	ft_printf("\n\n");
-	while ((a_stack.pr)[h] != NULL)
+	j = 0;
+	while ((a_stack.pr)[j] != NULL)
 	{
-		ft_printf("%s", (a_stack.pr)[h]);
-		h++;
+		ft_printf("%s", (a_stack.pr)[j]);
+		j++;
 	}
 	free_lst_arr(res_lst);
 	free_lst_arr(b);
@@ -370,84 +154,34 @@ int 	algorithm(int ac, char **av, unsigned flag)
 int		main(int ac, char **av)
 {
 	int			fd;
-	char 		*line;
-	char 		**sp_line;
+	char		*line;
+	char		**sp_line;
 	unsigned	res;
-	char        *tmp;
+	char		*tmp;
 
 	if (ac == 1)
-		return 0;
+		return (0);
 	if ((fd = read_input(ac, av, &res)) == -2)
 		return (write(2, "Error\n", 6));
-	if (!(res & READFILE_FLAG))
-	{
-		if (algorithm(ac, av, res) == 6)
-			return (0);
-	}
-	else
+	if (res & READFILE_FLAG)
 	{
 		while (get_next_line(fd, &line) > 0)
 		{
 			if (!*line)
-				break;
-			sp_line = ft_strsplit(tmp = ft_strjoin("0 ", line), ' ');
+				break ;
+			tmp = ft_strjoin("0 ", line);
+			sp_line = ft_strsplit(tmp, ' ');
 			ac = count_wrds(sp_line);
 			if (algorithm(ac, sp_line, res) == 6)
 				return (0);
-			while (ac != -1)
-			{
-				free(sp_line[ac]);
-				ac--;
-			}
+			free_arr(ac, sp_line);
 			free(tmp);
 			free(line);
 			free(sp_line);
 		}
 	}
+	else	
+		if (algorithm(ac, av, res) == 6)
+			return (0);
 	return (0);
 }
-
-
-
-//-25677
-//73658
-//-73853
-//-66569
-//-62632
-//-61060
-//-37372
-//
-//		ra
-//pb
-//		pb
-//pb
-//		ra
-//pb
-//		pb
-//pb
-//		sa
-//ra
-//		pa
-//rra
-//		pa
-//rb
-//		pa
-//rb
-//		pa
-//rb
-//		ra
-//ra
-//		pa
-//rb
-//		ra
-//ra
-//		ra
-//ra
-//		pa
-//rb
-//		rra
-//pa
-//		ra
-//ra
-//		ra
-//ra
