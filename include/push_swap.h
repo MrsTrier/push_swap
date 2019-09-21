@@ -53,7 +53,8 @@ typedef struct		s_stack
 	int				length;
 	char 			**cmnd;
 	char 			**pr;
-	unsigned		flag;
+    char 			**first_elem;
+    unsigned		flag;
 
 }					t_stack;
 
@@ -91,7 +92,9 @@ int			mk_easy_sort(t_arr **a, t_arr **b, t_stack *a_data);
 int			free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 int			min_is(int up, int bottom);
 int			calculate_comands(t_arr **a, t_cmnd *cmnd, int b, int a_length);
-void		free_arr(int ac, char **arr);
+void		free_arr(char **arr);
+void        merge_comands(t_stack *b_data, t_stack *a_data);
+
 
 
 #endif

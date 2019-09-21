@@ -10,11 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	free_arr(int ac, char **arr)
+#include "push_swap.h"
+
+void	free_arr(char **arr)
 {
-	while (ac != -1)
+	while (*arr != NULL)
 	{
-		free(arr[ac]);
-		ac--;
+		free(*arr);
+        (*arr)++;
 	}
+	free(arr);
 }

@@ -4,8 +4,9 @@ project(push_swap)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
+include_directories(src)
 
-add_executable(push_swap
+add_executable(
         include/checker.h
         include/conversions.h
         include/execute.h

@@ -95,9 +95,10 @@ void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack * b_data)
 	a_data->max = find_max(a);
 	heap_sort(i, &arr);
 	a_data->mdn = arr[(a_data->length / 2)];
-	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 100);
-	b_data->cmnd = (char**)malloc(sizeof(b_data->cmnd) * 100);
+	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 1000);
+	b_data->cmnd = (char**)malloc(sizeof(b_data->cmnd) * 1000);
 	a_data->pr = (a_data->cmnd);
 	b_data->pr = (b_data->cmnd);
+	b_data->first_elem = (b_data->cmnd);
 	free(arr);
 }

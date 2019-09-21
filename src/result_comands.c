@@ -15,7 +15,7 @@
 
 void	merge_comands(t_stack *b_data, t_stack *a_data)
 {
-	while (*b_data->pr != NULL)
+    while (*b_data->pr != NULL)
 	{
 		(*a_data->cmnd) = *(b_data->cmnd - 1);
 		a_data->cmnd++;

@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 17:46:05 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/09/19 18:03:25 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/09/21 16:16:33 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	visualize(t_arr **a, t_arr **b, char *cmnd, int color)
 {
 	t_arr	*pr_a;
 	t_arr	*pr_b;
-	int 		i;
+	int		i;
 
 	i = 0;
 	pr_a = *a;
@@ -49,7 +49,7 @@ void	visualize(t_arr **a, t_arr **b, char *cmnd, int color)
 	ft_printf("=============================================================\n");
 }
 
-int 	valid(char *line)
+int		valid(char *line)
 {
 	if ((ft_strcmp(line, "sa") == 0) || (ft_strcmp(line, "sb") == 0) ||
 		(ft_strcmp(line, "ss") == 0) || (ft_strcmp(line, "pa") == 0) ||
@@ -61,12 +61,11 @@ int 	valid(char *line)
 	return (0);
 }
 
-int 	*any_double(char **av, int ac, int flag)
+int		*any_double(char **av, int ac, int flag)
 {
 	int		i;
 	int		j;
-	int     *arr;
-
+	int		*arr;
 
 	i = 1 + flag;
 	j = 1 + flag;
@@ -90,25 +89,25 @@ int 	*any_double(char **av, int ac, int flag)
 
 int		save_stack(int ac, char **av, t_arr *res_lst, int *flag)
 {
-    int			i;
+	int			i;
 	int			j;
-    t_arr	*stack;
-    int			*arr;
+	t_arr		*stack;
+	int			*arr;
 
 	j = ((*flag & COLOR_FLAG) ? 1 : 0) + ((*flag & VISUALIZE_FLAG) ? 1 : 0);
 	j = (*flag & READFILE_FLAG) ? 0 : j;
-    i = 1;
-    stack = res_lst;
-    if (ac < 2)
-        return (6);
+	i = 1;
+	stack = res_lst;
+	if (ac < 2)
+		return (6);
 	if ((arr = any_double(av, ac, j)) == NULL)
 		return (6);
-    while (i < ac - j)
-    {
-        create_nb_elem(arr[i - 1], &stack, i);
-        i++;
-    }
-    free(arr);
-    *flag = j;
-    return (j);
+	while (i < ac - j)
+	{
+		create_nb_elem(arr[i - 1], &stack, i);
+		i++;
+	}
+	free(arr);
+	*flag = j;
+	return (j);
 }

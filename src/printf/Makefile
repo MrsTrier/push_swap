@@ -36,8 +36,6 @@ SOURCES =   c_conversions.c \
             ft_realloc.c \
             ft_strappend.c \
             ft_create_node.c \
-            ft_lstadd.c \
-            ft_lstnew.c \
 
 
 OBJECTS =     c_conversions.o \
@@ -73,8 +71,6 @@ OBJECTS =     c_conversions.o \
               ft_realloc.o \
               ft_strappend.o \
               ft_create_node.o \
-              ft_lstadd.o \
-              ft_lstnew.o \
 
 
 all: $(NAME)

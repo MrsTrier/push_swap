@@ -138,15 +138,19 @@ int		algorithm(int ac, char **av, unsigned flag)
 				executeRRA(&res_lst, &b, &a_stack, 1);
 		}
 		(*a_stack.cmnd) = NULL;
+        (*b_stack.cmnd) = NULL;
 	}
 	(a_stack.cmnd) = NULL;
+    (b_stack.cmnd) = NULL;
 	j = 0;
 	while ((a_stack.pr)[j] != NULL)
 	{
 		ft_printf("%s", (a_stack.pr)[j]);
 		j++;
 	}
-	free_lst_arr(res_lst);
+    free(a_stack.pr);
+    free(b_stack.first_elem);
+    free_lst_arr(res_lst);
 	free_lst_arr(b);
 	return (0);
 }
@@ -174,10 +178,9 @@ int		main(int ac, char **av)
 			ac = count_wrds(sp_line);
 			if (algorithm(ac, sp_line, res) == 6)
 				return (0);
-			free_arr(ac, sp_line);
+			free_arr(sp_line);
 			free(tmp);
 			free(line);
-			free(sp_line);
 		}
 	}
 	else	
