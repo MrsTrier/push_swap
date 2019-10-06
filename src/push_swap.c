@@ -123,12 +123,6 @@ int		algorithm(int ac, char **av, unsigned flag)
 		}
 		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ?
 				sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
-//		while (res_lst->next)
-//		{
-//			ft_printf("%d\n", res_lst->content);
-//			res_lst = res_lst->next;
-//		}
-//		ft_printf("%d\n", res_lst->content);
 		while (lst_sorted_ac(res_lst, 0, a_stack.length))
 		{
 			j = detect_index(&res_lst, a_stack.min);
@@ -183,7 +177,7 @@ int		main(int ac, char **av)
 			free(line);
 		}
 	}
-	else	
+	else
 		if (algorithm(ac, av, res) == 6)
 			return (0);
 	return (0);

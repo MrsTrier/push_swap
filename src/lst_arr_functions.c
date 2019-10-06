@@ -13,23 +13,6 @@
 #include "execute.h"
 #include "push_swap.h"
 
-t_arr	*ft_list_elem(t_arr *begin_list, unsigned int nbr)
-{
-	unsigned int i;
-
-	i = 0;
-	if (!(begin_list))
-		return (NULL);
-	while (i < nbr)
-	{
-		begin_list = begin_list->next;
-		i++;
-	}
-	if (i == nbr)
-		return (begin_list);
-	return (NULL);
-}
-
 t_arr  *nb_lstnew()
 {
     t_arr *new_list;
@@ -57,48 +40,28 @@ t_arr	*create_nb_elem(int nb, t_arr **lst, int i)
 	return (*lst);
 }
 
-int		lst_sorted_ac(t_arr *lst, int elem, int l_elem)
-{
-	t_arr  *new_item;
-	int			i;
+int		lst_sorted_ac(t_arr *lst, int elem, int l_elem) {
+    t_arr *new_item;
+    int i;
 
-	i = 0;
-	if (!lst)
-		return (0);
-	new_item = lst;
-	while (new_item->next && i != elem)
-	{
-		new_item = new_item->next;
-		i++;
-	}
-	i = 0;
-	while (i != l_elem - elem - 1)
-	{
+    i = 0;
+    if (!lst)
+        return (0);
+    new_item = lst;
+    while (new_item->next && i != elem) {
+        new_item = new_item->next;
+        i++;
+    }
+    i = 0;
+    while (i != l_elem - elem - 1) {
         i += 1;
-		if (new_item->content > new_item->next->content)
-			return (i);
-		new_item = new_item->next;
+        if (new_item->content > new_item->next->content)
+            return (i);
+        new_item = new_item->next;
 
-	}
-	return (0);
+    }
+    return (0);
 }
-
-int		lst_sorted_dec(t_arr *lst)
-{
-	t_arr *new_item;
-
-	if (!lst)
-		return (0);
-	new_item = lst;
-	while (new_item->next)
-	{
-		if (new_item->content < new_item->next->content)
-			return (0);
-		new_item = new_item->next;
-	}
-	return (1);
-}
-
 
 void	nb_push_back(t_arr **start, int nb)
 {

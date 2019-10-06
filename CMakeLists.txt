@@ -1,12 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
-project(push_swap)
+project(push)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
-include_directories(src)
 
-add_executable(
+add_executable(push
         include/checker.h
         include/conversions.h
         include/execute.h
@@ -97,8 +96,6 @@ add_executable(
         src/printf/ft_itoa_base.c
         src/printf/ft_itoa_base_hex_long.c
         src/printf/ft_lst_to_str.c
-        src/printf/ft_lstadd.c
-        src/printf/ft_lstnew.c
         src/printf/ft_printf.c
         src/printf/ft_realloc.c
         src/printf/ft_strappend.c
@@ -111,7 +108,6 @@ add_executable(
         src/printf/make_double.c
         src/printf/make_ldouble.c
         src/printf/Makefile
-        src/printf/mmm
         src/printf/mod_conversions.c
         src/printf/o_conversions.c
         src/printf/p_conversions.c
@@ -135,7 +131,4 @@ add_executable(
         src/supportive_functions.c
         src/validation.c
         Makefile
-        test
-        test.sh
-        test2
-        test3)
+        test.sh)

@@ -16,7 +16,7 @@
 int		executeSA(t_arr **a, t_arr **b, t_stack *a_data, int ss)
 {
 	t_arr	*pr_a;
-	int			tmp;
+	int		tmp;
 
 	if (!ss)
 	{
@@ -65,19 +65,16 @@ void	executePA(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_arr *new_item;
 	t_arr *new_a;
-	t_arr *next;
 
 	(*a_data->cmnd) = "pa\n";
 	a_data->cmnd++;
 	new_a = *b;
-	next = nb_list_at(new_a, 1);
-	new_item = nb_lstnew();
-	new_item->content = (*b)->content;
-	new_item->next = NULL;
-	new_item->next = *a;
+    new_item = nb_lstnew();
+	ft_memmove(new_item, new_a, sizeof(new_a));
+    new_item->next = *a;
 	*a = new_item;
-	free(new_a);
-	*b = next;
+    *b = new_a->next;
+	ft_memdel(&new_a);
 	a_data->length++;
 	b_data->length--;
 	if (a_data->flag & VISUALIZE_FLAG)
@@ -92,17 +89,14 @@ void	executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 
 	(*a_data->cmnd) = "pb\n";
 	a_data->cmnd++;
-    //ft_printf("pb\n");
 	new_a = *a;
-	next = nb_list_at(new_a, 1);
 	new_item = nb_lstnew();
 	new_item->content = (*a)->content;
-	new_item->next = NULL;
 	if (b_data->length != 0)
 		new_item->next = *b;
 	*b = new_item;
-	free(new_a);
-	*a = next;
+    *a = new_a->next;
+    ft_memdel(&new_a);
 	b_data->length++;
 	a_data->length--;
 	if (b_data->flag & VISUALIZE_FLAG)
