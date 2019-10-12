@@ -2,15 +2,15 @@
 
 t_bool	is_int(const char *str)
 {
-	unsigned long	result;
-	unsigned long	border;
+	long	result;
+	long	border;
 	int				i;
 	int				sign;
 	int				digits;
 
 	result = 0;
 	digits = 0;
-	border = (LLONG_MAX / 10);
+	border = (INT_MAX / 10);
 	i = 0;
 	while (str[i] == ' ')
 		i++;

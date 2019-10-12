@@ -28,7 +28,7 @@ void		executeRRA(t_arr **a, t_arr **b, t_stack *a_data, int rrr);
 void		executeRRB(t_arr **a, t_arr **b, t_stack *b_data, int rrr);
 void		executeRRR(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data);
 
-t_arr	*nb_list_at(t_arr *begin_list, unsigned int nbr);
+t_arr		*nb_list_at(t_arr *begin_list, unsigned int nbr);
 int			*lst_to_arr(t_arr *lst, int ac);
 void		heap_sort(int max, int **stack);
 

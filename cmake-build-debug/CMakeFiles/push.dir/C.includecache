@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+../include/checker.h
+stdarg.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+libft.h
+../include/libft.h
+ft_printf.h
+../include/ft_printf.h
+conversions.h
+../include/conversions.h
+large_arythmetics.h
+../include/large_arythmetics.h
+float_to_str.h
+../include/float_to_str.h
+floats.h
+../include/floats.h
+execute.h
+../include/execute.h
+get_next_line.h
+../include/get_next_line.h
+
 ../include/conversions.h
 stdarg.h
 -
@@ -78,9 +104,11 @@ floats.h
 get_next_line.h
 ../include/get_next_line.h
 
-/Users/mcanhand/push/src/nb_execute.c
+/Users/mcanhand/push/src/validation.c
 execute.h
 /Users/mcanhand/push/src/execute.h
+checker.h
+/Users/mcanhand/push/src/checker.h
 push_swap.h
 /Users/mcanhand/push/src/push_swap.h
 

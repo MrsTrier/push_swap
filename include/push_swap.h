@@ -71,9 +71,9 @@ int			save_stack(int ac, char **av, t_arr *res_lst, int *flag);
 int			lst_length(t_list *lst);
 int			lst_sorted_dec(t_arr *lst);
 int		    lst_sorted_ac(t_arr *lst, int elem, int l_elem);
-t_arr	*create_nb_elem(int nb, t_arr **lst, int i);
-t_arr	*nb_lstnew();
-t_arr	*ft_list_elem(t_arr *begin_list, unsigned int nbr);
+t_arr		*create_nb_elem(int nb, t_arr **lst, int i);
+t_arr		*nb_lstnew();
+t_arr		*ft_list_elem(t_arr *begin_list, unsigned int nbr);
 int			nb_lst_length(t_arr *lst);
 void		nb_push_back(t_arr **start, int nb);
 void		visualize(t_arr **a, t_arr **b, char *cmnd, int color);
@@ -93,6 +93,7 @@ int			free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 int			min_is(int up, int bottom);
 int			calculate_comands(t_arr **a, t_cmnd *cmnd, int b, int a_length);
 void		free_arr(char **arr);
+//void		free_int_arr(int **arr, int ac);
 void        merge_comands(t_stack *b_data, t_stack *a_data);
 
 

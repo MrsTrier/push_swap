@@ -74,8 +74,8 @@ void	executePA(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
     new_item->next = *a;
 	*a = new_item;
     *b = new_a->next;
-	ft_memdel(&new_a);
-	a_data->length++;
+    free(new_a);
+    a_data->length++;
 	b_data->length--;
 	if (a_data->flag & VISUALIZE_FLAG)
 		visualize(a, b, PA, a_data->flag & COLOR_FLAG ? 1 : 0);
@@ -85,7 +85,6 @@ void	executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	t_arr *new_item;
 	t_arr *new_a;
-	t_arr *next;
 
 	(*a_data->cmnd) = "pb\n";
 	a_data->cmnd++;
@@ -96,7 +95,7 @@ void	executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 		new_item->next = *b;
 	*b = new_item;
     *a = new_a->next;
-    ft_memdel(&new_a);
+    free(new_a);
 	b_data->length++;
 	a_data->length--;
 	if (b_data->flag & VISUALIZE_FLAG)
@@ -106,19 +105,23 @@ void	executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 
 void	executeRA(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 {
-	t_arr	*new_item;
-	int 		tmp;
+    t_arr *head;
+    t_arr *tail;
 
-	if (!rr)
-	{
-		(*a_data->cmnd) = "ra\n";
-		a_data->cmnd++;
-	}
-	new_item = (*a)->next;
-	tmp = (*a)->content;
-	free(*a);
-	*a = new_item;
-	nb_push_back(a, tmp);
+    if (!rr)
+    {
+        (*a_data->cmnd) = "ra\n";
+        a_data->cmnd++;
+    }
+    if (!(*a))
+        return ;
+    head = *a;
+    tail = *a;
+    (*a) = (*a)->next;
+    while (tail->next)
+        tail = tail->next;
+    tail->next = head;
+    head->next = NULL;
 	if ((a_data->flag & VISUALIZE_FLAG) && rr == 0)
 		visualize(a, b, RA, a_data->flag & COLOR_FLAG ? 1 : 0);
 }
@@ -126,19 +129,32 @@ void	executeRA(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 
 void	executeRB(t_arr **a, t_arr **b, int rr, t_stack *b_data)
 {
-	t_arr	*new_item;
-	int 		tmp;
+    t_arr *head;
+    t_arr *tail;
 
-	if (!rr)
-	{
-		(*b_data->cmnd) = "rb\n";
-		b_data->cmnd++;
-	}
-	new_item = (*b)->next;
-	tmp = (*b)->content;
-	free(*b);
-	*b = new_item;
-	nb_push_back(b, tmp);
+    if (!rr)
+    {
+        (*b_data->cmnd) = "rb\n";
+        b_data->cmnd++;
+    }
+    if (!(*b))
+        return ;
+    head = *b;
+    tail = *b;
+    (*b) = (*b)->next;
+    while (tail->next)
+        tail = tail->next;
+    tail->next = head;
+    head->next = NULL;
+//	t_arr	*new_item;
+//	int 		tmp;
+
+
+//	new_item = (*b)->next;
+//	tmp = (*b)->content;
+//	free(*b);
+//	*b = new_item;
+//	nb_push_back(b, tmp);
 	if ((b_data->flag & VISUALIZE_FLAG) && rr == 0)
 		visualize(a, b, RB, b_data->flag & COLOR_FLAG ? 1 : 0);
 }

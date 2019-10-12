@@ -21,3 +21,14 @@ void	free_arr(char **arr)
 	}
 	free(arr);
 }
+
+//void	free_int_arr(int **arr, int ac)
+//{
+//    while (ac)
+//    {
+//        free(*arr);
+//        (*arr)++;
+//        ac--;
+//    }
+//    free(arr);
+//}

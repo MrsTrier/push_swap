@@ -33,7 +33,7 @@ typedef struct		s_list
 
 typedef struct		s_arr
 {
-    int 			    content;
+    int 			content;
     struct s_arr	*next;
 }					t_arr;
 

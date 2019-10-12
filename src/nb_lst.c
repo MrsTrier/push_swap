@@ -37,6 +37,7 @@ void		free_lst_arr(t_arr *lst)
         free(lst);
         lst = tmp;
     }
+    free(lst);
 }
 
 

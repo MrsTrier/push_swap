@@ -104,7 +104,7 @@ int		algorithm(int ac, char **av, unsigned flag)
 	b_stack.flag = flag;
 	b_stack.length = 0;
 	if ((save_stack(ac, av, res_lst, (int*)&flag)) == 6)
-		return (write(2, "Error\n", 6));
+		return (write(1, "Error\n", 6));
 	if (ac == 3)
 	{
 		if (res_lst->content > res_lst->next->content)
@@ -149,36 +149,36 @@ int		algorithm(int ac, char **av, unsigned flag)
 	return (0);
 }
 
-int		main(int ac, char **av)
-{
-	int			fd;
-	char		*line;
-	char		**sp_line;
-	unsigned	res;
-	char		*tmp;
-
-	if (ac == 1)
-		return (0);
-	if ((fd = read_input(ac, av, &res)) == -2)
-		return (write(2, "Error\n", 6));
-	if (res & READFILE_FLAG)
-	{
-		while (get_next_line(fd, &line) > 0)
-		{
-			if (!*line)
-				break ;
-			tmp = ft_strjoin("0 ", line);
-			sp_line = ft_strsplit(tmp, ' ');
-			ac = count_wrds(sp_line);
-			if (algorithm(ac, sp_line, res) == 6)
-				return (0);
-			free_arr(sp_line);
-			free(tmp);
-			free(line);
-		}
-	}
-	else
-		if (algorithm(ac, av, res) == 6)
-			return (0);
-	return (0);
-}
+//int		main(int ac, char **av)
+//{
+//	int			fd;
+//	char		*line;
+//	char		**sp_line;
+//	unsigned	res;
+//	char		*tmp;
+//
+//	if (ac == 1)
+//		return (0);
+//	if ((fd = read_input(ac, av, &res)) == -2)
+//		return (write(1, "Error\n", 6));
+//	if (res & READFILE_FLAG)
+//	{
+//		while (get_next_line(fd, &line) > 0)
+//		{
+//			if (!*line)
+//				break ;
+//			tmp = ft_strjoin("0 ", line);
+//			sp_line = ft_strsplit(tmp, ' ');
+//			ac = count_wrds(sp_line);
+//			if (algorithm(ac, sp_line, res) == 6)
+//				return (0);
+//			free_arr(sp_line);
+//			free(tmp);
+//			free(line);
+//		}
+//	}
+//	else
+//		if (algorithm(ac, av, res) == 6)
+//			return (0);
+//	return (0);
+//}

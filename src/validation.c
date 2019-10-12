@@ -101,7 +101,10 @@ int		save_stack(int ac, char **av, t_arr *res_lst, int *flag)
 	if (ac < 2)
 		return (6);
 	if ((arr = any_double(av, ac, j)) == NULL)
-		return (6);
+	{
+        free(arr);
+        return (6);
+    }
 	while (i < ac - j)
 	{
 		create_nb_elem(arr[i - 1], &stack, i);
