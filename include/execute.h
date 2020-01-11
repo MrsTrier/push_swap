@@ -16,17 +16,17 @@
 #include "libft.h"
 #include "push_swap.h"
 
-int			executeSA(t_arr **a, t_arr **b, t_stack *a_data, int ss);
-int			executeSB(t_arr **a, t_arr **b, t_stack *a_data, int ss);
-void		executePA(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
-void		executePB(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
-void		executeRB(t_arr **a, t_arr **b, int rr, t_stack *a_stack);
-void		executeRA(t_arr **a, t_arr **b, int rr, t_stack *a_stack);
-void		executeSS(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
-void		executeRR(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
-void		executeRRA(t_arr **a, t_arr **b, t_stack *a_data, int rrr);
-void		executeRRB(t_arr **a, t_arr **b, t_stack *b_data, int rrr);
-void		executeRRR(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data);
+int			execute_sa(t_arr **a, t_arr **b, t_stack *a_data, int ss);
+int			execute_sb(t_arr **a, t_arr **b, t_stack *b_data, int ss);
+void		execute_pa(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
+void		execute_pb(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
+void		execute_rb(t_arr **a, t_arr **b, int rr, t_stack *b_data);
+void		execute_ra(t_arr **a, t_arr **b, int rr, t_stack *a_data);
+void		execute_ss(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
+void		execute_rr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
+void		execute_rra(t_arr **a, t_arr **b, t_stack *a_data, int rrr);
+void		execute_rrb(t_arr **a, t_arr **b, t_stack *b_data, int rrr);
+void		execute_rrr(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data);
 
 t_arr		*nb_list_at(t_arr *begin_list, unsigned int nbr);
 int			*lst_to_arr(t_arr *lst, int ac);

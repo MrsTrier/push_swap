@@ -24,9 +24,9 @@ int		switch_in_b(t_arr **a, t_arr **b, t_stack *b_data, int nb)
 	{
 		c++;
 		if ((min_is(i, b_data->length - i)) == i - 1)
-			executeRB(a, b, 0, b_data);
+			execute_rb(a, b, 0, b_data);
 		else
-			executeRRB(a, b, b_data, 1);
+			execute_rrb(a, b, b_data, 1);
 	}
 	return (c);
 }
@@ -42,9 +42,9 @@ int		switch_in_a(t_arr **a, t_arr **b, t_stack *a_data, int nb)
 	{
 		c++;
 		if ((min_is(i, a_data->length - i)) == i - 1)
-			executeRA(a, b, 0, a_data);
+			execute_ra(a, b, 0, a_data);
 		else
-			executeRRA(a, b, a_data, 1);
+			execute_rra(a, b, a_data, 1);
 	}
 	return (c);
 }
@@ -56,7 +56,7 @@ int		optimazationRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack 
 	c = 0;
 	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
 	{
-		executeRR(a, b, a_data, b_data);
+		execute_rr(a, b, a_data, b_data);
 		c++;
 	}
 	return (c);
@@ -69,7 +69,7 @@ int		optimazationRRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack
 	c = 0;
 	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
 	{
-		executeRRR(a, a_data, b, b_data);
+		execute_rrr(a, a_data, b, b_data);
 		c++;
 	}
 	return (c);
@@ -96,20 +96,20 @@ int		how_much_sorted(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	if (!elem)
 		return (0);
 	if (elem == 1)
-		executeSA(a, b, a_data, 0);
+		execute_sa(a, b, a_data, 0);
 	else if (elem == 2)
 	{
-		executeRA(a, b, 0, a_data);
-		executeSA(a, b, a_data, 0);
-		executeRRA(a, b, a_data, 1);
+		execute_ra(a, b, 0, a_data);
+		execute_sa(a, b, a_data, 0);
+		execute_rra(a, b, a_data, 1);
 		return (1);
 	}
-	else if ((pb = lst_sorted_ac(*a, i, a_data->length)) > (a_data->length / 2))
+	else if ((pb = lst_sorted_ac(*a, i, a_data->length)) > (a_data->length / 2)) // !!!!!
 	{
 		while (a_data->length - pb)
 		{
-			executeRRA(a, b, a_data, 1);
-			executePB(a, b, a_data, b_data);
+			execute_rra(a, b, a_data, 1);
+			execute_pb(a, b, a_data, b_data);
 			pb++;
 		}
 	}
@@ -126,24 +126,23 @@ int		how_much_sorted(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	}
 	if (elem == a_data->length - 1)
 	{
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeSA(a, b, a_data, 0);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
+		execute_rra(a, b, a_data, 1);
+		execute_rra(a, b, a_data, 1);
+		execute_sa(a, b, a_data, 0);
+		execute_ra(a, b, 0, a_data);
+		execute_ra(a, b, 0, a_data);
 	}
 	else if (elem == a_data->length - 2)
 	{
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeRRA(a, b, a_data, 1);
-		executeSA(a, b, a_data, 0);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
-		executeRA(a, b, 0, a_data);
+		execute_rra(a, b, a_data, 1);
+		execute_rra(a, b, a_data, 1);
+		execute_rra(a, b, a_data, 1);
+		execute_sa(a, b, a_data, 0);
+		execute_ra(a, b, 0, a_data);
+		execute_ra(a, b, 0, a_data);
+		execute_ra(a, b, 0, a_data);
 	}
 	else
 		return (0);
 	return (1);
-
 }

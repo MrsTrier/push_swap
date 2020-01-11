@@ -53,6 +53,7 @@ int 	read_input(int ac, char **av, unsigned *res)
 {
 	int			fd;
 	int			i;
+	char 		**result;
 
 	fd = -1;
 	i = 1;
@@ -67,6 +68,11 @@ int 	read_input(int ac, char **av, unsigned *res)
 				*res |= VISUALIZE_FLAG;
 			else if ((fd = open(av[i], O_RDONLY)) != -1)
 				*res |= READFILE_FLAG;
+			else if (ac == 2)
+			{
+				if ((result = ft_strsplit(ft_strjoin("0 ", av[1]), ' ')) != NULL)
+					return (count_wrds(result));
+			}
 			else
 				return (-2);
 		}
@@ -85,7 +91,7 @@ int 	count_wrds(char **sp_line)
 	return (wrds);
 }
 
-void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack * b_data)
+void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data)
 {
 	int			*arr;
 
@@ -95,7 +101,7 @@ void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack * b_data)
 	a_data->max = find_max(a);
 	heap_sort(i, &arr);
 	a_data->mdn = arr[(a_data->length / 2)];
-	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 1000);
+	a_data->cmnd = (char**)malloc(sizeof(a_data->cmnd) * 10000);
 	b_data->cmnd = (char**)malloc(sizeof(b_data->cmnd) * 1000);
 	a_data->pr = (a_data->cmnd);
 	b_data->pr = (b_data->cmnd);

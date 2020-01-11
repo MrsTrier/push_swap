@@ -85,7 +85,7 @@ int		sorting(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 		switch_in_b(a, b, b_data, cmnd.best);
 		merge_comands(b_data, a_data);
 		switch_in_a(a, b, a_data, cmnd.place);
-		executePA(a, b, a_data, b_data);
+		execute_pa(a, b, a_data, b_data);
 	}
 	return (0);
 }
@@ -127,58 +127,65 @@ int		algorithm(int ac, char **av, unsigned flag)
 		{
 			j = detect_index(&res_lst, a_stack.min);
 			if ((min_is(j, a_stack.length - j)) == j - 1)
-				executeRA(&res_lst, &b, 0, &a_stack);
+				execute_ra(&res_lst, &b, 0, &a_stack);
 			else
-				executeRRA(&res_lst, &b, &a_stack, 1);
+				execute_rra(&res_lst, &b, &a_stack, 1);
 		}
 		(*a_stack.cmnd) = NULL;
-        (*b_stack.cmnd) = NULL;
+		(*b_stack.cmnd) = NULL;
 	}
 	(a_stack.cmnd) = NULL;
-    (b_stack.cmnd) = NULL;
+	(b_stack.cmnd) = NULL;
 	j = 0;
 	while ((a_stack.pr)[j] != NULL)
 	{
 		ft_printf("%s", (a_stack.pr)[j]);
 		j++;
 	}
-    free(a_stack.pr);
-    free(b_stack.first_elem);
-    free_lst_arr(res_lst);
+	free(a_stack.pr);
+	free(b_stack.first_elem);
+	free_lst_arr(res_lst);
 	free_lst_arr(b);
 	return (0);
 }
 
-//int		main(int ac, char **av)
-//{
-//	int			fd;
-//	char		*line;
-//	char		**sp_line;
-//	unsigned	res;
-//	char		*tmp;
-//
-//	if (ac == 1)
-//		return (0);
-//	if ((fd = read_input(ac, av, &res)) == -2)
-//		return (write(1, "Error\n", 6));
-//	if (res & READFILE_FLAG)
-//	{
-//		while (get_next_line(fd, &line) > 0)
-//		{
-//			if (!*line)
-//				break ;
-//			tmp = ft_strjoin("0 ", line);
-//			sp_line = ft_strsplit(tmp, ' ');
-//			ac = count_wrds(sp_line);
-//			if (algorithm(ac, sp_line, res) == 6)
-//				return (0);
-//			free_arr(sp_line);
-//			free(tmp);
-//			free(line);
-//		}
-//	}
-//	else
-//		if (algorithm(ac, av, res) == 6)
-//			return (0);
-//	return (0);
-//}
+int		main(int ac, char **av)
+{
+	int			fd;
+	char		*line;
+	char		**sp_line;
+	unsigned	res;
+	char		*tmp;
+
+	if (ac == 1)
+		return (0);
+	if ((fd = read_input(ac, av, &res)) == -2)
+		return (write(1, "Error\n", 6));
+	if (res & READFILE_FLAG)
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break ;
+			tmp = ft_strjoin("0 ", line);
+			sp_line = ft_strsplit(tmp, ' ');
+			ac = count_wrds(sp_line);
+			if (algorithm(ac, sp_line, res) == 6)
+				return (0);
+			free_arr(sp_line); // !!!!!!!
+			free(tmp);
+			free(line);
+		}
+	}
+	else
+	{
+		if (fd != ac && fd != -1)
+		{
+			ac = fd;
+			av = ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
+		}
+		if (algorithm(ac, av, res) == 6)
+			return (0);
+	}
+	return (0);
+}

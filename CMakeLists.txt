@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.15)
 project(push)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -108,6 +108,7 @@ add_executable(push
         src/printf/make_double.c
         src/printf/make_ldouble.c
         src/printf/Makefile
+        src/printf/mmm
         src/printf/mod_conversions.c
         src/printf/o_conversions.c
         src/printf/p_conversions.c

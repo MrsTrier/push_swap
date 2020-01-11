@@ -420,6 +420,9 @@
 		<Unit filename="/Users/mcanhand/push/src/printf/make_ldouble.c">
 			<Option target="push"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/push/src/printf/mmm">
+			<Option target="push"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/push/src/printf/mod_conversions.c">
 			<Option target="push"/>
 		</Unit>

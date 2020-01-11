@@ -32,7 +32,7 @@ int		mk_easy_sort(t_arr **a, t_arr **b, t_stack *a_data)
 	i = 0;
 	if (easy(a, a_data))
 	{
-		executeSA(a, b, a_data, 0);
+		execute_sa(a, b, a_data, 0);
 		i++;
 	}
 	return (i);
@@ -48,8 +48,8 @@ int		free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	while (a_data->length != 3)
 	{
 		(((*a)->content != a_data->min) && ((*a)->content != a_data->max)
-			&& ((*a)->content != a_data->mdn)) ? executePB(a, b, a_data, b_data) :
-				executeRA(a, b, 0, a_data);
+			&& ((*a)->content != a_data->mdn)) ? execute_pb(a, b, a_data, b_data) :
+		execute_ra(a, b, 0, a_data);
 			i++;
 	}
 	return (i);

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-t_arr	*nb_list_at(t_arr *begin_list, unsigned int nbr)
+t_arr				*nb_list_at(t_arr *begin_list, unsigned int nbr)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (!(begin_list))
@@ -29,11 +29,11 @@ t_arr	*nb_list_at(t_arr *begin_list, unsigned int nbr)
 	return (NULL);
 }
 
-int     *lst_to_arr(t_arr *lst, int ac)
+int					*lst_to_arr(t_arr *lst, int ac)
 {
-	t_arr  *new_item;
-	int     *arr;
-	int     i;
+	t_arr			*new_item;
+	int				*arr;
+	int				i;
 
 	if (!lst)
 		return (NULL);

@@ -75,7 +75,7 @@ int		*any_double(char **av, int ac, int flag)
 		if (!is_int(av[i]))
 			return (NULL);
 		arr[i - 1 - flag] = ft_atoi(av[i]);
-		while (j < ac - flag)
+		while (j < ac)
 		{
 			if ((ft_atoi(av[j]) == arr[i - 1 - flag]) && (j != i))
 				return (NULL);

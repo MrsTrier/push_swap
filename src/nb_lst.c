@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		detect_index(t_arr **a, int place)
+int				detect_index(t_arr **a, int place)
 {
-	t_arr	*pr;
+	t_arr		*pr;
 	int			i;
 
 	pr = *a;
@@ -27,17 +27,15 @@ int		detect_index(t_arr **a, int place)
 	return (i);
 }
 
-void		free_lst_arr(t_arr *lst)
+void			free_lst_arr(t_arr *lst)
 {
-    t_arr	*tmp;
+	t_arr		*tmp;
 
-    while (lst)
-    {
-        tmp = lst->next;
-        free(lst);
-        lst = tmp;
-    }
-    free(lst);
+	while (lst)
+	{
+		tmp = lst->next;
+		free(lst);
+		lst = tmp;
+	}
+	free(lst);
 }
-
-

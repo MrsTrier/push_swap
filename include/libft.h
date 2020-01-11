@@ -76,7 +76,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_any(char **tab, int (*f)(char*));
-int					ft_count_if(char **tab, int (*f)(char*));
+//int					ft_count_if(char **tab, int (*f)(char*));
 
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strmap(char const *s, char (*f)(char));
@@ -116,4 +116,6 @@ char				*ft_lst_to_str(t_list *lst);
 int					create_node(void *str, size_t len, t_list **lst);
 t_bool				is_int(const char *str);
 int					get_next_line(const int fd, char **line);
+int					ft_count_if(char **tab, t_bool (*f)(const char*));
+
 #endif

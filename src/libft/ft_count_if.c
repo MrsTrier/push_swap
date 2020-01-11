@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_count_if(char **tab, int (*f)(char*))
+int		ft_count_if(char **tab, t_bool (*f)(const char*))
 {
 	int count;
 
