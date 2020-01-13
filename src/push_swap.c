@@ -99,7 +99,6 @@ int		algorithm(int ac, char **av, unsigned flag)
 	int			j;
 
 	res_lst = nb_lstnew();
-	b = nb_lstnew();
 	a_stack.flag = flag;
 	b_stack.flag = flag;
 	b_stack.length = 0;
@@ -112,15 +111,29 @@ int		algorithm(int ac, char **av, unsigned flag)
 		else
 			return (0);
 	}
+	if (ac == 4)
+	{
+		if (res_lst->content > res_lst->next->content)
+		{
+			free_lst_arr(res_lst);
+			return (write(1, "sa\n", 3));
+		}
+		else
+		{
+			free_lst_arr(res_lst);
+			write(1, "sa\n", 3);
+			return(write(1, "ra\n", 3));
+		}
+	}
 	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
 	if (lst_sorted_ac(res_lst, 0, a_stack.length))
 	{
-		if (a_stack.length > 5 ?
-				!(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
-		{
+//		if (a_stack.length > 5 ?
+//				!(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
+//		{
 			free_a(&res_lst, &b, &a_stack, &b_stack);
 			mk_easy_sort(&res_lst, &b, &a_stack);
-		}
+//		}
 		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ?
 				sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
 		while (lst_sorted_ac(res_lst, 0, a_stack.length))
@@ -131,6 +144,7 @@ int		algorithm(int ac, char **av, unsigned flag)
 			else
 				execute_rra(&res_lst, &b, &a_stack, 1);
 		}
+		free_lst_arr(b);
 		(*a_stack.cmnd) = NULL;
 		(*b_stack.cmnd) = NULL;
 	}
@@ -145,7 +159,6 @@ int		algorithm(int ac, char **av, unsigned flag)
 	free(a_stack.pr);
 	free(b_stack.first_elem);
 	free_lst_arr(res_lst);
-	free_lst_arr(b);
 	return (0);
 }
 

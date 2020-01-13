@@ -74,6 +74,7 @@ void	execute_pa(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	new_item->next = *a;
 	*a = new_item;
 	*b = new_a->next;
+//	free_lst_arr(new_a);
 	free(new_a);
 	a_data->length++;
 	b_data->length--;

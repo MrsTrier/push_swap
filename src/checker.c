@@ -95,40 +95,40 @@ int		execute(int ac, char **av, unsigned flag)
 	else
 		return (write(1, "OK\n", 3));
 }
-//
-//int		main(int ac, char **av)
-//{
-//	char		*line;
-//	int			fd;
-//	unsigned	res;
-//	char		**sp_line;
-//	char		*tmp;
-//
-//	if (ac == 1)
-//		return (write(2, "To run Checker, please, add some numeric parameters\n", 52));
-//	if ((fd = read_input(ac, av, &res)) == -2)
-//		return (write(2, "Error\n", 6));
-//	else if (fd != ac && fd != -1)
-//	{
-//		ac = fd;
-//		av =  ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
-//		execute(ac, av, res);
-//	}
-//	else if (!(res & READFILE_FLAG))
-//		execute(ac, av, res);
-//	else
-//	{
-//		while (get_next_line(fd, &line) > 0)
-//		{
-//			if (!*line)
-//				break ;
-//			tmp = ft_strjoin("0 ", line);
-//			sp_line = ft_strsplit(tmp, ' ');
-//			ac = count_wrds(sp_line);
-//			execute(ac, sp_line, res);
-//			free(tmp);
-//			free(line);
-//			free(sp_line);
-//		}
-//	}
-//}
+
+int		main(int ac, char **av)
+{
+	char		*line;
+	int			fd;
+	unsigned	res;
+	char		**sp_line;
+	char		*tmp;
+
+	if (ac == 1)
+		return (write(2, "To run Checker, please, add some numeric parameters\n", 52));
+	if ((fd = read_input(ac, av, &res)) == -2)
+		return (write(2, "Error\n", 6));
+	else if (fd != ac && fd != -1)
+	{
+		ac = fd;
+		av =  ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
+		execute(ac, av, res);
+	}
+	else if (!(res & READFILE_FLAG))
+		execute(ac, av, res);
+	else
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break ;
+			tmp = ft_strjoin("0 ", line);
+			sp_line = ft_strsplit(tmp, ' ');
+			ac = count_wrds(sp_line);
+			execute(ac, sp_line, res);
+			free(tmp);
+			free(line);
+			free(sp_line);
+		}
+	}
+}

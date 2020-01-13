@@ -35,5 +35,6 @@ int		s_conversions(t_params ft, va_list *args, t_list **lst)
 	}
 	else
 		create_node(res, str_len + 1, lst);
+	free(res);
 	return (0);
 }

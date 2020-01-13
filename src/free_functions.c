@@ -14,6 +14,8 @@
 
 void	free_arr(char **arr)
 {
+//	free(*arr);
+
 	while (*arr != NULL)
 	{
 		free(*arr);

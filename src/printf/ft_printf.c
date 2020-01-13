@@ -43,6 +43,7 @@ void		main_loop(const char *format, va_list *args, t_list *res_lst)
 {
 	const char	*tmp;
 	t_list		*last_lst;
+	char 		*res;
 
 	last_lst = res_lst;
 	while (*format)
@@ -50,12 +51,13 @@ void		main_loop(const char *format, va_list *args, t_list *res_lst)
 		tmp = format;
 		while (*tmp && *tmp != '%')
 			tmp++;
-		create_node(ft_strsub(format, 0, tmp - format), tmp - format + 1,
+		create_node(res = ft_strsub(format, 0, tmp - format), tmp - format + 1,
 				&last_lst);
 		format = tmp;
 		if (*tmp == '%')
 			print_arg(&format, args, &last_lst);
 	}
+	free(res);
 }
 
 size_t		calc_string_len(t_list *lst)

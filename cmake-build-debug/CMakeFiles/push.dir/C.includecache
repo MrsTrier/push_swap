@@ -78,9 +78,9 @@ floats.h
 get_next_line.h
 ../include/get_next_line.h
 
-/Users/mcanhand/push/src/lst_arr_functions.c
-execute.h
-/Users/mcanhand/push/src/execute.h
+/Users/mcanhand/push/src/push_swap.c
 push_swap.h
 /Users/mcanhand/push/src/push_swap.h
+execute.h
+/Users/mcanhand/push/src/execute.h
 
