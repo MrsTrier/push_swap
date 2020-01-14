@@ -13,10 +13,31 @@
 #include "push_swap.h"
 #include "execute.h"
 
-int     find_min(t_arr *res_lst)
+char			*handle_exceptions(int ac, char **av, int *fd, unsigned *res)
+{
+	if (ac == 1)
+		return ("To run Checker, please, add some numeric parameters");
+	if ((*fd = read_input(ac, av, res)) == -2)
+		return ("Error");
+	else
+		return ("");
+}
+
+int				prepare_input(char ***sp_line, char *line)
+{
+	char		*tmp;
+
+	tmp = ft_strjoin("0 ", line);
+	*sp_line = ft_strsplit(tmp, ' ');
+	free(tmp);
+	free(line);
+	return (count_wrds(*sp_line));
+}
+
+int				find_min(t_arr *res_lst)
 {
 	int			min;
-	t_arr	*new_item;
+	t_arr		*new_item;
 
 	if (!res_lst)
 		return (write(2, "Error\n", 6));
@@ -31,10 +52,10 @@ int     find_min(t_arr *res_lst)
 	return (min);
 }
 
-int     find_max(t_arr	*res_lst)
+int				find_max(t_arr *res_lst)
 {
 	int			max;
-	t_arr	*new_item;
+	t_arr		*new_item;
 
 	if (!res_lst)
 		return (write(2, "Error\n", 6));
@@ -49,15 +70,34 @@ int     find_max(t_arr	*res_lst)
 	return (max);
 }
 
-int 	read_input(int ac, char **av, unsigned *res)
+int				handle_input_in_row(char **av)
+{
+	char		**result;
+	int			num;
+	char		*line;
+
+	line = ft_strjoin("0 ", av[1]);
+	if ((result = ft_strsplit(line, ' ')) != NULL)
+	{
+		num = count_wrds(result);
+		free_arr(result);
+		free(result);
+		free(line);
+		return (num);
+	}
+	free(result);
+	free(line);
+	return (-1);
+}
+
+int				read_input(int ac, char **av, unsigned *res)
 {
 	int			fd;
 	int			i;
-	char 		**result;
+	int			result;
 
 	fd = -1;
 	i = 1;
-	*res = 0;
 	while (ac > 2 ? i < 3 : i < 2)
 	{
 		if (!is_int(av[i]))
@@ -70,8 +110,8 @@ int 	read_input(int ac, char **av, unsigned *res)
 				*res |= READFILE_FLAG;
 			else if (ac == 2)
 			{
-				if ((result = ft_strsplit(ft_strjoin("0 ", av[1]), ' ')) != NULL)
-					return (count_wrds(result));
+				if ((result = handle_input_in_row(av)) != -1)
+					return (result);
 			}
 			else
 				return (-2);
@@ -81,9 +121,9 @@ int 	read_input(int ac, char **av, unsigned *res)
 	return (fd);
 }
 
-int 	count_wrds(char **sp_line)
+int				count_wrds(char **sp_line)
 {
-	int 	wrds;
+	int			wrds;
 
 	wrds = 1;
 	while (sp_line[wrds] != NULL)
@@ -91,7 +131,7 @@ int 	count_wrds(char **sp_line)
 	return (wrds);
 }
 
-void	fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data)
+void			fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data)
 {
 	int			*arr;
 

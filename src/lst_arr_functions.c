@@ -18,7 +18,7 @@ t_arr			*nb_lstnew()
 	t_arr		*new_list;
 
 	if (!(new_list = (t_arr*)malloc(sizeof(t_arr))))
-		return (NULL);
+		return (new_list);
 	new_list->next = NULL;
 	return (new_list);
 }
@@ -63,26 +63,4 @@ int				lst_sorted_ac(t_arr *lst, int elem, int l_elem)
 		new_item = new_item->next;
 	}
 	return (0);
-}
-
-void			nb_push_back(t_arr **start, int nb)
-{
-	t_arr		*lst;
-	t_arr		*new;
-
-	lst = *start;
-	if (!(*start))
-	{
-		new = nb_lstnew();
-		new->content = nb;
-		lst->next = new;
-	}
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		new = nb_lstnew();
-		new->content = nb;
-		lst->next = new;
-	}
 }

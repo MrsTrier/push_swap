@@ -34,7 +34,7 @@ int		find_place(t_arr **a, int b, t_stack *a_data)
 	return (place);
 }
 
-t_cmnd		choose_best(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
+t_cmnd		choose_best(t_arr **a, t_arr **b, t_stack **a_data, t_stack *b_data)
 {
 	t_arr		*pr;
 	t_cmnd		cmnd;
@@ -47,9 +47,9 @@ t_cmnd		choose_best(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	best_place = 0;
 	while (pr)
 	{
-		cmnd.place = find_place(a, pr->content, a_data);
+		cmnd.place = find_place(a, pr->content, *a_data);
 		if (calculate_comands(a, &cmnd, min_is(i, b_data->length - i),
-					a_data->length))
+					(*a_data)->length))
 		{
 			cmnd.best = pr->content;
 			best_place = cmnd.place;
@@ -58,6 +58,8 @@ t_cmnd		choose_best(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 		pr = pr->next;
 	}
 	cmnd.place = best_place;
+	(*a_data)->place = cmnd.place;
+	(*a_data)->best = cmnd.best;
 	return (cmnd);
 }
 
@@ -69,7 +71,7 @@ int		sorting(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 
 	while (*b && b_data->length)
 	{
-		cmnd = choose_best(a, b, a_data, b_data);
+		cmnd = choose_best(a, b, &a_data, b_data);
 		if ((cmnd.b >= cmnd.a && cmnd.a > 0) ||
 				(cmnd.a >= cmnd.b && cmnd.b > 0))
 		{
@@ -77,10 +79,10 @@ int		sorting(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 			j = detect_index(b, cmnd.best);
 			if (((min_is(i, a_data->length - i)) == i - 1) &&
 					(min_is(j, b_data->length - j) == j - 1))
-				optimazationRR(a, b, cmnd, a_data, b_data);
+				optimazation_rr(a, b, a_data, b_data);
 			else if (((min_is(i, a_data->length - i)) == a_data->length - i + 1)
 				&& (min_is(j, b_data->length - j) == b_data->length - j + 1))
-				optimazationRRR(a, b, cmnd, a_data, b_data);
+				optimazation_rrr(a, b, a_data, b_data);
 		}
 		switch_in_b(a, b, b_data, cmnd.best);
 		merge_comands(b_data, a_data);
@@ -122,18 +124,14 @@ int		algorithm(int ac, char **av, unsigned flag)
 		{
 			free_lst_arr(res_lst);
 			write(1, "sa\n", 3);
-			return(write(1, "ra\n", 3));
+			return (write(1, "ra\n", 3));
 		}
 	}
 	fill_data(res_lst, ac - (int)flag - 1, &a_stack, &b_stack);
 	if (lst_sorted_ac(res_lst, 0, a_stack.length))
 	{
-//		if (a_stack.length > 5 ?
-//				!(how_much_sorted(&res_lst, &b, &a_stack, &b_stack)) : 1)
-//		{
-			free_a(&res_lst, &b, &a_stack, &b_stack);
-			mk_easy_sort(&res_lst, &b, &a_stack);
-//		}
+		free_a(&res_lst, &b, &a_stack, &b_stack);
+		mk_easy_sort(&res_lst, &b, &a_stack);
 		(lst_sorted_ac(res_lst, 0, a_stack.length) || b_stack.length != 0) ?
 				sorting(&res_lst, &b, &a_stack, &b_stack) : 0;
 		while (lst_sorted_ac(res_lst, 0, a_stack.length))
@@ -168,8 +166,8 @@ int		main(int ac, char **av)
 	char		*line;
 	char		**sp_line;
 	unsigned	res;
-	char		*tmp;
 
+	res = 0;
 	if (ac == 1)
 		return (0);
 	if ((fd = read_input(ac, av, &res)) == -2)
@@ -180,14 +178,11 @@ int		main(int ac, char **av)
 		{
 			if (!*line)
 				break ;
-			tmp = ft_strjoin("0 ", line);
-			sp_line = ft_strsplit(tmp, ' ');
-			ac = count_wrds(sp_line);
+			ac = prepare_input(&sp_line, line);
 			if (algorithm(ac, sp_line, res) == 6)
 				return (0);
-			free_arr(sp_line); // !!!!!!!
-			free(tmp);
-			free(line);
+			free_arr(sp_line);
+			free(sp_line);
 		}
 	}
 	else

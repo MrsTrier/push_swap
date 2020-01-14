@@ -49,12 +49,12 @@ int		switch_in_a(t_arr **a, t_arr **b, t_stack *a_data, int nb)
 	return (c);
 }
 
-int		optimazationRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data)
+int		optimazation_rr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	int c;
 
 	c = 0;
-	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
+	while (((*a)->content != a_data->place) && ((*b)->content != a_data->best))
 	{
 		execute_rr(a, b, a_data, b_data);
 		c++;
@@ -62,87 +62,15 @@ int		optimazationRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack 
 	return (c);
 }
 
-int		optimazationRRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data)
+int		optimazation_rrr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 {
 	int c;
 
 	c = 0;
-	while (((*a)->content != cmnd.place) && ((*b)->content != cmnd.best))
+	while (((*a)->content != a_data->place) && ((*b)->content != a_data->best))
 	{
 		execute_rrr(a, a_data, b, b_data);
 		c++;
 	}
 	return (c);
-}
-
-int		how_much_sorted(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
-{
-	int     i;
-	int     elem;
-	int     pb;
-
-	pb = 0;
-	elem = -1;
-	i = 0;
-	while (a_data->length - i - 1)
-	{
-		if ((pb = lst_sorted_ac(*a, i, a_data->length)) == 0)
-		{
-			elem = i;
-			break ;
-		}
-		i++;
-	}
-	if (!elem)
-		return (0);
-	if (elem == 1)
-		execute_sa(a, b, a_data, 0);
-	else if (elem == 2)
-	{
-		execute_ra(a, b, 0, a_data);
-		execute_sa(a, b, a_data, 0);
-		execute_rra(a, b, a_data, 1);
-		return (1);
-	}
-	else if ((pb = lst_sorted_ac(*a, i, a_data->length)) > (a_data->length / 2)) // !!!!!
-	{
-		while (a_data->length - pb)
-		{
-			execute_rra(a, b, a_data, 1);
-			execute_pb(a, b, a_data, b_data);
-			pb++;
-		}
-	}
-	i = a_data->length - 1;
-	elem = -1;
-	while (i != a_data->length - 2)
-	{
-		if (lst_sorted_ac(*a, 0, i) == 0)
-		{
-			elem = i;
-			break ;
-		}
-		i--;
-	}
-	if (elem == a_data->length - 1)
-	{
-		execute_rra(a, b, a_data, 1);
-		execute_rra(a, b, a_data, 1);
-		execute_sa(a, b, a_data, 0);
-		execute_ra(a, b, 0, a_data);
-		execute_ra(a, b, 0, a_data);
-	}
-	else if (elem == a_data->length - 2)
-	{
-		execute_rra(a, b, a_data, 1);
-		execute_rra(a, b, a_data, 1);
-		execute_rra(a, b, a_data, 1);
-		execute_sa(a, b, a_data, 0);
-		execute_ra(a, b, 0, a_data);
-		execute_ra(a, b, 0, a_data);
-		execute_ra(a, b, 0, a_data);
-	}
-	else
-		return (0);
-	return (1);
 }

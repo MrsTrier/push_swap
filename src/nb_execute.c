@@ -74,7 +74,6 @@ void	execute_pa(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	new_item->next = *a;
 	*a = new_item;
 	*b = new_a->next;
-//	free_lst_arr(new_a);
 	free(new_a);
 	a_data->length++;
 	b_data->length--;
@@ -124,47 +123,4 @@ void	execute_ra(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 	head->next = NULL;
 	if ((a_data->flag & VISUALIZE_FLAG) && rr == 0)
 		visualize(a, b, RA, a_data->flag & COLOR_FLAG ? 1 : 0);
-}
-
-void	execute_rb(t_arr **a, t_arr **b, int rr, t_stack *b_data)
-{
-	t_arr *head;
-	t_arr *tail;
-
-	if (!rr)
-	{
-		(*b_data->cmnd) = "rb\n";
-		b_data->cmnd++;
-	}
-	if (!(*b))
-		return ;
-	head = *b;
-	tail = *b;
-	(*b) = (*b)->next;
-	while (tail->next)
-		tail = tail->next;
-	tail->next = head;
-	head->next = NULL;
-	if ((b_data->flag & VISUALIZE_FLAG) && rr == 0)
-		visualize(a, b, RB, b_data->flag & COLOR_FLAG ? 1 : 0);
-}
-
-void	execute_ss(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
-{
-	(*a_data->cmnd) = "ss\n";
-	a_data->cmnd++;
-	execute_sa(a, b, a_data, 1);
-	execute_sb(a, b, b_data, 1);
-	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, SS, a_data->flag & COLOR_FLAG ? 1 : 0);
-}
-
-void	execute_rr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
-{
-	(*a_data->cmnd) = "rr\n";
-	a_data->cmnd++;
-	execute_ra(a, b, 1, a_data);
-	execute_rb(a, b, 1, a_data);
-	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RR, a_data->flag & COLOR_FLAG ? 1 : 0);
 }

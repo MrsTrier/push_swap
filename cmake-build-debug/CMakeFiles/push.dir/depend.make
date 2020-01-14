@@ -304,8 +304,15 @@ CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/libft.h
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/push_swap.h
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../src/lst_arr_functions.c
 
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/conversions.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/execute.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/float_to_str.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/floats.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/ft_printf.h
 CMakeFiles/push.dir/src/lst_execute.c.o: ../include/get_next_line.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/large_arythmetics.h
 CMakeFiles/push.dir/src/lst_execute.c.o: ../include/libft.h
+CMakeFiles/push.dir/src/lst_execute.c.o: ../include/push_swap.h
 CMakeFiles/push.dir/src/lst_execute.c.o: ../src/lst_execute.c
 
 CMakeFiles/push.dir/src/nb_execute.c.o: ../include/conversions.h

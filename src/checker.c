@@ -89,46 +89,38 @@ int		execute(int ac, char **av, unsigned flag)
 		return (write(2, "Error\n", 6));
 	fill_data(res_lst, ac - 1 - (int)flag, &a_stack, &b_stack);
 	if (manage_comands(&res_lst, &b, &a_stack, &b_stack) == 6)
-		return 0;
+		return (0);
 	if ((lst_sorted_ac(res_lst, 0, a_stack.length)) || b_stack.length != 0)
 		return (write(1, "KO\n", 3));
 	else
 		return (write(1, "OK\n", 3));
 }
 
-int		main(int ac, char **av)
-{
-	char		*line;
-	int			fd;
-	unsigned	res;
-	char		**sp_line;
-	char		*tmp;
-
-	if (ac == 1)
-		return (write(2, "To run Checker, please, add some numeric parameters\n", 52));
-	if ((fd = read_input(ac, av, &res)) == -2)
-		return (write(2, "Error\n", 6));
-	else if (fd != ac && fd != -1)
-	{
-		ac = fd;
-		av =  ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
-		execute(ac, av, res);
-	}
-	else if (!(res & READFILE_FLAG))
-		execute(ac, av, res);
-	else
-	{
-		while (get_next_line(fd, &line) > 0)
-		{
-			if (!*line)
-				break ;
-			tmp = ft_strjoin("0 ", line);
-			sp_line = ft_strsplit(tmp, ' ');
-			ac = count_wrds(sp_line);
-			execute(ac, sp_line, res);
-			free(tmp);
-			free(line);
-			free(sp_line);
-		}
-	}
-}
+//int		main(int ac, char **av)
+//{
+//	char		*line;
+//	int			fd;
+//	unsigned	res;
+//	char		**sp_line;
+//
+//	ft_printf("%s", handle_exceptions(ac, av, &fd, &res));
+//	if (fd != ac && fd != -1)
+//	{
+//		ac = fd;
+//		av = ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
+//		execute(ac, av, res);
+//	}
+//	else if (!(res & READFILE_FLAG))
+//		execute(ac, av, res);
+//	else
+//	{
+//		while (get_next_line(fd, &line) > 0)
+//		{
+//			if (!*line)
+//				break ;
+//			ac = prepare_input(&sp_line, line);
+//			execute(ac, sp_line, res);
+//			free(sp_line);
+//		}
+//	}
+//}

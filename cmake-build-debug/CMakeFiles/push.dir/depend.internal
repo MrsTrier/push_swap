@@ -305,8 +305,15 @@ CMakeFiles/push.dir/src/lst_arr_functions.c.o
  ../include/push_swap.h
  /Users/mcanhand/push/src/lst_arr_functions.c
 CMakeFiles/push.dir/src/lst_execute.c.o
+ ../include/conversions.h
+ ../include/execute.h
+ ../include/float_to_str.h
+ ../include/floats.h
+ ../include/ft_printf.h
  ../include/get_next_line.h
+ ../include/large_arythmetics.h
  ../include/libft.h
+ ../include/push_swap.h
  /Users/mcanhand/push/src/lst_execute.c
 CMakeFiles/push.dir/src/nb_execute.c.o
  ../include/conversions.h

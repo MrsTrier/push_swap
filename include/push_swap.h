@@ -51,6 +51,8 @@ typedef struct		s_stack
 	int				min;
 	int				mdn;
 	int				length;
+	int				best;
+	int				place;
 	char 			**cmnd;
 	char 			**pr;
     char 			**first_elem;
@@ -68,23 +70,19 @@ typedef struct		s_cmnd
 }					t_cmnd;
 
 int			save_stack(int ac, char **av, t_arr *res_lst, int *flag);
-int			lst_length(t_list *lst);
-int			lst_sorted_dec(t_arr *lst);
 int		    lst_sorted_ac(t_arr *lst, int elem, int l_elem);
 t_arr		*create_nb_elem(int nb, t_arr **lst, int i);
 t_arr		*nb_lstnew();
-t_arr		*ft_list_elem(t_arr *begin_list, unsigned int nbr);
-int			nb_lst_length(t_arr *lst);
-void		nb_push_back(t_arr **start, int nb);
 void		visualize(t_arr **a, t_arr **b, char *cmnd, int color);
 void		free_lst_arr(t_arr *lst);
 int			detect_index(t_arr **a, int place);
 int			read_input(int ac, char **av, unsigned *res);
+int			prepare_input(char ***sp_line, char *line);
+char		*handle_exceptions(int ac, char **av, int *fd, unsigned *res);
 int 		count_wrds(char **sp_line);
 void		fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data);
-int			how_much_sorted(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
-int			optimazationRRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data);
-int			optimazationRR(t_arr **a, t_arr **b, t_cmnd cmnd, t_stack *a_data, t_stack *b_data);
+int			optimazation_rrr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
+int			optimazation_rr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 int			switch_in_b(t_arr **a, t_arr **b, t_stack *b_data, int nb);
 int			switch_in_a(t_arr **a, t_arr **b, t_stack *a_data, int nb);
 int			easy(t_arr **a, t_stack *a_data);
@@ -93,7 +91,6 @@ int			free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 int			min_is(int up, int bottom);
 int			calculate_comands(t_arr **a, t_cmnd *cmnd, int b, int a_length);
 void		free_arr(char **arr);
-//void		free_int_arr(int **arr, int ac);
 void        merge_comands(t_stack *b_data, t_stack *a_data);
 
 

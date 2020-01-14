@@ -22,3 +22,5 @@ void	merge_comands(t_stack *b_data, t_stack *a_data)
 		b_data->pr++;
 	}
 }
+
+
