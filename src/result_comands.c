@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+//#include "push_swap.h"
 #include "execute.h"
 
 void	merge_comands(t_stack *b_data, t_stack *a_data)
@@ -23,4 +23,22 @@ void	merge_comands(t_stack *b_data, t_stack *a_data)
 	}
 }
 
+int				handle_input_in_row(char **av)
+{
+	char		**result;
+	int			num;
+	char		*line;
 
+	line = ft_strjoin("0 ", av[1]);
+	if ((result = ft_strsplit(line, ' ')) != NULL)
+	{
+		num = count_wrds(result);
+		free_arr(result);
+		free(result);
+		free(line);
+		return (num);
+	}
+	free(result);
+	free(line);
+	return (-1);
+}

@@ -142,7 +142,8 @@ int		algorithm(int ac, char **av, unsigned flag)
 			else
 				execute_rra(&res_lst, &b, &a_stack, 1);
 		}
-		free_lst_arr(b);
+		if (a_stack.length > 3)
+			free_lst_arr(b);
 		(*a_stack.cmnd) = NULL;
 		(*b_stack.cmnd) = NULL;
 	}

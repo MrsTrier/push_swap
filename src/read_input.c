@@ -70,31 +70,10 @@ int				find_max(t_arr *res_lst)
 	return (max);
 }
 
-int				handle_input_in_row(char **av)
-{
-	char		**result;
-	int			num;
-	char		*line;
-
-	line = ft_strjoin("0 ", av[1]);
-	if ((result = ft_strsplit(line, ' ')) != NULL)
-	{
-		num = count_wrds(result);
-		free_arr(result);
-		free(result);
-		free(line);
-		return (num);
-	}
-	free(result);
-	free(line);
-	return (-1);
-}
-
 int				read_input(int ac, char **av, unsigned *res)
 {
 	int			fd;
 	int			i;
-	int			result;
 
 	fd = -1;
 	i = 1;
@@ -109,10 +88,7 @@ int				read_input(int ac, char **av, unsigned *res)
 			else if ((fd = open(av[i], O_RDONLY)) != -1)
 				*res |= READFILE_FLAG;
 			else if (ac == 2)
-			{
-				if ((result = handle_input_in_row(av)) != -1)
-					return (result);
-			}
+				return ((handle_input_in_row(av) == -1) ?  -2 :  (handle_input_in_row(av)));
 			else
 				return (-2);
 		}
@@ -146,5 +122,7 @@ void			fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data)
 	a_data->pr = (a_data->cmnd);
 	b_data->pr = (b_data->cmnd);
 	b_data->first_elem = (b_data->cmnd);
+	a_data->a_is_full = true;
+	b_data->a_is_full = true;
 	free(arr);
 }

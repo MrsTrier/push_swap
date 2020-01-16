@@ -72,7 +72,7 @@ void				execute_rb(t_arr **a, t_arr **b, int rr, t_stack *b_data)
 	tail->next = head;
 	head->next = NULL;
 	if ((b_data->flag & VISUALIZE_FLAG) && rr == 0)
-		visualize(a, b, RB, b_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, RB, b_data);
 }
 
 void				execute_ss(t_arr **a, t_arr **b, t_stack *a_data,
@@ -83,7 +83,7 @@ void				execute_ss(t_arr **a, t_arr **b, t_stack *a_data,
 	execute_sa(a, b, a_data, 1);
 	execute_sb(a, b, b_data, 1);
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, SS, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, SS, a_data);
 }
 
 void				execute_rr(t_arr **a, t_arr **b, t_stack *a_data,
@@ -94,5 +94,5 @@ void				execute_rr(t_arr **a, t_arr **b, t_stack *a_data,
 	execute_ra(a, b, 1, a_data);
 	execute_rb(a, b, 1, a_data);
 	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, RR, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, RR, a_data);
 }

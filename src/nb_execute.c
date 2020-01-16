@@ -33,7 +33,7 @@ int		execute_sa(t_arr **a, t_arr **b, t_stack *a_data, int ss)
 		nb_list_at(pr_a, 1)->content = tmp;
 	}
 	if ((a_data->flag & VISUALIZE_FLAG) && ss == 0)
-		visualize(a, b, SA, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, SA, a_data);
 	return (1);
 }
 
@@ -57,7 +57,7 @@ int		execute_sb(t_arr **a, t_arr **b, t_stack *b_data, int ss)
 		nb_list_at(pr, 1)->content = tmp;
 	}
 	if ((b_data->flag & VISUALIZE_FLAG) && ss == 0)
-		visualize(a, b, SB, b_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, SB, b_data);
 	return (1);
 }
 
@@ -77,8 +77,13 @@ void	execute_pa(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	free(new_a);
 	a_data->length++;
 	b_data->length--;
+	if (b_data->length == 0)
+	{
+		a_data->a_is_full = true;
+		b_data->a_is_full = true;
+	}
 	if (a_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, PA, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, PA, a_data);
 }
 
 void	execute_pb(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
@@ -98,8 +103,10 @@ void	execute_pb(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	free(new_a);
 	b_data->length++;
 	a_data->length--;
+	b_data->a_is_full = false;
+	a_data->a_is_full = false;
 	if (b_data->flag & VISUALIZE_FLAG)
-		visualize(a, b, PB, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, PB, a_data);
 }
 
 void	execute_ra(t_arr **a, t_arr **b, int rr, t_stack *a_data)
@@ -122,5 +129,5 @@ void	execute_ra(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 	tail->next = head;
 	head->next = NULL;
 	if ((a_data->flag & VISUALIZE_FLAG) && rr == 0)
-		visualize(a, b, RA, a_data->flag & COLOR_FLAG ? 1 : 0);
+		visualize(a, b, RA, a_data);
 }

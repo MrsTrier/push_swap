@@ -14,42 +14,65 @@
 #include "checker.h"
 #include "push_swap.h"
 
-void	visualize(t_arr **a, t_arr **b, char *cmnd, int color)
+void		print_stack_b(t_stack *a_data, int *i, t_arr **b, t_arr **pr_b)
+{
+	while ((a_data->a_is_full) ? (*i < a_data->length) : (*pr_b != NULL))
+	{
+		ft_printf("%5d |   %-22s |   %-22d \n", *i, "(null)",
+				(a_data->a_is_full) ? 0 : (*pr_b)->content);
+		*pr_b = (a_data->a_is_full) ? *b : (*pr_b)->next;
+		(*i)++;
+	}
+}
+
+int			print_stack_b_a(t_stack *a_data, t_arr **pr_a,
+									t_arr **b, t_arr **pr_b)
+{
+	int		i;
+
+	i = 0;
+	while ((a_data->a_is_full == false) && (*pr_a != NULL) && (*pr_b != NULL))
+	{
+		(a_data->a_is_full) ?
+		(ft_printf("%5d |   %-22d |   %-22s \n", i, (*pr_a)->content, NULL)) :
+		(ft_printf("%5d |   %-22d |   %-22d \n", i,
+					(*pr_a)->content, (*pr_b)->content));
+		(*pr_a) = (*pr_a)->next;
+		(*pr_b) = (a_data->a_is_full) ? *b : (*pr_b)->next;
+		i++;
+	}
+	return (i);
+}
+
+void		visualize(t_arr **a, t_arr **b, char *cmnd, t_stack *a_data)
 {
 	t_arr	*pr_a;
 	t_arr	*pr_b;
 	int		i;
+	int		color;
 
+	color = (a_data->flag & COLOR_FLAG) ? 1 : 0;
 	i = 0;
 	pr_a = *a;
 	pr_b = *b;
 	ft_printf("    № |   A %-20s|   B %-20s\n", "STACK", "STACK");
-	ft_printf("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
-	while (pr_a && pr_b)
-	{
-		ft_printf("%5d |   %-22d |   %-22d \n", i, pr_a->content, pr_b->content);
-		pr_a = pr_a->next;
-		pr_b = pr_b->next;
-		i++;
-	}
+	ft_printf("- - - - - - - - - - - - - - - - - - - - - - - "
+		"- - - - - - - -\n");
+	i += print_stack_b_a(a_data, &pr_a, b, &pr_b);
 	while (pr_a)
 	{
 		ft_printf("%5d |   %-22d |   %-22s \n", i, pr_a->content, "(null)");
 		pr_a = pr_a->next;
 		i++;
 	}
-	while (pr_b)
-	{
-		ft_printf("%5d |   %-22s |   %-22d \n", i, "(null)", pr_b->content);
-		pr_b = pr_b->next;
-		i++;
-	}
+	print_stack_b(a_data, &i, b, &pr_b);
 	if (color)
 		ft_printf("\033[0;35m Last command \033[0m%s\n", cmnd);
-	ft_printf("=============================================================\n");
+	ft_printf("============================================"
+		"=================\n");
 }
 
-int		valid(char *line)
+int			valid(char *line)
 {
 	if ((ft_strcmp(line, "sa") == 0) || (ft_strcmp(line, "sb") == 0) ||
 		(ft_strcmp(line, "ss") == 0) || (ft_strcmp(line, "pa") == 0) ||
@@ -61,7 +84,7 @@ int		valid(char *line)
 	return (0);
 }
 
-int		*any_double(char **av, int ac, int flag)
+int			*any_double(char **av, int ac, int flag)
 {
 	int		i;
 	int		j;
@@ -87,24 +110,24 @@ int		*any_double(char **av, int ac, int flag)
 	return (arr);
 }
 
-int		save_stack(int ac, char **av, t_arr *res_lst, int *flag)
+int			save_stack(int ac, char **av, t_arr *res_lst, int *flag)
 {
-	int			i;
-	int			j;
-	t_arr		*stack;
-	int			*arr;
+	int		i;
+	int		j;
+	t_arr	*stack;
+	int		*arr;
 
 	j = ((*flag & COLOR_FLAG) ? 1 : 0) + ((*flag & VISUALIZE_FLAG) ? 1 : 0);
 	j = (*flag & READFILE_FLAG) ? 0 : j;
 	i = 1;
 	stack = res_lst;
-	if (ac < 2)
+	if (ac - j < 2)
 		return (6);
 	if ((arr = any_double(av, ac, j)) == NULL)
 	{
-        free(arr);
-        return (6);
-    }
+		free(arr);
+		return (6);
+	}
 	while (i < ac - j)
 	{
 		create_nb_elem(arr[i - 1], &stack, i);

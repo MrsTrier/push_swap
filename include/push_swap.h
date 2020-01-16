@@ -47,6 +47,7 @@
 
 typedef struct		s_stack
 {
+	t_bool			a_is_full;
 	int				max;
 	int				min;
 	int				mdn;
@@ -73,9 +74,10 @@ int			save_stack(int ac, char **av, t_arr *res_lst, int *flag);
 int		    lst_sorted_ac(t_arr *lst, int elem, int l_elem);
 t_arr		*create_nb_elem(int nb, t_arr **lst, int i);
 t_arr		*nb_lstnew();
-void		visualize(t_arr **a, t_arr **b, char *cmnd, int color);
+void		visualize(t_arr **a, t_arr **b, char *cmnd, t_stack *a_data);
 void		free_lst_arr(t_arr *lst);
 int			detect_index(t_arr **a, int place);
+int			handle_input_in_row(char **av);
 int			read_input(int ac, char **av, unsigned *res);
 int			prepare_input(char ***sp_line, char *line);
 char		*handle_exceptions(int ac, char **av, int *fd, unsigned *res);
@@ -90,7 +92,6 @@ int			mk_easy_sort(t_arr **a, t_arr **b, t_stack *a_data);
 int			free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 int			min_is(int up, int bottom);
 int			calculate_comands(t_arr **a, t_cmnd *cmnd, int b, int a_length);
-void		free_arr(char **arr);
 void        merge_comands(t_stack *b_data, t_stack *a_data);
 
 
