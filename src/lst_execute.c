@@ -59,7 +59,11 @@ void				execute_rb(t_arr **a, t_arr **b, int rr, t_stack *b_data)
 
 	if (!rr)
 	{
-		(*b_data->cmnd) = "rb\n";
+		(*b_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+		(*b_data->cmnd)[0] = 'r';
+		(*b_data->cmnd)[1] = 'b';
+		(*b_data->cmnd)[2] = '\n';
+		(*b_data->cmnd)[3] = '\0';
 		b_data->cmnd++;
 	}
 	if (!(*b))
@@ -78,7 +82,11 @@ void				execute_rb(t_arr **a, t_arr **b, int rr, t_stack *b_data)
 void				execute_ss(t_arr **a, t_arr **b, t_stack *a_data,
 		t_stack *b_data)
 {
-	(*a_data->cmnd) = "ss\n";
+	(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+	(*a_data->cmnd)[0] = 's';
+	(*a_data->cmnd)[1] = 's';
+	(*a_data->cmnd)[2] = '\n';
+	(*a_data->cmnd)[3] = '\0';
 	a_data->cmnd++;
 	execute_sa(a, b, a_data, 1);
 	execute_sb(a, b, b_data, 1);
@@ -89,7 +97,11 @@ void				execute_ss(t_arr **a, t_arr **b, t_stack *a_data,
 void				execute_rr(t_arr **a, t_arr **b, t_stack *a_data,
 		t_stack *b_data)
 {
-	(*a_data->cmnd) = "rr\n";
+	(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+	(*a_data->cmnd)[0] = 'r';
+	(*a_data->cmnd)[1] = 'r';
+	(*a_data->cmnd)[2] = '\n';
+	(*a_data->cmnd)[3] = '\0';
 	a_data->cmnd++;
 	execute_ra(a, b, 1, a_data);
 	execute_rb(a, b, 1, a_data);

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/push.dir/src/checker.c.o"
+  "CMakeFiles/push.dir/src/core.c.o"
   "CMakeFiles/push.dir/src/execute_rest.c.o"
   "CMakeFiles/push.dir/src/free_functions.c.o"
   "CMakeFiles/push.dir/src/heap_sort.c.o"

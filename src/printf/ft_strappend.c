@@ -25,6 +25,5 @@ char	*ft_strappend(char *s1, char *s2)
 	res = ft_strnew(l1 + l2);
 	ft_memcpy(res, s1, l1);
 	ft_memcpy(s1 + l1, s2, l2);
-//	free(s2);
 	return (res);
 }

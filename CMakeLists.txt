@@ -108,7 +108,6 @@ add_executable(push
         src/printf/make_double.c
         src/printf/make_ldouble.c
         src/printf/Makefile
-        src/printf/mmm
         src/printf/mod_conversions.c
         src/printf/o_conversions.c
         src/printf/p_conversions.c
@@ -118,6 +117,7 @@ add_executable(push
         src/printf/u_conversion.c
         src/printf/x_conversions.c
         src/checker.c
+        src/core.c
         src/execute_rest.c
         src/free_functions.c
         src/heap_sort.c
@@ -131,5 +131,10 @@ add_executable(push
         src/result_comands.c
         src/supportive_functions.c
         src/validation.c
+        author
         Makefile
-        test.sh)
+        test
+        test.sh
+        test2
+        test3
+        test500)

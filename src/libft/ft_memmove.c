@@ -12,49 +12,20 @@
 
 #include "libft.h"
 
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void					*ft_memmove(void *dst, const void *src, size_t len)
 {
-    size_t				i;
-    unsigned char		*ptr;
-    const unsigned char	*ptr2;
+	size_t				i;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-    ptr = (unsigned char*)dst;
-    ptr2 = (unsigned char*)src;
-    i = 0;
-    if (ptr2 < ptr)
-        while (++i <= len)
-            ptr[len - i] = ptr2[len - i];
-    else
-        while (len-- > 0)
-            *(ptr++) = *(ptr2++);
-    return (dst);
+	ptr = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	i = 0;
+	if (ptr2 < ptr)
+		while (++i <= len)
+			ptr[len - i] = ptr2[len - i];
+	else
+		while (len-- > 0)
+			*(ptr++) = *(ptr2++);
+	return (dst);
 }
-
-//void	*ft_memmove(void *dst, const void *src, size_t len)
-//{
-//	unsigned char	*s1;
-//	unsigned char	*s2;
-//
-//	s1 = (unsigned char *)dst;
-//	s2 = (unsigned char *)src;
-//	if (s2 < s1)
-//	{
-//		s1 = (unsigned char *)s1 + len - 1;
-//		s2 = (unsigned char *)s2 + len - 1;
-//		while (len)
-//		{
-//			*s1-- = *s2--;
-//			len--;
-//		}
-//	}
-//	else
-//	{
-//		while (len)
-//		{
-//			*s1++ = *s2++;
-//			len--;
-//		}
-//	}
-//	return ((void *)dst);
-//}

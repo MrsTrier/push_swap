@@ -48,14 +48,15 @@ int		free_a(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	while (a_data->length != 3)
 	{
 		(((*a)->content != a_data->min) && ((*a)->content != a_data->max)
-			&& ((*a)->content != a_data->mdn)) ? execute_pb(a, b, a_data, b_data) :
-		execute_ra(a, b, 0, a_data);
-			i++;
+			&& ((*a)->content != a_data->mdn)) ?
+				execute_pb(a, b, a_data, b_data) :
+					execute_ra(a, b, 0, a_data);
+		i++;
 	}
 	return (i);
 }
 
-int 	min_is(int up, int bottom)
+int		min_is(int up, int bottom)
 {
 	if (up <= bottom + 1)
 		return (up - 1);

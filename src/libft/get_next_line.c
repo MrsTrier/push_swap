@@ -55,14 +55,32 @@ static int		ft_read_file(int fd, char *tmp, char **buffer, char **line)
 	return (RET_VALUE(ret));
 }
 
-int				get_next_line(const int fd, char **line)
+int				support(char *tmp, char **str, const int fd, char **line)
 {
 	int			i;
 	int			ret;
+
+	i = 0;
+	while (i < BUFF_SIZE)
+		tmp[i++] = '\0';
+	ret = ft_read_file(fd, tmp, &str[fd], line);
+	free(tmp);
+	if (ret != 0 || str[fd] == NULL || str[fd][0] == '\0')
+	{
+		if (!ret && *line)
+			*line = NULL;
+		return (ret);
+	}
+	*line = str[fd];
+	str[fd] = NULL;
+	return (1);
+}
+
+int				get_next_line(const int fd, char **line)
+{
 	static char	*str[MAX_FD];
 	char		*tmp;
 
-	i = 0;
 	tmp = 0;
 	if (!line || fd < 0 || fd > MAX_FD || \
 		!(tmp = (char *)malloc(sizeof(char) * (BUFF_SIZE + 1))))
@@ -78,18 +96,5 @@ int				get_next_line(const int fd, char **line)
 			return (1);
 		}
 	}
-	while (i < BUFF_SIZE)
-		tmp[i++] = '\0';
-	ret = ft_read_file(fd, tmp, &str[fd], line);
-	free(tmp);
-	tmp = NULL;
-	if (ret != 0 || str[fd] == NULL || str[fd][0] == '\0')
-	{
-		if (!ret && *line)
-			*line = NULL;
-		return (ret);
-	}
-	*line = str[fd];
-	str[fd] = NULL;
-	return (1);
+	return (support(tmp, &str[fd], fd, line));
 }

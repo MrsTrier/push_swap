@@ -20,3 +20,22 @@ void	free_arr(char **arr)
 		(arr)++;
 	}
 }
+
+void	let_me_free(t_arr **res_lst, t_stack *a_stack, t_stack *b_stack)
+{
+	free_arr(a_stack->pr);
+	free(a_stack->pr);
+	free_arr(b_stack->first_elem);
+	free(b_stack->first_elem);
+	free_lst_arr(*res_lst);
+}
+
+int		count_wrds(char **sp_line)
+{
+	int	wrds;
+
+	wrds = 1;
+	while (sp_line[wrds] != NULL)
+		wrds++;
+	return (wrds);
+}

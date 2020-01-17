@@ -13,16 +13,6 @@
 #include "push_swap.h"
 #include "execute.h"
 
-char			*handle_exceptions(int ac, char **av, int *fd, unsigned *res)
-{
-	if (ac == 1)
-		return ("To run Checker, please, add some numeric parameters");
-	if ((*fd = read_input(ac, av, res)) == -2)
-		return ("Error");
-	else
-		return ("");
-}
-
 int				prepare_input(char ***sp_line, char *line)
 {
 	char		*tmp;
@@ -75,6 +65,7 @@ int				read_input(int ac, char **av, unsigned *res)
 	int			fd;
 	int			i;
 
+	*res = 0;
 	fd = -1;
 	i = 1;
 	while (ac > 2 ? i < 3 : i < 2)
@@ -88,23 +79,14 @@ int				read_input(int ac, char **av, unsigned *res)
 			else if ((fd = open(av[i], O_RDONLY)) != -1)
 				*res |= READFILE_FLAG;
 			else if (ac == 2)
-				return ((handle_input_in_row(av) == -1) ?  -2 :  (handle_input_in_row(av)));
+				return ((handle_input_in_row(av) == -1) ? -2 :
+					(handle_input_in_row(av)));
 			else
 				return (-2);
 		}
 		i++;
 	}
 	return (fd);
-}
-
-int				count_wrds(char **sp_line)
-{
-	int			wrds;
-
-	wrds = 1;
-	while (sp_line[wrds] != NULL)
-		wrds++;
-	return (wrds);
 }
 
 void			fill_data(t_arr *a, int i, t_stack *a_data, t_stack *b_data)

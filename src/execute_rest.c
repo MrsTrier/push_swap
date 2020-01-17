@@ -20,7 +20,12 @@ void	execute_rrb(t_arr **a, t_arr **b, t_stack *b_data, int rrr)
 
 	if (rrr)
 	{
-		(*b_data->cmnd) = "rrb\n";
+		(*b_data->cmnd) = (char *)malloc(sizeof(char) * 5);
+		(*b_data->cmnd)[0] = 'r';
+		(*b_data->cmnd)[1] = 'r';
+		(*b_data->cmnd)[2] = 'b';
+		(*b_data->cmnd)[3] = '\n';
+		(*b_data->cmnd)[4] = '\0';
 		b_data->cmnd++;
 	}
 	tmpl = nb_list_at(*b, b_data->length - 1);
@@ -38,7 +43,12 @@ void	execute_rra(t_arr **a, t_arr **b, t_stack *a_data, int rrr)
 
 	if (rrr)
 	{
-		(*a_data->cmnd) = "rra\n";
+		(*a_data->cmnd) = (char *)malloc(sizeof(char) * 5);
+		(*a_data->cmnd)[0] = 'r';
+		(*a_data->cmnd)[1] = 'r';
+		(*a_data->cmnd)[2] = 'a';
+		(*a_data->cmnd)[3] = '\n';
+		(*a_data->cmnd)[4] = '\0';
 		a_data->cmnd++;
 	}
 	pr = *a;
@@ -52,7 +62,12 @@ void	execute_rra(t_arr **a, t_arr **b, t_stack *a_data, int rrr)
 
 void	execute_rrr(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data)
 {
-	(*a_data->cmnd) = "rrr\n";
+	(*a_data->cmnd) = (char *)malloc(sizeof(char) * 5);
+	(*a_data->cmnd)[0] = 'r';
+	(*a_data->cmnd)[1] = 'r';
+	(*a_data->cmnd)[2] = 'r';
+	(*a_data->cmnd)[3] = '\n';
+	(*a_data->cmnd)[4] = '\0';
 	a_data->cmnd++;
 	execute_rra(a, b, a_data, 0);
 	execute_rrb(a, b, b_data, 0);

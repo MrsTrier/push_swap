@@ -13,8 +13,8 @@
 #ifndef EXECUTE_H
 # define EXECUTE_H
 
-#include "libft.h"
-#include "push_swap.h"
+# include "libft.h"
+# include "push_swap.h"
 
 int			execute_sa(t_arr **a, t_arr **b, t_stack *a_data, int ss);
 int			execute_sb(t_arr **a, t_arr **b, t_stack *b_data, int ss);
@@ -27,11 +27,12 @@ void		execute_rr(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data);
 void		execute_rra(t_arr **a, t_arr **b, t_stack *a_data, int rrr);
 void		execute_rrb(t_arr **a, t_arr **b, t_stack *b_data, int rrr);
 void		execute_rrr(t_arr **a, t_stack *a_data, t_arr **b, t_stack *b_data);
-
 t_arr		*nb_list_at(t_arr *begin_list, unsigned int nbr);
 int			*lst_to_arr(t_arr *lst, int ac);
 void		heap_sort(int max, int **stack);
 void		free_arr(char **arr);
-
+void		let_me_free(t_arr **res_lst, t_stack *a_stack,
+					t_stack *b_stack);
+int			count_wrds(char **sp_line);
 
 #endif

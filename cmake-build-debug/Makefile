@@ -150,6 +150,33 @@ src/checker.c.s:
 	$(MAKE) -f CMakeFiles/push.dir/build.make CMakeFiles/push.dir/src/checker.c.s
 .PHONY : src/checker.c.s
 
+src/core.o: src/core.c.o
+
+.PHONY : src/core.o
+
+# target to build an object file
+src/core.c.o:
+	$(MAKE) -f CMakeFiles/push.dir/build.make CMakeFiles/push.dir/src/core.c.o
+.PHONY : src/core.c.o
+
+src/core.i: src/core.c.i
+
+.PHONY : src/core.i
+
+# target to preprocess a source file
+src/core.c.i:
+	$(MAKE) -f CMakeFiles/push.dir/build.make CMakeFiles/push.dir/src/core.c.i
+.PHONY : src/core.c.i
+
+src/core.s: src/core.c.s
+
+.PHONY : src/core.s
+
+# target to generate assembly for a file
+src/core.c.s:
+	$(MAKE) -f CMakeFiles/push.dir/build.make CMakeFiles/push.dir/src/core.c.s
+.PHONY : src/core.c.s
+
 src/execute_rest.o: src/execute_rest.c.o
 
 .PHONY : src/execute_rest.o
@@ -3159,6 +3186,9 @@ help:
 	@echo "... src/checker.o"
 	@echo "... src/checker.i"
 	@echo "... src/checker.s"
+	@echo "... src/core.o"
+	@echo "... src/core.i"
+	@echo "... src/core.s"
 	@echo "... src/execute_rest.o"
 	@echo "... src/execute_rest.i"
 	@echo "... src/execute_rest.s"

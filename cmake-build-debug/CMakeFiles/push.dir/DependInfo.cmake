@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/mcanhand/push/src/checker.c" "/Users/mcanhand/push/cmake-build-debug/CMakeFiles/push.dir/src/checker.c.o"
+  "/Users/mcanhand/push/src/core.c" "/Users/mcanhand/push/cmake-build-debug/CMakeFiles/push.dir/src/core.c.o"
   "/Users/mcanhand/push/src/execute_rest.c" "/Users/mcanhand/push/cmake-build-debug/CMakeFiles/push.dir/src/execute_rest.c.o"
   "/Users/mcanhand/push/src/free_functions.c" "/Users/mcanhand/push/cmake-build-debug/CMakeFiles/push.dir/src/free_functions.c.o"
   "/Users/mcanhand/push/src/heap_sort.c" "/Users/mcanhand/push/cmake-build-debug/CMakeFiles/push.dir/src/heap_sort.c.o"

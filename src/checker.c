@@ -96,31 +96,31 @@ int		execute(int ac, char **av, unsigned flag)
 		return (write(1, "OK\n", 3));
 }
 
-//int		main(int ac, char **av)
-//{
-//	char		*line;
-//	int			fd;
-//	unsigned	res;
-//	char		**sp_line;
-//
-//	ft_printf("%s", handle_exceptions(ac, av, &fd, &res));
-//	if (fd != ac && fd != -1)
-//	{
-//		ac = fd;
-//		av = ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
-//		execute(ac, av, res);
-//	}
-//	else if (!(res & READFILE_FLAG))
-//		execute(ac, av, res);
-//	else
-//	{
-//		while (get_next_line(fd, &line) > 0)
-//		{
-//			if (!*line)
-//				break ;
-//			ac = prepare_input(&sp_line, line);
-//			execute(ac, sp_line, res);
-//			free(sp_line);
-//		}
-//	}
-//}
+int		main(int ac, char **av)
+{
+	char		*line;
+	int			fd;
+	unsigned	res;
+	char		**sp_line;
+
+	ft_printf("%s", handle_exceptions(ac, av, &fd, &res));
+	if (fd != ac && fd != -1 && !(res & READFILE_FLAG))
+	{
+		ac = fd;
+		av = ft_strsplit(ft_strjoin("0 ", av[1]), ' ');
+		execute(ac, av, res);
+	}
+	else if (!(res & READFILE_FLAG))
+		execute(ac, av, res);
+	else
+	{
+		while (get_next_line(fd, &line) > 0)
+		{
+			if (!*line)
+				break ;
+			ac = prepare_input(&sp_line, line);
+			execute(ac, sp_line, res);
+			free(sp_line);
+		}
+	}
+}

@@ -20,7 +20,11 @@ int		execute_sa(t_arr **a, t_arr **b, t_stack *a_data, int ss)
 
 	if (!ss)
 	{
-		(*a_data->cmnd) = "sa\n";
+		(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+		(*a_data->cmnd)[0] = 's';
+		(*a_data->cmnd)[1] = 'a';
+		(*a_data->cmnd)[2] = '\n';
+		(*a_data->cmnd)[3] = '\0';
 		a_data->cmnd++;
 		pr_a = *a;
 	}
@@ -44,7 +48,11 @@ int		execute_sb(t_arr **a, t_arr **b, t_stack *b_data, int ss)
 
 	if (!ss)
 	{
-		(*b_data->cmnd) = "sb\n";
+		(*b_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+		(*b_data->cmnd)[0] = 's';
+		(*b_data->cmnd)[1] = 'b';
+		(*b_data->cmnd)[2] = '\n';
+		(*b_data->cmnd)[3] = '\0';
 		b_data->cmnd++;
 	}
 	pr = *b;
@@ -66,7 +74,11 @@ void	execute_pa(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	t_arr *new_item;
 	t_arr *new_a;
 
-	(*a_data->cmnd) = "pa\n";
+	(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+	(*a_data->cmnd)[0] = 'p';
+	(*a_data->cmnd)[1] = 'a';
+	(*a_data->cmnd)[2] = '\n';
+	(*a_data->cmnd)[3] = '\0';
 	a_data->cmnd++;
 	new_a = *b;
 	new_item = nb_lstnew();
@@ -91,7 +103,11 @@ void	execute_pb(t_arr **a, t_arr **b, t_stack *a_data, t_stack *b_data)
 	t_arr *new_item;
 	t_arr *new_a;
 
-	(*a_data->cmnd) = "pb\n";
+	(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+	(*a_data->cmnd)[0] = 'p';
+	(*a_data->cmnd)[1] = 'b';
+	(*a_data->cmnd)[2] = '\n';
+	(*a_data->cmnd)[3] = '\0';
 	a_data->cmnd++;
 	new_a = *a;
 	new_item = nb_lstnew();
@@ -116,7 +132,11 @@ void	execute_ra(t_arr **a, t_arr **b, int rr, t_stack *a_data)
 
 	if (!rr)
 	{
-		(*a_data->cmnd) = "ra\n";
+		(*a_data->cmnd) = (char *)malloc(sizeof(char) * 4);
+		(*a_data->cmnd)[0] = 'r';
+		(*a_data->cmnd)[1] = 'a';
+		(*a_data->cmnd)[2] = '\n';
+		(*a_data->cmnd)[3] = '\0';
 		a_data->cmnd++;
 	}
 	if (!(*a))

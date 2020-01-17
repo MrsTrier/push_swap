@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
 #include "push_swap.h"
 
-t_arr			*nb_lstnew()
+t_arr			*nb_lstnew(void)
 {
 	t_arr		*new_list;
 

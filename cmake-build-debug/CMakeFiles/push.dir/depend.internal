@@ -13,6 +13,17 @@ CMakeFiles/push.dir/src/checker.c.o
  ../include/libft.h
  ../include/push_swap.h
  /Users/mcanhand/push/src/checker.c
+CMakeFiles/push.dir/src/core.c.o
+ ../include/conversions.h
+ ../include/execute.h
+ ../include/float_to_str.h
+ ../include/floats.h
+ ../include/ft_printf.h
+ ../include/get_next_line.h
+ ../include/large_arythmetics.h
+ ../include/libft.h
+ ../include/push_swap.h
+ /Users/mcanhand/push/src/core.c
 CMakeFiles/push.dir/src/execute_rest.c.o
  ../include/checker.h
  ../include/conversions.h
@@ -295,7 +306,6 @@ CMakeFiles/push.dir/src/libft/is_int.c.o
  /Users/mcanhand/push/src/libft/is_int.c
 CMakeFiles/push.dir/src/lst_arr_functions.c.o
  ../include/conversions.h
- ../include/execute.h
  ../include/float_to_str.h
  ../include/floats.h
  ../include/ft_printf.h

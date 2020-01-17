@@ -1344,9 +1344,22 @@ CMakeFiles/push.dir/src/checker.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push.dir/src/checker.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mcanhand/push/src/checker.c -o CMakeFiles/push.dir/src/checker.c.s
 
+CMakeFiles/push.dir/src/core.c.o: CMakeFiles/push.dir/flags.make
+CMakeFiles/push.dir/src/core.c.o: ../src/core.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/push.dir/src/core.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/core.c.o   -c /Users/mcanhand/push/src/core.c
+
+CMakeFiles/push.dir/src/core.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/push.dir/src/core.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mcanhand/push/src/core.c > CMakeFiles/push.dir/src/core.c.i
+
+CMakeFiles/push.dir/src/core.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/push.dir/src/core.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mcanhand/push/src/core.c -o CMakeFiles/push.dir/src/core.c.s
+
 CMakeFiles/push.dir/src/execute_rest.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/execute_rest.c.o: ../src/execute_rest.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/push.dir/src/execute_rest.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/push.dir/src/execute_rest.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/execute_rest.c.o   -c /Users/mcanhand/push/src/execute_rest.c
 
 CMakeFiles/push.dir/src/execute_rest.c.i: cmake_force
@@ -1359,7 +1372,7 @@ CMakeFiles/push.dir/src/execute_rest.c.s: cmake_force
 
 CMakeFiles/push.dir/src/free_functions.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/free_functions.c.o: ../src/free_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/push.dir/src/free_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/push.dir/src/free_functions.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/free_functions.c.o   -c /Users/mcanhand/push/src/free_functions.c
 
 CMakeFiles/push.dir/src/free_functions.c.i: cmake_force
@@ -1372,7 +1385,7 @@ CMakeFiles/push.dir/src/free_functions.c.s: cmake_force
 
 CMakeFiles/push.dir/src/heap_sort.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/heap_sort.c.o: ../src/heap_sort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/push.dir/src/heap_sort.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/push.dir/src/heap_sort.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/heap_sort.c.o   -c /Users/mcanhand/push/src/heap_sort.c
 
 CMakeFiles/push.dir/src/heap_sort.c.i: cmake_force
@@ -1385,7 +1398,7 @@ CMakeFiles/push.dir/src/heap_sort.c.s: cmake_force
 
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../src/lst_arr_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/push.dir/src/lst_arr_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/push.dir/src/lst_arr_functions.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/lst_arr_functions.c.o   -c /Users/mcanhand/push/src/lst_arr_functions.c
 
 CMakeFiles/push.dir/src/lst_arr_functions.c.i: cmake_force
@@ -1398,7 +1411,7 @@ CMakeFiles/push.dir/src/lst_arr_functions.c.s: cmake_force
 
 CMakeFiles/push.dir/src/lst_execute.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/lst_execute.c.o: ../src/lst_execute.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/push.dir/src/lst_execute.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/push.dir/src/lst_execute.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/lst_execute.c.o   -c /Users/mcanhand/push/src/lst_execute.c
 
 CMakeFiles/push.dir/src/lst_execute.c.i: cmake_force
@@ -1411,7 +1424,7 @@ CMakeFiles/push.dir/src/lst_execute.c.s: cmake_force
 
 CMakeFiles/push.dir/src/nb_execute.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/nb_execute.c.o: ../src/nb_execute.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/push.dir/src/nb_execute.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/push.dir/src/nb_execute.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/nb_execute.c.o   -c /Users/mcanhand/push/src/nb_execute.c
 
 CMakeFiles/push.dir/src/nb_execute.c.i: cmake_force
@@ -1424,7 +1437,7 @@ CMakeFiles/push.dir/src/nb_execute.c.s: cmake_force
 
 CMakeFiles/push.dir/src/nb_lst.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/nb_lst.c.o: ../src/nb_lst.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/push.dir/src/nb_lst.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/push.dir/src/nb_lst.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/nb_lst.c.o   -c /Users/mcanhand/push/src/nb_lst.c
 
 CMakeFiles/push.dir/src/nb_lst.c.i: cmake_force
@@ -1437,7 +1450,7 @@ CMakeFiles/push.dir/src/nb_lst.c.s: cmake_force
 
 CMakeFiles/push.dir/src/optimazation_functions.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/optimazation_functions.c.o: ../src/optimazation_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/push.dir/src/optimazation_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/push.dir/src/optimazation_functions.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/optimazation_functions.c.o   -c /Users/mcanhand/push/src/optimazation_functions.c
 
 CMakeFiles/push.dir/src/optimazation_functions.c.i: cmake_force
@@ -1450,7 +1463,7 @@ CMakeFiles/push.dir/src/optimazation_functions.c.s: cmake_force
 
 CMakeFiles/push.dir/src/push_swap.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/push_swap.c.o: ../src/push_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/push.dir/src/push_swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/push.dir/src/push_swap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/push_swap.c.o   -c /Users/mcanhand/push/src/push_swap.c
 
 CMakeFiles/push.dir/src/push_swap.c.i: cmake_force
@@ -1463,7 +1476,7 @@ CMakeFiles/push.dir/src/push_swap.c.s: cmake_force
 
 CMakeFiles/push.dir/src/read_input.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/read_input.c.o: ../src/read_input.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/push.dir/src/read_input.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/push.dir/src/read_input.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/read_input.c.o   -c /Users/mcanhand/push/src/read_input.c
 
 CMakeFiles/push.dir/src/read_input.c.i: cmake_force
@@ -1476,7 +1489,7 @@ CMakeFiles/push.dir/src/read_input.c.s: cmake_force
 
 CMakeFiles/push.dir/src/result_comands.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/result_comands.c.o: ../src/result_comands.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/push.dir/src/result_comands.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/push.dir/src/result_comands.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/result_comands.c.o   -c /Users/mcanhand/push/src/result_comands.c
 
 CMakeFiles/push.dir/src/result_comands.c.i: cmake_force
@@ -1489,7 +1502,7 @@ CMakeFiles/push.dir/src/result_comands.c.s: cmake_force
 
 CMakeFiles/push.dir/src/supportive_functions.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/supportive_functions.c.o: ../src/supportive_functions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/push.dir/src/supportive_functions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/push.dir/src/supportive_functions.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/supportive_functions.c.o   -c /Users/mcanhand/push/src/supportive_functions.c
 
 CMakeFiles/push.dir/src/supportive_functions.c.i: cmake_force
@@ -1502,7 +1515,7 @@ CMakeFiles/push.dir/src/supportive_functions.c.s: cmake_force
 
 CMakeFiles/push.dir/src/validation.c.o: CMakeFiles/push.dir/flags.make
 CMakeFiles/push.dir/src/validation.c.o: ../src/validation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/push.dir/src/validation.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/push.dir/src/validation.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/push.dir/src/validation.c.o   -c /Users/mcanhand/push/src/validation.c
 
 CMakeFiles/push.dir/src/validation.c.i: cmake_force
@@ -1614,6 +1627,7 @@ push_OBJECTS = \
 "CMakeFiles/push.dir/src/printf/u_conversion.c.o" \
 "CMakeFiles/push.dir/src/printf/x_conversions.c.o" \
 "CMakeFiles/push.dir/src/checker.c.o" \
+"CMakeFiles/push.dir/src/core.c.o" \
 "CMakeFiles/push.dir/src/execute_rest.c.o" \
 "CMakeFiles/push.dir/src/free_functions.c.o" \
 "CMakeFiles/push.dir/src/heap_sort.c.o" \
@@ -1730,6 +1744,7 @@ push: CMakeFiles/push.dir/src/printf/sum_longnum.c.o
 push: CMakeFiles/push.dir/src/printf/u_conversion.c.o
 push: CMakeFiles/push.dir/src/printf/x_conversions.c.o
 push: CMakeFiles/push.dir/src/checker.c.o
+push: CMakeFiles/push.dir/src/core.c.o
 push: CMakeFiles/push.dir/src/execute_rest.c.o
 push: CMakeFiles/push.dir/src/free_functions.c.o
 push: CMakeFiles/push.dir/src/heap_sort.c.o
@@ -1745,7 +1760,7 @@ push: CMakeFiles/push.dir/src/supportive_functions.c.o
 push: CMakeFiles/push.dir/src/validation.c.o
 push: CMakeFiles/push.dir/build.make
 push: CMakeFiles/push.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Linking C executable push"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mcanhand/push/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Linking C executable push"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/push.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

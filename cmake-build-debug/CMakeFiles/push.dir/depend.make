@@ -13,6 +13,17 @@ CMakeFiles/push.dir/src/checker.c.o: ../include/libft.h
 CMakeFiles/push.dir/src/checker.c.o: ../include/push_swap.h
 CMakeFiles/push.dir/src/checker.c.o: ../src/checker.c
 
+CMakeFiles/push.dir/src/core.c.o: ../include/conversions.h
+CMakeFiles/push.dir/src/core.c.o: ../include/execute.h
+CMakeFiles/push.dir/src/core.c.o: ../include/float_to_str.h
+CMakeFiles/push.dir/src/core.c.o: ../include/floats.h
+CMakeFiles/push.dir/src/core.c.o: ../include/ft_printf.h
+CMakeFiles/push.dir/src/core.c.o: ../include/get_next_line.h
+CMakeFiles/push.dir/src/core.c.o: ../include/large_arythmetics.h
+CMakeFiles/push.dir/src/core.c.o: ../include/libft.h
+CMakeFiles/push.dir/src/core.c.o: ../include/push_swap.h
+CMakeFiles/push.dir/src/core.c.o: ../src/core.c
+
 CMakeFiles/push.dir/src/execute_rest.c.o: ../include/checker.h
 CMakeFiles/push.dir/src/execute_rest.c.o: ../include/conversions.h
 CMakeFiles/push.dir/src/execute_rest.c.o: ../include/execute.h
@@ -294,7 +305,6 @@ CMakeFiles/push.dir/src/libft/is_int.c.o: ../include/libft.h
 CMakeFiles/push.dir/src/libft/is_int.c.o: ../src/libft/is_int.c
 
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/conversions.h
-CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/execute.h
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/float_to_str.h
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/floats.h
 CMakeFiles/push.dir/src/lst_arr_functions.c.o: ../include/ft_printf.h

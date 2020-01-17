@@ -14,8 +14,7 @@
 #include "conversions.h"
 #include "libft.h"
 
-
-int		x_conversions(t_params ft, va_list *args, t_list **lst)
+int				x_conversions(t_params ft, va_list *args, t_list **lst)
 {
 	long long	arg_val;
 	int			tmp;

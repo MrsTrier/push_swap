@@ -87,6 +87,9 @@
 		<Unit filename="/Users/mcanhand/push/Makefile">
 			<Option target="push"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/push/author">
+			<Option target="push"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/push/include/checker.h">
 			<Option target="push"/>
 		</Unit>
@@ -118,6 +121,9 @@
 			<Option target="push"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/push/src/checker.c">
+			<Option target="push"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push/src/core.c">
 			<Option target="push"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/push/src/execute_rest.c">
@@ -420,9 +426,6 @@
 		<Unit filename="/Users/mcanhand/push/src/printf/make_ldouble.c">
 			<Option target="push"/>
 		</Unit>
-		<Unit filename="/Users/mcanhand/push/src/printf/mmm">
-			<Option target="push"/>
-		</Unit>
 		<Unit filename="/Users/mcanhand/push/src/printf/mod_conversions.c">
 			<Option target="push"/>
 		</Unit>
@@ -462,7 +465,19 @@
 		<Unit filename="/Users/mcanhand/push/src/validation.c">
 			<Option target="push"/>
 		</Unit>
+		<Unit filename="/Users/mcanhand/push/test">
+			<Option target="push"/>
+		</Unit>
 		<Unit filename="/Users/mcanhand/push/test.sh">
+			<Option target="push"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push/test2">
+			<Option target="push"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push/test3">
+			<Option target="push"/>
+		</Unit>
+		<Unit filename="/Users/mcanhand/push/test500">
 			<Option target="push"/>
 		</Unit>
 		<Unit filename="/Users/mcanhand/push/CMakeLists.txt">

@@ -43,7 +43,7 @@ void		main_loop(const char *format, va_list *args, t_list *res_lst)
 {
 	const char	*tmp;
 	t_list		*last_lst;
-	char 		*res;
+	char		*res;
 
 	last_lst = res_lst;
 	while (*format)
